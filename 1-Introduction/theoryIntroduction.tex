@@ -1,0 +1,262 @@
+\chapter{Introduction to Neutrino Physics}
+\label{c:theoryIntro}
+
+This chapter is aimed at giving an introduction to the physics used in the thesis.
+
+\section{Research Goals}
+This research aims to construct a prototype Magnetized Iron Neutrino Detector (MIND) at the European Organization for Nuclear Research (CERN) and understand the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions at a neutrino beam at the JPARC facility in Japan.
+
+\section{Theory}\label{subsection:Theory}
+While measuring radioactive beta decay in the first two decades of the 20th century, physicists discovered what was then an anomaly. At the time it was thought that beta decay occurred as a two body process in which a neutron ($n$) decays to a proton ($p$) and electron ($e^-$). If this were the case, the energy of the proton and electron should be discrete and add up to the energy of neutron. However experiments showed that the electron could have a continuous spectrum of energy values, violating the energy conservation law. In order to solve this anomaly, a third particle, the neutrino ($\nu$), was postulated by Wolfgang Pauli \cite{4Pauli:Online} and then incorporated into the beta decay by Enrico Fermi \cite{5Wilson}. The neutrino was postulated as a neutral particle with mass of less than 1\% of the proton mass and a spin of 1/2. The addition of another particle changed the decay to $n \rightarrow p + e^- + \bar{\nu_e}$ and introduced the weak interaction model, as seen in \FigRef{fig:beta}. 
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{badBeta}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2}
+
+\fmf{fermion}{i1,v1}
+\fmf{fermion}{v1,o1}
+
+\fmf{boson}{v1,v2}
+\fmf{fermion}{v2,o2}
+
+\fmflabel{n}{i1}
+\fmflabel{p}{o1}
+\fmflabel{$e^{-}$}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+\vspace{2mm}
+  \caption{The first assumption beta decay}
+  %\label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{beta}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2,o3}
+
+\fmf{fermion}{i1,v1}
+\fmf{fermion}{v1,o1}
+
+\fmf{boson}{v1,v2}
+\fmf{fermion}{v2,o2}
+\fmf{fermion}{o3,v2}
+
+\fmflabel{n}{i1}
+\fmflabel{p}{o1}
+\fmflabel{$e^{-}$}{o2}
+\fmflabel{$\bar{\nu}_e$}{o3}
+\end{fmfgraph*}
+\end{fmffile}
+\vspace{2mm}
+  \caption{Correct beta decay}
+  %\label{fig:sub2}
+\end{subfigure}
+\vspace{2mm}
+\caption{Feynman diagrams showing beta decay.}
+\label{fig:beta}
+\end{figure}
+
+It would take another twenty years until the neutrino was experimentally discovered by the Savannah river reactor experiment in 1956~\cite{6Reines} and awarded the Nobel prize in 1995.
+
+\textbf{Add more details, energy spectrum, experimental details. How was it discovered.}
+
+After the discovery of the electron neutrino ($\nu_e$), several neutrino experiments were performed and led to the discovery of two other neutrino types/flavours, the muon neutrino ($\nu_\mu$) and the tau neutrino ($\nu_\tau$)~\cite{7Danby, 8Perl, Fix1}.
+
+\textbf{Table, different mass and so on.}
+
+\subsection{Standard Model neutrino}
+The experiment by \citeauthor{1Helicity} concluded that neutrinos only exist in a left handed chiral state, meaning that momentum and spin are oppositely aligned. They also concluded that anti-neutrinos only exists in the right handed state \cite{1Helicity}. 
+
+These results, coupled with the assumption that neutrinos were massless, led to the current model of the Standard Model (SM) neutrino. Since SM neutrinos are assumed massless and have a fixed helicity they can only be left handed in weak interactions, such as the beta decay, and the opposite for anti-neutrinos~\cite{3Peskin}.
+
+In \SubSectionRef{subsection:Neutrino mass and oscillation} it will be shown that neutrino oscillations require at least one of the neutrinos to have mass. This indicates that our current model needs to be extended to account for this new physics.
+
+\textbf{Expand what is handedness? What are the current methods of mass. Explain the standard model.}
+
+\subsection{Neutrino interactions}\label{subsection:Neutrino interactions}
+As discussed in \SubSectionRef{subsection:Neutrinos}, neutrino interactions are described by the weak interaction model. This model is split into two different parts depending on which boson mediates the interaction.
+Charge Current (CC) interactions changes the final state quarks or leptons by one unit of electric charge and are mediated by the $W^+$ and $W^-$ bosons while Neutral Current (NC) interactions do not change the charge and are mediated by a $Z^0$ boson. 
+To look at possible interactions of neutrinos described in the Standard Model of particle physics, one needs to look at the quantum field theory description of the interactions\cite{3Peskin, 2Hallsjo}. Feynman diagrams showing these interactions can be seen in \FigRef{fig:CC} and \FigRef{fig:NC}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{W+}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2,o3}
+
+\fmf{fermion}{v1,i1}
+\fmf{fermion}{o1,v1}
+
+\fmf{boson,label=$W^{+}$}{v1,v2}
+\fmf{fermion}{o2,v2}
+\fmf{fermion}{v2,o3}
+
+\fmflabel{$\bar{d}$}{i1}
+\fmflabel{u}{o1}
+\fmflabel{$e^{+}$}{o2}
+\fmflabel{$\nu_e$}{o3}
+\end{fmfgraph*}
+\end{fmffile}
+  %\caption{A subfigure}
+  %\label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{W-}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2,o3}
+
+\fmf{fermion}{i1,v1}
+\fmf{fermion}{v1,o1}
+
+\fmf{boson,label=$W^{-}$}{v1,v2}
+\fmf{fermion}{v2,o2}
+\fmf{fermion}{o3,v2}
+
+\fmflabel{d}{i1}
+\fmflabel{$\bar{u}$}{o1}
+\fmflabel{$e^{-}$}{o2}
+\fmflabel{$\bar{\nu}_e$}{o3}
+\end{fmfgraph*}
+\end{fmffile}
+  %\caption{A subfigure}
+  %\label{fig:sub2}
+\end{subfigure}
+\vspace{2mm}
+\caption{Feynman diagrams showing an example of a charge current interaction.}
+\label{fig:CC}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+  \begin{fmffile}{Z}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+
+\fmf{fermion}{i1,v1,o1}
+%\fmf{fermion}{v1,o1}
+
+\fmf{fermion}{i2,v2,o2}
+
+\fmf{boson,label=$Z^{0}$}{v1,v2}
+%\fmf{fermion}{o2,v2}
+%\fmf{fermion}{v2,o3}
+
+\fmflabel{$e^{-}$}{i1}
+\fmflabel{$\nu_{\mu}$}{i2}
+\fmflabel{$e^{-}$}{o1}
+\fmflabel{$\nu_{\mu}$}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+  %\caption{A subfigure}
+  %\label{fig:sub1}
+
+\vspace{2mm}
+\caption{Feynman diagrams showing an example of a neutral current interaction.}
+\label{fig:NC}
+\end{figure}
+
+From the Feynman diagrams one can calculate the probability of the interaction occurring, details can be found in \cite{3Peskin}. The interaction probability of NC is a factor of 3 lower than CC and both are 19 orders of magnitude lower than electron-electron scattering in quantum electrodynamics. 
+
+\subsection{Missing neutrinos}
+
+The Homestake experiment measured the flux of electron neutrinos and found only around 1/3 of the expected value from the theoretical model of the nuclear reactions in the core of the sun \cite{9Davis}. One of the possible explanations for the deficit was neutrino oscillations proposed by Bruno Pontecorvo~\cite{11Pontecorvo}. This theory was later verified at both the Sudbury Neutrino Observatory (SNO)~\cite{Fix6} and Super-Kamiokande~\cite{10Fukuda}. All three experiments were awarded Nobel prizes and have paved the way for physics beyond the Standard Model.
+
+\subsection{Neutrino mass and oscillation}\label{subsection:Neutrino mass and oscillation}
+While looking at an analog of neutral kaon mixing for neutrinos Bruno Pontecorvo, in 1957, developed the concept of neutrino-antineutrino transitions~\cite{11Pontecorvo}. Even though to date no matter-antimatter oscillation had been observed, the concept formed the foundation of lepton mixing, which was developed by Maki, Nakagawa, and Sakata~\cite{12Maki} and refined into a neutrino flavour oscillation model by Bruno Pontecorvo. They managed to show that neutrino mixing is a natural outcome of adding neutrino mass to a gauge theory~\cite{11Pontecorvo}
+
+The relation between the flavour and mass eigenstates can be expressed as,
+\begin{equation}
+ \left| \nu_\alpha \right\rangle = \sum_{i} U^{*}_{\alpha i} \left| \nu_i \right\rangle,
+ \left| \bar{\nu_\alpha} \right\rangle = \sum_{i} U_{\alpha i} \left| \bar{\nu_i} \right\rangle\
+ \end{equation}
+where
+ $\left| \nu_\alpha \right\rangle $ is a neutrino with a fixed flavour, $\alpha$ is one of \{e,$\mu$,$\tau$\} and  $\left| \nu_i \right\rangle$ is a neutrino with a fixed mass.
+$U$ is the Pontecorvo-Maki-Nagawa-Sakata (PMNS) matrix in \eqref{PMNS},
+\begin{equation}
+\label{PMNS}
+\begin{aligned}
+U ={} & 
+ \begin{pmatrix}
+ c_{12} & s_{12} & 0\\
+  -s_{12} & c_{12} & 0\\
+  0 & 0 & 1\\
+ \end{pmatrix} 
+  \begin{pmatrix}
+ 1 & 0 & 0\\
+  0 & c_{23} & s_{23}\\
+  0 & -s_{23} & c_{23}\\
+ \end{pmatrix} 
+   \begin{pmatrix}
+ c_{13} & 0 & s_{13}e^{i\delta_{CP}}\\
+  0 & 1 & 0\\
+  -s_{13}e^{-i\delta_{CP}} & 0 & c_{13}\\
+ \end{pmatrix} 
+ \\
+ & \times
+  \begin{pmatrix}
+1 & 0& 0\\
+  0 & e^{i\phi_2} & 0\\
+  0 & 0 & e^{i\phi_3}\\
+ \end{pmatrix} 
+ \end{aligned}
+\end{equation}
+where $s_{ij} = \sin\theta_{ij}$ and $c_{ij} = \cos\theta_{ij}$ with $\theta_{ij}$ the three mixing angles and $\delta_{CP}$, $\phi_2$ and $\phi_3$ are complex phases. The parameters $\phi_2$ and $\phi_3$ are only non-zero if neutrinos are their own antiparticles, which is still unknown~\cite{13PDG}.
+
+The interpretation is similar to that of a time-dependent quantum state, the probability of finding a neutrino in a specific state is related to the mass states through the PMNS matrix in which the elements are time dependent. The probability for flavour change in a two neutrino model can be written as:
+\begin{equation}
+P(\nu_i \rightarrow \nu_j) = sin(2\theta_{ij})sin(\frac{\Delta m^2}{4E} L)
+\end{equation}
+where $\Delta m$ the difference in neutrino mass, L the oscillation distance and E the neutrino energies. This becomes much more complicated for the three neutrino case and adds the phase differences associated with the change from neutrino to anti-neutrino.
+
+\subsection{CP-violation, baryogenesis and leptogenesis}
+According to the current understanding of the Big Bang theory, matter and anti-matter were created in equal amounts\cite{14Berry}. This gives rise to one of the major unsolved problems in physics, where is all the anti-matter? If the answer was simply that antimatter exists somewhere else in the universe, then we should see the annihilation horizon, where matter and anti-matter interact, however there are no signs of this. There has also not been any sign of this in the cosmic background radiation\cite{14Berry}.
+
+Through observations of the universe, much more matter has been found compared to anti-matter. One direct measurement was AMS-01, which measured the ratio of anti-helium to helium in the universe to be of the order of $10^{-6}$~\cite{15AMS1}. Another measurement, AMS-02 seems to confirm the first measurement and build on the results~\cite{16AMS2}. 
+From these experimental results, a mechanism is needed to explain why the antibaryon component of the universe is $\sim 10^{-9}$ to that of baryons. As of now our current models can not account for the difference thus there must be unknown processes that account for this.
+
+The unknown process has been split into two different fields, baryogenesis, looking at direct CP-violation in the baryon-antibaryon asymmetry and leptogenesis, CP-violation in the leptons that translates to a baryon asymmetry. Leptogenesis will be covered in this report as it relates to neutrinos.
+
+If neutrinos violate CP (Charge, Parity) by their oscillations being different for neutrinos and anti-neutrinos, this could explain the matter anti-matter imbalance that has been observed. CP-violation exists in the Standard Model but it can not explain the observed difference~\cite{3Peskin}, and measurements of the CP-violation in neutrino oscillations have not yet been able to show any conclusive results~\cite{17Gonzalez}.
+
+\subsection{How to detect neutrinos}
+Experiments are based around the searches for the different parameters in the PMNS matrix. 
+
+Neutrinoless double beta decay.
+
+Mass heariarcy. 
+
+Neutrino mass.
+
+Sterile neutrinos.
+
+From solar, atomsphere, reactor or accelerator
+
+\section{Extended theories with neutrinos}
+In this section some extended theories requirering more neutrinos or neutrinolike particles are presented.
+\subsection{Supersymmetry}
+\subsection{Dark matter}
+
+\section{Conclusion}
+
+%==============================================================================
+%\section{Thesis Statement}
+%\label{c:intro:thesisstatement}
+
+%\input{"1-introduction/thesis_statement.tex"}
