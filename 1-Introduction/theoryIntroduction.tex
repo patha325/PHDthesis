@@ -4,7 +4,7 @@
 This chapter is aimed at giving an introduction to the physics used in the thesis.
 
 \section{Research Goals}
-This research aims to construct a prototype Magnetized Iron Neutrino Detector (MIND) at the European Organization for Nuclear Research (CERN) and understand the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions at a neutrino beam at the JPARC facility in Japan.
+This research aims to construct a prototype Magnetized Iron Neutrino Detector (Baby MIND) at the European Organization for Nuclear Research (CERN) and understand the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions with our collaborators in the WAGASCI collaboration at a neutrino beam at the JPARC facility in Japan. This is discussed further in chapter~\ref{c:WAGASCI}.
 
 \section{Theory}\label{section:Theory}
 While measuring radioactive beta decay in the first two decades of the 20th century, physicists discovered what was then an anomaly. At the time it was thought that beta decay occurred as a two body process in which a neutron ($n$) decays to a proton ($p$) and electron ($e^-$). If this were the case, the energy of the proton and electron should be discrete and add up to the energy of neutron. However experiments showed that the electron could have a continuous spectrum of energy values, violating the energy conservation law, as seen in \FigRef{fig:betaeng}. In order to solve this anomaly, a third particle, the neutrino ($\nu$), was postulated by Wolfgang Pauli \cite{4Pauli:Online} and then incorporated into the beta decay by Enrico Fermi \cite{5Wilson}. The neutrino was postulated as a neutral particle with mass of less than 1\% of the proton mass and a spin of 1/2. For consistency, the particle used in the beta decay was changed to be noted as the antineutrino with the electron flavour, or just electron antineutrino $\bar{\nu_e}$. The addition of another particle changed the decay to $n \rightarrow p + e^- + \bar{\nu_e}$ and introduced the weak interaction model, as seen in \FigRef{fig:beta}. 
@@ -75,10 +75,10 @@ It would take another twenty years until the neutrino was experimentally discove
 After the discovery of the electron neutrino ($\nu_e$), several neutrino experiments were performed and led to the discovery of two other neutrino types/flavours, the muon neutrino ($\nu_\mu$) and the tau neutrino ($\nu_\tau$)~\cite{7Danby, 8Perl, Fix1}.
 
 \subsection{Standard Model neutrino}\label{subsection:SMN}
-The standard model of particle physics or simply the Standard Model (SM) categorizes all the fundamental particles that have been discovered experimentally and the mathematics of their properties and how they interact \cite{32Burchan:1995}. Currently there are two fundamental types of particles which are modelled as point like, quarks (fractional charge) and leptons (integer charge), seen in figure \FigRef{fig:standardModel}. Aside from these gauge bosons, the force mediators, are in the standard model. The split can also be seen as ferminos (fractional spin) and bosons (integer spin). \textbf{All gauge bosons are bosons (as the name implies) and all quarks and leptons are fermions.}
+The standard model of particle physics or simply the Standard Model (SM) categorizes all the fundamental particles that have been discovered experimentally and the mathematics of their properties and how they interact \cite{32Burchan:1995, 38griffiths}. Currently there are two fundamental types of particles which are modelled as point like, quarks (fractional charge) and leptons (integer charge), seen in figure \FigRef{fig:standardModel}. Aside from these gauge bosons, the force mediators, are in the standard model. The split can also be seen as ferminos (fractional spin) and bosons (integer spin). \textbf{All gauge bosons are bosons (as the name implies) and all quarks and leptons are fermions.}
 
 \begin{figure}[h!]
-\includegraphics[width=\textwidth]{figures/Standard_Model_of_Elementary_Particles.png}
+\includegraphics[width=0.7\textwidth]{figures/Standard_Model_of_Elementary_Particles.png}
 \caption{The standard model of particle physics where the three first columns represent the so called generations, starting with the first. \cite{33wiki1:Online}}
  \label{fig:standardModel}
 \end{figure}
@@ -176,9 +176,66 @@ To look at possible interactions of neutrinos described in the Standard Model of
 \label{fig:NC}
 \end{figure}
 
-From the Feynman diagrams one can calculate the probability of the interaction occurring, details can be found in \cite{3Peskin}. 
+From the Feynman diagrams one can calculate the probability of the interaction occurring, details can be found in \cite{3Peskin}. Two interesting examples of this is to compare the probability for comparing similar interactions in Quantum ElectroDynamics (QED), or simply electromagnetic interactions, and weak interactions, comparing CC and NC. In  \FigRef{fig:weakQED} a comparison is made between QED and a weak interaction. Calculating the cross-sections when $E<<M_Z$ the following quotient is produced: $\frac{\sigma_{Weak}}{\sigma_{QED}} \approx (\frac{s}{M_Z^2})^2$ where s is the square of the center of mass energy, $M_Z$ is the mass of the Z-boson. Currently the Z-boson mass is $91.1876 GeV$~\cite{13PDG} but since s varies it is hard to give a value to the quotient. For the energy range where $E<<M_Z$ this quotient varies from $0.01 \rightarrow 0.1225$. With the current values QED is approximately 100 times more likely to occur than a weak interaction..
 
-Looking at the following CC and NC examples \FigRef{fig:CMPNCCC} with electrons and muon neutrinos, so that the final states can be distinguished. The cross sections of both can be written as $\sigma_{CC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} $ and $\sigma_{NC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} \left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] $ Giving a relation CC and NC as $\frac{\sigma_{CC}}{\sigma_{NC}} = 1/\left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] \approx 11$. With the current values CC is approximately 11 times more likely to occur that NC.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{QED}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2,o3}
+
+\fmf{fermion}{v1,i1}
+\fmf{fermion}{o1,v1}
+
+\fmf{boson,label=$\gamma$}{v1,v2}
+\fmf{fermion}{o2,v2}
+\fmf{fermion}{v2,o3}
+
+\fmflabel{$e^{+}$}{i1}
+\fmflabel{$e^{-}$}{o1}
+\fmflabel{$\bar{f}$}{o2}
+\fmflabel{$f$}{o3}
+\end{fmfgraph*}
+\end{fmffile}
+  %\caption{A subfigure}
+  %\label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{fmffile}{Weak}
+\begin{fmfgraph*}(120,80)
+\fmfstraight
+\fmfleft{i1,i2,o1}
+\fmfright{o2,o3}
+
+\fmf{fermion}{v1,i1}
+\fmf{fermion}{o1,v1}
+
+\fmf{boson,label=$Z^0$}{v1,v2}
+\fmf{fermion}{o2,v2}
+\fmf{fermion}{v2,o3}
+
+\fmflabel{$e^{+}$}{i1}
+\fmflabel{$e^{-}$}{o1}
+\fmflabel{$\bar{f}$}{o2}
+\fmflabel{$f$}{o3}
+\end{fmfgraph*}
+\end{fmffile}
+  %\caption{A subfigure}
+  %\label{fig:sub2}
+\end{subfigure}
+\vspace{2mm}
+\caption{The QED and the weak contributions to the scattering electron-positron to any quark or lepton pair.\protect\footnotemark}
+\label{fig:weakQED}
+\end{figure}
+\footnotetext{If $f=e^-$ a T-channel diagram has to be added as well} 
+
+Looking at the following CC and NC examples \FigRef{fig:CMPNCCC} with electrons and muon neutrinos, so that the final states can be distinguished. The cross sections of both can be written as $\sigma_{CC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} $ and $\sigma_{NC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} \left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] $ where $G_F$ is the Fermi coupling constant and $\theta_W$ is the Weinberg angle. This gives a relation CC and NC as $\frac{\sigma_{CC}}{\sigma_{NC}} = 1/\left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] \approx 11$. With the current values CC is approximately 11 times more likely to occur than NC.
 
 
 \begin{figure}[h!]
@@ -236,7 +293,7 @@ Looking at the following CC and NC examples \FigRef{fig:CMPNCCC} with electrons 
   %\label{fig:sub2}
 \end{subfigure}
 \vspace{2mm}
-\caption{Feynman diagrams with the same initial states.}
+\caption{Feynman diagrams, CC(Left) and NC(Right) with the same initial states.}
 \label{fig:CMPNCCC}
 \end{figure}
 
@@ -319,7 +376,27 @@ where the oscillation length $L_{ij} = \frac{4\pi  \left| \vec{p} \right| }{\lef
 
 It can be seen that if $m_i^2 - m_j^2 = 0 $ this probability becomes $0$ which contradicts the experimental results. This means that atleast one of the neutrinos must have non-zero mass which currently is not explained through the Standard Model. Also that if $U_{\alpha i}$ is real, which is related to $\delta_{CP} = 0$, then $arg(U_{\alpha i} U_{\beta i}^* U_{\alpha j}^* U_{\beta j} ) = 0$.
 
-Current experimental focus lies with trying to measure values for all of these parameters and one of the most interesting for understanding more about the Big Bang theory is the complex phase $\delta_{CP}$. This is known as the CP-violating phase which, if non-zero, would state that there is a difference between how normal and anti-neutrinos oscillate.
+Current experimental focus lies with trying to measure values for all of these parameters and one of the most interesting for understanding more about the Big Bang theory is the complex phase $\delta_{CP}$. This is known as the CP-violating phase which, if non-zero, would state that there is a difference between how normal and anti-neutrinos oscillate. \textbf{Experimental value so far of CP}
+
+Table \ref{table:UpperNMass} provides the current mass limits for neutrinos, note that currently there is no lower limit since it is only known that at least two of the neutrinos must have mass.
+
+\begin {table}[H]
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Particle & 95\% CL Mass limit (MeV) & 95\% CL Anti-particle mass limit (MeV) \\ 
+  \hline
+ $\nu_e$ & $<0.225$ & $<2 \cdot 10^{-3}$ \\ 
+ $\nu_\mu$ & $<0.19$ & No Data \\ 
+  $\nu_\tau$ & $< 18.2$ & No Data \\ 
+ \hline
+
+\end{tabular}
+\end{center}
+\caption{Current upper neutrino mass limits ~\cite{13PDG}}
+\label{table:UpperNMass}
+\end {table}
+
 
 \subsection{CP-violation, baryogenesis and leptogenesis}
 According to the current understanding of the Big Bang theory, matter and anti-matter were created in equal amounts\cite{14Berry}. This gives rise to one of the major unsolved problems in physics, where is all the anti-matter? If the answer was simply that antimatter exists somewhere else in the universe, then we should see the annihilation horizon, where matter and anti-matter interact, however there are no signs of this. There has also not been any sign of this in the cosmic background radiation\cite{14Berry}.
@@ -351,23 +428,27 @@ By looking at the oscillation probability \eqref{eq:Problength} one can devise t
 Finding a distance x to the source where $P_{\nu_\alpha \rightarrow \nu_\alpha} (x) < 1$ it is possible to look at so called disappearance of the beam. At the detector, by comparing the expected neutrino flux to the observed one can provide evidence for neutrino oscillations. For the disappearing flavour there must be a probability, $P_{\nu_\alpha \rightarrow \nu_\beta} (x) > 0, \alpha=\beta$ for another flavour to appear. The second kind of experiment, denoted as appearance, is based on looking for interaction products which are impossible without oscillations. An example of this would be to see a positron from a muon neutrino beam. More on this can be found well described in~\cite{34doi:10.1142/9789812562203_0002} and examples of different detectors will be discussed in chapter~\ref{c:expIntro}.
 
 \section{Current Theories to explain neutrino mass}
-As discussed in subsection~\ref{subsection:SMN}, it is clear that without having both types of chiral, neutrinos can not have mass through Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. What other methods could explain the reason for neutrino masses?
+As discussed in subsection~\ref{subsection:SMN}, it is clear that without having both types of chiral, neutrinos can not have mass through Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. Currently there are two different approaches to explain the neutrino masses through processes which already exist in the SM by implying that some observations still have to be made.
 
-\subsection{Dirac neutrinos}
-Did we miss some perhaps heavier neutrinos with the other chirality? Would have to add other neutrinos for with the chirality.
+\textbf{NEEDS TO BE EXTENDED.}
+%\subsection{Dirac neutrinos}
+%Did we miss some perhaps heavier neutrinos with the other chirality? Would have to add other neutrinos for with the chirality.
 
-\subsection{Majorana neutrinos}
-If they are neutral, thus anti and normal are the same particle. (Z boson mass) only chirality would distinguish them.
+%\subsection{Majorana neutrinos}
+%If they are neutral, thus anti and normal are the same particle. (Z boson mass) only chirality would distinguish them.
 
-\section{Extended theories with neutrinos}
-In this section some extended theories requiring more neutrinos or neutrinolike particles are presented.
+%\subsection{Neutrinoless double beta decay}
+%This experiment can conclusively show that neutrinos must be majorana particles. Reference? How? Diagrams
 
-\subsection{Neutrinoless double beta decay}
+%\section{Extended theories with neutrinos}
+%In this section some extended theories requiring more neutrinos or neutrinolike particles are presented.
 
-\subsection{Massive neutrinos as dark matter}
-What is SUSY? What is a neutralio? Sterile neutrinos
 
-What is dark matter? Why cold? Current ideas and theories? How does it relate to neutrinos? Or to neutralinos?
+
+%\subsection{Massive neutrinos as dark matter}
+%What is SUSY? What is a neutralio? Sterile neutrinos
+
+%What is dark matter? Why cold? Current ideas and theories? How does it relate to neutrinos? Or to neutralinos?
 
 %==============================================================================
 %\section{Thesis Statement}
