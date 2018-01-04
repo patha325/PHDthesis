@@ -1,11 +1,144 @@
 \chapter{Baby MIND + WAGASCI}
 \label{c:WAGASCI}
 
+%Initially MIND prototype for nufact, now low pt can be used as muon spectrometry. Add preface to describe what done by xyz, clarify my contribution.
 \section{Baby MIND}
-The prototype Magnetized Iron Neutrino Detector (Baby MIND)~\cite{26babyMIND} has the principal aim to study muon charge identification efficiencies in order to get estimates for a future Neutrino Factory. A secondary aim is to compare simulations from GEANT4~\cite{Geant4} to data taken from the detector to be able to verify the properties of muon interactions at momentum ranges of 0.5 to 10 GeV/c.
 
-The prototype is currently being built at CERN, where it will be provided with a charged particle test beam to fully understand the characteristics of the detector. Once the detector has been characterised, the plan is to integrate it into the WAGASCI experiment in Japan to improve measurements of the ratio of neutrino interaction cross-sections on water and carbon and also to place it downstream to provide improved charge identification. The main way of improving these measurements is by reducing systematic errors that arrive from the nuclear effects in water~\cite{26babyMIND}.
+%Magnetised Iron Neutrino Detectors (MINDs) have been proposed for Neutrino Factories, since wrong-sign muons are the neutrino oscillation signal. Baby MIND is a prototype detector to study charge identification of muons on a charged particle beamline at CERN. The CERN Neutrino Platform approved Baby MIND as experiment NP05 in December 2015 and construction started in August 2016 and finished in June 2017. 
 
+The prototype Magnetized Iron Neutrino Detector (Baby MIND)~\cite{26babyMIND} was designed with the aim to study muon charge identification efficiencies in order to get estimates for a future Neutrino Factory, discussed in this section. The particle charge is essential for their oscillation measurements since wrong-sign muons are the neutrino oscillation signal. During the design process this a secondary aim was added, to measure the momentum and charge of muons from neutrino interactions in water and hydrocarbon targets at the J-PARC T59 (WAGASCI) experiment, further discussed in section~\ref{sec:WAGASCI}
+
+The Baby MIND collaboration is comprised of 44 scientists from nine different institutions, and is part of the CERN Neutrino Platform as experiment NP05~\cite{Fix2}.
+
+\subsection{Motivation}
+
+The Baby MIND aims to show that MIND type detectors are viable to use for muon charge identification at low momenta ($<1$GeV/c) and also to show how well the charge can be identified from a Neutrino Factory~\cite{25NUfact} beam. Additionally the experiment aims to compare simulations from GEANT4~\cite{Geant4} to data taken from the detector to be able to verify the properties of muon interactions at momentum ranges of 0.5 to 10 GeV/c.
+
+Separating and identify particles of different charges requires a magnetic field, and to perform identification at low momenta the following must be solved. How do you magnify as large a volume as possible, with as high and uniform a field as possible, without stopping the particles you are identifying and preferably doing this cheaply? \textbf{Mention Gas tpc!} In essence it creates a triangle where one can have a large magnetized volume over for instance gas, it will not stop particles but it will not be strong/cheap/large or uniform. The other option is to magnetize a large iron block which is cheap and uniform but stops particles.
+
+For the Baby MIND a novel approach was chosen to use thin high quality magnetised ARMCO steel plates in an arrangement to optimize charge identification while minimizing the amount of steel plates surrounded by scintillator modules. An added advantage of this approach is the addition of a fully modular design leading to the Baby MIND being able to be set in any configuration with an appropriate support frame. By using magnetised steel modules instead of requiring the use of an all encompassing magnet, simplifies the magnetic design, lowers the cost and allows for a more uniform field. The direct disadvantages of this becomes the uncertainty of the momentum and difficulty of performing track reconstruction, discussed further in \textbf{Where?}.
+
+The CERN Neutrino Platform approved Baby MIND as experiment NP05 in December 2015 and construction started in August 2016 and finished in June 2017. 
+
+%During the development of the detector it was proposed to use Baby MIND as a muon spectrometer downstream of the WAGASCI experiment (T59) at J-PARC, using neutrinos from the T2K beamline, to provide charge and momentum of outgoing muons from neutrino charged current interactions. Currently the schedule is to install Baby MIND in the ND280 pit at the start of 2018.
+
+ %the bending of the magnetic field to improve charge identification while using as few steel plates as possible.
+
+
+%The Baby MIND spectrometer is designed to measure the momentum and charge of muons from neutrino interactions in water and hydrocarbon targets at the J-PARC T59 (WAGASCI) experiment. The WAGASCI experiment will measure the ratio of neutrino charged current interaction cross-sections on water and hydrocarbon aiming at reducing systematic errors in neutrino oscillation analyses at T2K. Construction of the Baby MIND detector within the CERN Neutrino Platform framework was completed in June 2017, where it underwent full commissioning and characterization on a charged particle beam line at the Proton Synchrotron experimental hall.
+
+%The prototype is currently being built at CERN, where it will be provided with a charged particle test beam to fully understand the characteristics of the detector. Once the detector has been characterised, the plan is to integrate it into the WAGASCI experiment in Japan to improve measurements of the ratio of neutrino interaction cross-sections on water and carbon and also to place it downstream to provide improved charge identification. The main way of improving these measurements is by reducing systematic errors that arrive from the nuclear effects in water~\cite{26babyMIND}.
+
+%History and use as low momentum spectrometer
+
+\subsection{Layout}
+\textbf{Project constraints for the design, construction and testing of the Baby MIND came from the need to operate the detector both at CERN and J-PARC on a relatively short timescale. Installation at J-PARC in particular has driven the overall design of the detector. The magnetisation scheme for the Baby MIND developed within the CERN Neutrino Platform framework is a direct result of the requirement to lower segments of detector elements through a narrow shaft down to the lowest floor of the ND280 building pit at J-PARC. }
+
+Previous magnetised iron detector, discussed in chapter~\ref{c:expIntro}, have been in the kiloton range, Baby MIND is comparatively small weighing only 65 t. A schematic overview of the detector can be seen in \FigRef{fig:design}, showing the full detector composed of 18 scintillator modules, and 33 magnetised ARMCO steel plates, referred to as magnet modules. The full detector is around 4 meters in length with a height of around 2 meters and width of 3.5 meters. The current chosen layout of the detector is divided into four blocks with first block, block 1, containing 3 sub-blocks and the last block, block 4, containing 2 sub-blocks. The gaps between sub-blocks in block 1 have been added to improve the low momentum reconstruction using a lever-arm approach, discussed further in \textbf{Where?}.
+
+
+%As discussed in \SubSectionRef{subsec:MINDdetector}, a MIND type detector requires a magnetized volume as well as interaction medium to deflect the particle tracks and scintillating elements to detect the particle hits. A schematic overview of the detector can be seen in \FigRef{fig:design}. 
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=\textwidth]{figures/design.png}
+\includegraphics[width=\textwidth]{figures/MINDschematic.jpeg}
+\caption{The current Baby MIND design}
+\label{fig:design}
+\end{figure}
+
+%Last layout
+\textbf{iterations, highlight flexibility of design?}
+\subsection{Magnet modules}
+
+The magnetised volume for the Baby MIND has been chosen as a total of 33 steel modules both to have a simple magnetic field as well as being modular and cheaper than the alternatives. An overview of the magnetic field is seen in \FigRef{fig:mField} with two open slots in order to cover the entire plate with coils with currents in opposite directions. This improves the flux return, contains the stray fields and reduces power dissipation outside of the plates compared to a single conducting coil wound on the surface of each individual plate. Each module consists of ARMCO steel with two slits to allow aluminium coils to be wrapped around the steel and two side caps to allow for the magnetic flux return. The field is split into 3 parts where the field is 1.5 T but with opposite orientation as can be seen in \FigRef{fig:mField}. Because of this simple design, the field lines are contained in the steel and have negligible stray fields of less than 15 mT, with a good uniformity in the area of interest (seen as red in the \FigRef{fig:mField}). This provides a bending direction either up or down depending where the particle passes and its charge. The magnet module dimensions $3500 \times 2000 \times 30$ mm$^3$, with the field oriented in the x−direction (right) and bending with respect to the bend in z−axis (Into figure). Simulations show the magnet field map to be very uniform over this central tracking region covering an area of $2800 \times 2000$ mm$^2$, where the field component in the x−direction dominates with field in the other orthogonal directions. The magnet modules were constructed at CERN through the CERN Neutrino Platform~\cite{50MagnetMIND}.
+
+Test results on the 33 modules show all to achieve the required field of 1.5 T for a current of 140 A, with a total power consumption of 11.5 kW.
+
+%The Baby MIND is built from sheets of iron interleaved with scintillator detector modules. The 33 Baby MIND iron magnet modules are all individually magnetised, unlike traditional layouts for magnetised iron neutrino detectors (e.g. MINOS) which tend to be monolithic blocks with a unique pitch between consecutive iron segments and large conductor coils threaded around the whole magnet volume. This allows for far greater flexibility in the setting of the pitch between segments, and in the layouts that these detectors can take.
+
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=0.45\textwidth]{figures/magnet.png}
+%\includegraphics[width=0.45\textwidth]{figures/magnet2.png}
+\includegraphics[width=\textwidth]{figures/Mfield.png}
+%\caption{(Left) Schematic view of the magnet module. (Right) A contour plot of the magnet module, with the fiducial areas of interest showing magnetic field uniformity.}
+\caption{(Top) Schematic view of the magnet module. (Bottom) A contour plot of the magnet module, with the fiducial areas of interest showing magnetic field uniformity.}
+\label{fig:mField}
+\end{figure}
+
+\textbf{Field, credit in preface of CERN.}
+\subsection{Scintillator modules}
+In the Baby MIND, particle hits are detected by scintillating bars and provide both horizontal and vertical position information. There are a total of 18 scintillator modules, where each scintillator module is constructed from 95 horizontal bars, $3000 \times 31 \times 7.5$ mm$^3$, and 16 vertical bars, $1950 \times 210 \times 7.5$ mm$^3$ providing a total size of the scintillator module as $3000 \times 1950 \times 30$ mm$^3$. Since the vertical information is important for curvature, smaller bars are used to provide a better position resolution. The bars are arranged in 4 planes, of horizontal, vertical, vertical, horizontal, with an overlap between planes to achieve close to 100\% hit efficiency for minimum ionizing muons~\cite{51Saba}. INR Moscow built and designed the scintillator bars, providing a good light yield \textbf{figure ref!}, regardless of where the bar is hit. The bars are polystyrene based, 1.5\%PTP, 0.01\% POPOP and held together mechanically within an aluminium support frame  The bars contains Kuraray WLS fiber (200 ppm, S-type, diameter 1.0 mm) and contain a reflective coating 30 to 100 μm from chemical etching of surface. The connectors are custom made using Eljen EJ-500 optical cement. A schematic view of the horizontal bars can be seen in \FigRef{fig:horizontal} and the vertical bars in \FigRef{fig:vertical}. 
+
+
+%The scintillating elements, seen in \FigRef{fig:Vbar}, have been chosen as 18 scintillating modules consisting of four planes per module, two oriented along the horizontal direction with and two oriented in the vertical direction, each to produce good horizontal and vertical resolution of the particle interactions 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/horizontal.png}
+\caption{Schematic view of the horizontal bar and light yield curves.}
+\label{fig:horizontal}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/vertical.png}
+\caption{Schematic view of the vertical bar and light yield curves performed for hits at the near and far end of the bar.}
+\label{fig:vertical}
+\end{figure}
+
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.5\textwidth]{figures/Vbar.png}
+%\caption{One of the vertical scintillator bars.}
+%\label{fig:Vbar}
+%\end{figure}
+\subsection{Electronics}
+\textbf{Georgies paper!}
+
+The scintillating fibres, present in the bars are read out using Hamamatsu MPPC (Multi Pixel Photon Counters). Compared to PMTs these use a lower voltage, less current and are compatible with magnetic fields. This provides a small size, and simple electronics for the modules. The MPPCs are custom made S12571-025C (and derived S10943-5796), a size of 1x1 mm2 (65\% fill factor) and 25 μm cell size. The operating voltage is ≈ 67.5 V with photon detection efficiency (PDE) ≈ 35\%, gain 5 × 105 and dark counts of typically 100 kcps.
+
+The MPPC signals, sampled at 400 MHz, are powered (HV/LV) and read out by custom made Front End Boards (FEBs), seen in \FigRef{fig:FEB}, designed for 96 channels using CITIROC [5] ASICs. These rack- mounted FEBs have been designed by Geneva University containing 3 × 32 channel connectors, 3 CITIROC ASICs with 32 channels each. The FEBs have readout/slow control on USB3 and/or Gigabit on the backplane with a platform independent readout, Windows/Linux. There is also an analog readout, 8 μs for 96-channel low gain and high gain with a 12-bits, 8 channel, 40 MSam- ples/s per channel ADC based on the Altera ARIA5 FPGA. \textbf{Cite Etams paper?}
+
+\begin{figure}[h!]
+	\centering
+\includegraphics[width=0.48\textwidth]{figures/FEB.png}
+\includegraphics[width=0.48\textwidth]{figures/FEB2.png}
+\caption{(Left) Schematic view of FEB layout. (Right) An image of the FEB in one of the racks.}
+\label{fig:FEB}
+\end{figure}
+
+
+%The Baby MIND electronic readout scheme includes several custom-designed boards [12].  At the heart of the system is the electronics Front End Board (FEB), developed by the University of Geneva, Figure 5. The readout system includes two ancillary boards, the Backplane, and the Master Clock Board (MCB) whose development has been managed by INRNE (Bulgarian Academy of Sciences) collaborators.
+%One critical element in the photosensor readout path is the cable bundle, a 5 m extension coaxial cable RG174U that connects the photosensor to the FEB. Each bundle connects up to 32 photosensors. The purpose is to decouple the FEBs from the scintillator modules, which improves accessibility to FEBs and their long term maintainability. The module end of the bundle hosts some electronics that manages the application of the high voltage to the SiPMs, enabling faulty SiPMs to be switched off at that level. This feature was added after the summer 2016 beam tests, where a short circuit on a single channel would disable a bank of 96 channels.
+
+%The FEBv2 hosts 3 CITIROC chips that can each read in signals from 32 SiPMs [13]. Each signal input is processed by a high gain, and a separate low gain, signal path. Both paths comprise independent pre-amplification and "slow" shaping stages with tuneable gain and shaping time con- stant, respectively. The outputs from the slow shapers can be sampled using one of two modes: a mode with an externally applied delay, and a peak detector mode. A faster shaper can be switched to either HG or LG paths, followed by discriminators with adjustable thresholds providing 32 individ- ual trigger outputs and one OR32 trigger output. An Altera ARIA5 FPGA on the FEBv2 samples these trigger outputs at 400 MHz, recording rising and falling times for the individual triggers and assigning time stamps to these. Time-over-threshold from the difference between falling and rising times gives some measure of signal amplitude, used in addition to charge information and useful if there is more than one hit per bar within the deadtime due to the readout of the multiplexed charge output of $\approx$ 9 μs. The ARIA5 also manages the digitization of the sampled CITIROC multiplexed HG and LG outputs via a 12-bit 8-ch ADC.
+
+%The FEBv2 is designed to fit into a slot in a minicrate as shown in Figure 5. The front face receives the SiPMs cable bundles, the rear end plugs into the backplane. Up to 6 FEBv2 can be housed in each minicrate. Eight minicrates are distributed either side of the Baby MIND.
+%The internal 400 MHz clock on the FEBv2 can be synchronised to a common 100 MHz clock. The synchronisation subsystem combines input signals from the beam line into a digital synchro- nisation signal (SYNC) and produces a common detector clock (CLK) which can eventually be synchronised to an external experiment clock [14]. Both SYNC and CLK signals are distributed to the FEBs. Tests show the FEB-to-FEB CLK(SYNC) delay difference to be 50 ps (70 ps). Signals from the beam line at WAGASCI include two separate timing signals, arriving 100 ms and 30 μs before the neutrino beam at the near detectors [15]. The spill number is available as a 16-bit signal.
+
+\subsection{Construction and test beam}
+timelineish.
+
+\textbf{saba paper!}
+\textbf{my paper!}
+\textbf{Discussion what was in the test beam, results in chap 5?}
+\section{WAGASCI}\label{sec:WAGASCI}
+
+The WAGASCI experiment being built at the J-PARC neutrino beam line will measure the dif- ference in cross sections from neutrinos interacting with a water and scintillator targets, in order to constrain neutrino cross sections, essential for the T2K neutrino oscillation measurements. A prototype Magnetised Iron Neutrino Detector (MIND), called Baby MIND, has been constructed at CERN and will act as a magnetic spectrometer behind the main WAGASCI target. Baby MIND will be installed inside the WAGASCI cavern at J-PARC in the beginning of 2018. Baby MIND will be able to measure the charge and momentum of the outgoing muon from neutrino charged current interactions, to enable full neutrino event reconstruction in WAGASCI.
+During the summer of 2017, Baby MIND was operated and characterised at the T9 test beam at CERN. Results from this test beam will be presented, including charge identification performance and momentum resolution for charged tracks. These results will be compared to the Monte Carlo simulations. Finally, simulations of charge-current quasi-elastic (CCQE) neutrino interactions in an active scintillator neutrino target, followed by the Baby MIND spectrometer, will be shown to demonstrate the capability of this detector set-up to perform cross-section measurements under different assumptions.
+
+\subsection{Motivation}
+\subsection{Layout}
+\subsection{WAGASCI target}
+\subsection{MRD and Baby MIND}
+Why Baby MIND, role for WAGASCI.
+\subsection{Construction}
+Preface, who did what?
+
+\section{OLD}
 \subsection{Timeline}
 The current timeline for the construction of Baby MIND can be seen in \FigRef{fig:timeline}.
 These are the following milestones expected to be met by the Baby MIND project:
@@ -32,33 +165,9 @@ These are the following milestones expected to be met by the Baby MIND project:
 \label{fig:collaboration}
 \end{figure}
 
-The Baby MIND collaboration is comprised of 44 scientists from nine different institutions, and is part of the CERN Neutrino Platform as experiment NP05~\cite{Fix2}.
 The 3000 Multi-Pixel Photon Counters (MPPC, also known as Silicon Photomultipliers, SiPM) were provided by the University of Glasgow. Glasgow is also responsible for the simulation software.
 \subsection{Layout}
-As discussed in \SubSectionRef{subsec:MINDdetector}, a MIND type detector requires a magnetized volume as well as interaction medium to deflect the particle tracks and scintillating elements to detect the particle hits. A schematic overview of the detector can be seen in \FigRef{fig:design}. 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=\textwidth]{figures/design.png}
-\caption{The current Baby MIND design}
-\label{fig:design}
-\end{figure}
-The magnetised volume for the Baby MIND has been chosen as a total of 33 steel plates both to have a simple magnetic field as well as being modular and cheaper than the alternatives. An overview of the magnetic field is seen in \FigRef{fig:mField} with two open slots in order to cover the entire plate with coils with currents in opposite directions. This improves the flux return, contains the stray fields and reduces power dissipation outside of the plates compared to a single conducting coil wound on the surface of each individual plate. 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=\textwidth]{figures/MField.png}
-\caption{The current Baby MIND magnetic field map}
-\label{fig:mField}
-\end{figure}
-
-The scintillating elements, seen in \FigRef{fig:Vbar}, have been chosen as 18 scintillating modules consisting of four planes per module, two oriented along the horizontal direction with and two oriented in the vertical direction, each to produce good horizontal and vertical resolution of the particle interactions 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.5\textwidth]{figures/Vbar.png}
-\caption{One of the vertical scintillator bars.}
-\label{fig:Vbar}
-\end{figure}
 %\subsection{Motivation}
 %In the white paper? LOI.
 
