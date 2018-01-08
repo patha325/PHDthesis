@@ -43,7 +43,7 @@
   \if@fmfio
     \immediate\closeout\@outfmf
   \fi
-  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
+  \IfFileExists{\thefmffile.mp}{\immediate\write18{/Library/TeX/texbin/mpost \thefmffile}}{}
   \let\thefmffile\relax
 }
 \makeatother
