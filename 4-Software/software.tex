@@ -53,7 +53,7 @@ As a way to simplify the integration and implementation, the data acquisition (D
 
 To ensure that all further analysis is performed properly, there is no way to distinguish data coming out of the digitisation as being simulated or read in through the DAQ.
 
-One of the most difficult design features of Baby MIND is combining hits from both vertical and horizontal bars. It is possible to get hits which can not be combined without ambiguity. In figure~\FigRef{BarAmbi} it is impossible to distinguished the green hits from each other and the same with the red hits. The current method is for the digitisation to create both hits at all times and these hits being handled by the reconstruction.
+One of the most difficult design features of Baby MIND is combining hits from both vertical and horizontal bars. It is possible to get hits which can not be combined without ambiguity. In figure~\FigRef{fig:BarAmbi} it is impossible to distinguished the green hits from each other and the same with the red hits. The current method is for the digitisation to create both hits at all times and these hits being handled by the reconstruction.
 
 \begin{figure}[h!]
 \centering
@@ -117,8 +117,8 @@ The reconstruction has split into several minor tasks.
 \subsection{Pattern recognition}
 The pattern recognition starts by looking at the number of hits for a given event. There are currently two main limitations to if a track can be fitted.
 \begin{itemize}
-\item At least 4 hits single hits are required to do any form of charge estimation or track building.
-\item At least 10 single hits are required to perform a Kalman fitting.
+\item At least 4 hit modules are required to do any form of charge estimation or track building.
+\item At least 10 hit modules are required to perform a Kalman fitting.
 \end{itemize}
 Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each even will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is done very simply by assuming anything that is not a shower is a muon. Single hits here refers to separable space points meaning that for each z-position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition track are built up from so called track stubs of at least 4 single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using $\chi^2$ as a metric. This $\chi^2$ analysis is run through the fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub and the other hits saved for use in finding secondary tracks. 
 
@@ -166,8 +166,11 @@ If a helical fit is not possible, denoted the low momentum case, several differe
 
 The fitting is performed in a usual Kalman way by using this underlying equation and assuming each measurement point has some error.
 Each measurement point $\vec{X}$ is related to the next through extrapolating the helical equation and assuming an error: $\vec{X_{k+1}} = \vec{F_{k+1,k}}\vec{X_k} + \vec{w_k}$. 
-the output is then given as: $\vec{Y_{k}} = \vec{H_{k}}\vec{X_k} + \vec{v_k}$
+It is in this error term where multiple scattering and energy loss is taken into account.
+The output is then given as: $\vec{Y_{k}} = \vec{H_{k}}\vec{X_k} + \vec{v_k}$
 The helical equation goes into forming the matrix F and H.
+
+Add note somewhere in how a helix is an approximation for our detector, we will have field, no field, straight line etc etc through the full detector.
 
 \subsection{Low momentum algorithms}
 The force applied to a particle travelling through a magnetic field is given by the Lorentz force:
@@ -190,12 +193,12 @@ Using the definition of the cross-product, writing this as a scalar equation, us
 \begin{equation}
 P = 0.3 QB_\bot \frac{|\vec{l}|}{\theta}=0.3 QB_\bot R
 \end{equation}
-where P is the momentum in MeV/c, the charge Q in in units of e, the magnetic field strength B is in T and the radius of curvature R is in cm. This is only one way of deriving the relation, but it is one of the main equations used for momentum reconstruction in SaRoMaN. The charge is then reconstructed using $P/|P|$ \textbf{Figure of one bending in first plane in mind.}
+where P is the momentum in MeV/c, the charge Q in in units of e, the magnetic field strength B is in T and the radius of curvature R is in cm. This is only one way of deriving the relation, but it is one of the main equations used for momentum reconstruction in SaRoMaN. The charge is then reconstructed using $P/|P|$. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/lowP/scattering.jpeg}
-\caption{}
+\caption{Figure of one bending in first plane in mind.}
 \label{fig:Scattering}
 \end{figure}
 
@@ -243,13 +246,16 @@ Probability of angle from multiple scattering, or from magnetic field.
 
 Momentum comes from the range calculation, see detector layout. Major gaps in monument,  Potentially could and perhaps should use range momentum as long as tracks stop in detector. Problem with steps, helix better.
 
-
+We have steps in the tracking detectors.
 
 This seems to be the best approach. If this for some reason fails it goes on to a final attempt.
 
 Quadratic fit, given few hits, try to fit to return charge. Use this only for charge. Momentum from range momentum.
 
 \subsection{Performance}
+
+\textbf{Add event display! also for testbeam in next chapter}
+
 During development of SaRoMaN two main metrics were used to evaluate performance, charge reconstruction efficiency and track reconstructed efficiency. These metrics provide information about how many simulated tracks can be reconstructed and how many of those reconstructed tracks have the correct charge. This is done for muons of both charges and different momentum values.
 
 Performance will be shown for the initial and proposed layout, for which the software algorithms were designed, the layout required for the text beam due to construction constraints and a final study based on the layout used for the WAGASCI detector layout. The main difference between the initial and test beam layout is removing the initial measurement point D0, restructuring  the layout and adding gaps between each of the blocks. This was done from a constructional not a physics motivation.
@@ -262,7 +268,8 @@ The charge identification is however improved when utilizing a measurement point
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.48\textwidth]{figures/oldStudies/oldMIND.png}
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/MINDetam.jpeg}
+\includegraphics[width=0.48\textwidth]{figures/MIND.jpeg}
+%\includegraphics[width=0.48\textwidth]{figures/oldStudies/MINDetam.jpeg}
 \caption{(Left) Image of the initial Baby MIND layout. (Right) The current Baby MIND layout. The main differences consists of removing the first scintillator plane, some different layout in the middle blocks and removed the final scintillator plane.}
 \label{fig:oldMIND}
 \end{figure}
@@ -292,6 +299,8 @@ Add in the new layout studies?
 
 Quite good, add that charge ID is about x for range y and so on.  Could be improved by changing layout, perhaps even tweaking algorithms etc etc but want to keep generic algorithms to handle different designs.
 
+Momentum pulls and comparisons? Large RMS from RecPack and difficult geometry. Room for improvement.
+
 \textbf{Perhaps cite my Uppsala proceedings?} When it is citable.
 
 \subsection{DAQ}
@@ -301,13 +310,13 @@ Should I add details about the data format?
 
 Explain how the unpacking works, the main data structure assumed in the electronics. The main problem with the data structure, how it is not aimed to work online. 
 
-Read and use documentation from Yordan Ivanov Karadzhov. Also look at what Aleksander, Sascha has done and what is in the code.
+Read and use documentation from Yordan Ivanov Karadzhov. Also look at what Aleksander/Sascha has done and what is in the code.
 
 
 \subsection{Particle identification}
 Machine learning through the Toolkit for Multivariate Data Analysis with ROOT (TMVA)~\cite{TMVA}. Add some small part about what ML is and TMVA as well as some minor plots showing performances.
 
-So far have results for $\mu^+/\mu^-$ in a background of  $\pi^+/\pi^-$.
+So far have results for $\mu^+/\mu^-$ in a background of  $\pi^+/\pi^-$. Will use for CCQE events compared to other neutrino interactions.
 
 Currently found that the best method, however many perform similarly, is MLPBNN, Multilayer perceptron (neutral network) with BFGS training method, similar to gradient decent or quasi-Newton method, and bayesian regulator.
 
@@ -317,3 +326,4 @@ add analysis flows. What is a normal data flow? Add parts to appendix, more data
 
 Final root file, read in trees, filter out bad events, if any. Compare apples to apples. 
 
+\section{Future development}
