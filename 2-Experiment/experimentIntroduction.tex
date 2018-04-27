@@ -338,9 +338,12 @@ The experiment wanted to improve the understanding of the neutrino oscillation p
 The main source of systematic error for T2K is caused by the difference of the target material and acceptance between the ND280 near detector (hydrocarbon) and the far detector water Cherenkov detector~\cite{T2Kpaper} motivating further studies and upgrades to the ND280 detector.
 
 \section{Reactor}
-Nuclear reactors are very intense sources of low energy neutrinos. Through beta-decay channels electron neutrinos are produced with well known energy spectra and low background. Compared to other neutrino sources the energy range is limited to below $9 MeV/c$, see \FigRef{fig:reactor} as well as a harsh cut of at $1.8 MeV/c$ required for inverse beta decay to occur. The low energy range means that oscillation experiments can be performed with a short baseline since equation~\ref{eq:twoPNeutrinoosc} provides the same probability by decreasing both the momentum and baseline.
+Nuclear reactors are very intense sources of low energy neutrinos. Through beta-decay channels electron neutrinos are produced with well known energy spectra and low background. Compared to other neutrino sources the energy range is limited to below $9 MeV/c$, see \FigRef{fig:reactor} as well as a sharp cut of at $1.8 MeV/c$ required for inverse beta decay to occur. The low energy range means that oscillation experiments can be performed with a short baseline since equation~\ref{eq:twoPNeutrinoosc} provides the same probability by decreasing both the momentum and baseline.
 
-The low energy range also means that experiments based on reactor neutrinos can only search for $\bar{\nu_e}$ disapperence since the produced neutrinos do not have enough energy to produce muons or taus and any neutral current interaction will be very difficult to distinguish form background. Based on the current values neutrino reactor experiments are well suited to determine $\theta_{12}$ and $\Delta m_{12}^2 $ as well as  $\theta_{13}$ and $\Delta m_{13}^2 $.
+\textbf{The positron deposits its kinetic energy to the scintillator then annihilates with an electron and generates two photons  which together with the deposited positron kinetic energy cause a so called prompt signal a few nanoseconds after the neutrino event.}
+
+
+The low energy range also means that experiments based on reactor neutrinos can only search for $\bar{\nu_e}$ disappearance since the produced neutrinos do not have enough energy to produce muons or taus and any neutral current interaction will be very difficult to distinguish form background. Based on the current values neutrino reactor experiments are well suited to determine $\theta_{12}$ and $\Delta m_{12}^2 $ as well as  $\theta_{13}$ and $\Delta m_{13}^2$. Requiring specifically anti-neutrinos, becomes insensitive to $\delta_{CP}$ right?
 
 \begin{figure}[h!]
 \centering
@@ -352,56 +355,177 @@ The low energy range also means that experiments based on reactor neutrinos can 
 \end{figure}
 
 \subsection{KamLAND}
-Kamioka Liquid Scintillator Antineutrino Detector (KamLAND)
+After the completion of the KamiokaNDE experimental run the site used to install the Kamioka Liquid Scintillator Antineutrino Detector (KamLAND) in 2002. KamLAND, seen in \FigRef{fig:KamLAND}, looks specifically for neutrino oscillations by looking at anti electron neutrinos emitted from distant reactors~\cite{46KamLAND} by using a 1 kton liquid scintillator volume encased by oil. If the neutrinos interact with the volume by inverse beta-decay, it will produce positrons which will annihilate and produce two distinct photon signals, known as prompt signal.
 
-KamLAND, the Kamioka Liquide scintilator Anti-Neutrino Detector, was build in 2002 and helped investigate if there were any neutrino oscillations by looking at anti electron neutrinos emitted from distant reactors~\cite{46KamLAND}.
-
-\subsection{Double Chooz}
-\textbf{Correct after Pauls comments and add data.}
-
-The Double Chooz experiment~\cite{45DoubleChooz} used anti-neutrinos produced two nuclear cores from a nuclear power station to improve the neutrino mixing angle $\theta_{13}$ as well as showed that these detectors can be used to ensure non-proliferation~\cite{66ReactorNP}. The experiment consisted of two Cherenkov detectors at a distance of 280m and 1050m both consisted of PMTs inside a scintillating volume shielded from cosmic radiation. 
+The majority of the neutrino events are from 26 reactors within the distance range of 138-214 km providing a good baseline to see oscillations at the energy spectrum. The spectrum and results can be seen in \FigRef{fig:KamLAND2}. 
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth]{figures/doubleChooz.jpeg}
-\caption{Overview of the Double Chooz experimental site~\cite{45DoubleChooz}.}
-\label{fig:dc}
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/KamLAND.jpeg}
+    \vspace{2mm}
+    \caption{Schematic diagram of the KamLAND detector~\cite{46KamLAND}.}
+    \label{fig:KamLAND}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/KamLAND2.jpeg}
+       \vspace{2mm}
+    \caption{Top panel: Expected reactor $\bar{\nu_e}$ energy spectrum. Lower panel: Energy spectrum of the observed events along with the the no oscillation spectrum and best fit spectrum. }
+     \label{fig:KamLAND2}
+  \end{minipage}
+\end{figure}
+
+\subsection{Double Chooz}
+The Double Chooz experiment~\cite{45DoubleChooz} started in 2004, used anti-neutrinos produced two nuclear cores from a nuclear power station to measure the neutrino mixing angle $\theta_{13}$ as well as showed that these detectors can be used to ensure non-proliferation~\cite{45DoubleChooz, 66ReactorNP}. The experiment consisted of two liquid scintillator detectors detectors at a distance of 280m and 1050m both consisted of PMTs inside a scintillating volume shielded from cosmic radiation. 
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/doubleChooz.jpeg}
+    \vspace{2mm}
+    \caption{Overview of the Double Chooz experimental site~\cite{45DoubleChooz}.}
+    \label{fig:dc}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/doubleChooz2.jpeg}
+       \vspace{2mm}
+    \caption{Top panel: Measured energy spectrum with data on best fit and no oscillation models. Lower panel: Ratio of data over no-oscillation prediction~\cite{72Double}.}
+     \label{fig:dc2}
+  \end{minipage}
+\end{figure}
+
+\subsection{RENO}
+The Reactor Experiment for Neutrino Oscillation (RENO), started taking data in 2011 and was the first experiment two use two identical detectors placed at a near and far site. The detectors are liquid scintillator detectors with 16.5 tons of Gadolinium doped scintillator. It measures neutrinos generated by six nuclear reactors each spread out perpendicular from a base line setting the detectors at 294 m and 1383 m from the center of the base line, see~\FigRef{fig:reno1}. Reno measured $|\Delta m^2_{32}| = 2.61 \pm 0.16 \pm 0.09 \times 10^{-3} eV^2$ and $\sin^2(2\theta{13}) = 0.086 \pm 0.006 \pm 0.005$ using the data in~\FigRef{fig:reno2}.
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/reno1.jpeg}
+    \vspace{2mm}
+    \caption{Layout of the RENO detectors, yellow and reactors in red. The six reactors are equally spaced in a 1280 m span~\cite{73Reno}.}
+    \label{fig:reno1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/reno2.jpeg}
+       \vspace{2mm}
+    \caption{Top panel: Measured energy spectrum with data on best fit and no oscillation models. Lower panel: Ratio of data over no-oscillation prediction~\cite{73Reno}.}
+     \label{fig:reno2}
+  \end{minipage}
 \end{figure}
 
 \subsection{Daya Bay}
 \textbf{Correct after Pauls comments and add data.}
 
-The Daya Bay experiments~\cite{44DayaBay}, main goal is to improve the measurement of $\theta_{13}$It is improving results from Double Chooz by utilizing eight identical detectors placed at three locations around the Daya Bay area consisting of a total of 6 different nuclear cores. Each detector is a Cherenkov detector using PMTs.
+The Daya Bay experiments~\cite{44DayaBay} main goal is to improve the measurement of $\theta_{13}$It is improving results from Double Chooz by utilizing eight identical detectors placed at three locations around the Daya Bay area consisting of a total of 6 different nuclear cores. This layout allows for maximum sensitivity and the ability to reduce systimatic uncertainties due to uncertainties in reactor power levels. It also allows for cross-calibration of the detectors since they are all identical. Each detector is a segmented Gadolinium doped liquid scintillator detector using PMTs to read out photons produced through inverse beta-decay and annihilation. The experiment has been taking data since 2011.
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/DayaBay.jpeg}
-\caption{Layout of the Daya Bay experiment.~\cite{44DayaBay}.}
-\label{fig:DB}
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/DayaBay.jpeg}
+    \vspace{2mm}
+    \caption{Layout of the Daya Bay experiment~\cite{44DayaBay}.}
+    \label{fig:DB}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/db2.jpeg}
+       \vspace{2mm}
+    \caption{Near site layout of the Daya Bay detector with surrounding structure~\cite{74DayaBay}.}
+     \label{fig:db2}
+  \end{minipage}
 \end{figure}
 
-\subsection{RENO}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/db3.jpeg}
+    \vspace{2mm}
+    \caption{Comparison of $\sin^2 2\theta_{13}$ measurements from various experiments, taken from~\cite{74DayaBay}.}
+    \label{fig:db3}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/db4.jpeg}
+       \vspace{2mm}
+    \caption{Comparison of $|\Delta m^2_{32}|$ measurements from various experiments, taken from~\cite{74DayaBay}.}
+     \label{fig:db4}
+  \end{minipage}
+\end{figure}
 
 \subsection{JUNO}
 
+The Jiangmen Underground Neutrino Observatory (JUNO)~\cite{75Juno} is a 20 kton liquid scintillator detector currently under construction and aiming to start data taking in 2020, seen in both \FigRef{fig:juno1} and \FigRef{fig:juno2}. It has as one if its primary aim to determine the mass hierarchy, sign of the mass splitting, using reactor neutrinos and inverse beta-decay with an improved energy resolution compared to previous experiments~\cite{75Juno}. It uses the Daya Bay reactor as a far reactor and results from the Daya Bay experiment to reduce systematic errors from the reactor.
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/juno1.jpeg}
+    \vspace{2mm}
+    \caption{Location of the JUNO site with distances to the near by reactors, Yangjiang and Taishan at both 53km as well as Daya Bay at 215km away.~\cite{75Juno}.}
+    \label{fig:juno1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/juno2.jpeg}
+       \vspace{2mm}
+    \caption{Schematic view of the JUNO detector~\cite{75Juno}.}
+     \label{fig:juno2}
+  \end{minipage}
+\end{figure}
+
+
 \section{Future neutrino oscillation experiments}
-\textbf{Correct after Pauls comments and add data.}
-
-\subsection{Hyper-K}
-\textbf{Correct after Pauls comments and add data.}
-
-The Hyper-Kamiokande Experiment\cite{24HyperK}  builds on the T2K-experiment\cite{21T2K} by improving the neutrino beam at JPARC, and expanding the water Cherenkov detector by a factor of 10 to a fiducial volume of 500 ktons, which aims to improve the sensitivity for $\delta_{cp}$.
-
 
 \subsection{DUNE}
-\textbf{Correct after Pauls comments and add data.}
+LBNF/DUNE\cite{23DUNE}, seen in \FigRef{fig:dune2}, is a new experiment currently under construction aiming at looking at the full range of $\delta_{cp}$ with greater sensitivity than before by improving on the MINOS~\cite{MINOS} experiment, and performing an electron neutrino appearance measurement with a high-powered neutrino beam from Fermilab and a 40 kton liquid argon detector at a distance of 1300 km, in the Homestake mine in South Dakota with a full initial physics study presented in~\cite{76Dune}
 
-LBNF/DUNE\cite{23DUNE} is a new experiment aiming at looking at the full range of $\delta_{cp}$ with greater sensitivity than before by improving on the MINOS~\cite{MINOS} experiment, and performing an electron neutrino appearance measurement with a high-powered neutrino beam from Fermilab and a 40 kton liquid argon detector at a distance of 1300 km, in the Homestake mine in South Dakota.
+The main goals are to perform precision measurements of neutrino oscillation to determine $\delta_{CP}$ within $5\sigma$, determining the neutrino mass ordering, seen in \FigRef{fig:dune1}, and measuring the sign of the mixing angle $\theta_{23}$ all to within new limits. 
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/dune2.jpeg}
+    \vspace{2mm}
+    \caption{Estimated significance of the mass hierarchy discrimination metric as a function of values for $\delta_{CP}$ ~\cite{23DUNE}.}
+    \label{fig:dune1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/dune.png}
+       \vspace{2mm}
+    \caption{Schematic view of the DUNE detectors~\cite{23DUNE}.}
+     \label{fig:dune2}
+  \end{minipage}
+\end{figure}
+
+\subsection{Hyper-K}
+
+The Hyper-Kamiokande Experiment (Hyper-K)\cite{24HyperK}  builds on the T2K-experiment\cite{21T2K} by improving the neutrino beam at JPARC, and expanding the water Cherenkov detector by a factor of 10 to a fiducial volume of 500 ktons, which aims to improve the sensitivity for $\delta_{CP}$ and determine the value within $>3\sigma$, and $<18^\circ$ and determine the mass hierarchy within $>3\sigma$ and the sign of $\theta_{23}$ with a $>90\%$ confidence level.
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.59\textwidth}
+    \includegraphics[width=\textwidth]{figures/hyper1.jpeg}
+    \vspace{2mm}
+    \caption{Cross section view of the Hyper-Kamiokande detector~\cite{24HyperK}.}
+    \label{fig:hyper1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.39\textwidth}
+    \includegraphics[width=\textwidth]{figures/hyperk2.jpeg}
+       \vspace{2mm}
+    \caption{A map showing the proposed candidate site~\cite{24HyperK}.}
+     \label{fig:hyper2}
+  \end{minipage}
+\end{figure}
 
 \section{Neutrino Factory}\label{subsec:nuFACT}
-\textbf{Correct after Pauls comments and add data.}
+The Neutrino Factory (NuFACT) is a novel concept for a neutrino accelerator which will produce a high intensity (1000 higher than previously) and high energy beam (up to 15 GeV~\cite{Fix7}). Compared to other previous experiments it will produce a two flavour, electron and muon, neutrino beam through a muon decay ring. The neutrino factory has the capacity to improve the precision of neutrino oscillation measurements, since the neutrino beam from the decay of muons can be determined with high accuracy. The beam produces one bunch of $\mu^+$ and one bunch of $\mu^-$, so the facility can make measurements of $\nu_{\mu}$ and $\bar{\nu_{e}}$ and $\bar{\nu_{\mu}}$ and $\nu_{e}$ simultaneously. Using this $\delta_{cp}$ can be decisively explored, with an expected accuracy of $\Delta \delta_{CP}\sim 5^\circ$~\cite{25NUfact}. A schematic of the facility is shown in figure \ref{fig:nuFact} showing the full accelerator chain. The full chain, starts by producing muons and pions from a proton beam on target. Pions are then captured in a strong solenoid magnetic field surrounding the target. The bunches are sent rhough the so called Front end containing a phase rotation and a ionisation cooling channel before being re-accelerated and entering the muon storage ring. Before entering the ring the muons are charge separated and go into the storage ring in counter-rotating directions. After $\approx 70$ turns of the circuit the muons decay through the following modes with the branching ratio:
 
-The Neutrino Factory (NuFACT) is a novel concept for a neutrino accelerator which will produce a high intensity (1000 higher than previously) and high energy beam (up to 20-50 GeV). Compared to other previous experiments it will produce a two flavour, electron and muon, neutrino beam through a muon decay ring. The neutrino factory has the capacity to improve the precision of neutrino oscillation measurements, since the neutrino beam from the decay of muons can be determined with high accuracy. The beam produces one bunch of $\mu^+$ and one bunch of $\mu^-$, so the facility can make measurements of $\nu_{\mu}$ and $\bar{\nu_{e}}$ and $\bar{\nu_{\mu}}$ and $\nu_{e}$ simultaneously. Using this $\delta_{cp}$ can be decisively explored, with an expected accuracy of $\Delta \delta_{CP}\sim 5^\circ$~\cite{25NUfact}. NuFACT is also significantly better that alternative facilities at measuring the value if $\theta_{13}$ is small. A schematic of the facility is shown in figure \ref{fig:nuFact} showing the full accelerator chain. The full chain, starts by producing muons and pions from a proton beam on target. The particles are selected based on charge in a magnetic horn after which the pions decay into muons in a transport line before the beam being collating to form a pure muon beam. The muon beam is then cooled to focus the beam before further accelerating the muon beam to its final energy and introducing it into the decay ring. After $\approx 70$ turns of the circuit the muons decay through the following modes with the branching ratio:
+%The muon beam is then cooled to focus the beam before further accelerating the muon beam to its final energy and introducing it into the decay ring. 
 
 \begin{align}
 \mu^- &\rightarrow e^- + \bar{\nu_e} + \nu_\mu, \approx 100\% \\
@@ -409,7 +533,7 @@ The Neutrino Factory (NuFACT) is a novel concept for a neutrino accelerator whic
 \mu^- &\rightarrow e^- + \bar{\nu_e} + \nu_\mu + e^+ + e^-, <1\%
 \end{align}
 
-From the branching ratio the energy spectrum and competition of the neutrino beam is well known, The beam is also produced as a pure beam since they are two neutrino flavours at the same time but with different flavours. It is important to know that a muon beam will only produce muon neutrinos and anti-electron neutrinos. Thus any electron neutrinos or anti-muon neutrinos discovered must have been produced through oscillation. Currently there are proposals for NuFACT to be constructed at CERN~\cite{25NUfact}, ESS~\cite{ESS} and FERMILAB~\cite{NuFACTfermi}, where it is also seen as a step toward a full muon collider experiment.
+From the branching ratio the energy spectrum and composition of the neutrino beam is well known as the decays only produces two different neutrino flavours. It is important to note that a $\mu^+/mu^-$ beam will produce $\bar{\nu_\mu} + \nu_e / \nu_{\mu} + \bar{\nu_e}$. Thus for a $\mu^-$ beam any electron neutrinos or anti-muon neutrinos discovered must have been produced through oscillation. To be able to distinguish muons from anti-muons at a detector, a magnetic field is required motivating the design of any considered detector, described in subsection~\ref{subsec:MINDdetector}. Currently there are proposals for NuFACT to be constructed at CERN~\cite{25NUfact}, ESS~\cite{ESS} and FERMILAB~\cite{NuFACTfermi}, where it is also seen as a step toward a full muon collider experiment.
 %Neutrino factory, explain it. MIND detector for nufact.  MIND needed for charge id, wrong sign muons produced from mu neutrino and anti electron neutrino in accelerator, anti electron to anto muon oscillation. Nufact known 0 anti nu mu in generation, only in oscillation. Prob is 0 for nufact for wrong sign at near detector/source.
 
 \begin{figure}[h!]
@@ -426,7 +550,12 @@ From the branching ratio the energy spectrum and competition of the neutrino bea
 \label{fig:nuFactExp}
 \end{figure}
 
-The Neutrino Factory is an complex and expensive facility which requires new technology to be realised. To overcome this a staged approach has been suggested, where each stage would be delivering physics~\cite{Fix7}. The first state in this plan is named nuSTORM (Neutrinos from Stored Muons) with a schematic shown in figure~\ref{fig:nuStorm}. The nuSTORM beam is designed to produce 3.8 GeV/c muons which are injected into a muon storage ring. Compared to the full neutrino factory nuSTORM is expected to have some pions and kaons in the final beam producing both neutrinos and anti-neutrinos for both muon and anti-muon modes and thus a near detector is required to measure the flux of both. 
+
+\textbf{Add in different channels and how it requires a charge identification to be able to identify the various challenge.}
+
+\subsection{NuStorm}
+
+The Neutrino Factory is a complex and expensive facility which requires new technology to be realised. To overcome this a staged approach has been suggested, where each stage would be delivering physics~\cite{Fix7}. The first state in this plan is named nuSTORM (Neutrinos from Stored Muons) with a schematic shown in figure~\ref{fig:nuStorm}. The nuSTORM beam is designed to produce 3.8 GeV/c muons which are injected into a muon storage ring. Compared to the full neutrino factory nuSTORM is expected to have some pions and kaons for the first pass in the storage ring providing some contamination in the final beam producing both neutrinos and anti-neutrinos for both muon and anti-muon modes and thus a near detector is required to measure the flux of both. 
 
 \begin{figure}[h!]
 \centering
@@ -437,11 +566,7 @@ The Neutrino Factory is an complex and expensive facility which requires new tec
 
 For the both NuFACT and nuSTORM the detector type proposed will be a MIND type, similar to the ones used in CDHSW and MINOS~\cite{NuFACTIDS}.
 
-\textbf{Add in different channels and how it requires a charge identification to be able to identify the various challenge.}
-
-
-
-\subsection{NuStorm}
+~\cite{77nustorm}.
 
 \section{Magnetized Iron Neutrino Detectors}\label{subsec:MINDdetector}
 \textbf{Correct after Pauls comments and add data.}
