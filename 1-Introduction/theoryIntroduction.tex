@@ -70,7 +70,7 @@ While measuring radioactive beta decay, from bombarding beryllium with a alpha p
 \label{fig:beta}
 \end{figure}
 
-It would take another twenty years until the neutrino was experimentally discovered by the Savannah river reactor experiment in 1956~\cite{6Reines} which was awarded the Nobel prize in 1995. \textbf{Describe experiments in more detail.}
+It would take another twenty years until the neutrino was experimentally discovered by the Savannah river reactor experiment in 1956~\cite{6Reines} where neutrinos from a nuclear reactor were detected in 300 litres of liquid scintillator and cadmium. The experiment was awarded the Nobel prize in 1995.
 
 After the discovery of the electron neutrino ($\nu_e$), several neutrino experiments were performed and led to the discovery of two other neutrino types/flavours, the muon neutrino ($\nu_\mu$) and the tau neutrino ($\nu_\tau$)~\cite{7Danby, 8Perl, Fix1}.
 
@@ -84,21 +84,23 @@ Very few details, more in Peskin and Schroeder and other books.
 \textbf{Mix in experiments!}
 \fi
 
+To describe the neutrino interactions it is worth building a theory to try to describe the interactions. 
+
 Starting with the generalized and relativistic version of the Schro\"{o}dinger equation, the Dirac equation:
 \begin{equation}
 \sum_\mu (i\gamma^\mu \partial_\mu - m)\psi(x) = 0
 \end{equation}
-where $\gamma$ are the so called Dirac matrices \textbf{CITE} and the sum over $\mu$ is often removed using the Einstein notation requiring any free index to be summed over.
+where $\gamma$ are the so called Dirac matrices and the sum over $\mu$ is often removed using the Einstein notation requiring any free index to be summed over.
 
-As with all quantum mechanical equations this allows us to define $\psi(x)$ as a quantum field/state in a vacuum.
+As with all quantum mechanical equations this allows us to define $\psi(x)$ as a quantum field/state.
 
 After taking Lorentz-invariance into account the Dirac Lagrangian can be written as:
 \begin{equation}
 \mathcal{L} = \bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi
 \end{equation}
-and the Euler-Lagrange equation for $\bar{\psi}$ produces the Dirac equation.
+where the Euler-Lagrange equation for $\bar{\psi}$ reproduces the Dirac equation.
 
-The Lagrangian is so far correct, however from a physical point of view the equation also needs to be invariant under a phase shift, so called gauge transformation $\psi -> e^{i\Theta(x)}\psi$ This requires the addition of an extra term to remove the terms which prevent gauge invariance providing the full Dirac Lagrangian as:
+The Lagrangian is so far correct, however from a physical point of view the equation also needs to be invariant under a phase shift, so called gauge transformation $\psi -> e^{i\theta(x)}\psi$ This requires the addition of an extra term to remove the terms which prevent gauge invariance providing the full Dirac Lagrangian as:
 
 \begin{equation}
 \mathcal{L} = \bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi -q\bar{\psi}\gamma^\mu\psi\epsilon_\mu \equiv \mathcal{L}_{Dirac}
@@ -123,16 +125,12 @@ This can be simplified by introducing the gauge covariant derivative $D_\mu \equ
 \end{equation}
 
 \textbf{Add example of interaction?} 
-electron muon scattering? and introducing Feynman diagrams
+\textbf{electron muon scattering? and introducing Feynman diagrams}
 
-Based on the experiments relating to $\beta$-decay Fermi hypothesised that the Lagrangian should be similar to the QED Lagrangian.   
-
-Added a new constant $G_F$. Not mentioned previously. QED contains $\gamma^\mu$ meaning that it transforms as a vector. (Confirmed by experiments) For weak interactions anything could have been possible. However, both experiments (absence of Fierz iterference terms early) and parity violation along with the Goldhaber helicity experiment it became clear that the interactions had to transform as vectors and axial vectors giving the term $\gamma^\mu - \gamma^\mu \gamma^5 =  \gamma^\mu (1- \gamma^5)$ and also providing the theory with its name. V-A theory. 
+Based on the experiments relating to $\beta$-decay Fermi hypothesised that the Lagrangian for weak interactions should be similar to the QED Lagrangian.    To handle the observed differences, a constant is added $G_F$ to replace the electron charge, and mass removed. QED contains $\gamma^\mu$ meaning that it transforms as a vector (Confirmed by experiments) and for weak interactions anything could have been possible. However, both experiments (absence of Fierz iterference terms early) and parity violation along with the Goldhaber helicity experiment it became clear that the interactions had to transform as vectors and axial vectors giving the term $\gamma^\mu - \gamma^\mu \gamma^5 =  \gamma^\mu (1- \gamma^5)$ and also providing the theory with its name. V-A theory. 
 \textbf{cite}
 
-\textbf{Mention CPT here?}
-
-This produced the Lagrangian in the form of 
+This produced a Lagrangian in the form of 
 \begin{equation}
 \mathcal{L} = \frac{G_F}{\sqrt{2}}J_L \cdot J_H
 \end{equation}
@@ -151,20 +149,11 @@ J_H = \bar{\psi}_p(x)\gamma^\mu (g_\nu-g_A\gamma_5) \psi_n(x)
 where $g_\nu$ and $g_A$ are constants relating to strong interactions and have to be determined experimentally along with $G_F$.
 
 \section{Standard Model neutrino}\label{subsection:SMN}
-This theory works well in practice but does not create a Gauge theory connecting to an underlying field, such as QED does. Historically, could not have massive particles. No explanation for z boson, neutral currents. Create a gauge theory.
+This theory works well in practice but does not create a Gauge theory connecting to an underlying field, such as QED does. Is is also based on the interacting particles not having a mass which does not explain the observed masses of the weak interaction particles, W bosons. There is also no explanation for any neutral interactions which were observed and introduced a massive Z boson. Group theory describes that any uniform group U(N) has $N^2 -1$ generators. Based on the SU(1) group from QED, the easiest group to handle the other bosons becomes SU(2). \textbf{SU(2) can be made quickly invariant under U(1) by adding extra term. Choosing constants correctly unifies QFD and QED into the Electro-weak theory! }
 
-Years pass, more particles. 
-Check Pauls lecture notes and add part from Pauls book: Can also add history before this point.
-Spontaneous Symmetry Breaking and Goldstone Bosons
-Higgs and Goldstone.
+The experiment by \citeauthor{1Helicity} concluded that neutrinos only exist in a left handed chiral state, meaning that momentum and spin are oppositely aligned. They also concluded that anti-neutrinos only exists in the right handed state \cite{1Helicity}. In the initial or unexpanded SM, \cite{34doi:10.1142/9789812562203_0002}, only fermions which have both chiral states have mass through the Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. At the time this led to the definition of the neutrino as a massless particle, however in \SubSectionRef{subsection:Neutrinomassandoscillation} it will be shown that neutrino oscillations require at least one of the neutrinos to have mass. This indicates that the SM needs to be extended to account for this new physics.
 
-Makes sense to have weak theory or Quantum FlavourDymanics (QFD) as SU(2)
-
-SU2 field requires introducing 3 fields to the free field from the Dirac equation resulting in the Lagrangian to look as the following:
-
-SU(2) can be made quickly invariant under U(1) by adding extra term. Choosing constants correctly unifies QFD and QED into the Electro-weak theory! 
-
-Glashow-Weinberg-Salam (GWS) took the success of the V-A theory and modified it to make a Gauge theory out of it. Massive Ws and Z. Add left/right doublets and singlets? Required for no experimental right-handed neutrinos. Higgs is a SU(2) Left doublet. Properly write in that we are creating an SU(2) because U(2) makes no sense? but U(1) Aha! U(1) in QED could be SU(1), but U(1) is more general and explains it well. For QFD, require SU since basing it on Pauli matrices.
+\textbf{Glashow-Weinberg-Salam (GWS) took the success of the V-A theory and modified it to make a Gauge theory out of it. Massive Ws and Z. Add left/right doublets and singlets? Required for no experimental right-handed neutrinos. Higgs is a SU(2) Left doublet. Properly write in that we are creating an SU(2) because U(2) makes no sense? but U(1) Aha! U(1) in QED could be SU(1), but U(1) is more general and explains it well. For QFD, require SU since basing it on Pauli matrices.}
 
 Experiments requiring 3 bosons, interaction modes. This means, take a simple field and make it SU(2). \textbf{SU(2) can easily be made U(1).} Initially the Lagrangian can naively be taken as that of a complex scalar field coupled to the electromagnetic field (and itself) as:
 \begin{equation}
@@ -172,7 +161,7 @@ Experiments requiring 3 bosons, interaction modes. This means, take a simple fie
 \end{equation}
 where $D_\mu$ is the covariant derivative from QED, $D_\mu = \partial_\mu +ieA_\mu$ and a potential V will be discussed shortly as a way of adding mass to the theory.
 
-Similar procedure to QED, requiring gauge invariance requires the covariant derivative to be changed, requiring a field for each of the so called generators or each of the Bosons. This requires 3 new fields aside from the QED/photon field. \textbf{Any SU(N) or U(N) group has $N^2 -1$ generators.} This changes the covariant derivative in the following way.
+Similar procedure to QED, requiring gauge invariance requires the covariant derivative to be changed, requiring a field for each of the so called generators or each of the Bosons. This requires 3 new fields aside from the QED/photon field. This changes the covariant derivative in the following way.
 \begin{equation}
 D_\mu = \partial_\mu - ig S^a_\mu \frac{\sigma^a}{2} - \frac{1}{2}g' A_\mu
 \end{equation}
@@ -269,6 +258,17 @@ The final resulting theory has added massive bosons, explains and provides a fra
 
 Interactions, probabilities. CC, other interaction types, NC, QE. Define and explain cross-sections and probabilities. What does the theory predict?
 
+The Standard Model of particle physics (SM) categorizes all the fundamental particles that have been discovered experimentally and the mathematics of their properties and how they interact \cite{32Burchan:1995, 38griffiths}. 
+
+The particles in SM, seen in \FigRef{fig:standardModel}, can be split into two different types, fermions and gauge bosons, characterised by their half-integer and integer spin. Fermions can be further split depending on their charge, quarks with fractional charge and leptons with integer charge. Gauge bosons are the force mediators for the particle interactions containing the Higgs boson, the only scalar, spin 0, particle in the SM~\cite{35Higgs}.
+
+\begin{figure}[h!]
+\includegraphics[width=0.7\textwidth]{figures/Standard_Model_of_Elementary_Particles.png}
+\caption{The standard model of particle physics where the three first columns represent the so called generations, starting with the first. \cite{33wiki1:Online}}
+\label{fig:standardModel}
+\end{figure}
+
+Finally to produce the full standard model requires the strong interaction QCD which will not be described in this thesis.
 
 \if{0}
 Made it su2  because? SM is based on it but why? Number of particles?
@@ -308,24 +308,6 @@ Note how the neutrino is not modelled with a right handed component as the exist
 
 More details
 \fi
-Finally to produce the full standard model requires the strong interaction QCD which will not be described in this thesis.
-
-\textbf{Old material}
-
-The Standard Model of particle physics (SM) categorizes all the fundamental particles that have been discovered experimentally and the mathematics of their properties and how they interact \cite{32Burchan:1995, 38griffiths}. 
-
-The particles in SM, seen in \FigRef{fig:standardModel}, can be split into two different types, fermions and gauge bosons, characterised by their half-integer and integer spin. Fermions can be further split depending on their charge, quarks with fractional charge and leptons with integer charge. Gauge bosons are the force mediators for the particle interactions containing the Higgs boson, the only scalar, spin 0, particle in the SM~\cite{35Higgs}.
-
-\begin{figure}[h!]
-\includegraphics[width=0.7\textwidth]{figures/Standard_Model_of_Elementary_Particles.png}
-\caption{The standard model of particle physics where the three first columns represent the so called generations, starting with the first. \cite{33wiki1:Online}}
-\label{fig:standardModel}
-\end{figure}
-
-The experiment by \citeauthor{1Helicity} concluded that neutrinos only exist in a left handed chiral state, meaning that momentum and spin are oppositely aligned. They also concluded that anti-neutrinos only exists in the right handed state \cite{1Helicity}. In the initial or unexpanded SM, \cite{34doi:10.1142/9789812562203_0002}, only fermions which have both chiral states have mass through the Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. At the time this led to the definition of the neutrino as a massless particle, however in \SubSectionRef{subsection:Neutrinomassandoscillation} it will be shown that neutrino oscillations require at least one of the neutrinos to have mass. This indicates that the SM needs to be extended to account for this new physics.
-
-\textbf{Describe experiment and how this led to parity violation, and then to V-A theory of weak interactions.} ]
-\textbf{Expand Higgs}
 
 \section{Neutrino interactions}\label{subsection:Neutrino interactions}
 Using the above theory we can describe neutrino interactions.
@@ -1009,9 +991,9 @@ The first condition is very important in that it related cosmological models wit
 In \cite{36CRC} a number of viable scenarios for baryogenesis are briefly discussed, for instance Grand Unified theories, heavy Majorana neutrinos and supersymmetry.
 
 \section{Current Theories to explain neutrino mass}
-The problem with neutrino masses is that we only see left-handed neutrinos. The standard way for fermions to obtain a mass through interaction with the Higgs field is through a three point interaction involving a left-handed fermion, a right-handed fermion, and the Higgs field. With no right handed neutrinos, there is no way to form such interactions, which lead to a mass term after symmetry breaking. This leaves the exact mechanism by which neutrinos acquire mass a mystery. When SM was created neutrinos were assumed to be massless since they were only left-handed. There are three main reasons to why the neutrino mass now must be zero in the SM:
+The problem with neutrino masses is that we only see left-handed neutrinos. The standard way for fermions to obtain a mass through interaction with the Higgs field is through a three point interaction involving a left-handed fermion, a right-handed fermion, and the Higgs field. With no right handed neutrinos, there is no way to form such interactions, which lead to a mass term after symmetry breaking. This leaves the exact mechanism by which neutrinos acquire mass a mystery. When SM was created neutrinos were assumed to be massless since they were only left-handed. There are three main reasons to why the neutrino mass must be zero in the SM:
 \begin{itemize}
-\item There is no renormalizable operator which allows for a neutrino mass without introducing either an additional Higgs particle or by introducing right-handed neutrinos.
+\item There is no renormalizable operator which allows for a neutrino mass without introducing either an additional Higgs particle or by introducing right-handed neutrinos, neither of which have currently been observed.
 
 \item The current Higgs is an $SU(2)_L$ doublet, thus it requires fermions to have both chiral states to provide mass. It could be possible to introduce further Higgs particles which do not require this.
 

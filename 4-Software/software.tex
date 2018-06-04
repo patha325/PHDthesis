@@ -7,7 +7,7 @@
 The software environment used for Baby MIND is the SaRoMaN (Simulation and Reconstruction of Muons and Neutrinos) software suite which is a comprehensive software for MIND/nuSTORM detectors and has been developed at the University of Glasgow over several iterations~\cite{27Bross,  53Laing, 54NUFACT2016Hallsjo}. The software has been expanded to be able to model and simulate a generic detector with limitations in the current implementation of the reconstruction. It includes a complete range of functionality for simulating single particle beams, through GEANT4~\cite{Geant4} or neutrino beams, through GENIE~\cite{Genie}, including geometry design, digitisation and reconstruction through RecPack~\cite{RecPack}. The software suite is also shipped with several analysis code examples written in ROOT~\cite{Root}. It has been created exploiting software engineering and object-oriented technology and implemented in the C++ and Python programming languages. The software is accessible on request from \url{https://lspace.ppe.gla.ac.uk}. 
 
 \section{General structure}
-The SaRoMaN software suites main design goal has been to promote modularity, single point of entry and simplicity for the user. With this in mind the SaRoMaN software is split into four main parts which can be replaced or altered independently of the others as long as the input/output flow is conserved. The parts are denoted, wrapper, simulation, digitisation and reconstruction with the flow seen in \FigRef{fig:codeFlow} and a more detailed view in \FigRef{fig:structure}. Each part will be discussed further below.
+The SaRoMaN software suites main design goals have been to promote modularity, provide a single point of entry for the design and input variables and to simplify usage. With this in mind the SaRoMaN software is split into four main parts which can be replaced or altered independently of the others as long as the input/output flow is conserved. The parts are denoted, wrapper, simulation, digitisation and reconstruction with the main flow regulated by the wrapper seen in \FigRef{fig:codeFlow} and a more detailed view in \FigRef{fig:structure}. Each part will be discussed further below.
 
 \begin{figure}[h!]
 \centering
@@ -28,7 +28,7 @@ The SaRoMaN software suites main design goal has been to promote modularity, sin
 %Plot the overlaying idea and structure. Stress modularity, charge, momentum and particle type
 
 \section{Wrapper}
-To simplify the installation, compiling and usage of the other parts in the SaRoMaN suite, a wrapper has been developed in the Python programming language. This wrapper, aside from the above, handles all input variables, file names, writing of configuration files, standardisation of magnetic field map and geometry, and data flow between the other parts. 
+To simplify the installation, compilation and usage of the other parts in the SaRoMaN suite, a wrapper has been developed in the Python programming language. This wrapper, aside from the above, handles all input variables, file names, writing of configuration files, standardisation of magnetic field map and geometry, and data flow between the other parts. 
 
 To simplify for the user, all of the installation, compilation and running are handled through simple command line inputs with the option of more advanced commands being issued through the use of the Python wrapper class. After installation SaRoMaN can be run with some default parameters, a full run diagram can be seen in \FigRef{fig:block}.
 
@@ -44,10 +44,12 @@ Simulations are used to model how particles will interact with a detector model 
 
 The simulation comes with two different modes, neutrino or "single particle". For neutrinos GENIE is first run to generate neutrino events. These events are later populated and the detector constructed through GEANT. In a single particle mode a beam of a single particle type is assumed, GENIE is not called and the simulation and detector construction are handled through GEANT.
 
-A unique feature is that the whole SaRoMaN suite uses a single geometry definition for the whole suite, written in Geometry Description Markup Language (GDML)~\cite{GDML} which is interpreted in GEANT and passed as a simplified .txt file to the reconstruction, which simplifies any changes of the geometry. 
+A unique feature is that the whole SaRoMaN suite uses a single geometry definition for the whole suite, written in Geometry Description Markup Language (GDML)~\cite{GDML} which is interpreted in GEANT and is passed as a simplified .txt file to the reconstruction, which simplifies any changes of the geometry. This GDML file can be used to describe simple detectors, such as the TASD, as well as the full Baby MIND and even any combination of several of these put together.
 
 \section{Digitisation}
-Digitization is the emulation of the hardware required to build the detector. It needs to handle the response of the electronics and describes the expected output signals, based on input hits in the detector. This is currently done in a simplified way by smearing data with different Poisson distributions as well as handling events which are distinguished by a large time difference. For the Baby MIND detector the algorithms take the horizontal and vertical bar hits and clusters together hits to construct x, y and z positions along with the energy deposition and time to produce physical hit points. The full program flow can be seen in \FigRef{fig:digi}.
+Digitization is the emulation of the hardware required to build the detector. It needs to handle the response of the electronics and describes the expected output signals, based on input hits in the detector. Any electrical system can be described by as providing an output based on the systems response function and the input signal. The digitization is based on a description of the response function of the detector for the simulated input.
+
+This is currently done in a simplified way by smearing data with different Poisson distributions as well as handling events which are distinguished by a large time difference. For the Baby MIND detector the algorithms take the horizontal and vertical bar hits and clusters together hits to construct x, y and z positions along with the energy deposition and time to produce physical hit points. The full program flow can be seen in \FigRef{fig:digi}.
 
 As a way to simplify the integration and implementation, the data acquisition (DAQ) used for the different test beams have been implemented in the digitisation as well. In this mode, real data is given as input and only the clustering takes place. Due to the usage of a single geometry, a token simulation has to be run in this mode as well to properly construct the geometry.
 
@@ -88,7 +90,7 @@ For simplicity the DAQ converts the acquired data and converts it into the same 
 
 Data comes in with files specific for each FEB. This data, has channel number, hit time and hit amplitude. The first step is to convert the data into space-positions, either vertical or horizontal bar position information and z-position, using a database based on FEB, channel number and knowledge of the physical layout of the detector. The second step is ensuring that each hit position, time and amplitude. Step three is to cluster all of the hits in specific time slots, which are equivalent to the event time windows. When this is done several low level filters are performed, to ensure that an event has enough hits to produce atleast four 3-d space positions in a time slot. After these steps the data is equivalent to the data produced by a simulation.
 
-\section{Reconstruction}
+\section{Reconstruction}\label{sec:reconstruction}
 The reconstruction takes the digitized hit data and assembles tracks and vertices. The main physics parameters are the momentum as well as the charge of the particle. The main problems occur when there are overlapping hits with multiple occupancy per bar. In this situation, it is difficult to distinguish between valid hits and to extract the momentum of the track and its charge.
 The first problem is handled by removing and adding hits and using a $\chi^2$ analysis through a Kalman fitter package, RecPack~\cite{RecPack}, to find the best trajectory that fits all hits.The second problem is solved through various algorithms to estimate the charge and momentum using different fits.
 
@@ -120,7 +122,7 @@ The pattern recognition starts by looking at the number of hits for a given even
 \item At least 4 hit modules are required to do any form of charge estimation or track building.
 \item At least 10 hit modules are required to perform a Kalman fitting.
 \end{itemize}
-Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each even will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is done very simply by assuming anything that is not a shower is a muon. Single hits here refers to separable space points meaning that for each z-position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition track are built up from so called track stubs of at least 4 single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using $\chi^2$ as a metric. This $\chi^2$ analysis is run through the fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub and the other hits saved for use in finding secondary tracks. 
+Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each event will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is done very simply by assuming anything that is not a shower is a muon. Single hits here refers to separable space points meaning that for each z-position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition track are built up from so called track stubs of at least 4 single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using a $\chi^2$analysis as a metric. This $\chi^2$ analysis is run through the fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub and the other hits saved for use in finding secondary tracks. 
 
 The program flow can be seen as taking in an event worth of hits and returning a number of tracks along with hits which could not be fitted into any track. Each returned track contains only single hits as well as a momentum and charge estimate. The latter two are then improved by the fitter.
 
@@ -170,7 +172,7 @@ It is in this error term where multiple scattering and energy loss is taken into
 The output is then given as: $\vec{Y_{k}} = \vec{H_{k}}\vec{X_k} + \vec{v_k}$
 The helical equation goes into forming the matrix F and H.
 
-Add note somewhere in how a helix is an approximation for our detector, we will have field, no field, straight line etc etc through the full detector.
+It should be noted that in the Baby MIND a helix model is an approximation given that there is no fully encompassing magnetic field and various different materials, iron and scintillator, in the detector. A more correct, but much more complex model would be a helix in the iron with straight line segments in-between for the non-magnetised air gaps and scintillator modules.
 
 \subsection{Low momentum algorithms}
 The force applied to a particle travelling through a magnetic field is given by the Lorentz force:
@@ -185,7 +187,7 @@ Using Newtons second law one produces the following differential vector equation
 \end{equation}
 The solution to this equation is given by:
 \begin{equation}
-\vec{P}=m\vec{a}=m\vec{v}=q\frac{\vec{l}\times\vec{B}}{c}
+\vec{P}=m\vec{v}=q\frac{\vec{l}\times\vec{B}}{c}
 \end{equation} 
 where P is the momentum of the particle and $\vec{l}=\vec{X}-\vec{X_0}$ is a vector containing the lengths traversed through the magnetic field.
 
@@ -202,7 +204,7 @@ where P is the momentum in MeV/c, the charge Q in in units of e, the magnetic fi
 \label{fig:Scattering}
 \end{figure}
 
-A previous study performed in the collaboration showed that the best best way of evaluating the charge comes from comparing both the first and second bending in the detector using two different distributions to handle the scattering.
+A previous study performed in the collaboration showed that the best best way of evaluating the charge using this method comes from comparing both the first and second bending in the detector using two different distributions to handle the scattering.
 
 \begin{figure}[h!]
 \centering
@@ -217,8 +219,7 @@ Reconstruct $\mu^-$ if
 \begin{equation}
 \frac{f_{\mu^-}(\Delta_1)}{f_{\mu^+}(\Delta_1)} > \frac{f_{\mu^+}(\Delta_2)}{f_{\mu^-}(\Delta_2)}
 \end{equation}
-and as $mu^+$ if
-Reconstruct $\mu^-$ if 
+and as $\mu^+$ if
 \begin{equation}
 \frac{f_{\mu^+}(\Delta_1)}{f_{\mu^-}(\Delta_1)} > \frac{f_{\mu^-}(\Delta_2)}{f_{\mu^+}(\Delta_2)}
 \end{equation}
@@ -234,10 +235,14 @@ multiple scattering  through small angles, the angle is given by, taken from pdg
 \end{equation}
 where p is the momentum, $\beta c$ the velocity, z the charge number of the incident particle and $x/X_0$ is the thickness of the scattering medium in radiation lengths.
 
-The probability is calculated as 1/2pi exp -(scattering angle +- total bending angle) etc. check code.
+The probability, using this notation is given in equation~\ref{eq:probScatt}.
+\begin{equation}
+F_{\mu^\pm} \frac{1}{2\pi} e ^ {-( \theta_0 \pm \Delta)}
+\label{eq:probScatt}
+\end{equation}
 
-
-
+Another part of the reconstruction is to estimate the momentum. May different method using the scattering or fits have been studied for this low momentum region, however the current best approach is to use the continuous slowing down approximation (CSDA) range.
+CSDA is based on knowledge of the energy loss in the material before a certain measurement in the detector, assuming the particle deposits an average energy in all materials which is passes through. In the Baby MIND given that the density varies and that there are measuring planes at some distance of each other, this provides a rough estimate of the momentum and the errors depend on how many iron pates are between the specific scintillator modules for that measurement. In the part of the detector which is least designed for this, where there is three iron modules between scintillators the error on the momentum estimate can be approximated as $\sqrt{2} \times 90 MeV/c$ This method can also not be used for tracks which pass through the full detector as then the error is impossible to estimate.
 
 
 Use the angles to and probability to calculate the charge. Momentum currently from range. Seems better.
@@ -327,3 +332,6 @@ add analysis flows. What is a normal data flow? Add parts to appendix, more data
 Final root file, read in trees, filter out bad events, if any. Compare apples to apples. 
 
 \section{Future development}
+I've had some time over to pursue some interesting things. Currently I am setting up a new GEANT4 environment using the latest geant version and latest root. I am trying my best to only use packages available through apt-get to simplify usage and to make it "future proof". It is going quite well and I hope to have some nice plots by tomorrow or next week. I have also started playing around with a simpler Kalman filter which is open source and easy to obtain. I will provide more documentation and information for anyone who is interested. But for now please not that the environment and code can be found in  a docker environment at: \url{https://hub.docker.com/r/patha325/science/} If you only want the code, you can find it: \url{https://github.com/patha325/NewSaRoMaN} and it is based on a Geant4 example called B4c but with (many) modifications.
+
+
