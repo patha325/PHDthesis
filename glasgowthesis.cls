@@ -151,9 +151,9 @@
       }
     }
     \vskip 5em%
-%    \includegraphics[trim=0.5cm 0.7cm 0.7cm 0.7cm]{graphics/crest_cs}
-%    \vskip 8em
-%    \vfill
+    \includegraphics[width=\textwidth]{SchPhyAst_colour.pdf}
+    \vskip 5em
+   \vfill
     \textsc{\@date}
     \vskip 2em%
     {

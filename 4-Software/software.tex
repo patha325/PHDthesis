@@ -39,6 +39,7 @@ To simplify for the user, all of the installation, compilation and running are h
 \label{fig:block}
 \end{figure}
 
+\pagebreak
 \section{Simulation}
 Simulations are used to model how particles will interact with a detector model and what scintillator hits can be expected. The outputs from the simulation include the position of the hit on a bar, the location of a bar, the time of the hit and the amount of energy that was deposited.
 
@@ -46,6 +47,7 @@ The simulation comes with two different modes, neutrino or "single particle". Fo
 
 A unique feature is that the whole SaRoMaN suite uses a single geometry definition for the whole suite, written in Geometry Description Markup Language (GDML)~\cite{GDML} which is interpreted in GEANT and is passed as a simplified .txt file to the reconstruction, which simplifies any changes of the geometry. This GDML file can be used to describe simple detectors, such as the TASD, as well as the full Baby MIND and even any combination of several of these put together.
 
+\pagebreak
 \section{Digitisation}
 Digitization is the emulation of the hardware required to build the detector. It needs to handle the response of the electronics and describes the expected output signals, based on input hits in the detector. Any electrical system can be described by as providing an output based on the systems response function and the input signal. The digitization is based on a description of the response function of the detector for the simulated input.
 
@@ -90,6 +92,7 @@ For simplicity the DAQ converts the acquired data and converts it into the same 
 
 Data comes in with files specific for each FEB. This data, has channel number, hit time and hit amplitude. The first step is to convert the data into space-positions, either vertical or horizontal bar position information and z-position, using a database based on FEB, channel number and knowledge of the physical layout of the detector. The second step is ensuring that each hit position, time and amplitude. Step three is to cluster all of the hits in specific time slots, which are equivalent to the event time windows. When this is done several low level filters are performed, to ensure that an event has enough hits to produce atleast four 3-d space positions in a time slot. After these steps the data is equivalent to the data produced by a simulation.
 
+\pagebreak
 \section{Reconstruction}\label{sec:reconstruction}
 The reconstruction takes the digitized hit data and assembles tracks and vertices. The main physics parameters are the momentum as well as the charge of the particle. The main problems occur when there are overlapping hits with multiple occupancy per bar. In this situation, it is difficult to distinguish between valid hits and to extract the momentum of the track and its charge.
 The first problem is handled by removing and adding hits and using a $\chi^2$ analysis through a Kalman fitter package, RecPack~\cite{RecPack}, to find the best trajectory that fits all hits.The second problem is solved through various algorithms to estimate the charge and momentum using different fits.
@@ -331,7 +334,16 @@ add analysis flows. What is a normal data flow? Add parts to appendix, more data
 
 Final root file, read in trees, filter out bad events, if any. Compare apples to apples. 
 
+\pagebreak
 \section{Future development}
 I've had some time over to pursue some interesting things. Currently I am setting up a new GEANT4 environment using the latest geant version and latest root. I am trying my best to only use packages available through apt-get to simplify usage and to make it "future proof". It is going quite well and I hope to have some nice plots by tomorrow or next week. I have also started playing around with a simpler Kalman filter which is open source and easy to obtain. I will provide more documentation and information for anyone who is interested. But for now please not that the environment and code can be found in  a docker environment at: \url{https://hub.docker.com/r/patha325/science/} If you only want the code, you can find it: \url{https://github.com/patha325/NewSaRoMaN} and it is based on a Geant4 example called B4c but with (many) modifications.
+
+Based on the main principles of easily shareable code, using the latest versions and simplicity.
+
+The simulation is based on a generic Geant4 simulation used by many. Neutrinos are simulated with the GENIE open source code used by many. Reconstruction is done through the open source GENFIT package used by Bell 2 etc etc. GENFIT takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
+
+This is all handled by a very simple python script which ensures that all software runs coherently with each other. The geometry is handled in a GDML file and read through all different parts to provide one single point of entry for the geometry. To ensure that the code can be used by anyone on different machines without a difficult installation process, the full software is provided in a docker container which means that the code can be run on any operating system. 
+
+The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrinos) (Neutrinolike events).
 
 

@@ -20,7 +20,7 @@
 
 The prototype Magnetized Iron Neutrino Detector (Baby MIND)~\cite{26babyMIND} was designed with the aim to study muon charge identification efficiencies in order to get estimates for a future Neutrino Factory, discussed in this section. The Baby MIND project was launched as a prototyping activity within the European Commission-funded AIDA-2020 project. The particle charge is essential for their oscillation measurements since wrong-sign muons are the neutrino oscillation signal. During the design process a secondary aim was added, to measure the momentum and charge of muons from neutrino interactions in water and hydrocarbon targets at the J-PARC T59 (WAGASCI) experiment, further discussed in section~\ref{sec:WAGASCI}
 
-The Baby MIND collaboration is comprised of 46 scientists from 10 different institutions, and is part of the CERN Neutrino Platform as experiment NP05~\cite{Fix2}.
+The Baby MIND collaboration is comprised of 46 scientists from 10 different institutions, and is part of the CERN Neutrino Platform as experiment NP05~\cite{Fix2} and is as of 2018 fully integrated into WAGASCI and in turn T2K.
 
 \textbf{CHECK NUMBERS ABOVE!}
 
@@ -167,12 +167,12 @@ The CERN Neutrino Platform approved Baby MIND as experiment NP05 in December 201
 
 \section{WAGASCI/T59}\label{sec:WAGASCI}
 
-The new WAter- Grid-SCIintilator-detector (WAGASCI) at the J-PARC neutrino beam line will measure the difference in cross sections from neutrinos interacting with a water and scintillator targets, in order to constrain neutrino cross sections, essential for the T2K neutrino oscillation measurements. It follows a similar approach to the one used for Iron scintillator cross-sections in the INGRID detector~\cite{21T2K}.
+The new WAter- Grid-SCIintilator-detector (WAGASCI) at the J-PARC neutrino beam line will measure the difference in cross sections from neutrinos interacting with a water and scintillator targets, in order to constrain neutrino cross sections in oxygen and carbon, essential for the T2K neutrino oscillation measurements. It follows a similar approach to the one used for iron scintillator cross-sections in the INGRID detector~\cite{21T2K}.
 
 Baby MIND will act as a magnetic spectrometer behind the main WAGASCI target. Baby MIND was installed inside the WAGASCI cavern at J-PARC in the beginning of 2018 to measure the charge and momentum of the outgoing muon from neutrino charged current interactions, to enable full neutrino event reconstruction in WAGASCI.
 
 \subsection{Motivation}
-The WAGASCI experiment (T-59) at J-PARC on the T2K beamline aims to improve measurements of the ratio of neutrino interaction cross-sections on water and carbon. This is required to reduce systematics due to nuclear effects in water, currently the dominant systematic uncertainty in the T2K neutrino oscillation analyses~\cite{21T2K} With planned upgrades to the T2K and planned follow-up project HyperK~\cite{24HyperK}, there is a strong motivation to reduce the systematic uncertainties. The aim is for T2K to improve the level of systematic precision to 4\%. 
+The WAGASCI experiment (T-59) at J-PARC on the T2K beamline aims to improve measurements of the ratio of neutrino interaction cross-sections on water and carbon. This is required to reduce systematics due to nuclear effects in water, currently the dominant systematic uncertainty in the T2K neutrino oscillation analyses~\cite{21T2K} With planned upgrades to the T2K and a planned follow-up project HyperK~\cite{24HyperK}, there is a strong motivation to reduce the systematic uncertainties. The aim is for T2K to improve the level of systematic precision to 4\%. 
 
 %The main goals of the proposed detector are to improve the charge current cross section ratio between water and scintillator targets and to perform high-precision measurement of different charged current neutrino interaction channels.
 
@@ -197,7 +197,10 @@ WAGASCI proposes to test a new 3-D grid-type detector, composed of plastic scint
 
 %Currently WAGASCI is horizontal or vertical bars with 3D grid submersed in water. Layout is H 3D V 3D H etc etc. \textbf{What is it actually?} 
 
-There are two main elements of the WAGASCI, the central part is a neutrino interaction target which contains water and hydrocarbon, the target is surrounded by muon range detectors (MRDs). The target it self has scintillator bars in different orientation. The current layout is horizontally stacked bars, 3D grid, vertically stacked bars, 3D grid repeated twice providing a total of 8 planes. The 3D grid, seen in~\FigRef{fig:StrucWAGASCI}, is made of thin scintillator bars of $1000\times25\times3$ mm$^3$ put together to form a grid with small pieces cut out to form a full grid, seen in The 3D structure is currently submerged in water to provide the water in which to study neutrino interactions. This design maximizes the fraction of the target material and also provides good particle tracking capabilities allowing to reconstruct tracks emerging at large angles w.r.t. neutrino beam direction.
+There are two main elements of the WAGASCI, the central part is a neutrino interaction target which contains water and hydrocarbon, the target is surrounded by muon range detectors (MRDs). The target it self has scintillator bars in different orientation. The current layout is horizontally stacked bars, 3D grid, vertically stacked bars, 3D grid repeated twice providing a total of 8 planes. The 3D grid, seen in~\FigRef{fig:StrucWAGASCI}, is made of thin scintillator bars of $1000\times25\times3$ mm$^3$ put together to form a grid with small pieces cut out to form a full grid, seen in The 3D structure is currently submerged in water to provide the water in which to study neutrino interactions. This design maximizes the fraction of the target material and also provides good particle tracking capabilities allowing to reconstruct tracks emerging at large angles w.r.t. neutrino beam direction. The WAGASCI detector will collect data with both polarities of T2K focusing horn system. The WAGASCI modules are mainly composed of 1280 plastic scintillator bars and a surrounding stainless steel tank. One WAGASCI module consists of 16 scintillator tracking planes, where each plane is an array of 80 scintillator bars fixed within a frame.
+The 40 bars, called parallel scintillators, are placed perpendicularly to the beam, and the other 40 bars, called lattice scintillators, are placed in parallel to the beam with hollow cuboid lattice.
+
+WAGASCI has the possibility of being operated both with water-in and water-out providing either a fiducial volume of the module of 188 kg and the mass ratio of scintillator bars to water as 1 : 4 or a fiducial volume of 47 kg and the mass fraction of scintillator bars as 100 \%.
 
 In conjunction with WAGASCI there is also the INGRID proton module and INGRID module \textbf{description?}. The main MRD, downstream of the target it the Baby MIND. It can all be seen in~\FigRef{fig:WAGASCI} and in \FigRef{fig:StrucWAGASCI}. 
 
@@ -226,27 +229,8 @@ In conjunction with WAGASCI there is also the INGRID proton module and INGRID mo
 \end{figure}
 
 \subsection{Electronics}
-Plastic scintillator bars will be used as active elements in both target and surrounding muon range detectors. Light collection is done by utilizing WLS fibers (embedded into the grooves) that transport light to the photosensors, Hamamatsu MPPCs will be used for the latter. For WAGASCI experiment new generation of MPPCs will be used, these sensors have low dark noise rate, wider range of operation over-voltage (≃4V, allowing to increase the efficiency), and low rate of afterpulses and crorsstalk between the pixels.It is crucial to obtain high detection efficiency with thin bars of the target area so to fulfill the requirements of the physics program. The performance of plastic scintillator bars was measured with the 600 MeV positron beam. The average light yield was found to be 10-18 p.e. and the detection efficiency was better than 99\% for the whole region of scintillator with a threshold set to 1.5 p.e.The WAGASCI detector will collect data with both polarities of T2K focusing horn system. 
 
-he WAGASCI modules are mainly composed of 1280 plastic scintillator bars and a surrounding stainless steel tank as shown in Figure \ref{fig:3dgrid_wagascimod}.
-The total number of channels in one WAGASCI module is 1280.
-The stainless steel tank is constructed by welding stainless steel plates, is sized as 460mm$\times$1250mm$\times$1250 mm, and weighs 0.5 tonne. 
-
-
-One WAGASCI module consists of 16 scintillator tracking planes, where each plane is an array of 80 scintillator bars fixed with ABS frames.
-The 40 bars, called parallel scintillators, are placed perpendicularly to the beam, and the other 40 bars, called lattice scintillators, are placed in parallel to the beam with hollow cuboid lattice in the tracking plane as shown in Figure \ref{fig:3dgrid_wagascimod}.
-Thanks to the hollow cuboid lattice of the scintillator bars, 
-the WAGASCI module has $4\pi$ angular acceptance for charged particles.
-
-We can operate the WAGASCI module with two conditions, water-in and a water-out.
-The water-in WAGASCI module has water in spaces of the hollow cuboid lattice.
-The total water mass serving as neutrino targets in the fiducial volume of the module is 188 kg,
-and the mass ratio of scintillator bars to water is 1 : 4.
-The water-out WAGASCI module doesn't have water inside the detector.
-The total CH mass serving as neutrino target in the fiducial volume of the module is 47 kg,
-and the mass fraction of scintillator bars is 100 \%.
-
-The detector performance of the water-in WAGASCI module was checked during the beam operation in 2017.
+Scintillator bars are used as active elements in the WAGASCI detector. The bars are similar to the Baby MIND as they also use WLS fibres to transport light to Hamamatsu MPPCs. The performance of the scintillator bars was measured with a 600 MeV positron beam. The average light yield was found to be 10-18 p.e. and the detection efficiency was better than 99\% for the whole region of scintillator with a threshold set to 1.5 p.e.  The detector performance of the water-in WAGASCI module was checked during the beam operation in 2017.
 
 As front-end electronics of the WAGASCI modules, a Silicon PM Integrated Read-Out Chip (SPIROC) is adopted.
 SPIROC is a 36-channel auto-triggered front-end ASIC, and is produced by OMEGA/ IN2P3. 
@@ -254,12 +238,10 @@ It not only contains an analog signal processing part such as amplification and 
 Charge of MPPC signal is sampled by track-and-hold circuit.
 A Front-end electronics board, Active Sensor Unit (ASU), has been developed with the SPIROC2D chip, which is the latest version of SPIROC. 
 Each readout board is designed to control a 32-channel arrayed MPPC, and 40 of the ASU boards are aligned on the module surface. 
-The data acquisition system used for this detector, including back-end boards, has been developed for prototypes of ultra-granular calorimeters for the International Linear Collider (ILC) \cite{cal_ilc}, and independent of the T2K DAQ system.
+The data acquisition system used for this detector, including back-end boards, has been developed for prototypes of ultra-granular calorimeters for the International Linear Collider (ILC), and independent of the T2K DAQ system.
 To synchronize the DAQ system to J- PARC neutrino beam, pre-beam trigger and beam trigger are sent to the clock control card.
 The beam trigger signals are converted from optical signals to NIM signals at NIM module on the B2 floor.
 In addition, the information of spill number are delivered with 16-bit ECL level signals, and converted to an Ethernet frame by an FPGA evaluation board to be directly sent to the DAQ PC.
-
-
 
 \subsection{MRD and Baby MIND}
 The WAGASCI detector requires a muon range detector to measure the momentum and charge of outgoing muons to identify the neutrino event and calculate the neutrino cross-section. As mentioned above, Baby MIND provides this role placed after the main target. There are also two much smaller MRDs on either side of the target to measure background muons from other sources or which have been produced from the neutrino beam but will miss the target or Baby MIND. These side MRDs will not be able to provide any momentum or charge information and will only be used as an extra veto plane for acceptance measurements. The layout can be seen in As seen in \FigRef{fig:WAGASCI}. The main event requirements are that the neutrinos decay somewhere in the target and produces a muon within a suitable angle to traverse four scintillator planes of the Baby MIND.

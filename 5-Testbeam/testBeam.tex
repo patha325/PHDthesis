@@ -53,6 +53,8 @@ More details, limits, cuts, etc etc. What plots? Photo electron counts, dark cou
 Describe how data is handled/used and combined after unpacking.
 
 \subsection{Data preprocessing}
+
+
 Describe how hits are handled and converted into the simulation format to be fully usable in the SaRoMaN framework.
 
 Convert time and hits to x or y bar hits. These are then combined in the same way as for simulations. To remove excess events there are initial filters. Count hit places, potential for tracks? Remove potential pions? 
@@ -92,6 +94,7 @@ Too few planes. No magnetic field. Confirms that the full chain works and can pr
 
 %What were the results, showed that the software seems to work, both digitisation and reconstruction. Anything else? All the electronics etc. Only result from me, plots on poster...  However this shows that software works well, compared slightly to simulations??? On hardware side, daq and full chain huge improvements. Went from nothing to ensuring that bars work properly (done previously) show that FEB reads out data and that this is passed to computer. DAQ can then use this to unpack the data correctly and finally into SaRoMaN for visualization.
 
+\pagebreak
 \section{MIND-test beam}
 
 Baby MIND qualification took place at the T9 beam line at the PS experimental hall (East Area), during June - July 2017. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam is a secondary beam from the collision of the proton beam with a 200 mm thick Aluminium target, that delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity. Users can adjust the beam momentum by setting the currents for the optical magnets of the beam line.
@@ -112,14 +115,29 @@ For the data taking during the test beam, the TASD was placed in front of the Ba
 A total of 44 FEBs mounted on 8 mini crates instrumented the 3996 channels of Baby MIND and took the 192 channels from the TASD. All 44 FEBs were synchronized using the spill signal from T9 beam line which arrives one second before the arrival of the spill of particles. This signal was fed to a dedicated Master FEB which would generate a reference clock signal for all the other FEBs acquiring data.
 
 \subsection{Data preprocessing}
+
 Similar to the previous test beam. Hits need to be converted into a test beam format.
 
 Discuss how data was taken, what was done? Beam settings etc etc. What kind of simulations? Beam settings? Visualize the hits, see difference in expected curvature and spread. Many different reasons, electronics cosmics etc etc etc. Without hit amplitude this is very difficult.
 
 Explain the full chain from how data is taken until it the analysis, results start.
 
+Data was taken for a period of 2 months. Out of the recorded data, a verified samples with the best possible settings for the data acquisition was selected for analysis. The samples contained a few hours worth of data taking at different beam momenta for both muons and anti-muons beam settings. These samples were all run through the unpacking software required to read out the recorded data before being passed to SaRoMaN. The data was passed directly into the digitisation for clustering and grouping before being passed into the reconstruction.
 
 \subsection{Analysis}
+
+For the first part of the analysis the data sample was assumed to be quite clean, containing mostly only muons or anti-muons. To remove any contribution from outside of the beam the hits in the TASD were used as a beam trigger to defined a time window of  interest from this time and 125 ns after and used to fit any tracks. This time was chosen after seeing what was appropriate for our data structure. To remove any potential showers or noise any event less than 4 hits in MIND or on average more than 10 hits per plane were removed.
+
+Data was run through the software framework and produced plots of charge reconstruction efficiency, momentum reconstruction etc etc and compared to simulations.
+
+In the analysis it was also quite clear that the beam was not pure muons and contained some contamination of other particles. The main contamination seems to be pions. Thus for the second analysis the data was firstly run through a TMVA sofware packages providing many different machine learning techniques which would perform the particle identification of muons vs pions.
+
+
+
+%Talk about different samples, event selection.
+%Initially started with data recorded under x amount of hours. This is then passed through the the reconstruction ...
+%TMVA used....
+
 
 Compare momentum and spread. Mention that filters could be used to improve data. Momentum comparison, unknown real true momentum and particle ID. TMVA used to try to see if possible to separate and identify particle type. Describe also how it was trained, mention in section 4.
 
@@ -129,11 +147,13 @@ Show perhaps possibility in looking at single track events to identify showers v
 \subsection{Results}
 Two of the main results provided during the test beam were both to commission the detector by showing that all parts works, including the reconstruction framework with hits in all of the modules and magnetic field providing the ability to estimate momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in this data and produce charge and momentum estimates for the beam.
 
+\if{0}
 \subsubsection{Data from unpacking}
 Low level hits from only unpacking.
 
 \subsubsection{Tracks from unpacking}
 Using this data to build tracks.
+\fi
 
 \subsubsection{Hits in SaRoMaN}
 Using unpacking hits, combined into 3d points in SaRoMaN. Use full simulation and digitisation framework
@@ -220,6 +240,8 @@ MLPBNN Recommended ANN with BFGS training method and bayesian regulator
 Then provide final charge estimates and efficiencies.
 
 This finally shows, that assuming the beam after this is sufficiencly pure there is a discrepancy between the simulations and final data representing detector and electronics factors which have not been taken into account. This also updates values provided from nufact and nuphys papers showing that the muon charge reconstruction is slightly lower than previosly thought. it is still better than 0 (T2K) and 0.6 or so from previous MIND type experiments. it is also possible to probe down to low energies which has not previously been possible.
+
+\subsubsection{Updated charge identification efficiency}
 
 \subsubsection{Momentum identification}
 Discuss results and show the spread and difference between expected (put in by hand) simulations and measured distributions. 
