@@ -227,12 +227,12 @@ and as $\mu^+$ if
 \frac{f_{\mu^+}(\Delta_1)}{f_{\mu^-}(\Delta_1)} > \frac{f_{\mu^-}(\Delta_2)}{f_{\mu^+}(\Delta_2)}
 \end{equation}
 
-The bending angles are calculated from both measurement planes, (or only one if not possible) and tested against a null-hypothesis of having deflection from only multiple scattering 
-
 %link from http://pdg.lbl.gov/2000/passagerpp.pdf
 %Also, look at mind_rec/detector.c
 
-multiple scattering  through small angles, the angle is given by, taken from pdg link
+
+The bending angles are calculated from both measurement planes, (or only one if not possible) and tested against a null-hypothesis of having deflection from only multiple scattering~\cite{13PDG}.
+
 \begin{equation}
 \theta_0 = \frac{13.6 MeV}{\beta cp} z \sqrt{x/X_0}[1+0.038\ln(x/X_0)]
 \end{equation}
@@ -245,73 +245,87 @@ F_{\mu^\pm} \frac{1}{2\pi} e ^ {-( \theta_0 \pm \Delta)}
 \end{equation}
 
 Another part of the reconstruction is to estimate the momentum. May different method using the scattering or fits have been studied for this low momentum region, however the current best approach is to use the continuous slowing down approximation (CSDA) range.
-CSDA is based on knowledge of the energy loss in the material before a certain measurement in the detector, assuming the particle deposits an average energy in all materials which is passes through. In the Baby MIND given that the density varies and that there are measuring planes at some distance of each other, this provides a rough estimate of the momentum and the errors depend on how many iron pates are between the specific scintillator modules for that measurement. In the part of the detector which is least designed for this, where there is three iron modules between scintillators the error on the momentum estimate can be approximated as $\sqrt{2} \times 90 MeV/c$ This method can also not be used for tracks which pass through the full detector as then the error is impossible to estimate.
+CSDA is based on knowledge of the energy loss in the material before a certain measurement in the detector, assuming the particle deposits an average energy in all materials which is passes through. In the Baby MIND given that the density varies and that there are measuring planes at some distance of each other, this provides a rough estimate of the momentum and the errors depend on how many iron pates are between the specific scintillator modules for that measurement. In the part of the detector which is least designed for this, where there is three iron modules between scintillators the error on the momentum estimate can be approximated as $\sqrt{2} \times 90 MeV/c$ This method cannot be used for tracks which pass through the full detector as then the error is impossible to estimate. Combining information from the CSDA and the angle produces the final momentum and charge estimate.
 
+If the angular estimate does not work due to multiple scattering a final estimate is used by using a quadratic fit for the few hits provided.
 
+\if{0}
 Use the angles to and probability to calculate the charge. Momentum currently from range. Seems better.
-
 Probability of angle from multiple scattering, or from magnetic field. 
-
 Momentum comes from the range calculation, see detector layout. Major gaps in monument,  Potentially could and perhaps should use range momentum as long as tracks stop in detector. Problem with steps, helix better.
-
 We have steps in the tracking detectors.
-
 This seems to be the best approach. If this for some reason fails it goes on to a final attempt.
-
 Quadratic fit, given few hits, try to fit to return charge. Use this only for charge. Momentum from range momentum.
+\fi
 
 \subsection{Performance}
 
 \textbf{Add event display! also for testbeam in next chapter}
 
-During development of SaRoMaN two main metrics were used to evaluate performance, charge reconstruction efficiency and track reconstructed efficiency. These metrics provide information about how many simulated tracks can be reconstructed and how many of those reconstructed tracks have the correct charge. This is done for muons of both charges and different momentum values.
+During development of SaRoMaN two main metrics were used to evaluate performance, charge reconstruction efficiency and track reconstructed efficiency. These metrics provide information about how many simulated tracks can be reconstructed compared to total number of simulated tracks and how many of those reconstructed tracks have the correct charge. This is done for muons of both charges and different momentum values.
 
-Performance will be shown for the initial and proposed layout, for which the software algorithms were designed, the layout required for the text beam due to construction constraints and a final study based on the layout used for the WAGASCI detector layout. The main difference between the initial and test beam layout is removing the initial measurement point D0, restructuring  the layout and adding gaps between each of the blocks. This was done from a constructional not a physics motivation.
+Performance will be shown for the initial and proposed layout, for which the software algorithms were designed, the layout required for the text beam due to construction constraints and a final study based on the layout used for the WAGASCI detector layout. The main difference between the initial and test beam layout is removing the initial measurement point D0, restructuring  the layout and adding gaps between each of the blocks, seen in \FigRef{fig:oldMIND}. This was done from a constructional not a physics motivation.
 
 The charge identification is however improved when utilizing a measurement point from a neutrino target such as the WAGASCI, however this will reduce the lower limit of reconstruction since the muons must traverse the material of the WAGASCI. 
-
-\textbf{Perhaps momentum rec plots as well? Look at old material/collaboration meeting 2 with pull and residuals.}
-\textbf{One plot comparing all of these? Can we compare them? Lower momentum due to TASD?}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.48\textwidth]{figures/oldStudies/oldMIND.png}
-\includegraphics[width=0.48\textwidth]{figures/MIND.jpeg}
+\includegraphics[width=0.46\textwidth]{figures/MIND.jpeg}
 %\includegraphics[width=0.48\textwidth]{figures/oldStudies/MINDetam.jpeg}
 \caption{(Left) Image of the initial Baby MIND layout. (Right) The current Baby MIND layout. The main differences consists of removing the first scintillator plane, some different layout in the middle blocks and removed the final scintillator plane.}
 \label{fig:oldMIND}
 \end{figure}
 
+In \FigRef{fig:oldMIND2} results for the initially proposed geometry can be seen. The plots have been generated by simulating muons and anti-muons in the SaRoMaN framework. The results for the slightly changed test beam geometry layout can be seen in  \FigRef{fig:TestBeamMIND2}. 
+
+The main difference between the results are both below $1 GeV/c$ and in the region above $1 GeV/c$ and below $2 GeV/c$. Below $1 GeV/c$ the charge reconstruction is slightly worse for the test beam geometry which can be attributed to the removal of the first scintillating plate D0. There is also a slight change in the shape of the reconstruction efficiency above $1 GeV/c$ and below $2 GeV/c$ related to the change of the structure of the detector and additions of gaps providing some drift between measurement positions. For both of the layouts the reconstruction efficiency $> 95\%$ above $0.7 GeV/c$ and  is charge identification efficiency is $> 95\%$ above $0.7 GeV/c$. For the full region both reconstruction and charge identification efficiencies are $> 80\% $. 
+
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/oldChargeID.png}
 \includegraphics[width=0.48\textwidth]{figures/oldStudies/oldRecEff.png}
+\includegraphics[width=0.48\textwidth]{figures/oldStudies/oldChargeID.png}
 \caption{Metric plots of the initial Baby MIND layout with all algorithms adjusted to utilize this layout.}
 \label{fig:oldMIND2}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/FullChargeID.pdf}
 \includegraphics[width=0.48\textwidth]{figures/oldStudies/FullFitted.pdf}
-\caption{Metric plots of the current Baby MIND layout.}
+\includegraphics[width=0.48\textwidth]{figures/oldStudies/FullChargeID.pdf}
+\caption{Metric plots of the CERN test beam Baby MIND layout.}
 \label{fig:TestBeamMIND2}
 \end{figure}
 
+\textbf{Perhaps momentum rec plots as well? Look at old material/collaboration meeting 2 with pull and residuals.}
+\textbf{One plot comparing all of these? Can we compare them? Lower momentum due to TASD?}
+\if{0}
 Give for different layouts. The initial, well worked. Then work down to the test beam layout and perhaps the latest J-parc layout? 
-
 Charge id, fitting id, momentum pulls and so on.
 Look at muons/pions. pure beams with and without TASD/WAGASCI. Especially test beam layout and J-Parc.
-
 Add in the new layout studies?
-
 Quite good, add that charge ID is about x for range y and so on.  Could be improved by changing layout, perhaps even tweaking algorithms etc etc but want to keep generic algorithms to handle different designs.
-
 Momentum pulls and comparisons? Large RMS from RecPack and difficult geometry. Room for improvement.
+\textbf{Perhaps cite my Uppsala proceedings?} ~\cite{82Uppsala}.
+\fi
 
-\textbf{Perhaps cite my Uppsala proceedings?} When it is citable.
+\subsection{DAQ/Unpacking}
 
-\subsection{DAQ}
+\textbf{Based on the FEB readoutprotocol v2.6.}
+
+Currently data has to be recorded by the electronics and handled by a test beam computer system. The data is written to disk and needs to be written completely written with full spills before it can be processed off-line after the data taking.
+
+The format consists of a Time slot containing a spill with several triggers. Each trigger contains all of the hit data from the various channels at all the times inside the trigger. Hit data contains amplitude and time measurements with the the channel information.
+Each time measurement comes in steps of 2.5 ns so the system can only distinguish hits on a channel if they happen more than 2.5 ns between each other. The triggers come in block of 10 $\mu s$ resulting in at most 4000 events per channel per trigger. The format can be seen a bit clearer in \FigRef{fig:FEBstructure}.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/febstructure.jpeg}
+\caption{TDM, GTRIG, SPILL and DATA structure for the FEB readout communication.}
+\label{fig:FEBstructure}
+\end{figure}
+
 Add data plots perhaps? Not sure what goes here.
 
 Should I add details about the data format?
@@ -340,10 +354,63 @@ I've had some time over to pursue some interesting things. Currently I am settin
 
 Based on the main principles of easily shareable code, using the latest versions and simplicity.
 
-The simulation is based on a generic Geant4 simulation used by many. Neutrinos are simulated with the GENIE open source code used by many. Reconstruction is done through the open source GENFIT package used by Bell 2 etc etc. GENFIT takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
+The simulation is based on a generic Geant4 simulation used by many. Neutrinos are simulated with the GENIE open source code used by many. Reconstruction is done through the open source GENFIT~\cite{81Genfit} package used by Bell 2 etc etc. GENFIT takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
 
 This is all handled by a very simple python script which ensures that all software runs coherently with each other. The geometry is handled in a GDML file and read through all different parts to provide one single point of entry for the geometry. To ensure that the code can be used by anyone on different machines without a difficult installation process, the full software is provided in a docker container which means that the code can be run on any operating system. 
 
 The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrinos) (Neutrinolike events).
+
+To be compatible with the DAQ unpacking software developed by my collegues, a secondary docker container has been created to handle the specific root version requirement as well as some other minor software requirements which all clash with the SAURON container.
+
+SAURON is currently in a state were it can be seen as a simplified and novel version of SaRoMaN. Bar representation, clustering and pattern recognition is not currently implemented in the reconstruction, these are all handled by using truth information from the simulation or provided as extra information. None of there are seen to have a major impact on the results, but should be implemented in a future version. In a similar way, the DAQ unpacking is not included, instead the data is assumed to have been processed through it before being passed into the reconstruction. There are currently discussions regarding a unification of the DAQ unpacking and SAURON.
+
+In the field of neutrino physics machine learning  is not often used, some plots for dune etc etc. This was used in this collaboration using TMVA for particle identification/particle selections to chose muons in a background sample for the test beam.
+For the reconstruction, kalman filtering and cellular automaton for few hit events, are used as well.
+Outside of this novel software frameworks such as virtual machines, docker containers and continuous integration techniques have been used.
+
+\subsection{Containers}
+One of the main issues with scientific software is that they are developed by small teams, often not made publicly available and often the knowledge is only spread through scientific papers. This means that there are many great software solutions and packages which are not used by scientific collaborations, or are misused due to a lack of knowledge. One could argue that code is easy to read and that the purpose of a software should be easy to understand, however this assumes that all developers follows some form of coding standard and has/takes the time to develop their code properly which is often not the case. The clear solution to this problem would be to let physicists spend more time documenting and cleaning up their code as well as sharing it publicly. One problem which may arise is the use of specific third party software versions which make installation quite difficult especially in a climate where documentation is not prioritised and where software is constantly in development.
+
+One proposed solutions which solves the problem would be to provide a full runnable coding platform such as a virtual machine. The benefits are numerous however most of these are even improved by moving to a new software technique known as a container.
+
+\subsubsection{Docker vs Virtual machine}
+
+\subsubsection{Container for particle physics simulations}
+Containing root and geant.
+
+\subsubsection{Container for neutrino physics simulations}
+The above with genie
+
+\subsubsection{Container for Baby MIND}
+The above with SaRoMaN (Can not be done due to missing software.) and with new software. 
+
+\subsection{Continuous integration}
+Does this need to mentioned? It is a good technique which may or may not be used? For everything.
+
+\subsection{Machine learning}
+
+What is machine learning? How is it used today? Techniques for particle physics etc. novel ML techniques.
+
+\subsubsection{Machine learning in particle physics}
+
+\subsubsection{Machine learning applied to charge identification}
+
+Show TMVA plots, comparing normal likelihood techniques to machine learning, different applications and different methods. Explain the different methods.
+
+Relating more to data science than expected results from physics.
+
+\subsubsection{Machine learning applied to event identification}
+
+
+\subsection{Other good practises}
+
+\subsubsection{Versioning}
+Used for Container and data (gitlab etc). 
+
+
+\subsubsection{Testing}
+Installation etc. Ensuring that software 
+
+\subsubsection{Documenting}
 
 
