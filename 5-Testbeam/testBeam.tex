@@ -14,46 +14,40 @@ In this section details will be given to how data is collected and processed bef
 \subsection{Setup}
 During June-July 2016 a test beam was performed to characterise the readout system, data acquisition (DAQ) and electronics to be used in the Baby MIND detector. The test beam was at the T9 beam of the East Area, operating at the Proton Synchrotron (PS) at CERN. A Totally Active Scintillation Detector (TASD) constructed under the AIDA-2020 project (Advanced European Infrastructures for Detectors at Accelerators) was used to test the readout system, electronics, DAQ and reconstruction software. \textbf{Apart from some updates and slight upgrades, the Baby MIND is read out in the same way with the same electronics, only slightly more boards are used.}
 
-The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000 mm^3$, and can be~\FigRef{fig:TASD}. Each bar is read read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This summarizes as a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total size of $1m^3$. Check and mention uninstrumented bars? Gap size? Etc. Etc. A real life figure?
+The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000 mm^3$, and can be seen in~\FigRef{fig:TASD}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This summarizes as a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total size of $1m^3$.  For the test beam only $16 \times 16$ bars were instrumented.
+
+
+\textbf{Check and mention uninstrumented bars? Gap size? Etc. Etc. A real life figure?}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/AIDA.png}
+\includegraphics[width=\textwidth]{figures/AIDA.png}
 \caption{The TASD with the instrumented bars visualised}
 \label{fig:TASD}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/TASDinstrumented.jpeg}
+\caption{The TASD at the PS with the readout PC.}
+\label{fig:TASDreal}
+\end{figure}
+
 \subsection{DAQ}
-Each MPPC is connected to a Front End Board (FEB) which returns data in a specific format. For the setup a full 4 FEBs were used each able to read 96 MPPC channels each. These FEBs were then all connected via USB3 to a readout PC. 
+Each MPPC is connected to a Front End Board (FEB) which returns data in a specific format. For the setup a full 4 FEBs were used each able to read 96 MPPC channels each. These FEBs were then all connected via USB3 to a readout PC. The readout PC:s are controlled via remote connection/ethernet by a computer outside of the beam area in the control room. The data is currently just recorded, thus all analysis needs to be handled offline. This is slightly due to the data format design, but also due to the complexity of the unpacking.
 
 During the initial test beam FEBv1 was used. For, ease in finding plots, details regarding FEBv2 are going to be shown.
-\textbf{Readout format and block chart can be seen in figures? }OR \cite{71Status17}.
+\textbf{Readout format and block chart can be seen in figures? }OR \cite{71Status17}. Described above under SaRoMaN.
 
-This data is sent from each of the FEBs in a custom made data format. The data format simplifies combining the data from all of the FEBs, however it also 
-only works for offline processing as the footers need to be read before any processing can be done.
+This data is sent from each of the FEBs in a custom made data format. The data format simplifies combining the data from all of the FEBs, however it only works for offline processing as the footers need to be read before any processing can be done.
 
-When this is done an unpacking software is used to translate the format to actual usable data and hits. 
-
-During the first test beam conversion between channel and position was hard coded, this was later changed to a database.  
+When this is done an unpacking software is used to translate the format to actual usable data and hits. During the first test beam conversion between channel and position was hard coded, this was later changed to a database.  
 
 \textbf{Describe how the data is read in, from the electronics etc etc. Mention that there is no real difference between TASD MIND beam daq. Only more! }
 
-Described in some part in Baby MIND section hint at the readout block figure and describe how data is taken.  All in beam area. Signal created from particle depositing energy in bar, bar producing photons, photons measured by MPPC. MPPC produces an electrical signal which is sent to FEB, which samples the signals each 2.5 ns in gtriggers of 0.1ms, in spills given by the accelerator signal.
-
-The FEB signals are sent to a back plane which sends the data several readout PC:s via USB.
-
-Essentially that is how all the data is read out. The readout PC:s are controlled via remote connection/ethernet by a computer outside of the beam area in the control room.
-
-The data is currently just recorded, thus all analysis needs to be handled offline. This is slightly due to the data format design, but also due to the complexity of the unpacking.
-
-What is unpacking?
-
-More details, limits, cuts, etc etc. What plots? Photo electron counts, dark counts, peaks. Very unusually good values. Bar efficiencies etc etc.
-
-Describe how data is handled/used and combined after unpacking.
+Described in some part in Baby MIND section hint at the readout block figure and describe how data is taken.  All in beam area. Signal created from particle depositing energy in bar, bar producing photons, photons measured by MPPC. MPPC produces an electrical signal which is sent to FEB, which samples the signals each 2.5 ns in gtriggers of 0.1ms, in spills given by the accelerator signal. The FEB signals are sent to a back plane which sends the data several readout PC:s via USB.
 
 \subsection{Data preprocessing}
-
 
 Describe how hits are handled and converted into the simulation format to be fully usable in the SaRoMaN framework.
 
@@ -63,9 +57,11 @@ Mention that this is later lessened in the further analysis. (what I have done n
 
 Did not ans still do not have energy dep value.
 
+Provide plots of diagnostic information, hit data etc etc.
+
 \subsection{Results}
 
-The main goal of this first test beam was to test the readout system, electronics, DAQ and reconstruction software. The results can be quite nicely summed up in \FigRef{fig:TASDres2} and \FigRef{fig:TASDres} and noting that the TASD was horizontally aligned but the beam was slightly off-center vertically. Detailed studies were performed and published in~\cite{52Georgi}.
+The main goal of this first test beam was to test the readout system, electronics, DAQ and reconstruction software. The results can be quite nicely summed up in \FigRef{fig:TASDres2} and \FigRef{fig:TASDres} and noting that the TASD was horizontally aligned but the beam was slightly off-center vertically. Detailed studies of the electronics were performed and published in~\cite{52Georgi}.
 
 
 \begin{figure}[h!]
@@ -102,13 +98,22 @@ Baby MIND qualification took place at the T9 beam line at the PS experimental ha
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/MINDAIDAtestbeam.jpeg}
-\caption{MIND in testbeam}
+\caption{MIND in testbeam.}
 \label{fig:MINDtb}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/DSC_2619.JPG}
+\caption{MIND in testbeam photo.}
+\label{fig:MINDtbreal}
 \end{figure}
 
 \subsection{Setup}
 
 In order to support the magnets and scintillating modules mechanically, four support frames were constructed specifically to support the Baby MIND and  to meet the transport requirements within CERN and shipping to J-PARC. The Baby Mind modules were installed in the four frames, giving each block a weight around 20 tons which is within the required limits for crane operations at both sites.
+
+Photos?
 
 For the data taking during the test beam, the TASD was placed in front of the Baby MIND to provide initial beam information, both an angular measurement of the beam and a veto measurement from cosmic rays. Only a total of 2 planes of the TASD were instrumented providing 192 channels. 
 
@@ -124,13 +129,15 @@ Explain the full chain from how data is taken until it the analysis, results sta
 
 Data was taken for a period of 2 months. Out of the recorded data, a verified samples with the best possible settings for the data acquisition was selected for analysis. The samples contained a few hours worth of data taking at different beam momenta for both muons and anti-muons beam settings. These samples were all run through the unpacking software required to read out the recorded data before being passed to SaRoMaN. The data was passed directly into the digitisation for clustering and grouping before being passed into the reconstruction.
 
+Provide plots of diagnostic information, hit data etc etc.
+
 \subsection{Analysis}
 
 For the first part of the analysis the data sample was assumed to be quite clean, containing mostly only muons or anti-muons. To remove any contribution from outside of the beam the hits in the TASD were used as a beam trigger to defined a time window of  interest from this time and 125 ns after and used to fit any tracks. This time was chosen after seeing what was appropriate for our data structure. To remove any potential showers or noise any event less than 4 hits in MIND or on average more than 10 hits per plane were removed.
 
-Data was run through the software framework and produced plots of charge reconstruction efficiency, momentum reconstruction etc etc and compared to simulations.
+Data was run through the SaRoMaN software framework and produced plots of charge reconstruction efficiency, momentum reconstruction etc etc and compared to simulations.
 
-In the analysis it was also quite clear that the beam was not pure muons and contained some contamination of other particles. The main contamination seems to be pions. Thus for the second analysis the data was firstly run through a TMVA sofware packages providing many different machine learning techniques which would perform the particle identification of muons vs pions.
+In the analysis it was also quite clear that the beam was not pure muons and contained some contamination of other particles. The main contamination seems to be pions. Thus for the second analysis the data was firstly run through a TMVA software packages providing many different machine learning techniques which would perform the particle identification of muons vs pions.
 
 
 
@@ -147,6 +154,32 @@ Show perhaps possibility in looking at single track events to identify showers v
 \subsection{Results}
 Two of the main results provided during the test beam were both to commission the detector by showing that all parts works, including the reconstruction framework with hits in all of the modules and magnetic field providing the ability to estimate momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in this data and produce charge and momentum estimates for the beam.
 
+\subsubsection{Electronics results}
+
+Gain plots for all of the 3996 MPPCs installed on Baby MIND. The gain is evenly distributed around 45 ADC/photoelectrons $\pm  5$ as seen in \FigRef{fig:MPPCplot1}. This can be further improved by optimising the pre-amp gain on the FEB for each of the MPPCs.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/mppcplot1.jpeg}
+\caption{Gain for 576 channels (left) and noise spectrum finger plots with 5 viable peaks.
+ for one channel (right).}
+\label{fig:MPPCplot1}
+\end{figure}
+
+\subsubsection{Magnet results}
+
+The magnet performance was measured at CERN, with detailed tests on the first module allowing comparisons verification of simulations. The magnet modules reached the design specification of 1.5 T for a current of 140 A. Stray fields were measured at $<10$ mTat a distance of 1 mm from the surface of the magnet modules. The measured power consumption at CERN was 11.5 kW. %The measured power consumption at J-PARC is 11.1 kW. The ambient temperature at J-PARC is 10C lower which accounts for the lower aluminium coil temperatures and resistances. 
+The current and voltage reach stable operating values several hours, this can be seen in~\FigRef{fig:Magnetplot1}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/magnetFigure1.jpeg}
+\caption{Baby MIND magnet measured (at CERN) field values for 33 modules (left), current at J-PARC (middle) and corresponding voltage (right).}
+\label{fig:Magnetplot1}
+\end{figure}
+
+
+
 \if{0}
 \subsubsection{Data from unpacking}
 Low level hits from only unpacking.
@@ -158,51 +191,59 @@ Using this data to build tracks.
 \subsubsection{Hits in SaRoMaN}
 Using unpacking hits, combined into 3d points in SaRoMaN. Use full simulation and digitisation framework
 
+Show of all hits in the data files.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/HitMap5GeVYZ.pdf}
+\caption{All recorded hits for a run with the 5 GeV beam settings etc etc...}
+\label{fig:hitmap}
+\end{figure}
+
 
 \subsubsection{Tracks in SaRoMaN}
-Same way as simulate hits are used. Build possible tracks.
 
+Same way as simulate hits are used. Build possible tracks. Separate hits by hit time.
+
+Show events one by one.
 
 Mention efficiency and mention problem of not knowing beam composition. Handling pions.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{figures/SampleTrack5GeVYZ.pdf}
+\caption{A sample track, taking a time cut for the hits for a run with the 5 GeV beam settings etc etc....}
+\label{fig:hitmap}
+\end{figure}
+
+Using pattern recognition to identify showers (non-muons) from muons (non-showers).
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.49\textwidth]{figures/oldStudies/m5GeVevent2.jpg}
-\includegraphics[width=0.49\textwidth]{figures/oldStudies/m5GeVevent3.jpg}
+\includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent2.jpg}
+
+\includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent3.jpg}
 \caption{Sample events of test beam interactions at a set energy value of $5GeV/c$.}
 \label{fig:EventsInitial}
 \end{figure}
 
 \subsubsection{Charge identification efficiency}
+One of the main takes of the Baby MIND detector is to correctly identify the charge of incoming muons. In the test beam it is difficult to estimate the number of muons produced since the beam itself is a mix of mostly muons and pions. As seen above, the reconstruction software can return the number of tracklike events against the number of reconstructible tracks. With these reconstructible tracks the charge can then be reconstructed and a charge identification efficiency plotted as seen in~\FigRef{fig:ChargeInitial}. Initial results of this study were shown at NuFact2017 and published in~\cite{82Uppsala}.
 
-Similar to what was presented at \textbf{Perhaps cite my Uppsala proceedings?} ~\cite{82Uppsala}.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.49\textwidth]{figures/oldStudies/newChargeZoom5.pdf}
-\includegraphics[width=0.49\textwidth]{figures/oldStudies/newChargeZoom1.pdf}
+\includegraphics[width=\textwidth]{figures/oldStudies/newChargeZoom5.pdf}
+
+\includegraphics[width=\textwidth]{figures/oldStudies/newChargeZoom1.pdf}
 \caption{Initial charge id results}
 \label{fig:ChargeInitial}
 \end{figure}
-Confirms that the full chain works and can produce plots, however the results are slightly less than expected. Add in event displays. Something to show both pion showers and muons. See expecting bending for first time! enough data to test recpack! Low pt and recpack ! Different regions.
 
-Different run number? no real difference.
+These plots confirm that the full data analysis chain works however the results are slightly less than expected from simulations. Looking on an event by event basis it become clear that the events are a mix of muons and pions even after an initial pattern recognition. This motivated the development of a more advanced pattern recognition algorithm using machine learning.
 
-Improved unpacking gave more data.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFull6GeV.pdf}
-\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLow.pdf}
-\caption{Initial charge id results}
-\label{fig:ChargeImproved}
-\end{figure}
-
-Initial results, with pion contamination and initial unpacking. Discuss issue with cuts. Assuming that all hits had hit amplitude, unpacking could not collate hits correctly.
-
-Confirm reconstruction even further. Will be able to properly run the code on the data.
-
+Initial results, with pion contamination and initial unpacking. Discuss issue with cuts. Assuming that all hits had hit amplitude, unpacking could not collate hits correctly. Confirm reconstruction even further. Will be able to properly run the code on the data.
 
 Improving data (HOW?!?!) show similar result to previously. Slightly reduced errors etc etc. What about adding in expected reconstruction for pions? Show why we expect pion contamination or something else, but pion largest contribution known in t9 beam. 
 
@@ -212,14 +253,15 @@ Motivating muon contamination in plots by comparing muon charge efficiency. Brok
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullWPion.pdf}
-\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLowWPion.pdf}
-\caption{Initial charge id results}
+\includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullWPion.pdf}
+
+\includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLowWPion.pdf}
+\caption{Simulated charge id for different particles vs data points}
 \label{fig:ChargeImprovedPion}
 \end{figure}
 
+Add in event displays. Something to show both pion showers and muons. See expecting bending for first time! enough data to test recpack! Low pt and recpack ! Different regions. Different run number? no real difference. Improved unpacking gave more data.
 
-Show most recent plots, which is the updated unpacking and more data, still issue comparing simulation to data. 
 
 Use pion data to show how it may be possible that it is contamination. Charge ID for pion is low, reconstruction eff is also poor.
 
@@ -230,27 +272,113 @@ Charge ID study momentum reconstruction. look at charge id for particles correct
 
 Add details, not understanding what is correct data, further study has been performed but not solved problem efficiently. Unknown beam composition.
 
-
+%\pagebreak
+\clearpage
 \subsubsection{Particle identification}
 
 Using TMVA to classify muon from other events which may still pass through harsh criteria. 
+
+Developed to not be dependent on the momentum of the particle, should work for full range.
+
+Essentially the machine learning algorithm identifies muons in a mixed background, but does not identify any particles in the background. This could be a future study and could be used to identify pions as well. Refer to above plot for track and shower, perhaps show that the difficulty is at low pt since then track is shorter.
+
+Signal is always defined as a muon, background as the remaining particles in the beam such as pions etc.
+
+Variables, described in some presentation?
+
+\begin{itemize}
+\item Number of total hits,
+\item Number of used planes
+\item Number of hits used hits / number of used planes
+\item Average number of hits per plane
+\item Maximum distance between hits in an event.
+\end{itemize}
+
+
+
+Number of hits in an event
+Hits per plane
+Planes in track
+Average hits per used planes
+Length of track (Being plotted without modulus)
+Not now using deposited energy, do not have it for test beam! Using Muons as data, Pions as background
+
+
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=\textwidth]{figures/TMVA/inputvariables.pdf}
+\caption{ROC curve for various machine learning algorithms.}
+\label{fig:TMVAroc}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=\textwidth]{figures/TMVA/roc12.pdf}
+\caption{ROC curve for various machine learning algorithms.}
+\label{fig:TMVAroc}
+\end{figure}
+
+
+from this chose, MLPBNN Recommended ANN with BFGS training method and bayesian regulator. Could have chosen others but this was the best
+
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=\textwidth]{figures/TMVA/ROC1.pdf}
+\caption{ROC curve for the chosen machine learning algorithms.}
+\label{fig:TMVAroc}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.49\textwidth]{figures/TMVA/responceTest.pdf}
+\includegraphics[width=.49\textwidth]{figures/TMVA/responceTestOT.pdf}
+\caption{Responce with and without overtraining check}
+\label{fig:TMVAresponce}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=\textwidth]{figures/TMVA/Cuts.pdf}
+\caption{Cut efficiency plots.}
+\label{fig:TMVAcuts}
+\end{figure}
 
 Show plots of different simulated and TMVA in events with both muon and pion classification. Show loss of data, number in initial sample vs pion and muons after separation with efficiencies and values from training with all the appropriate plots. 
 
 What is this method? Cite the method? Show that many different methods would have produced very similar results.
 
-MLPBNN Recommended ANN with BFGS training method and bayesian regulator
+
 
 Then provide final charge estimates and efficiencies.
 
 This finally shows, that assuming the beam after this is sufficiencly pure there is a discrepancy between the simulations and final data representing detector and electronics factors which have not been taken into account. This also updates values provided from nufact and nuphys papers showing that the muon charge reconstruction is slightly lower than previosly thought. it is still better than 0 (T2K) and 0.6 or so from previous MIND type experiments. it is also possible to probe down to low energies which has not previously been possible.
 
+\clearpage
 \subsubsection{Updated charge identification efficiency}
 
-\subsubsection{Momentum identification}
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFull6GeV.pdf}
+%\includegraphics[width=0.49\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLow.pdf}
+
+\includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFull6GeV.pdf}
+
+\includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLow.pdf}
+\caption{After TMVA charge id results}
+\label{fig:ChargeImproved}
+\end{figure}
+
+
+\subsubsection{Momentum reconstruction}
 Discuss results and show the spread and difference between expected (put in by hand) simulations and measured distributions. 
 
 Expected that the T9 beam area momentum is adjusted before final decay, actually choosing pion momentum and not muon momentum. Confirmed by email conversation. However, for lower momentum these match quite well. Large RMS from RecPack.
 
+Requires a new thinking regarding the reconstruction software and lead to the development of SAURON using more modern, reliable Kalman packages and a Runge-kutta method instead of a helical track model.
 
 
