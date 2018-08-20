@@ -254,7 +254,7 @@ j_\mu^{(Z)}&=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e-\frac{1}{2}\bar{e
 j_\mu^{(3)}&=0\\
 j_\mu^{(Y/2)}&=0
 \end{align}
-Comparing the formula for $j_\mu^{(Z)}$ from the electroweak theory, above, and from V-A theory, $j_\mu^{(Z)}=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e+\bar{e}\gamma_\mu(g_\nu-g_A\gamma_5)e$, provides a relation between the $g_\nu$ and $g_A$ and the Weinberg angles as $g_\nu=-\frac{1}{2}+2\sin^2\theta_W$ and $g_A = -\frac{1}{2}$ Given that both the currents for both W and Z are non-zero means that electrons and neutrinos should have interaction through all three bosons. Looking in detail it can be seen that both of the W currents couple (anti-)neutrino to electron or vice-versa but the Z current only couples the particles to themselves. This means that the W currents carry charge and gives them the name charge-current interactions compared to the Z current where this is not the case and has the name neutral-current interaction.
+Comparing the formula for $j_\mu^{(Z)}$ from the electroweak theory above, and from V-A theory, $j_\mu^{(Z)}=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e+\bar{e}\gamma_\mu(g_\nu-g_A\gamma_5)e$, provides a relation between the $g_\nu$ and $g_A$ and the Weinberg angles as $g_\nu=-\frac{1}{2}+2\sin^2\theta_W$ and $g_A = -\frac{1}{2}$ Given that both the currents for both W and Z are non-zero means that electrons and neutrinos should have interaction through all three bosons. Looking in detail it can be seen that both of the W currents couple (anti-)neutrino to electron or vice-versa but the Z current only couples the particles to themselves. This means that the W currents carry charge and gives them the name charge-current interactions compared to the Z current where this is not the case and has the name neutral-current interaction.
 
 %The final resulting theory has added massive bosons, explains and provides a framework for electro-weak interactions and mass.
 
@@ -322,13 +322,9 @@ To look at possible interactions of neutrinos described in the Standard Model of
 
 \subsection{Neutrino-electron interactions}
 
-\textbf{New material}
+%\textbf{New material}
 
-Interactions, require electron as one of the initial parts, and final parts.
-
-Check Pauls book. What is the difference between mu e and e e scattering? spin, handedness etc.
-
-These are all point like interactions
+Through the theory it is clear that neutrinos should interact with electrons. Electrons are a fundamental particle meaning that the interaction can be seen as pointlike interactions.
 
 When it comes to neutrino and electron interactions, experimentally only the following have been observed:
 
@@ -337,20 +333,25 @@ Lagrangian for NC scattering, $\nu_x y \rightarrow \nu_x y$:
 \mathcal{L}=-\frac{G_F}{\sqrt{2}} \left[ \bar{\nu_x}\gamma_\alpha (1-\gamma_5)\nu_x \right] \left[ \bar{y} \gamma_\alpha (g_V-g_A \gamma_5)y \right]
 \end{equation}
 
+with the constants as defined previously. The Fermi constant $G_F$, the Wienberg angle $\theta_W$ and where $g_\nu$ and $g_A$ are constants relating to strong interactions from v-a theory.
+
 Lagrangian for CC scattering, $\nu_x y \rightarrow \nu_y x$:
 \begin{equation}
 \mathcal{L}=-\frac{G_F}{\sqrt{2}} \left[ \bar{\nu_x}\gamma_\alpha (1-\gamma_5)x\right] \left[ \bar{\nu_y}\gamma_\alpha (1-\gamma_5)y \right]
 \end{equation}
 
-Where are steps? what are steps? Reference how to calculate cross-sections. Relate parameters to interactions and experiments.
+From the Lagrangian the cross-sections are calculated by first calculating the  interaction amplitude by using the initial and final states to evaluate the Lagrangian. This amplitude can then be related to a derivative of the cross-section with can be integrated to provide the final cross-section. The details can be found in~\cite{3Peskin}.
+
+The various processes involving an electron as an initial state with their calculated cross-sections can be seen in table~\ref{tab:electronproc} where the variable $s$ is the mandelstam variable, $s=(p_{\nu_\mu} + p_e)^2 = 2m_e E_{\nu_\mu}$
 
 \begin{table}[h!]
 \centering
-\caption{My caption}
-\label{my-label}
+\caption{Neutrino interactions with electrons}
+\label{tab:electronproc}
 \begin{tabular}{|l|l|l|}
  \hline
 Type & Process & Cross-section \\
+ \hline
 CC interaction & $\nu_\mu + e^- \rightarrow \mu^- + \nu_e$  & $\frac{G_F^2 s}{\pi}$\\
 CC+NC Scattering & $\nu_e + e^- \rightarrow \nu_e + e^-$ & $\frac{G_F^2 s}{4\pi} \left[ (2\sin^2 \theta_W -1){}^2 +\frac{4}{3}\sin^2 \theta_W \right]$\\ 
 CC+NC Scattering & $\bar{\nu_e} + e^- \rightarrow \bar{\nu_e} + e^-$ & $\frac{G_F^2 s}{4\pi} \left[ \frac{1}{3}(2\sin^2 \theta_W +1){}^2 +4\sin^2 \theta_W \right]$ \\
@@ -362,12 +363,7 @@ Neutrino pair production & $e^+ + e^- \rightarrow \nu_\mu + \bar{\nu_\mu}$ & $\f
 \end{tabular}
 \end{table}
 
-Where s is the mandelstam variable, $s=(p_{\nu_\mu} + p_e)^2 = 2m_e E_{\nu_\mu}$
-
-Mention last neutrino pair production only possible through NC.
-
-
-Initially mention what cross-section is, 
+To make it simpler for calculations and visualization these interactions have been plotted as Feynman diagrams in~\FigRef{fig:einteractions1}, \FigRef{fig:einteractions2} and \FigRef{fig:einteractions3}.
 
 \begin{figure}[h!]
 \vspace{2mm}
@@ -417,7 +413,7 @@ Initially mention what cross-section is,
 \end{subfigure}
 \vspace{2mm}
 \caption{Charge interaction between neutrinos and electrons}
-\label{fig:test}
+\label{fig:einteractions1}
 \end{figure}
 
 \begin{figure}[h!]
@@ -470,7 +466,7 @@ Initially mention what cross-section is,
 \end{subfigure}
 \vspace{2mm}
 \caption{Neutral interaction between neutrinos and electrons}
-\label{fig:test}
+\label{fig:einteractions2}
 \end{figure}
 
 \begin{figure}[h!]
@@ -528,7 +524,7 @@ Initially mention what cross-section is,
 \end{subfigure}
 \vspace{2mm}
 \caption{Neutrino pair production}
-\label{fig:test}
+\label{fig:einteractions3}
 \end{figure}
 
 
@@ -570,52 +566,37 @@ Initially mention what cross-section is,
 \subsection{Neutrino-quark scattering}
 Moving away from electrons into quarks one has to take into account that quarks are always bound in a hadron, and thus do not exist in a free state. 
 
-Neutrino-quark interactions can be understood in two different ways. Starting with inverse beta-decay where a proton interacts with an anti-neutrino producing a positron and neutrino, $\bar{\nu_e}+p \rightarrow e^+ + n$, can be seen as an interaction where the full hadron interacts and only changes its weak charge instead of seeing each quark interact separately.  Could use muon neutrino instead? $\nu_\mu + n \rightarrow \mu^- + p$
+Neutrino-quark interactions can be understood in two different ways. Starting with inverse beta-decay where a proton interacts with an anti-neutrino producing a positron and neutrino, $\bar{\nu_e}+p \rightarrow e^+ + n$, can be seen as an interaction where the full hadron interacts and only changes its weak charge instead of seeing each quark interact separately. The interacting particle, proton changes into another baryon the neutron. However at higher energies it is possible for the quark to become ejected from the proton and the interaction changing the proton from a baryon into a meson.
+
+%Could use muon neutrino instead? $\nu_\mu + n \rightarrow \mu^- + p$
 
 \subsubsection{Quasi-elastic interactions}
-Inverse beta decay. Details of how we model the proton as similar to an electron with magnetic moment, the model provides a cross section as a point-line part, with corrections for charge-current quark mixing transition from a u to d quark $( \cos^2 \theta_C)$, a mass suppression factor $\xi_{mass}$ and proton form factors $g^2_v + 3 g^2_A$. cite PAULS PROCEEDING!
-
+Quasi-elastic relates to when the neutrino interacts with the proton as a whole. 
+This however requires some factors for modelling the nucleus as a whole, compared to the electron which was seen as point-like. The cross section is given as:
 \begin{equation}
 \sigma(\bar{\nu_e} + p \rightarrow e^+ + n) = \frac{G_Fs}{\pi} \times \cos^2 \theta_C \times \xi_{mass} \times (g^2_v + 3 g^2_A)
 \end{equation}
+with corrections for charge-current quark mixing transition from u to d quark $( \cos^2 \theta_C)$, a mass suppression factor $\xi_{mass}$ and proton form factors $g^2_v + 3 g^2_A$ ~\cite{47Soler}.
 
-Both charge current and neutral current. relate to electron scattering and explain 2p2h and other resent models.
+It is also interesting to note that apart from inverse beta-decay which is a CC interaction, an Quasi-elastic NC interaction can also happen $\nu_\mu + p \rightarrow \nu_\mu + p$ which knocks on the proton but does not change it.
 
-No longer point like, no free quarks, require parton models etc etc. nu N Elastic scattering
-
-Can do beta decay without to many changes. Still nucleus after interaction.
-
-Plot showing that this is interesting below or around 1 GeV? Write about transition region.
-
-
-Also neutral CCQE!
-
-$\nu_\mu + p \rightarrow \nu_\mu + p$
+%Inverse beta decay. Details of how we model the proton as similar to an electron with magnetic moment, 
+%Both charge current and neutral current. relate to electron scattering and explain 2p2h and other resent models.
+%No longer point like, no free quarks, require parton models etc etc. nu N Elastic scattering
+%Can do beta decay without to many changes. Still nucleus after interaction.
+%Plot showing that this is interesting below or around 1 GeV? Write about transition region.Also neutral CCQE!$\nu_\mu + p \rightarrow \nu_\mu + p$
 
 \subsubsection{Deep inelastic scattering}
+If the neutrino has an energy of around or above 1 GeV there is enough energy that the neutrino can break up the nucleon and interact with the quarks as if they were free particles. It becomes quite difficult to calculate the cross-section for these interactions as it depends on the final particle(s) as well as understanding the so called form factors relating the quarks to the proton. 
+DIS comes with both a charge current and neutral current modes as $\nu_\mu + p \rightarrow \mu^- + X$ or $\nu_\mu + p \rightarrow \nu_\mu + X$.
 
-Interesting around or above 1 GeV.
-
-Require more energy to make quarks behave as free point+like particles, breaks nucleon/hadron. quite difficult writing up cross-section. 
-
-Diagram Difference between charge current DIS $\nu_\mu + p \rightarrow \mu^- + X$ and Neutral current $\nu_\mu + p \rightarrow \nu_mu + X$
-
-
-Break nucleus!
+More details can be found in~\cite{47Soler}.
 
 \subsubsection{Resonant interactions}
-In region between elastic and inelastic
-
-Between the elastic and inelastic region is an area associated with pion production through the excitation of baryon resonances
-
-pion production
-
-$\nu_i + N \rightarrow l + N*$ where the nucleus further decays $N* \rightarrow \pi + N'$
-
-little data, examples with $\Delta$
+Between the elastic and inelastic region is an area associated with pion production through the excitation of baryon resonances, $\nu_i + N \rightarrow l + N*$ where the nucleus further decays $N* \rightarrow \pi + N'$. Two examples with delta particles can be seen below.
 \begin{align}
-\nu_\mu + N &\rightarrow \mu^- - \Delta^{++} \rightarrow \mu^- + p + \pi^+\\
-\nu_\mu + N &\rightarrow \mu^- - \Delta^{+} \rightarrow \mu^- + n + \pi^+
+\nu_\mu + N &\rightarrow \mu^- + \Delta^{++} \rightarrow \mu^- + p + \pi^+\\
+\nu_\mu + N &\rightarrow \mu^- + \Delta^{+} \rightarrow \mu^- + n + \pi^+
 \end{align}
 
 \subsection{Comparing neutrino interactions to QED}
@@ -860,7 +841,7 @@ The amount of argon can then be counted by measuring x-rays comming from the dec
 
 This results shock the whole neutrino field by suggesting something fundamentally wrong in the understanding of the neutrino, either in the interactions or in the solar model. There were various solar experiments which confirmed the solar neutrino model~\cite{48Solar} implying something wrong in the interaction model. At the same time measurements were performed at several other detectors, Sudbury Neutrino Observatory (SNO)~\cite{Fix6}, Kamiokande~\cite{55Kamiokande} and Super-Kamiokande~\cite{10Fukuda} all in agreement with a lesser flux. Further information from the measurement at SNO hinted at the fact that additional neutrino flavours may be produced, contradicting the verified solar neutrino model. One of the possible explanations for the deficit was neutrino oscillations proposed by Bruno Pontecorvo~\cite{11Pontecorvo}. 
 
-The oscillation model is in good agreement with experimental values and was verified at SNO and Super-Kamiokande awarding the neutrino flavour oscillation measurements with Nobel prizes in 2015 and paved the way for physics beyond the Standard Model. \textbf{REFERENCE TO MENTIONING THEM IN CHAP 2}
+The oscillation model is in good agreement with experimental values and was verified at SNO and Super-Kamiokande awarding the neutrino flavour oscillation measurements with Nobel prizes in 2015 and paved the way for physics beyond the Standard Model. %\textbf{REFERENCE TO MENTIONING THEM IN CHAP 2}
 
 \pagebreak
 \section{Neutrino mass and oscillation in vacuum}\label{subsection:Neutrinomassandoscillation}
@@ -903,7 +884,7 @@ U ={} &
  \end{pmatrix} 
  \end{aligned}
 \end{equation}
-where $s_{ij} = \sin\theta_{ij}$ and $c_{ij} = \cos\theta_{ij}$ with $\theta_{ij}$ the three mixing angles and $\delta_{CP}$, $\phi_2$ and $\phi_3$ are complex phases. The parameters $\phi_2$ and $\phi_3$ are only non-zero if neutrinos are their own antiparticles, denoted as Majorana, which is still unknown at the time of writing this~\cite{13PDG}.  \textbf{This is a big deal since it has not been seen and implies a splitting with the relation to the Higgs field. } The three first matrices are denoted the Dirac part of the PMNS matrix and the final forth matrix is the Majorana term which is non-identity only if neutrinos are Majorana.
+where $s_{ij} = \sin\theta_{ij}$ and $c_{ij} = \cos\theta_{ij}$ with $\theta_{ij}$ the three mixing angles and $\delta_{CP}$, $\phi_2$ and $\phi_3$ are complex phases. The parameters $\phi_2$ and $\phi_3$ are only non-zero if neutrinos are their own antiparticles, denoted as Majorana, which is still unknown at the time of writing this~\cite{13PDG}. This would be an interesting result as it would imply a splitting with the relation to the Higgs field. The three first matrices are denoted the Dirac part of the PMNS matrix and the final forth matrix is the Majorana term which is non-identity only if neutrinos are Majorana.
 
 The probability of finding a neutrino in a specific time-dependent state is related to the mass states through the PMNS matrix elements and the time-evolution operator. The PMNS introduces a rotation in the space of mass eigenstates. The derivations of the oscillation probability for two-neutrino and three-neutrino oscillations can be found in the literature \cite{34doi:10.1142/9789812562203_0002}. The three neutrino flavour state shown in equation \ref{eq:eigenstates} evolves as a function of time as:
 %The interpretation is similar to that of a time-dependent quantum state, the probability of finding a neutrino in a specific state is related to the mass states through the PMNS matrix in which the elements are time dependent.
@@ -950,7 +931,9 @@ The mass-squared difference between neutrino mass states $\left|m_i^2 - m_j^2\ri
 
 Looking at the oscillation probability \eqref{eq:Problength} two main classes of experiments for neutrino oscillations can be devised. Finding a distance $x$ to the source where $P_{\nu_\alpha \rightarrow \nu_\alpha} (x) < 1$, it is possible to look at so called disappearance of the beam by comparing the expected neutrino flux to the observed. For the disappearing flavour there must be a probability, $P_{\nu_\alpha \rightarrow \nu_\beta} (x) > 0, \alpha=\beta$ for another flavour to appear. The second kind of experiment, denoted as appearance, is based on looking for interaction products which are impossible without oscillations.  An example of this would be to see a positron from a muon neutrino beam. More on this can be found well described in~\cite{34doi:10.1142/9789812562203_0002} and examples of different detectors will be discussed in chapter~\ref{c:expIntro}. As a rule of thumb this L has to be on the order of km for energy ranges between MeV to GeV. This means that oscillations will have a small effect on short scale neutrino interactions measured close to the source.
 
-Charge conjugation and parity (C and P, CP) symmetry states that physics should be the same for particles and anti-particles while the spatial coordinates are inverted. If $\delta_{CP}$ is non-zero it would imply CP symmetry is violated it would imply a difference between the rate of neutrino and anti-neutrino oscillations and could be responsible for the matter-antimatter asymmetry of the early universe.\textbf{ How does the formula look like and what changes in both orderings?} Current best-fit values (at 90\% confidence limit) have $\delta_{CP} = -1.79\pm 1.42$ for normal mass ordering and $\delta_{CP} = -1.41\pm 0.68$ for inverted mass ordering both rejecting the null hypothesis for $\delta_{CP}$ at around $3\sigma$\cite{T2KResults}.
+Charge conjugation and parity (C and P, CP) symmetry states that physics should be the same for particles and anti-particles while the spatial coordinates are inverted. If $\delta_{CP}$ is non-zero it would imply CP symmetry is violated it would imply a difference between the rate of neutrino and anti-neutrino oscillations and could be responsible for the matter-antimatter asymmetry of the early universe. Current best-fit values (at 90\% confidence limit) have $\delta_{CP} = -1.79\pm 1.42$ for normal mass ordering and $\delta_{CP} = -1.41\pm 0.68$ for inverted mass ordering both rejecting the null hypothesis for $\delta_{CP}$ at around $3\sigma$\cite{T2KResults}.
+
+%\textbf{ How does the formula look like and what changes in both orderings?} 
 
 %Also that if $U_{\alpha i}$ is real, which is related to $\delta_{CP} = 0$, then $arg(U_{\alpha i} U_{\beta i}^* U_{\alpha j}^* U_{\beta j} ) = 0$.
 %It can be seen that if $m_i^2 - m_j^2 = 0 $ this probability becomes $0$ which contradicts the experimental results. This means that atleast one of the neutrinos 

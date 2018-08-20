@@ -84,11 +84,11 @@ After the timing clustering so called 3-d space points are created by combining 
 The final step in the digitisation is to smear the value of deposited energy and hit time based on measured values of propagation time through the scintillator bars given the simulated hit position and not only the bar position.
 
 \subsection{DAQ}
-\textbf{Here or test beam?}
+%\textbf{Here or test beam?}
 
 The current DAQ framework for the Baby MIND detector is based on being used offline, processed both after and away from the acquisition.
 
-For simplicity the DAQ converts the acquired data and converts it into the same format as expected from a simulation so that the digitisation can be used in the same way. The main difference is that the smearing used for simulated data is turned off. In this section the DAQ will be discussed. 
+For simplicity the DAQ converts the acquired data and converts it into the same format as expected from a simulation so that the digitisation can be used in the same way. The main difference is that the smearing used for simulated data is turned off. 
 
 Data comes in with files specific for each FEB. This data, has channel number, hit time and hit amplitude. The first step is to convert the data into space-positions, either vertical or horizontal bar position information and z-position, using a database based on FEB, channel number and knowledge of the physical layout of the detector. The second step is ensuring that each hit position, time and amplitude. Step three is to cluster all of the hits in specific time slots, which are equivalent to the event time windows. When this is done several low level filters are performed, to ensure that an event has enough hits to produce atleast four 3-d space positions in a time slot. After these steps the data is equivalent to the data produced by a simulation.
 
@@ -297,8 +297,8 @@ The main difference between the results are both below $1 GeV/c$ and in the regi
 \label{fig:TestBeamMIND2}
 \end{figure}
 
-\textbf{Perhaps momentum rec plots as well? Look at old material/collaboration meeting 2 with pull and residuals.}
-\textbf{One plot comparing all of these? Can we compare them? Lower momentum due to TASD?}
+%\textbf{Perhaps momentum rec plots as well? Look at old material/collaboration meeting 2 with pull and residuals.}
+%\textbf{One plot comparing all of these? Can we compare them? Lower momentum due to TASD?}
 \if{0}
 Give for different layouts. The initial, well worked. Then work down to the test beam layout and perhaps the latest J-parc layout? 
 Charge id, fitting id, momentum pulls and so on.
@@ -311,7 +311,7 @@ Momentum pulls and comparisons? Large RMS from RecPack and difficult geometry. R
 
 \subsection{DAQ/Unpacking}
 
-\textbf{Based on the FEB readoutprotocol v2.6.}
+%\textbf{Based on the FEB readoutprotocol v2.6.}
 
 Currently data has to be recorded by the electronics and handled by a test beam computer system. The data is written to disk and needs to be written completely written with full spills before it can be processed off-line after the data taking.
 
@@ -326,13 +326,10 @@ Each time measurement comes in steps of 2.5 ns so the system can only distinguis
 \label{fig:FEBstructure}
 \end{figure}
 
-Add data plots perhaps? Not sure what goes here.
-
-Should I add details about the data format?
-
-Explain how the unpacking works, the main data structure assumed in the electronics. The main problem with the data structure, how it is not aimed to work online. 
-
-Read and use documentation from Yordan Ivanov Karadzhov. Also look at what Aleksander/Sascha has done and what is in the code.
+%Add data plots perhaps? Not sure what goes here.
+%Should I add details about the data format?
+%Explain how the unpacking works, the main data structure assumed in the electronics. The main problem with the data structure, how it is not aimed to work online. 
+%Read and use documentation from Yordan Ivanov Karadzhov. Also look at what Aleksander/Sascha has done and what is in the code.
 
 
 \subsection{Particle identification}
@@ -350,67 +347,59 @@ Final root file, read in trees, filter out bad events, if any. Compare apples to
 
 \pagebreak
 \section{Future development}
-I've had some time over to pursue some interesting things. Currently I am setting up a new GEANT4 environment using the latest geant version and latest root. I am trying my best to only use packages available through apt-get to simplify usage and to make it "future proof". It is going quite well and I hope to have some nice plots by tomorrow or next week. I have also started playing around with a simpler Kalman filter which is open source and easy to obtain. I will provide more documentation and information for anyone who is interested. But for now please not that the environment and code can be found in  a docker environment at: \url{https://hub.docker.com/r/patha325/science/} If you only want the code, you can find it: \url{https://github.com/patha325/NewSaRoMaN} and it is based on a Geant4 example called B4c but with (many) modifications.
+Based on the main principles of easily shareable code, using the latest versions and simplicity, a further development of SaRoMaN has already been started by creating a fully new version based on newer versions of the third party software packages such as GEANT4, Genie and root. By moving to the latest versions and ensuring that they will be easy to maintain the software becomes "future proof" which is very important for ensuring that the results are making use of he latest physics software. The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrino-like events).  SAURON also makes sure to only use open source software and has thus moved from the RecPack Kalman filter to use a Runge-Kutta and Kalman open source fitter known as GENFIT~\cite{81Genfit}.
+The software environment and code can be found in  a docker environment at: \url{https://hub.docker.com/r/patha325/science/} If you only want the code, you can find it: \url{https://github.com/patha325/NewSaRoMaN} .
 
-Based on the main principles of easily shareable code, using the latest versions and simplicity.
+The simulation is based on a generic Geant4 simulation, which takes in neutrino data through  are simulated with the GENIE open source code used by many. The reconstruction package  GENFIT~\cite{81Genfit} package, used by several different experiments, takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
 
-The simulation is based on a generic Geant4 simulation used by many. Neutrinos are simulated with the GENIE open source code used by many. Reconstruction is done through the open source GENFIT~\cite{81Genfit} package used by Bell 2 etc etc. GENFIT takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
+In a similar way to SaRoMaN, the running is handled by a very simple python script which ensures that all software runs coherently with each other. The geometry is handled in a GDML file and read through all different parts to provide one single point of entry for the geometry. To ensure that the code can be used by anyone on different machines without a difficult installation process, the full software is provided in a docker container which means that the code can be run on any operating system. 
 
-This is all handled by a very simple python script which ensures that all software runs coherently with each other. The geometry is handled in a GDML file and read through all different parts to provide one single point of entry for the geometry. To ensure that the code can be used by anyone on different machines without a difficult installation process, the full software is provided in a docker container which means that the code can be run on any operating system. 
-
-The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrinos) (Neutrinolike events).
-
-To be compatible with the DAQ unpacking software developed by my collegues, a secondary docker container has been created to handle the specific root version requirement as well as some other minor software requirements which all clash with the SAURON container.
+To be compatible with the DAQ unpacking software developed by my colleagues, a secondary docker container has been created to handle the specific root version requirement as well as some other minor software requirements which all clash with the SAURON container.
 
 SAURON is currently in a state were it can be seen as a simplified and novel version of SaRoMaN. Bar representation, clustering and pattern recognition is not currently implemented in the reconstruction, these are all handled by using truth information from the simulation or provided as extra information. None of there are seen to have a major impact on the results, but should be implemented in a future version. In a similar way, the DAQ unpacking is not included, instead the data is assumed to have been processed through it before being passed into the reconstruction. There are currently discussions regarding a unification of the DAQ unpacking and SAURON.
+
+\subsection{Containers}
+One of the main issues with scientific software is that they are developed by small teams, often not made publicly available and often the knowledge is only spread through scientific papers. This means that there are many great software solutions and packages which are not used by scientific collaborations, or are misused due to a lack of knowledge. One could argue that code is easy to read and that the purpose of a software should be easy to understand, however this assumes that all developers follow some form of coding standard and has/takes the time to develop their code properly which is often not the case. The clear solution to this problem would be to let physicists spend more time documenting and cleaning up their code as well as sharing it publicly. One problem which may arise is the use of specific third party software versions which make installation quite difficult especially in a climate where documentation is not prioritised and where software is constantly in development.
+
+One proposed solutions which solves the problem would be to provide a full runnable coding platform such as a virtual machine. The benefits are numerous however most of these are even improved by moving to a new software technique known as a container.
+
+\subsubsection{Container vs Virtual machine}
+
+A container is similar to a Virtual machine (VM) but without requiring any abstraction of hardware, they also run on the OS kernel not requiring an added layer. In essence a container contains an application with the code and dependencies without also requiring a full copy of an operating system. This reduces the size of a container compared to a VM and decreases the boot time.
+n handle more applications and require fewer VMs and Operating systems.
+
+\subsubsection{Container for particle physics simulations}
+There exists several containers which can be combined for various particle physics simulations. There is currently an official version of the root software in a container \url{https://root.cern.ch/root-docker-container-alpha-version} as well as various unofficial containers for software such as GEANT.
+
+During the development of SAURON, early versions of the the container provide good tools for running particle physics simulations, without providing the SAURON framework or the neutrino specific parts. There are also early versions which provide the GENIE neutrino generator which provides a good staring point for running neutrino simulations.
+
+
+\subsection{Machine learning}
 
 In the field of neutrino physics machine learning  is not often used, some plots for dune etc etc. This was used in this collaboration using TMVA for particle identification/particle selections to chose muons in a background sample for the test beam.
 For the reconstruction, kalman filtering and cellular automaton for few hit events, are used as well.
 Outside of this novel software frameworks such as virtual machines, docker containers and continuous integration techniques have been used.
 
-\subsection{Containers}
-One of the main issues with scientific software is that they are developed by small teams, often not made publicly available and often the knowledge is only spread through scientific papers. This means that there are many great software solutions and packages which are not used by scientific collaborations, or are misused due to a lack of knowledge. One could argue that code is easy to read and that the purpose of a software should be easy to understand, however this assumes that all developers follows some form of coding standard and has/takes the time to develop their code properly which is often not the case. The clear solution to this problem would be to let physicists spend more time documenting and cleaning up their code as well as sharing it publicly. One problem which may arise is the use of specific third party software versions which make installation quite difficult especially in a climate where documentation is not prioritised and where software is constantly in development.
-
-One proposed solutions which solves the problem would be to provide a full runnable coding platform such as a virtual machine. The benefits are numerous however most of these are even improved by moving to a new software technique known as a container.
-
-\subsubsection{Docker vs Virtual machine}
-
-\subsubsection{Container for particle physics simulations}
-Containing root and geant.
-
-\subsubsection{Container for neutrino physics simulations}
-The above with genie
-
-\subsubsection{Container for Baby MIND}
-The above with SaRoMaN (Can not be done due to missing software.) and with new software. 
-
-\subsection{Continuous integration}
-Does this need to mentioned? It is a good technique which may or may not be used? For everything.
-
-\subsection{Machine learning}
-
 What is machine learning? How is it used today? Techniques for particle physics etc. novel ML techniques.
 
 \subsubsection{Machine learning in particle physics}
 
-\subsubsection{Machine learning applied to charge identification}
+\subsubsection{Machine learning applied to event identification}
 
 Show TMVA plots, comparing normal likelihood techniques to machine learning, different applications and different methods. Explain the different methods.
 
 Relating more to data science than expected results from physics.
 
-\subsubsection{Machine learning applied to event identification}
-
+Already been done, needs improvement.
 
 \subsection{Other good practises}
 
 \subsubsection{Versioning}
-Used for Container and data (gitlab etc). 
+Currently the software is provided as is without any main release or naming convention. It would be beneficial to adapt a good versioning convention by tagging the software on gitlab. The container used has been provided with version numbers in an adhoc manor which should be tied into the software version number.
 
-
-\subsubsection{Testing}
-Installation etc. Ensuring that software 
+\subsubsection{Continuous integration}
+For the SaRoMaN software a continuous integration platform was provided to ensure that installation of third party software as well as simple test analysis would always work regardless of bad committed code or broken download links. Something similar has been started for SAURON but not implemented fully and it is clear that it could be extended with thorough analysis and more specific test examples.
 
 \subsubsection{Documenting}
-
+Due to the time constraint no documentation exists for either of the software frameworks. The direct recommendation would be to spend time developing some doxygen documentation for the SAURON framework along with an easy how-to guide for new users.
 

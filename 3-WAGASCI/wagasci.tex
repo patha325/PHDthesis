@@ -69,6 +69,8 @@ Test results on the 33 modules show all to achieve the required field of 1.5 T f
 In the Baby MIND, particle hits are detected by scintillating bars which provide both horizontal and vertical position information. There are a total of 18 scintillator modules, where each scintillator module is constructed from 95 horizontal bars for each of the two horizontal planes, $3000 \times 31 \times 7.5$ mm$^3$, and 16 vertical bars, $1950 \times 210 \times 7.5$ mm$^3$ for two planes of vertical bars each providing a total size of the scintillator module as $3000 \times 1950 \times 30$ mm$^3$. Since the vertical information is important for curvature, smaller bars are used to provide a better position resolution. The bars are arranged in 4 planes, of horizontal, vertical, vertical, horizontal, with an overlap between planes to achieve close to 100\% hit efficiency for minimum ionizing muons~\cite{51Saba}. INR Moscow built and designed the scintillator bars, providing a good light yield, figure~\ref{fig:horizontal}~\ref{fig:vertical}, regardless of where the bar is hit. The bars are polystyrene based, 1.5\%PTP, 0.01\% POPOP and held together mechanically within an aluminium support frame  The bars contain Kuraray WLS fibers (200 ppm, S-type, diameter 1.0 mm) and contain a reflective coating 30 to 100 $\mu$m from chemical etching of the surface. The connectors are custom made using Eljen EJ-500 optical cement. A schematic view of the horizontal bars can be seen in \FigRef{fig:horizontal} and the vertical bars in \FigRef{fig:vertical}. 
 
 
+Overlap plot?
+
 %The scintillating elements, seen in \FigRef{fig:Vbar}, have been chosen as 18 scintillating modules consisting of four planes per module, two oriented along the horizontal direction with and two oriented in the vertical direction, each to produce good horizontal and vertical resolution of the particle interactions 
 
 \begin{figure}[h!]
@@ -176,7 +178,8 @@ The WAGASCI experiment (T-59) at J-PARC on the T2K beamline aims to improve meas
 
 %The main goals of the proposed detector are to improve the charge current cross section ratio between water and scintillator targets and to perform high-precision measurement of different charged current neutrino interaction channels.
 
-WAGASCI proposes to test a new 3-D grid-type detector, composed of plastic scintillator and water, to improve on the current understanding of nuclear effects in neutrino interactions. The WAGASCI collaboration states that the detector will be able to measure this cross-section to a level of 3\% systematic uncertainties in the $1 GeV/c$ energy region with a generic MIND~\cite{30WAGASCI}, \textbf{however no evidence has been given for this claim}. Using WAGASCI as a near detector, in the ND280 building, combined with the far Cherenkov detector provides knowledge of the ratio of neutrino interaction cross-sections in water and plastic scintillator. Due to the design of the WAGASCI being both small and not including any magnets, it is impossible to reconstruct charge or momentum for incoming particles. By including the Baby MIND to provide reconstruction downstream, this obstacle is overcome. The size of the Baby MIND is particularly well suited for the WAGASCI experiment providing excellent acceptance for forward secondaries from interactions in the upstream WAGASCI water and carbon targets. During operation with the WAGASCI experiment, Baby MIND is referred to as the Muon Range Detector (MRD). The layout can be seen in \FigRef{fig:WAGASCI}.
+WAGASCI proposes to test a new 3-D grid-type detector, composed of plastic scintillator and water, to improve on the current understanding of nuclear effects in neutrino interactions. The WAGASCI collaboration states that the detector will be able to measure this cross-section to a level of 3\% systematic uncertainties in the $1 GeV/c$ energy region with a generic MIND~\cite{30WAGASCI}. %\textbf{however no evidence has been given for this claim}. 
+Using WAGASCI as a near detector, in the ND280 building, combined with the far Cherenkov detector provides knowledge of the ratio of neutrino interaction cross-sections in water and plastic scintillator. Due to the design of the WAGASCI being both small and not including any magnets, it is impossible to reconstruct charge or momentum for incoming particles. By including the Baby MIND to provide reconstruction downstream, this obstacle is overcome. The size of the Baby MIND is particularly well suited for the WAGASCI experiment providing excellent acceptance for forward secondaries from interactions in the upstream WAGASCI water and carbon targets. During operation with the WAGASCI experiment, Baby MIND is referred to as the Muon Range Detector (MRD). The layout can be seen in \FigRef{fig:WAGASCI}.
 
 %Long baseline neutrino oscillation experiments, amongst others, have confirmed the neutrino sector requires physics beyond the Standard Model. T2K (Tokai-to-Kamioka) discovered electron neutrino appearance in 2013 from a muon neutrino beam with a significance of 7.3σ with a frac- tion of the approved 7.8 × 1020 protons-on-target (POT) [1], using the Super-Kamiokande water Cherenkov located 295 km from the neutrino production site at the J-PARC. Results excluding zero CP violation at 90\% confidence level were announced by T2K in 2016, with data from 20\% of the approved POT. With upgrades to the proton beam, reaching 420 kW in 2016, and projected to reach 800 kW in 2019 and 1.3 MW beyond 2020, there is a strong motivation not to be systematics- limited for future runs at T2K and its follow-up project HyperK \cite{24HyperK}
 
@@ -202,7 +205,7 @@ The 40 bars, called parallel scintillators, are placed perpendicularly to the be
 
 WAGASCI has the possibility of being operated both with water-in and water-out providing either a fiducial volume of the module of 188 kg and the mass ratio of scintillator bars to water as 1 : 4 or a fiducial volume of 47 kg and the mass fraction of scintillator bars as 100 \%.
 
-In conjunction with WAGASCI there is also the INGRID proton module and INGRID module \textbf{description?}. The main MRD, downstream of the target it the Baby MIND. It can all be seen in~\FigRef{fig:WAGASCI} and in \FigRef{fig:StrucWAGASCI}. 
+In conjunction with WAGASCI there is also the INGRID proton module and INGRID module. The main MRD, downstream of the target it the Baby MIND. It can all be seen in~\FigRef{fig:WAGASCI} and in \FigRef{fig:StrucWAGASCI}. 
 
 \begin{figure}[h!]
   \centering
@@ -246,9 +249,11 @@ In addition, the information of spill number are delivered with 16-bit ECL level
 \subsection{MRD and Baby MIND}
 The WAGASCI detector requires a muon range detector to measure the momentum and charge of outgoing muons to identify the neutrino event and calculate the neutrino cross-section. As mentioned above, Baby MIND provides this role placed after the main target. There are also two much smaller MRDs on either side of the target to measure background muons from other sources or which have been produced from the neutrino beam but will miss the target or Baby MIND. These side MRDs will not be able to provide any momentum or charge information and will only be used as an extra veto plane for acceptance measurements. The layout can be seen in As seen in \FigRef{fig:WAGASCI}. The main event requirements are that the neutrinos decay somewhere in the target and produces a muon within a suitable angle to traverse four scintillator planes of the Baby MIND.
 
+\if{0}
 \subsection{Sample events}
 
-We successfully observed some neutrino candidate events. Figure \ref{fig:fNU_evt} shows the first event observed by the WAGASCI module. An event display for reconstructed tracks is shown in Chapter \ref{chapter5}.
+We successfully observed some neutrino candidate events. Figure \ref{fig:fNU_evt} shows the first event observed by the WAGASCI module. An event display for reconstructed tracks is shown in chapter~\ref{chapter5}.
+
 
 \subsection{Construction}
 
@@ -263,8 +268,10 @@ Unknown, is it built? No information given or public.
 
 Preface, who did what?
 
-\section{Joining the two detectors}
-Mention event building using the two detectors? Based on spill number given from the beam.
+%\section{Joining the two detectors}
+%Mention event building using the two detectors? Based on spill number given from the beam.
+
+\fi
 
 \if{0}
 \section{OLD}
