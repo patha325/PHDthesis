@@ -2,12 +2,12 @@
 \label{c:theoryIntro}
 
 \section{Research Goals}
-The research in this thesis describes the construction of a prototype Magnetized Iron Neutrino Detector (Baby MIND) at the European Organization for Nuclear Research (CERN) and determine the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions with our collaborators in the WAGASCI collaboration at a neutrino beam at the JPARC facility in Japan. This is discussed further in chapter~\ref{c:WAGASCI}.
+The research in this thesis describes the construction of a prototype Magnetized Iron Neutrino Detector (Baby MIND) at the European Organization for Nuclear Research (CERN) and determine the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions with our collaborators in the WAGASCI collaboration at a neutrino beam line at the Japan Proton Accelerator Research Complex (J-PARC). %This is discussed further in chapter~\ref{c:WAGASCI}.
 
 %This research aims to construct a prototype Magnetized Iron Neutrino Detector (Baby MIND) at the European Organization for Nuclear Research (CERN) and understand the performance of the detector to reconstruct charged particle tracks at a test beam at CERN and neutrino interactions with our collaborators in the WAGASCI collaboration at a neutrino beam at the JPARC facility in Japan. This is discussed further in chapter~\ref{c:WAGASCI}.
 
 \section{Neutrino discovery}\label{section:Theory}
-While measuring radioactive beta decay, from bombarding beryllium with alpha particles from polonium, in the first two decades of the 20th century, physicists discovered what was then an anomaly. At the time it was thought that beta decay occurred as a two body process in which a neutron ($n$) decays to a proton ($p$) and electron ($e^-$). If this were the case, the energy of the proton and electron should be discrete and add up to the energy of the neutron. However experiments showed that the electron had a continuous spectrum of energy values, violating the energy conservation law, as seen in \FigRef{fig:betaeng}. In order to solve this anomaly, a third particle, the neutrino ($\nu$), was postulated by Wolfgang Pauli \cite{4Pauli:Online} and then incorporated into the beta decay by Enrico Fermi \cite{5Wilson}. The neutrino was postulated as a neutral particle with mass of less than 1\% of the proton mass and a spin of 1/2. For consistency, the particle produced in the beta decay is relabelled as the electron antineutrino, $\bar{\nu_e}$, in order to conserve lepton number. The addition of another particle changed the decay to $n \rightarrow p + e^- + \bar{\nu_e}$ and introduced the weak interaction model, as seen in \FigRef{fig:beta}. 
+While measuring radioactive beta decay, from bombarding beryllium with alpha particles from polonium in the first two decades of the 20th century, physicists discovered what was then an anomaly. At the time it was thought that beta decay occurred as a two body process in which a neutron ($n$) decays to a proton ($p$) and electron ($e^-$). If this were the case, the energy of the proton and electron should be discrete and add up to the energy of the neutron. However experiments showed that the electron had a continuous spectrum of energy values, violating the energy conservation law, as seen in \FigRef{fig:betaeng}. In order to solve this anomaly, a third particle, the neutrino ($\nu$), was postulated by Wolfgang Pauli \cite{4Pauli:Online} and then incorporated into the beta decay by Enrico Fermi \cite{5Wilson}. The neutrino was postulated as a neutral particle with mass of less than 1\% of the proton mass and a spin of 1/2. For consistency, the particle produced in the beta decay is relabelled as the electron antineutrino, $\bar{\nu_e}$, in order to conserve lepton number. The addition of another particle changed the decay to $n \rightarrow p + e^- + \bar{\nu_e}$ and introduced the weak interaction model, as seen in \FigRef{fig:beta}. 
 
 \begin{figure}[h!]
 \includegraphics[width=\textwidth]{figures/betaRadium.jpeg}
@@ -84,17 +84,15 @@ Very few details, more in Peskin and Schroeder and other books.
 \textbf{Mix in experiments!}
 \fi
 
-To describe the neutrino interactions it is worth building a theory to try to describe the interactions. 
-
-Starting with the generalized and relativistic version of the Schro\"{o}dinger equation, the Dirac equation:
+To describe the neutrino interactions it is worth building a theory to try to describe the interactions. Starting with the generalized and relativistic version of the Schro\"{o}dinger equation, the Dirac equation:
 \begin{equation}
 \sum_\mu (i\gamma^\mu \partial_\mu - m)\psi(x) = 0
 \end{equation}
 where $\gamma$ are the so called Dirac matrices and the sum over $\mu$ is often removed using the Einstein notation requiring any free index to be summed over.
 
-As with all quantum mechanical equations this allows us to define $\psi(x)$ as a quantum field/state.
+As with all quantum mechanical equations this allows us to define $\psi(x)$ as a quantum field or state.
 
-After taking Lorentz-invariance into account the Dirac Lagrangian can be written as:
+After taking Lorentz-invariance into account the Dirac Lagrangian of can be written as:
 \begin{equation}
 \mathcal{L} = \bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi
 \end{equation}
@@ -105,7 +103,7 @@ The Lagrangian is so far correct, however from a physical point of view the equa
 \begin{equation}
 \mathcal{L} = \bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi -q\bar{\psi}\gamma^\mu\psi\epsilon_\mu \equiv \mathcal{L}_{Dirac}
 \end{equation}
-with $\epsilon_\mu$ being a new field which must gauge invariant and q conserved quantity, a numerical constant.
+with $\epsilon_\mu$ being a new field which must be gauge invariant and q a conserved quantity, a numerical constant.
 
 There is now a mathematical framework to describe quantum states or particles in a vacuum. It is now possible to create a framework for a particle interacting with a electromagnetic field by combining $\mathcal{L}_{Dirac}$ with the classical $\mathcal{L}_{Maxwell} = \frac{-1}{4}F_{\mu\nu}F^{\mu\nu} $ with $F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu$ where $A_\mu$ is the electromagnetic vector potential, a 4-vector combined of the electric potential and magnetic potential. 
 
@@ -127,7 +125,7 @@ This can be simplified by introducing the gauge covariant derivative $D_\mu \equ
 %\textbf{Add example of interaction?} 
 %\textbf{electron muon scattering? and introducing Feynman diagrams}
 
-Based on the experiments relating to $\beta$-decay, Fermi hypothesised that the Lagrangian for weak interactions should be similar to the QED Lagrangian. To handle the observed differences, a constant is added $G_F$ to replace the electron charge, and mass removed. QED contains $\gamma^\mu$ meaning that it transforms as a vector which was confirmed by experiments. For weak interactions anything could be mathematically possibly. The absence of Fierz interference terms, parity violation and the Goldhaber helicity experiment made it clear that the interactions had to transform as vectors and axial vectors giving the term $\gamma^\mu - \gamma^\mu \gamma^5 =  \gamma^\mu (1- \gamma^5)$ and also providing the theory with its name: V-A theory. 
+Based on the experiments relating to $\beta$-decay, Fermi hypothesised that the Lagrangian for weak interactions should be similar to the QED Lagrangian. To handle the observed differences, a constant is added $G_F$ to replace the electron charge, and mass removed. In this the assumption was made that the neutrinos were massless. QED contains $\gamma^\mu$ meaning that it transforms as a vector which was confirmed by experiments. For weak interactions anything could be mathematically possibly. The absence of Fierz interference terms, parity violation and the Goldhaber helicity experiment made it clear that the interactions had to transform as vectors and axial vectors giving the term $\gamma^\mu - \gamma^\mu \gamma^5 =  \gamma^\mu (1- \gamma^5)$ and also providing the theory with its name: V-A theory. 
 
 This produced a Lagrangian in the form of 
 \begin{equation}
@@ -149,11 +147,11 @@ where $g_\nu$ and $g_A$ are constants relating to strong interactions and have t
 
 \pagebreak
 \section{Standard Model neutrino}\label{subsection:SMN}
-V-A theory works well in practice but does not create a Gauge theory connecting to an underlying field, such as QED does. Is is also based on the interacting particles not having a mass which does not explain the observed masses of the weak interaction particles, W bosons. There is also no explanation for any neutral interactions which were observed and introduced a massive Z boson. Group theory describes that any unitary group U(N) has $N^2 -1$ generators this is also the case for groups with the determinant 1 denoted special S. Based on the SU(1) group from QED, the easiest group to handle the other bosons becomes SU(2). 
+V-A theory works well in practice but does not create a Gauge theory connecting to an underlying field, such as QED does. Is is also based on the interacting particles not having mass which does not explain the observed masses of the weak interaction particles, W bosons. There is also no explanation for any neutral interactions which were observed and introduced a massive Z boson. Group theory describes that any unitary group U(N) has $N^2 -1$ generators. This is also the case for groups with the determinant 1 denoted special S. Based on the SU(1) group from QED, the easiest group to handle the other bosons becomes SU(2). 
 
 Glashow-Weinberg-Salam (GWS) took the success of the V-A theory and modified it to make a Gauge theory out of it, Quantum Flavour Dynamics (QFD) with  massive W:s and Z basing it on the SU(2) group. It was also easy to see that QFD and QED could be unified as an SU(2) group can be made invariant under U(1) by adding extra term. By choosing this constant term correctly QFD and QED were unified into the Electro-weak theory.
 
-The experiment by \citeauthor{1Helicity} concluded that neutrinos only exist in a left handed chiral state, meaning that momentum and spin are oppositely aligned. They also concluded that anti-neutrinos only exists in the right handed state \cite{1Helicity}. In the initial or unexpanded SM, \cite{34doi:10.1142/9789812562203_0002}, only fermions which have both chiral states have mass through the Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. At the time this led to the definition of the neutrino as a massless particle, however in \SubSectionRef{subsection:Neutrinomassandoscillation} it will be shown that neutrino oscillations require at least one of the neutrinos to have mass. This indicates that the SM needs to be extended to account for this new physics.
+The experiment by \citeauthor{1Helicity} concluded that neutrinos only exist in a left handed chiral state, meaning that momentum and spin are oppositely aligned~\cite{1Helicity}. They also concluded that anti-neutrinos only exist in the right handed state. In the initial or unexpanded SM, \cite{34doi:10.1142/9789812562203_0002}, only fermions which have both chiral states have mass through the Brout\hyp{}Englert\hyp{}Higgs mechanism~\cite{35Higgs}. At the time this led to the definition of the neutrino as a massless particle, however in \SubSectionRef{subsection:Neutrinomassandoscillation} it will be shown that neutrino oscillations require at least one of the neutrinos to have mass. This indicates that the SM needs to be extended to account for this new physics.
 
 %\textbf{Glashow-Weinberg-Salam (GWS) took the success of the V-A theory and modified it to make a Gauge theory out of it. Massive Ws and Z. Add left/right doublets and singlets? Required for no experimental right-handed neutrinos. Higgs is a SU(2) Left doublet. Properly write in that we are creating an SU(2) because U(2) makes no sense? but U(1) Aha! U(1) in QED could be SU(1), but U(1) is more general and explains it well. For QFD, require SU since basing it on Pauli matrices.}
 
@@ -169,7 +167,7 @@ D_\mu = \partial_\mu - ig S^a_\mu \frac{\sigma^a}{2} - \frac{1}{2}g' A_\mu
 \end{equation}
 where $g'$ is now the new coupling to the photon field and $g$ is the coupling to our new fields $S$, $a$ takes the values ${1,2,3}$ and $\sigma$ are the Pauli matrices.
 
-At this stage there are enough fields to produce the Bosons required, however there needs to be a way of making them all but the photon field massive.
+At this stage there are enough fields to produce the Bosons required, however there needs to be a way of making all but the photon field massive.
 
 V is chosen in a way such that it is a produces a massive Goldstone Boson~\cite{80Goldstone} and so that it is also gauge invariant. This gives V as:
 \begin{equation}
@@ -207,7 +205,7 @@ Using the properties of Pauli matrices this can be rewritten as:
 \begin{equation}
 \frac{1}{2}\frac{v^2}{4}\lbrace g^2 (S_\mu^1)^2 + g^2 (S_\mu^2)^2 + (-gS^3_\mu+g' A_\mu)^2 \rbrace
 \end{equation}
-These results can be modified to show how mass is added to fermions as well and will be discussed slightly in neutrino mass.
+These results can be modified to show how mass is added to fermions as well.
 
 Using this note how the factors $g$ and $g'$ will produce different mass terms. To create a massless contribution combinations of these fields can be used to produce 4 different fields required for the bosons with 3 massive and one massless as follows:
 \begin{align}
@@ -254,7 +252,7 @@ j_\mu^{(Z)}&=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e-\frac{1}{2}\bar{e
 j_\mu^{(3)}&=0\\
 j_\mu^{(Y/2)}&=0
 \end{align}
-Comparing the formula for $j_\mu^{(Z)}$ from the electroweak theory above, and from V-A theory, $j_\mu^{(Z)}=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e+\bar{e}\gamma_\mu(g_\nu-g_A\gamma_5)e$, provides a relation between the $g_\nu$ and $g_A$ and the Weinberg angles as $g_\nu=-\frac{1}{2}+2\sin^2\theta_W$ and $g_A = -\frac{1}{2}$ Given that both the currents for both W and Z are non-zero means that electrons and neutrinos should have interaction through all three bosons. Looking in detail it can be seen that both of the W currents couple (anti-)neutrino to electron or vice-versa but the Z current only couples the particles to themselves. This means that the W currents carry charge and gives them the name charge-current interactions compared to the Z current where this is not the case and has the name neutral-current interaction.
+Comparing the formula for $j_\mu^{(Z)}$ from the electroweak theory above, and from V-A theory, $j_\mu^{(Z)}=\frac{1}{2}\bar{\nu}_e\gamma_\mu(1-\gamma_5)\nu_e+\bar{e}\gamma_\mu(g_\nu-g_A\gamma_5)e$, provides a relation between the $g_\nu$ and $g_A$ and the Weinberg angles as $g_\nu=-\frac{1}{2}+2\sin^2\theta_W$ and $g_A = -\frac{1}{2}$ Given that both the currents for both W and Z are non-zero means that electrons and neutrinos should have interaction through all three bosons. Looking in detail it can be seen that both of the W currents couple (anti-)neutrino to electron or vice-versa but the Z current only couples the particles to themselves. This means that the W currents carry charge and thus are named charge-current interactions compared to the Z current where this is not the case and have been named neutral-current interaction.
 
 %The final resulting theory has added massive bosons, explains and provides a framework for electro-weak interactions and mass.
 
@@ -563,10 +561,11 @@ To make it simpler for calculations and visualization these interactions have be
 \end{figure}
 \fi
 
+\pagebreak
 \subsection{Neutrino-quark scattering}
 Moving away from electrons into quarks one has to take into account that quarks are always bound in a hadron, and thus do not exist in a free state. 
 
-Neutrino-quark interactions can be understood in two different ways. Starting with inverse beta-decay where a proton interacts with an anti-neutrino producing a positron and neutrino, $\bar{\nu_e}+p \rightarrow e^+ + n$, can be seen as an interaction where the full hadron interacts and only changes its weak charge instead of seeing each quark interact separately. The interacting particle, proton changes into another baryon the neutron. However at higher energies it is possible for the quark to become ejected from the proton and the interaction changing the proton from a baryon into a meson.
+Neutrino-quark interactions can be understood in two different ways. Starting with inverse beta-decay where a proton interacts with an anti-neutrino producing a positron and neutrino, $\bar{\nu_e}+p \rightarrow e^+ + n$, can be seen as an interaction where the full hadron interacts and only changes its weak charge instead of seeing each quark interact separately. The interacting particle, the proton, changes into another baryon the neutron. However at higher energies it is possible for the quark to become ejected from the proton and the interaction changing the proton from a baryon into a meson.
 
 %Could use muon neutrino instead? $\nu_\mu + n \rightarrow \mu^- + p$
 
@@ -756,7 +755,7 @@ It is interesting to compare the probability for Charge Current and Neutral Curr
 \end{figure}
 \footnotetext{If $f=e^-$ a T-channel diagram has to be added as well} 
 
-The CC and NC examples in  \FigRef{fig:CMPNCCC} with electrons and muon neutrinos, so that the final states can be distinguished, the cross sections of both can be written as $\sigma_{CC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} $ and $\sigma_{NC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} \left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] $ where $G_F$ and $\theta_W$ are defined above. This gives a relation CC and NC as $\frac{\sigma_{CC}}{\sigma_{NC}} = 1/\left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] \approx 11$. With the current values CC is approximately 11 times more likely to occur than NC.
+The CC and NC examples in  \FigRef{fig:CMPNCCC}, with electrons and muon neutrinos, so that the final states can be distinguished, the cross sections of both can be written as $\sigma_{CC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} $ and $\sigma_{NC} (\nu_\mu e^-) \approx \frac{G_F^2 s}{\pi} \left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] $ where $G_F$ and $\theta_W$ are defined above. This gives a relation CC and NC as $\frac{\sigma_{CC}}{\sigma_{NC}} = 1/\left[ (-\frac{1}{2} + \sin^2 \theta_W)^2 + \frac{1}{3}\sin^4 \theta_W\right] \approx 11$. With the current values CC is approximately 11 times more likely to occur than NC.
 
 \begin{figure}[h!]
 \centering
@@ -820,7 +819,7 @@ The CC and NC examples in  \FigRef{fig:CMPNCCC} with electrons and muon neutrino
 \pagebreak
 \section{Missing neutrinos}\label{subsection:Missing}
 
-The sun generate energy principally through the proton-proton chain reaction~\cite{48Solar}. In this chain electron neutrino are produced through proton-proton interactions and beta decay processes. 
+The sun generates energy principally through the proton-proton chain reaction~\cite{48Solar}. In this chain electron neutrino are produced through proton-proton interactions and beta decay processes. 
 \begin{equation}
 \label{eq:ppreaction}
 \ce{H^+ + H^+ ->  ^{2}H + e^+ + $\nu_e$  }
@@ -837,7 +836,7 @@ produces electron neutrinos with energies up to 18 MeV, however the fluxes are m
 \begin{equation}
 \ce{$\nu_e$ + ^{37}Cl -> ^{37}Ar + $e^{-}$ }
 \end{equation}
-The amount of argon can then be counted by measuring x-rays comming from the decaying argon isotope and related to the neutrino flux. The Homestake experiment used this technique ran from 1970 until 1994 with a goal to measure the flux of electron neutrinos. They measured the flux of electron neutrinos and found only around 1/3, (1.75/4.7), of the expected value from the theoretical model of the nuclear reactions in the core of the sun \cite{9Davis}. 
+The amount of argon can then be counted by measuring x-rays comming from the decaying argon isotope and related to the neutrino flux. The Homestake experiment used this technique and ran from 1970 until 1994 with a goal to measure the flux of electron neutrinos. They measured the flux of electron neutrinos and found only around 1/3, (1.75/4.7), of the expected value from the theoretical model of the nuclear reactions in the core of the sun \cite{9Davis}. 
 
 This results shock the whole neutrino field by suggesting something fundamentally wrong in the understanding of the neutrino, either in the interactions or in the solar model. There were various solar experiments which confirmed the solar neutrino model~\cite{48Solar} implying something wrong in the interaction model. At the same time measurements were performed at several other detectors, Sudbury Neutrino Observatory (SNO)~\cite{Fix6}, Kamiokande~\cite{55Kamiokande} and Super-Kamiokande~\cite{10Fukuda} all in agreement with a lesser flux. Further information from the measurement at SNO hinted at the fact that additional neutrino flavours may be produced, contradicting the verified solar neutrino model. One of the possible explanations for the deficit was neutrino oscillations proposed by Bruno Pontecorvo~\cite{11Pontecorvo}. 
 
@@ -931,7 +930,7 @@ The mass-squared difference between neutrino mass states $\left|m_i^2 - m_j^2\ri
 
 Looking at the oscillation probability \eqref{eq:Problength} two main classes of experiments for neutrino oscillations can be devised. Finding a distance $x$ to the source where $P_{\nu_\alpha \rightarrow \nu_\alpha} (x) < 1$, it is possible to look at so called disappearance of the beam by comparing the expected neutrino flux to the observed. For the disappearing flavour there must be a probability, $P_{\nu_\alpha \rightarrow \nu_\beta} (x) > 0, \alpha=\beta$ for another flavour to appear. The second kind of experiment, denoted as appearance, is based on looking for interaction products which are impossible without oscillations.  An example of this would be to see a positron from a muon neutrino beam. More on this can be found well described in~\cite{34doi:10.1142/9789812562203_0002} and examples of different detectors will be discussed in chapter~\ref{c:expIntro}. As a rule of thumb this L has to be on the order of km for energy ranges between MeV to GeV. This means that oscillations will have a small effect on short scale neutrino interactions measured close to the source.
 
-Charge conjugation and parity (C and P, CP) symmetry states that physics should be the same for particles and anti-particles while the spatial coordinates are inverted. If $\delta_{CP}$ is non-zero it would imply CP symmetry is violated it would imply a difference between the rate of neutrino and anti-neutrino oscillations and could be responsible for the matter-antimatter asymmetry of the early universe. Current best-fit values (at 90\% confidence limit) have $\delta_{CP} = -1.79\pm 1.42$ for normal mass ordering and $\delta_{CP} = -1.41\pm 0.68$ for inverted mass ordering both rejecting the null hypothesis for $\delta_{CP}$ at around $3\sigma$\cite{T2KResults}.
+Charge conjugation and parity (C and P, CP) symmetry states that physics should be the same for particles and anti-particles while the spatial coordinates are inverted. If $\delta_{CP}$ is non-zero it would imply CP symmetry is violated it would imply a difference between the rate of neutrino and anti-neutrino oscillations and could be responsible for the matter-antimatter asymmetry of the early universe. Current best-fit values (at 90\% confidence limit) have $\delta_{CP} = -1.79\pm 1.42$ for normal mass ordering and $\delta_{CP} = -1.41\pm 0.68$ for inverted mass ordering both rejecting the null hypothesis for $\delta_{CP}$ at around $3\sigma$~\cite{T2KResults}.
 
 %\textbf{ How does the formula look like and what changes in both orderings?} 
 
@@ -982,7 +981,7 @@ The first condition is very important in that it related cosmological models wit
 In \cite{36CRC} a number of viable scenarios for baryogenesis are briefly discussed, for instance Grand Unified theories, heavy Majorana neutrinos and supersymmetry.
 
 \pagebreak
-\section{Current Theories to explain neutrino mass}
+\section{Introduction to explaining neutrino masses}
 The problem with neutrino masses is that we only see left-handed neutrinos. The standard way for fermions to obtain a mass through interaction with the Higgs field is through a three point interaction involving a left-handed fermion, a right-handed fermion, and the Higgs field. With no right handed neutrinos, there is no way to form such interactions, which lead to a mass term after symmetry breaking. This leaves the exact mechanism by which neutrinos acquire mass a mystery. When SM was created neutrinos were assumed to be massless since they were only left-handed. There are three main reasons to why the neutrino mass must be zero in the SM:
 \begin{itemize}
 \item There is no renormalizable operator which allows for a neutrino mass without introducing either an additional Higgs particle or by introducing right-handed neutrinos, neither of which have currently been observed.
@@ -999,7 +998,7 @@ In this thesis the focus will be on introducing right-handed neutrinos. There ar
 \subsection{Dirac neutrinos}
 Naively introducing right-handed neutrinos makes an assumptions that neutrinos and anti-neutrinos are distinct particles, however since the neutrino is electrically neutral, this does not have to be the case.
  
-Introducing right-handed neutrinos introduces particles which will not interact in the SM since the electroweak interaction model only couples to left handed neutrinos. Thus right-handed neutrinos are often denoted sterile neutrinos and only interact through gravity. This introduces sterile neutrinos as a possible candidate as dark matter. \cite{SterileDark, SUSYdark}
+Introducing right-handed neutrinos introduces particles which will not interact in the SM since the electroweak interaction model only couples to left handed neutrinos. Thus right-handed neutrinos are often denoted sterile neutrinos and only interact through gravity. This introduces sterile neutrinos as a possible candidate as dark matter~\cite{SterileDark, SUSYdark}.
 
 The main problems with this description is both that no right-handed neutrinos have been detected and that the observed neutrino mass measurement requires a weaker coupling for neutrinos compared to the other leptons.
 
@@ -1008,7 +1007,7 @@ Dirac neutrinos could be experimentally verified by finding neutrino being diffe
 \subsection{Majorana neutrinos}
 Removing the assumption that neutrinos and anti-neutrinos are distinct allows for a simplified model. Right handed neutrinos have to be produces to conserve lepton number conservation but not to introduce a mass mechanism. Majorana mass also has no equivalent for other leptons and could explain the the neutrino mass is so small. Majorana neutrinos would allow neutrinoless double beta decay\cite{NeuLess} as an experimental verification.
 
-\subsection{Summary}
+\section{Summary}
 In this chapter the theory of neutrino interactions as well as a the history of neutrinos have been introduced. The current issues with neutrinos in the SM and open questions have been presented.
 
 %==============================================================================
