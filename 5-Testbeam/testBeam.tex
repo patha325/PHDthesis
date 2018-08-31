@@ -1,9 +1,9 @@
 \chapter{Test beam}
 \label{c:Testbeam}
 
-The Baby MIND collaboration performed an electronics validation using a Totally Active Scintillating Detector (TASD) at the T9 test beam in the PS facility at CERN in 2016. After construction was completed In 2017, the full Baby MIND was commissioned in the same test beam.
+The Baby MIND collaboration performed an electronics validation using a Totally Active Scintillating Detector (TASD) at the T9 test beam in the PS facility at CERN in 2016. After construction was completed of Baby MIND in 2017, the full Baby MIND was commissioned in the same test beam.
 
-The Baby MIND test beams tests took place at the T9 beam line at the proton synchrotron (PS) experimental hall. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam comes of as a secondary beam by firing the proton beam at a 200 mm thick Aluminum target which delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity, as hadron (pion) or muons and the beam momentum can be adjusted by setting the currents for the optical magnets of the beam line.
+The Baby MIND test beams tests took place at the T9 beam line at the proton synchrotron (PS) experimental hall. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam comes of as a secondary beam by firing the proton beam at a 200 mm thick aluminium target which delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity, as hadron (pion) or muons and the beam momentum can be adjusted by setting the currents for the optical magnets of the beam line.
 
 In this section details will be given to how data is collected and processed before showing some sample events and then further describe how data is processed in SaRoMaN to provide results obtained from each of the two test beams.
 
@@ -14,7 +14,7 @@ In this section details will be given to how data is collected and processed bef
 \subsection{Setup}
 During June-July 2016 a test beam was performed to characterise the readout system, data acquisition (DAQ) and electronics to be used in the Baby MIND detector. The test beam was at the T9 beam of the East Area, operating at the Proton Synchrotron (PS) at CERN. A Totally Active Scintillation Detector (TASD) constructed under the AIDA-2020 project (Advanced European Infrastructures for Detectors at Accelerators) was used to test the readout system, electronics, DAQ and reconstruction software. Baby MIND uses the same read out electronics and boards, with some firmware upgrades from this initial test beam.
 
-The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000 mm^3$, and can be seen in~\FigRef{fig:TASD}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This summarizes as a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total size of $1m^3$.  For the test beam only $16 \times 16$ bars were instrumented.
+The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000 mm^3$, and can be seen in~\FigRef{fig:TASD} and in~\ref{fig:TASDreal}. Each bar is readout on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This summarizes as a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total size of $1m^3$.  For the test beam only $16 \times 16$ bars were instrumented.
 
 
 \begin{figure}[h!]
@@ -32,7 +32,7 @@ The TASD detector consisted of horizontal and vertical planes, each plane with 1
 \end{figure}
 
 \subsection{DAQ}
-Each MPPC is connected to a Front End Board (FEB) which returns data in a specific format. For the setup a full 4 FEBs were used each able to read 96 MPPC channels each. These FEBs were then all connected via USB3 to a readout PC. The readout PC:s are controlled via remote connection/ethernet by a computer outside of the beam area in the control room. The data is currently just recorded, thus all analysis needs to be handled offline. This is slightly due to the data format design, but also due to the complexity of the unpacking.
+Each MPPC is connected to a Front End Board (FEB) which returns data in a specific format. For the setup a full 4 FEBs were used each able to read 96 MPPC channels each. These FEBs were then all connected via USB3 to a readout PC. The readout PC:s are controlled via remote connection/ethernet by a computer outside of the beam area in the control room. The data is currently just recorded, thus all analysis needs to be handled offline. This is both consequences of the data format design and the complexity of unpacking the data.
 
 %During the initial test beam FEBv1 was used. For, ease in finding plots, details regarding FEBv2 are going to be shown.
 %\textbf{Readout format and block chart can be seen in figures? }OR \cite{71Status17}. Described above under SaRoMaN.
@@ -47,7 +47,7 @@ When this is done an unpacking software is used to translate the format to actua
 
 The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible between signal to deposited energy.
 
-It was possible for the DAQ to return hits without a time which were removed before the analysis. And also events which were to large time outside of the initial hit were removed.
+It was possible for the DAQ to return hits without a time which were removed before the analysis, also events which were to large time outside of the initial hit were removed.
 
 \subsection{Results}
 
@@ -83,7 +83,7 @@ The plots show both that the electronics and readout system works well, and that
 \pagebreak
 \section{MIND-test beam}
 
-Baby MIND qualification took place at the T9 beam line at the PS experimental hall (East Area), during June - July 2017. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam is a secondary beam from the collision of the proton beam with a 200 mm thick Aluminium target, that delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity. Users can adjust the beam momentum by setting the currents for the optical magnets of the beam line.
+The Baby MIND qualification took place at the T9 beam line at the PS experimental hall (East Area), during June - July 2017. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam is a secondary beam from the collision of the proton beam with a 200 mm thick Aluminium target, that delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity. Users can adjust the beam momentum by setting the currents for the optical magnets of the beam line. A sketch of the layout can be seen in~\FigRef{fig:MINDtb} and a photograph in~\FigRef{fig:MINDtbreal}.
 
 \begin{figure}[h!]
 \centering
@@ -101,7 +101,7 @@ Baby MIND qualification took place at the T9 beam line at the PS experimental ha
 
 \subsection{Setup}
 
-In order to support the magnets and scintillating modules mechanically, four support frames were constructed specifically to support the Baby MIND and  to meet the transport requirements within CERN and shipping to J-PARC. The Baby Mind modules were installed in the four frames, giving each block a weight around 20 tons which is within the required limits for crane operations at both sites.
+In order to support the magnets and scintillating modules mechanically, four support frames were constructed specifically to support the Baby MIND and  to meet the transport requirements within CERN and shipping to J-PARC. The Baby Mind modules were installed in the four frames. The total weight of the detector is around 65 t giving each block a weight of at less than 20 tons which is within the required limits for crane operations at both sites.
 
 For the data taking during the test beam, the TASD was placed in front of the Baby MIND to provide initial beam information, both an angular measurement of the beam and a veto measurement from cosmic rays. Only a total of 2 planes of the TASD were instrumented providing 192 channels. 
 
@@ -137,7 +137,7 @@ In the analysis it was also quite clear that the beam was not pure muons and con
 
 
 \subsection{Results}
-Two of the main results provided during the test beam were both to commission the detector by showing that all parts works, including the reconstruction framework with hits in all of the modules and magnetic field providing the ability to estimate momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in this data and produce charge and momentum estimates for the beam.
+Two of the main results provided during the test beam were both to commission the detector by showing that all parts works, including the reconstruction framework with hits in all of the modules, and magnetic field providing the ability to estimate momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in this data and produce charge and momentum estimates for the beam.
 
 \subsubsection{Electronics results}
 
@@ -179,7 +179,7 @@ Using the recorded data, the SaRoMaN needed to be verified to see if it could co
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/HitMap5GeVYZ.pdf}
-\caption{All recorded hits for a run with the 5 GeV beam settings etc etc...}
+\caption{All recorded hits for a run with the 5 GeV beam settings.}
 \label{fig:hitmap}
 \end{figure}
 
@@ -192,7 +192,7 @@ The main difficulty comes from the framework only reconstructing tracks and disc
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/SampleTrack5GeVYZ.pdf}
-\caption{A sample track, taking a time cut for the hits for a run with the 5 GeV beam settings etc etc....}
+\caption{A sample track, taking a time cut for the hits for a run with the 5 GeV beam settings.}
 \label{fig:event}
 \end{figure}
 
@@ -206,7 +206,7 @@ The main difficulty comes from the framework only reconstructing tracks and disc
 \end{figure}
 
 \subsubsection{Charge identification efficiency}
-One of the main takes of the Baby MIND detector is to correctly identify the charge of incoming muons. In the test beam it is difficult to estimate the number of muons produced since the beam itself is a mix of mostly muons and pions. As seen above, the reconstruction software can return the number of tracklike events against the number of reconstructible tracks. With these reconstructible tracks the charge can then be reconstructed and a charge identification efficiency plotted as seen in~\FigRef{fig:ChargeInitial}. Initial results of this study were shown at NuFact2017 and published in~\cite{82Uppsala}.
+One of the main goals of the Baby MIND detector is to correctly identify the charge of incoming muons. In the test beam it is difficult to estimate the number of muons produced since the beam itself is a mix of mostly muons and pions. As seen above, the reconstruction software can return the number of tracklike events against the number of reconstructible tracks. With these reconstructible tracks the charge can then be reconstructed and a charge identification efficiency plotted as seen in~\FigRef{fig:ChargeInitial}. Initial results of this study were shown at NuFact2017 and published in~\cite{82Uppsala}.
 
 
 \begin{figure}[h!]
@@ -252,8 +252,7 @@ It should be mentioned that for future runs the deposited energy will be availab
 %\pagebreak
 \clearpage
 \subsubsection{Particle identification}
-
-Using TMVA to classify muon from other events which may still pass through harsh criteria. The model has been developed to not be dependent on the momentum of the particle, should work for full range.
+To further charge reconstruction, a  particle identification algorithm was developed using TMVA~\cite{TMVA} to classify muon from other events which may still pass through harsh criteria. The model has been developed to not be dependent on the momentum of the particle, should work for full range.
 
 Essentially the machine learning algorithm identifies muons in a mixed background, but does not identify any particles in the background. This could be a future study and could be used to identify pions as well. In a more formal structure the signal is muons and the background are all of the remaining particles in the beam such as pions, protons etc.
 
@@ -277,6 +276,9 @@ These variables can be seen in \FigRef{fig:TMVAinput}.
 \end{figure}
 
 Based on these simulated signal and background samples, TMVA will provided a Signal efficiency curve based on the various build in models, seen in \FigRef{fig:TMVAroc}. In this plot is is clear that several models outperform others, however the multilayer perception with a Bayesian Neural Network (MLPBNN) was choose as the best performing model. The specific performance can be seen in \FigRef{fig:TMVAroc2}.
+
+
+%Currently found that the best method, however many perform similarly, is MLPBNN, Multilayer perceptron (neutral network) with BFGS training method, similar to gradient decent or quasi-Newton method, and bayesian regulator.
 
 
 \begin{figure}[h!]
@@ -319,6 +321,7 @@ This translates directly into \FigRef{fig:TMVAcuts} showing what value the of th
 
 %This also updates values provided from nufact and nuphys papers showing that the muon charge reconstruction is slightly lower than previously thought. it is still better than 0.6 previous MIND type experiments and show that it is possible to probe down to low energies which has not previously been shown.
 
+%So far have results for $\mu^+/\mu^-$ in a background of  $\pi^+/\pi^-$. Will use for CCQE events compared to other neutrino interactions.
 
 \clearpage
 \subsubsection{Updated charge identification efficiency}
