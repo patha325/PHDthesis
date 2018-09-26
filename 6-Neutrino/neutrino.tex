@@ -218,6 +218,8 @@ The result of the TMVA can be combined to estimate the total statistical and sys
 
 By defining the following operation, $a \oplus b = \sqrt{a^2+b^2}$ and generalising it as $\subsetadd x_i \equiv \sqrt{\sum x_i ^2}$, the error is defined through combining each error as $\sigma_{\nu_{\mu CC}} \oplus \sigma_{\bar{\nu}_{eCC}} \oplus \sigma_{\nu_{NC}} $. Using this error estimate combined with the cross-section values from~\FigRef{fig:neutrinoInteractionsFig} results in \FigRef{fig:crossSecEst} with the estimated measurement errors included.
 
+The results show that it is possible to identify the cross-section to within small errors even with a 10 ton detector in the NuSTORM beam at $10^{21}$ POT. These errors would decrease with a larger detector mass as well as with more protons on target.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/CrossSecEstimate.pdf}
@@ -239,7 +241,7 @@ By defining the following operation, $a \oplus b = \sqrt{a^2+b^2}$ and generalis
 \newpage
 
 \section{Summary}
-From the NuSTORM study carried out in this chapter, a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$ with 91,3\% efficiency.
+From the NuSTORM study carried out in this chapter, a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$ with 84\% efficiency.
 
 %From the NuSTORM study is it clear that a TASD + Baby MIND configuration would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu_{e_{CC}}}$ and $\nu_{\mu_{NC}}$ with 91.3 \% efficiency.
 
@@ -322,7 +324,7 @@ The reverse horn current neutrino and antineutrino spectrum at 1.5$^\circ$ that 
 %Simulations for a  T2K like beam, explain the details and event selection, (None for simulation but easy enough with data). Use the specific fiducial volume. Set up at J-PARC, all the details with that.
 %Lead into expected momentum reconstruction? Potential for tracks to be miss constrocted given angle etc etc. Even with cuts on no hit in first plate and hits after iron possible for sand muons to pass through. Tracks leaving would affect reconstruction. Angle and leaving, other than that is should be ok. Few events in total... Number of events sent to Paul, seems resonable.
 
-To compare simulations with data taken for the commissioning run, interactions were simulated in the iron of Baby MIND to perform a standalone Baby MIND analysis, independent of the data taken by the WAGASCI  detector. The fiducial volume selected includes the first three iron plates in the upstream section of Baby MIND (denoted as a1-3 in~\FigRef{fig:MINDneutrinoLayout}) and can be seen in detail in~\FigRef{fig:MINDFiducial}. The selected area is $1 \times 1$ m$^2$ around the centre of the Baby MIND detector.
+To compare simulations with data taken for the commissioning run, interactions were simulated in the iron of Baby MIND to perform a standalone Baby MIND analysis, independent of the data taken by the WAGASCI  detector. The fiducial volume selected includes the first three iron plates in the upstream section of Baby MIND (denoted as a1-3 in~\FigRef{fig:MINDneutrinoLayout}) and can be seen in detail in~\FigRef{fig:MINDFiducial}. The selected area is $1 \times 1$ m$^2$ around the centre of the Baby MIND detector providing a total weight of 1500 kg of iron and $9.03 \times 10^{29}$ iron nucleons.
 
 %New paragraph:
 %At this point, you define the event selection criteria, ie. the trigger condition of how you choose that a neutrino event is selected.
@@ -341,7 +343,7 @@ The event selection has been chosen try to ensure that only muons from neutrino 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{figures/NeutrinoChap/NuFactTalk/eventRateCheck.jpeg}
-\caption{Fiducial volume chosen to measure neutrino events in the first module of iron in the Baby MIND detector. Figures, courtesy of Kenji Yasutome.}
+\caption{Fiducial volume chosen to measure neutrino events in the first module of iron in the Baby MIND detector. Figure, courtesy of Kenji Yasutome.}
 \label{fig:MINDFiducial}
 \end{figure}
 
@@ -398,17 +400,65 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 %\subsection{Comparing simulations to data}
 \section{Comparison of simulations to data}
 
-%All of this is just one big ramble. Please make this look like a thesis, not some random thoughts. This needs to be tightened up. In this section you need to describe the data that was taken, when it was taken, under what conditions, the dates of the runs, how many days of neutrino data were taken, roughly how many POT were used, what runs were used, the selection criteria, including the trigger condition that was used. After all of this you need to say how many neutrino events survived and how many antineutrino events survived. Then you need to describe how you compare to the simulation. For this you need to show the algorithm that you used, including the equation to estimate the number of antineutrino and neutrino events: Number events = flux * cross section * N_target. Show this calculation, showing which flux you sued, show the plots of the cross section you used and how the multiplication of these gives you estimates for the number of antineutrinos and neutrinos. Then you can show the plot of the number of estimated events overlayed to the data. Try and conclude with a quantitative estimate of the ratio of antineutrino to neutrino events at 1.5 degrees, based on the previous calculations.
+%All of this is just one big ramble. Please make this look like a thesis, not some random thoughts. This needs to be tightened up. 
+
+%In this section you need to describe the data that was taken, when it was taken, under what conditions, the dates of the runs, how many days of neutrino data were taken, roughly how many POT were used, what runs were used, the selection criteria, including the trigger condition that was used. 
+%After all of this you need to say how many neutrino events survived and how many antineutrino events survived. Then you need to describe how you compare to the simulation. 
+
+%For this you need to show the algorithm that you used, including the equation to estimate the number of antineutrino and neutrino events: Number events = flux * cross section * N_target. 
+
+%Show this calculation, showing which flux you sued, show the plots of the cross section you used and how the multiplication of these gives you estimates for the number of antineutrinos and neutrinos. 
+
+%Then you can show the plot of the number of estimated events overlayed to the data. 
+
+%Try and conclude with a quantitative estimate of the ratio of antineutrino to neutrino events at 1.5 degrees, based on the previous calculations.
+
+
+Data was collected during March and May 2018. For this study data collected between the 24th and 31st of may were used. The data was unpacked the provided unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}, and the study started after this unpacking. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track like and can reconstructed. When these tracks have been reconstructed, both an angular cut is made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, reduces the number of event to 4585 (13.2\%) and the momentum to be well reconstructed ($ 200$ MeV/c $<$ p $<$ $10000$ MeV/c),results in 3899 (11.2\%) events. After these cuts there are 2245 track reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and forth plane provides a final number of events as 224 (0.6\%). Out of this sample 123 event are reconstructed with positive charge and 101 with negative charge. Based on number of reconstructed event and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$ 
+
+To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum a seen in~\FigRef{fig:SimuSpectrum}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/ReconstructedESpectrum.pdf}
+%\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/data260618/T2K/ChargeIDT2KNeutrinoBeamMIND.pdf}
+\caption{The reconstructed energy spectrum for the simulated neutrino events in SAURON.}
+\label{fig:SimuSpectrum}
+\end{figure}
+
+The simulated reconstructed energy spectrum needs to be converted to number of events. This is done through the following equation:
+\begin{equation}
+N_{events} = \phi_\nu \times \sigma \times N_{target}
+\end{equation}
+where $\phi$ is the neutrino flux seen in~\FigRef{fig:SimuFlux}, $\sigma$ is the cross section taken from figures~\ref{fig:neutrinoInteractionsFig} and~\ref{fig:antineutrinoInteractionsFig} and $N_{target}$ is the number of iron nucleons in the fiducial volume $=9.03 \times 10^{29}$. This provides a rescaling of the energy spectrum and provides the total number of events in~\FigRef{fig:NumSim}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/FluxSpectrum.pdf}
+%\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/data260618/T2K/ChargeIDT2KNeutrinoBeamMIND.pdf}
+\caption{The neutrino flux for $\bar{\nu}_\mu$ and $\nu_\mu$. Figure, courtesy of Kenji Yasutome.}
+\label{fig:SimuFlux}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NumSimEvents.pdf}
+%\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/data260618/T2K/ChargeIDT2KNeutrinoBeamMIND.pdf}
+\caption{The reconstructed number of simulated neutrino events in SAURON.}
+\label{fig:NumSim}
+\end{figure}
 
 In comparing data to simulations the main way is looking at the reconstructed energy spectra for the events which have been classified as muon neutrino and muon anti-neutrino respectively. In \FigRef{fig:datanumubar} and \FigRef{fig:datanumu} the simulated (expected) reconstructed energy spectrum is plotted with the recorded data points from the beam line overlaid. Both plots have been normalized to each other to ensure that the number of simulated events have been scaled to match the number of recorded events.
 
-Only data taken during the commissioning phase, some errors in data taking requiring only able to use some data. Not possible to correlate time of events with neutrino events allowing background neutrino events and muons to enter into the data sample.
+The results shown in~ \FigRef{fig:datanumubar} show good agreement between data and simulations. The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin. The results shown in~ \FigRef{fig:datanumu} show good agreement between data and simulations. The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin and the further shape is rough due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or the assumption that the muon events have been correctly identified as charge-current events in the iron. It is possible that the cuts need to be enhanced to provide improved results. For further results more data needs to be collected and data in the forward horn current mode.
 
-Currently only have data for RHC, $\bar{\nu_{\mu}}$. Need to understand deviation and perhaps enforce stricter cuts on data. The main issues seem to be in the uncertainty in the data where an issue comes from not seeing interaction in the iron. The only way to improve on this would be to correlate the beam bunch timing with the data taking. 
+%Only data taken during the commissioning phase, some errors in data taking requiring only able to use some data. Not possible to correlate time of events with neutrino events allowing background neutrino events and muons to enter into the data sample.
 
-In general, for neutrino interactions a combined analysis will allow for better neutrino event classification. In this analysis all tracks were assumed to be muons from CCQE which does not have to be the case, however the vertex needs to be inspected or more data collected to be able to perform an interaction identification using TMVA. 
+%Currently only have data for RHC, $\bar{\nu_{\mu}}$. Need to understand deviation and perhaps enforce stricter cuts on data. The main issues seem to be in the uncertainty in the data where an issue comes from not seeing interaction in the iron. The only way to improve on this would be to correlate the beam bunch timing with the data taking. 
 
-To see vertex WAGASCI is needed.
+%In general, for neutrino interactions a combined analysis will allow for better neutrino event classification. In this analysis all tracks were assumed to be muons from CCQE which does not have to be the case, however the vertex needs to be inspected or more data collected to be able to perform an interaction identification using TMVA. 
+
+%To see vertex WAGASCI is needed.
 
 
 %Show same as the idea for nuFact, explain in detail what was done. Show the data, neutrino energy reconstruction.
@@ -416,26 +466,26 @@ To see vertex WAGASCI is needed.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/nuBarEventNewer.pdf}
-\caption{Energy spectrum of the reconstructed events with simulation in contour and data as error bars for $\bar{\nu_\mu}$ events.}
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/nuBarEventNewest.pdf}
+\caption{Energy spectrum of the reconstructed antineutrino $\bar{\nu}_\mu$ events in data (points with error bars) compared to the simulation (histogram).}
 \label{fig:datanumubar}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/nuEventNewer.pdf}
-\caption{Energy spectrum of the reconstructed events with simulation in contour and data as error bars for $\nu_\mu$ events.}
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/nuEventNewest.pdf}
+\caption{Energy spectrum of the reconstructed neutrino $\nu_\mu$ events in data (points with error bars) compared to the simulation (histogram).}
 \label{fig:datanumu}
 \end{figure}
 
 
 
 %\pagebreak
-\section{Future studies}
+%\section{Future studies}
 
-\subsection{Interactions in the full WAGASCI}
+%\subsection{Interactions in the full WAGASCI}
 
-Using WAGASCI as a CCQE identification, perhaps even using some of the INGRID modules to provide range momentum reconstruction at the very low momentum.
+%Using WAGASCI as a CCQE identification, perhaps even using some of the INGRID modules to provide range momentum reconstruction at the very low momentum.
 
 
 %\subsection{Neutrino interactions in WAGASCI + Baby MIND}
@@ -447,7 +497,7 @@ Using WAGASCI as a CCQE identification, perhaps even using some of the INGRID mo
 
 
 
-Discuss future data taking, interactions everywhere etc etc.
+%Discuss future data taking, interactions everywhere etc etc.
 
 %\subsection{GAr + BabyMIND}
 %\subsubsection{Analysis Simulations}
@@ -460,4 +510,4 @@ Discuss future data taking, interactions everywhere etc etc.
 %\section{Electron charge current quasi-elastic}
 
 \section{Summary}
-Something here.
+From the study carried out in this chapter, it is possible for the Baby MIND spectrometer to analyse neutrino events interacting in its iron plates and it would be able to provide charge reconstruction of tracks down to 400 GeV/c. The first neutrino events were also shown and compared to simulations to provide a first analysis for neutrino events in the Baby MIND.

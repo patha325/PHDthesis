@@ -7,7 +7,7 @@
 The software environment used for Baby MIND is the Simulation and Reconstruction of Muons and Neutrinos (SaRoMaN) software suite which is a comprehensive software for MIND/nuSTORM detectors and has been developed at the University of Glasgow over several iterations~\cite{27Bross,  53Laing, 54NUFACT2016Hallsjo}. The software has been expanded to be able to model and simulate a generic detector with limitations in the current implementation of the reconstruction. It includes a complete range of functionality for simulating single particle beams, through GEANT4~\cite{Geant4} or neutrino beams, through GENIE~\cite{Genie}, including geometry design, digitisation and reconstruction through RecPack~\cite{RecPack}. The software suite is also shipped with several analysis code examples written in ROOT~\cite{Root}. It has been created exploiting software engineering and object-oriented techniques and implemented in the C++ and Python programming languages. The software is accessible on request from \url{https://lspace.ppe.gla.ac.uk}. 
 
 \section{General structure}
-The SaRoMaN software's main design goals have been to promote modularity, provide a single point of entry for the design and input variables and to simplify usage. With this in mind the SaRoMaN software is split into four main parts which can be replaced or altered independently of the others as long as the input/output flow is conserved. The parts are denoted, wrapper, simulation, digitisation and reconstruction with the main flow regulated by the wrapper seen in \FigRef{fig:codeFlow} and a more detailed view in \FigRef{fig:structure}. Each part will be discussed further below.
+The SaRoMaN software's main design goals have been to promote modularity, provide a single point of entry for the design and input variables and to simplify usage. With this in mind, the SaRoMaN software is split into four main parts which can be replaced or altered independently of the others as long as the input/output flow is conserved. The parts are denoted, wrapper, simulation, digitisation and reconstruction with the main flow regulated by the wrapper seen in \FigRef{fig:codeFlow} and a more detailed view in \FigRef{fig:structure}. Each part will be discussed further below.
 
 \begin{figure}[h!]
 \centering
@@ -30,7 +30,7 @@ The SaRoMaN software's main design goals have been to promote modularity, provid
 \section{Wrapper}
 To simplify the installation, compilation and usage of the other parts in the SaRoMaN suite, a wrapper has been developed in the Python programming language. This wrapper, aside from the above, handles all input variables, file names, writing of configuration files, standardisation of magnetic field maps and geometry, and data flow between the other parts. 
 
-To simplify for the user, all of the installation, compilation and running are handled through simple command line inputs with the option of more advanced commands being issued through the use of the Python wrapper class. After installation, SaRoMaN can be run with some default parameters, a full run diagram can be seen in \FigRef{fig:block}.
+To simplify operation for the user, all of the installation, compilation and running are handled through simple command line inputs with the option of more advanced commands being issued through the use of the Python wrapper class. After installation, SaRoMaN can be run with some default parameters, a full run diagram can be seen in \FigRef{fig:block}.
 
 \begin{figure}[h!]
 \centering
@@ -41,7 +41,7 @@ To simplify for the user, all of the installation, compilation and running are h
 
 \pagebreak
 \section{Simulation}
-Simulations are used to test and model how particles will interact with a detector model and what scintillator hits can be expected. The outputs from the simulation include the position of the hit on a bar, the location of a bar, the time of the hit and the amount of energy that was deposited. For the studies performed in SaRoMaN, well tested physics models are used in GEANT4 however the option exists to add new physics and to test new theoretical models.
+Simulations are used to test and model how particles will interact with a detector model and what scintillator hits can be expected. The outputs from the simulation include the position of the hit on a bar, the location of a bar, the time of the hit and the amount of energy that was deposited. For the studies performed in SaRoMaN, well tested physics models are used in GEANT4, however the option exists to add new physics and to test new theoretical models.
 
 The simulation comes with two different modes, neutrino or ``single particle''. For neutrino mode, GENIE is first run to generate the neutrino events. The data from these events are run through GEANT4, which includes details of the detector geometry and materials, to create the response of the detector to the particle hits. In the single particle mode, GENIE is not invoked, and one can choose to run with a beam of charged particles of a single species, which are also passed onto GEANT4 that simulates the response of the detector.
 
@@ -88,7 +88,7 @@ The final step in the digitisation is to smear the value of the deposited energy
 \subsection{Data acquisition}
 %\textbf{Here or test beam?}
 
-The current data acquisition (DAQ) framework for the Baby MIND detector is based on being used offline meaning it is processed both after and away from the acquisition.
+The current data acquisition (DAQ) framework for the Baby MIND detector is based on the event building to be carried out offline,  meaning it is processed both after and away from the acquisition to combine the information from multiple FEBs and to create full events offline.
 
 For simplicity, the DAQ converts the acquired data into the same format as expected from a simulation so that the digitisation can be used in the same way. The main difference is that the smearing is only used for simulated data.
 
@@ -101,7 +101,7 @@ In this simplified version of the data acquisition system written for the Baby M
 The reconstruction takes the digitised hit data and assembles tracks and vertices. The main physics parameters are the momentum as well as the charge of the particle. The main problems occur when there are overlapping hits with multiple occupancy per bar. In this situation, it is difficult to distinguish between valid hits and to extract the momentum of the track and its charge.
 The first problem is handled by removing and adding hits and using a $\chi^2$ analysis through a Kalman fitter package, RecPack~\cite{RecPack}, to find the best trajectory that fits all hits. The second problem is solved through various algorithms to estimate the charge and momentum using different fits.
 
-For simplicity the reconstruction currently contains a mode denoted as "test beam" where it does nothing more than writes out the input data into a final .root file.
+For simplicity, the reconstruction currently contains a mode denoted as "test beam" where it does nothing more than writes out the input data into a final .root file.
 
 \subsection{Structure}
 The reconstruction software has been structured to ensure that the software is as modular as possible. It is currently based on the Kalman fitter package known as RecPack~\cite{RecPack} to provide both a framework and back bone for handling track objects. It is still used since it was the first Kalman filter implementation, however SaRoMaN would benefit from using a bespoke Kalman fitter implementation to ensure its maintenance and reliability, as RecPack is no longer maintained and its documentation is lacking. 
@@ -109,7 +109,7 @@ The reconstruction software has been structured to ensure that the software is a
 
 A Kalman fitter is given an underlying model of the trajectory, in our case knowing that particles travel as helices, and a model of the detector as well as other known inputs to the system to form an estimate of the different possible states of the system in a way that is better than using only a single measurement. This is particularly well suited in particle physics where random noise is given through multiple scattering. It can also take into account the energy loss through different materials and keeps track of the varying magnetic field. The measurements can be used in different parts of the detector to estimate both how the particle has and will continue its propagation. Compared to other models, a Kalman fitter has no underlying assumption about the errors being Gaussian.
 
-In high energy physics one frequently faces the problem of modeling the evolution of a dynamic system from a set of experimental measurements. Most reconstruction programs use similar methods. However, in general they are reimplemented for each specific experimental setup. Some examples are fitting algorithms (i.e. Kalman Filter), equations for propagation, random noise estimation (i.e. multiple scattering), model corrections (i.e. energy loss, inhomogeneous magnetic field, etc.), model conversion, etc. Similarly, the data structure (measurements, tracks, vertices, etc.), which can be generalised as well, depends on the particular implementation. The motivation for using RecPack is due to the combination of these properties into a simple software package.
+In high energy physics one frequently faces the problem of modeling the evolution of a dynamic system from a set of experimental measurements. Most reconstruction programs use similar methods. However, in general they are reimplemented for each specific experimental setup. Some examples are fitting algorithms (i.e. Kalman Filter), equations for propagation, random noise estimation (i.e. multiple scattering), model corrections (i.e. energy loss, inhomogeneous magnetic field, and physics measurements.), model conversion, etc. Similarly, the data structure (measurements, tracks, vertices, etc.), which can be generalised as well, depends on the particular implementation. The motivation for using RecPack is due to the combination of these properties into a simple software package.
 
 SaRoMaN has been split into a number of phases: it first initialises the fitter and then it uses an initial pattern classification to choose reconstruction mode. Currently particles and showers are identified, but only muon-like particles are reconstructed. In this identification, a track is produced along with any off-track hits. Finally, the fitter performs a final charge and momentum estimate on the track and tries to fit more tracks to the off-track hits. If this is a neutrino sample, proton/neutron tracks are only built if it finds an initial muon track.
 
@@ -117,7 +117,7 @@ The test beam mode ignores the event classification and uses the fitter to pass 
 
 The reconstruction has split into several minor tasks.
 \begin{itemize}
-\item Handling data. Pushing the input data into a final root file.
+\item Handling data: Pushing the input data into a final root file.
 \item Track building / pattern recognition, given an event, (a time window) can we build a track from this?
 \item Fitting, with a candidate track, is it possible to add more hits to the track and make it longer? Is it possible to find secondary tracks? Also, is it possible to estimate the momentum and charge of the track?
 \end{itemize}
@@ -132,26 +132,26 @@ The pattern recognition tries to estimate if the event is muon-like or not. It s
 \end{itemize}
 Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each event will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is performed very simply by assuming anything that is not a shower is a muon. Single hits here refer to separable space points, meaning that for each $z-$position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition, tracks are built up from so-called track stubs of at least four single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using a $\chi^2$analysis as a metric. This $\chi^2$ analysis is run through the fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub and the other hits are saved for use in finding secondary tracks. 
 
-The program flow can be seen as taking in an event worth of hits and returning a number of tracks along with hits which could not be fitted into any track. Each returned track contains only single hits as well as a momentum and charge estimate. The latter two are then improved by the fitter.
+The program flow can be seen as taking in an event consisting of a number of hits and returning a number of tracks along with hits which could not be fitted into any track. Each returned track contains only single hits as well as a momentum and charge estimate. The latter two are then improved by the fitter.
 
 %Given an event, a time selection which can be seen as part of a accelerator spill cycle. Is it possible from the ensemble of hits to find a track or several tracks. Currently makes the assumption that tracks will be separable in space for at least 4 points or that there are 4 planes with single track points as to have an initial track to later add more points into.
 
 \subsection{Fitting}
 The fitter's main job is to build tracks and to estimate the momentum and charge of that track. There are two modes, one main mode for hits with more than nine hits are passed into the Kalman fitter RecPack. When it is not possible to perform a helical fit and for any track with more than three hits, a self implemented lever-arm approach is used. In both cases RecPack is used to build the tracks, however the momentum and charge reconstruction has to be split depending on the possibility of a helical fit or not. The full helix equation (equations 4.1-4.3 and 4.4-4.6) has a total of nine parameters and takes ten measurements to be fully fitted.  
 \begin{align}
-x(t) &= acos(bt+c)+d\\
-y(t) &= esin(ft+g) + h\\
+x(t) &= a\cos(bt+c)+d\\
+y(t) &= e\sin(ft+g) + h\\
 z(t) &= kt
 \end{align}
 
-The helix can be related to physical quantities as.
+The helix can be related to physical quantities as:
 %This can also be written in a more helpful way as.
 %http://www-jlc.kek.jp/subg/offl/lib/docs/helix_manip/main.html
 
 \begin{align}
-x(\phi) &= x_0 + d_p \cos \phi_0 + \frac{\alpha}{\kappa}(\cos \phi_0 - cos(\phi_0 + \phi))\\ 
-y(\phi) &= y_0 + d_p \sin \phi_0 + \frac{\alpha}{\kappa}(\sin \phi_0 - cos(\phi_0 + \phi))\\
-z(\phi) &= z_0 + d_z - \frac{\alpha}{\kappa} tan \lambda \phi
+x(\phi) &= x_0 + d_p \cos \phi_0 + \frac{\alpha}{\kappa}(\cos \phi_0 - \cos(\phi_0 + \phi))\\ 
+y(\phi) &= y_0 + d_p \sin \phi_0 + \frac{\alpha}{\kappa}(\sin \phi_0 - \cos(\phi_0 + \phi))\\
+z(\phi) &= z_0 + d_z - \frac{\alpha}{\kappa} \tan \lambda \phi
 \end{align}
 where $\vec{X} = (x_0, y_0, z_0)$ is the arbitrary helix pivot point, $d_p$ is the distance from the helix to the pivot point in the $xy$ plane, $\phi_0$ is the azimuthal angle from the pivot point with respect to the helix center, $\kappa$ is the signed reciprocal transverse momentum, $d_z$ is the distance of the helix from the pivot point in the z direction, and $\tan\lambda$ is the dip angle. The deflection angle $\phi$ is measured from the pivot point and specifies the position of the charged particle on the helical track. The variable $\kappa$ can be used to relate to the transverse particle momentum, $p_T$ and to the magnetic field as 
 \begin{align}
@@ -165,7 +165,7 @@ where Q is the particle charge, $\rho$ being the signed radius of the helix, and
  -\sin(\phi_0 + \phi)\\
  cos(\phi_0 + \phi)\\
  tan\lambda
- \end{pmatrix}
+ \end{pmatrix}.
 \end{equation}
 
 In practice, this fit also takes both energy loss in the detector and multiple scattering into account when calculating the $\chi^2$ values used to fit the parameters. This motivates the requirement for two different modes. If a helical fit is possible RecPack performs the fitting and returns a final fitted helix, within provided measurement errors, with a momentum and charge estimate.
@@ -197,7 +197,7 @@ Using the definition of the cross-product, writing this as a scalar equation, us
 \begin{equation}
 p = 0.3 QB_\bot \frac{|\vec{l}|}{\theta}=0.3 QB_\bot R
 \end{equation}
-where $p$ is the momentum in MeV/c, the charge $Q$ is in units of $e$, the electron charge, the magnetic field strength $B$ is in Tesla and the radius of curvature $R$ is in cm. This is one of the main equations used for momentum reconstruction in SaRoMaN. The charge is then reconstructed using $p/|p|$. 
+where $p$ is the momentum in MeV/c, the charge $Q$ is in units of $e$, the electron charge, the magnetic field strength $B$ is in Tesla and the radius of curvature $R$ is in m. This is one of the main equations used for momentum reconstruction in SaRoMaN. The charge is then reconstructed using $p/|p|$. 
 
 \begin{figure}[h!]
 \centering
@@ -218,7 +218,7 @@ A previous study performed in the collaboration showed that the best best way of
 \label{fig:NullHyp}
 \end{figure}
 
-Assuming the distribution of multiple scattering angles and the notation in \FigRef{fig:NullHyp}, such as $f(\Delta_1 | \mu )$ representing the distribution of the measured angle $\Delta1$ given an assumed charge, the choice of charge is given by the probability.
+Assuming the distribution of multiple scattering angles and the notation in \FigRef{fig:NullHyp}, such as $f(\Delta_1 | \mu )$ representing the distribution of the measured angle $\Delta_1$ given an assumed charge, the choice of charge is given by the ratio of probabilities.
 
 The algorithm returns a $\mu^-$ if 
 \begin{equation}
@@ -242,7 +242,7 @@ where $\beta c$ it the velocity, $z$ is the number of elemetary charges of the i
 
 The probability, using this notation, is given in equation~\ref{eq:probScatt}:
 \begin{equation}
-P_{\mu^\pm} = \frac{1}{2\pi} e ^ {-( \theta_0 \pm \Delta)}.
+P_{\mu^\pm} = \frac{1}{2\pi} e^{-(\theta\pm\Delta)^2 / 2\theta_0^2}
 \label{eq:probScatt}
 \end{equation}
 
@@ -267,11 +267,11 @@ Quadratic fit, given few hits, try to fit to return charge. Use this only for ch
 
 %\textbf{Add event display! also for testbeam in next chapter}
 
-During development of SaRoMaN two main metrics were used to evaluate performance, charge reconstruction efficiency and track reconstructed efficiency. These metrics are evaluated by determining how many simulated tracks can be reconstructed compared to the total number of simulated tracks and how many of those reconstructed tracks have the correct charge. This is done for muons of both charges and different momentum values.
+During development of SaRoMaN two main metrics were used to evaluate performance, track reconstructed efficiency and charge reconstruction efficiency. These metrics are evaluated by determining how many simulated tracks can be reconstructed compared to the total number of simulated tracks and how many of those reconstructed tracks have the correct charge. This is done for muons of both charges and different momentum values.
 
-Performance will be shown for the initially proposed layout of Baby MIND, for which the software algorithms were designed, the layout implemented for the CERN test beam, and a final study based on the layout used for the WAGASCI detector. The main difference between the initial and test beam layout was to remove the initial measurement point d0, restructuring a few of the blocks and adding gaps between each of the blocks, as seen in \FigRef{fig:oldMIND}. %This was done from a constructional not a physics motivation.
+Performance will be shown for the initially proposed layout of Baby MIND, for which the software algorithms were designed, the layout implemented for the CERN test beam, and a final study based on the layout used for the WAGASCI detector. The main difference between the initial and test beam layout was to remove the initial measurement plane d0, restructuring a few of the blocks and adding gaps between each of the blocks, as seen in \FigRef{fig:oldMIND}. %This was done from a constructional not a physics motivation.
 
-The charge identification is however improved when utilizing a measurement point from a neutrino target, WAGASCI module upstream of Baby MIND, however this will reduce the lower limit of reconstruction since the muons must traverse the material of the WAGASCI. 
+The charge identification is however improved when utilizing a measurement point from a neutrino target, the WAGASCI module upstream of Baby MIND, however this will reduce the lower limit of reconstruction since the muons must traverse the material of the WAGASCI. 
 
 \begin{figure}[h!]
 \centering
@@ -289,17 +289,19 @@ The main difference between the results are both below 1~$GeV/c$ and in the regi
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/oldRecEff.png}
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/oldChargeID.png}
-\caption{Reconstructed efficiency and charge identification efficiency of the initial Baby MIND layout with using the SaRoMaN simulation and reconstruction package.}
+\includegraphics[width=0.8\textwidth]{figures/oldStudies/oldRecEff.png}
+
+\includegraphics[width=0.8\textwidth]{figures/oldStudies/oldChargeID.png}
+\caption{Reconstructed efficiency and charge identification efficiency of the initial Baby MIND layout using the SaRoMaN simulation and reconstruction package.}
 \label{fig:oldMIND2}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/FullFitted.pdf}
-\includegraphics[width=0.48\textwidth]{figures/oldStudies/FullChargeID.pdf}
-\caption{Reconstructed efficiency and charge identification efficiency of the Baby MIND layout configured for the CERN test beam.}
+\includegraphics[width=0.8\textwidth]{figures/oldStudies/FullFitted.pdf}
+
+\includegraphics[width=0.8\textwidth]{figures/oldStudies/FullChargeID.pdf}
+\caption{Reconstructed efficiency and charge identification efficiency of the Baby MIND layout configured for the CERN test beam, using the SaRoMaN simulation and reconstruction package.}
 \label{fig:TestBeamMIND2}
 \end{figure}
 
@@ -347,7 +349,7 @@ Machine learning algorithms are used through the Toolkit for Multivariate Data A
 
 %Final root file, read in trees, filter out bad events, if any. Compare apples to apples. 
 
-\pagebreak
+%\pagebreak
 \section{Future development}
 Based on the main principles of easily shareable code, using the latest versions and simplicity, a further development of SaRoMaN has already commenced by creating a fully new version based on newer versions of the third party software packages such as GEANT4, GENIE and ROOT. By moving to the latest versions and ensuring that they will be easy to maintain the software becomes ``future proof'' which is very important for ensuring that the results are making use of the latest physics software. The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrino-like events). SAURON also makes sure to only use open source software and has thus moved from the RecPack Kalman filter to use a Runge-Kutta and Kalman open source fitter known as GENFIT~\cite{81Genfit}.
 The software environment and code can be found in a docker environment at: \url{https://hub.docker.com/r/patha325/science/}. The code is hosted at : \url{https://github.com/patha325/NewSaRoMaN}.
@@ -367,7 +369,7 @@ One proposed solution which solves the problem would be to provide a full runnab
 
 \subsubsection{Container vs Virtual machine}
 
-A container is similar to a Virtual machine (VM) but without requiring any abstraction of hardware, they also run on the OS kernel not requiring an added layer. In essence a container includes an application with the code and all its dependencies without also requiring a full copy of an operating system. This reduces the size of a container compared to a VM and decreases boot time.
+A container is similar to a Virtual machine (VM) but without requiring any abstraction of hardware, they also run on the OS kernel not requiring an added layer. In essence, a container includes an application with the code and all its dependencies without also requiring a full copy of an operating system. This reduces the size of a container compared to a VM and decreases boot time.
 %n handle more applications and require fewer VMs and Operating systems.
 
 \subsubsection{Container for particle physics simulations}

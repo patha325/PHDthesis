@@ -3,9 +3,9 @@
 
 The Baby MIND collaboration performed an electronics validation using a Totally Active Scintillating Detector (TASD) at the T9 test beam in the PS facility at CERN in 2016. After construction was completed of Baby MIND in 2017, the full Baby MIND was commissioned in the same test beam.
 
-The Baby MIND test beams took place at the T9 beam line at the proton synchrotron (PS) experimental hall. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam comes of as a secondary beam by firing the proton beam at a 200 mm thick aluminium target which delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity, as hadron (pion) or muons and the beam momentum can be adjusted by setting the currents for the optical magnets of the beam line.
+The Baby MIND test beams took place at the T9 beam line at the proton synchrotron (PS) experimental hall. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam is extracted as a secondary beam by firing the proton beam at a 200 mm thick aluminium target which delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity, as hadron (pion) or muons and the beam momentum can be adjusted by setting the currents for the optical magnets of the beam line. Additional particle identification Cherenkov detectors can be included as part of the T9 beam line but these were not included during the Baby MIND 2016 and 2017 tests.
 
-In this section details will be given to how data was collected and processed before showing some sample events and then further describe how data is processed in SaRoMaN to provide results obtained from each of the two test beams.
+In this section details will be given ton how the data was collected and processed before showing some sample events and then further describe how data is processed in SaRoMaN to provide results obtained from each of the two test beams.
 
 %Write like a lab report, describe what we are doing with T9, what is happening in the detector when a particle comes through, what happens with the data and how it is saved. When this is saved, what does the unpacking do and SaRoMaN. After all of this, how is the analysis done, what are the plots etc etc.
 
@@ -14,13 +14,13 @@ In this section details will be given to how data was collected and processed be
 \subsection{Setup}
 During June-July 2016 a test beam was performed to characterise the readout system, data acquisition (DAQ) and electronics to be used in the Baby MIND detector. The test beam was at the T9 beam of the East Area, operating at the Proton Synchrotron (PS) at CERN. A Totally Active Scintillation Detector (TASD) constructed under the AIDA-2020 project (Advanced European Infrastructures for Detectors at Accelerators) was used to test the readout system, electronics, DAQ and reconstruction software. Baby MIND uses the same read out electronics and boards, with some firmware upgrades from this initial test beam.
 
-The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000~mm^3$, and can be seen in figures~\ref{fig:TASD} and in~\ref{fig:TASDreal}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This results in a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total detector size of $1~m^3$.  For the test beam only 12 layers of $16 \times 16$ bars were instrumented and the total instrumented volume was $0.003~m^3$
+The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000~mm^3$, and the configuration can be seen in figures~\ref{fig:TASD} and in~\ref{fig:TASDreal}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This results in a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total detector size of $1~m^3$.  For the test beam only 12 layers of $16 \times 16$ bars were instrumented and the total instrumented volume was $0.003~m^3$
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/AIDA.png}
-\caption{The TASD with the instrumented bars visualised}
+\caption{The TASD with the instrumented bars visualised.}
 \label{fig:TASD}
 \end{figure}
 
@@ -52,13 +52,13 @@ It was possible for the DAQ to return hits without a time, which were removed be
 
 \subsection{Results}
 
-The main goal of this first test beam was to understand the readout system, electronics, DAQ and reconstruction software. The results can be quite nicely summed up in \FigRef{fig:TASDres2} and \FigRef{fig:TASDres1} where the recorded hits have been shown for one specific plane and all recorded hits, seen from the side (\FigRef{fig:TASDres2}). These is also a combined 3D view and a selected single track (\FigRef{fig:TASDres1}). In these figures it can be seen that the TASD was horizontally aligned but the beam was slightly off-center vertically. Detailed studies of the electronics were performed and published in~\cite{52Georgi}.
+The main goal of this first test beam was to understand the readout system, electronics, DAQ and reconstruction software. The results can be quite nicely summed up in \FigRef{fig:TASDres2} and \FigRef{fig:TASDres1} where the recorded hits have been shown for one specific plane and all recorded hits, seen from the side (\FigRef{fig:TASDres2}). Included in \FigRef{fig:TASDres1}, there is also a combined 3D view and a selected single track. In these figures it can be seen that the TASD was horizontally aligned but the beam was slightly off-center vertically. Detailed studies of the electronics were performed and published in~\cite{52Georgi}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.48\textwidth]{figures/nuphys/newFigures/beamXYplane1Hadron2.png}
 \includegraphics[width=0.48\textwidth]{figures/nuphys/newFigures/beamYZhadron2.png}
-\caption{(Left) A beam profile in the $xy$ projection as measured by the TASD. (Right) A beam profile in the $yz$ projection as measured by the TASD.}
+\caption{(Left) A beam profile in the $xy$ projection as measured by the TASD. The colour code illustrates the number of hits recorded in each bar. (Right) A beam profile in the $yz$ projection as measured by the TASD. A similar colour code illustrates the number of hits recorded.}
 \label{fig:TASDres2}
 \end{figure}
 
@@ -74,7 +74,7 @@ The main goal of this first test beam was to understand the readout system, elec
 
 %What was lowest energy recorded in a bar? Results in lowest energy for horizontal and vertical.
 
-The plots show that both the electronics and readout system work well, and that the data can be passed through the DAQ into the reconstruction software. Given that the TASD was only 6 planes of scintillator and did not have a magnetic field, the reconstruction software only combined hits in $x$ and $y$ with the $z$ position to a final track, without being able to perform any momentum reconstruction. However it showed that the reconstruction software was operational and could create tracks from these hits.
+The plots show that both the electronics and readout system work well, and that the data can be passed through the DAQ into the reconstruction software. Given that the TASD was only 6 planes of scintillator and did not have a magnetic field, the reconstruction software only combined hits in $x$ and $y$ with the $z$ position to form a final track, without being able to perform any momentum reconstruction. However it showed that the reconstruction software was operational and could create tracks from these hits.
 
 %Too few planes. No magnetic field. Confirms that the full chain works and can produce plots, however the results are slightly less than expected. Add in event displays. Something to show both pion showers and muons.
 
@@ -102,9 +102,9 @@ A sketch of the layout can be seen in~\FigRef{fig:MINDtb} and a photograph is in
 
 \subsection{Setup}
 
-Four support frames were constructed specifically to support the Baby MIND magnets and scintillator modules mechanically and to meet the transport requirements within CERN and for shipping to J-PARC. The Baby Mind modules were installed in the four frames, as can be seen in~\FigRef{fig:MINDtbreal}. The total weight of the detector is around 65 t giving each block a weight of less than 20 tons, which is within the required limits for crane operations at both sites.
+Four support frames were constructed specifically to support the Baby MIND magnets and scintillator modules mechanically and to meet the transport requirements within CERN and for shipping to J-PARC. The Baby MIND modules were installed in the four frames, as can be seen in~\FigRef{fig:MINDtbreal}. The total weight of the detector is around 65 t giving each block a weight of less than 20 tons, which is within the required limits for crane operations at both sites.
 
-For the data taking during the test beam, the TASD aida module was placed in front of the Baby MIND to provide initial beam information, both for an angular measurement of the beam and a veto measurement from cosmic rays. Only a total of two planes of the TASD were instrumented providing 192 channels. 
+For the data taking during the test beam, the TASD AIDA module was placed in front of the Baby MIND to provide initial beam information, both for an angular measurement of the beam and a veto measurement from cosmic rays. Only a total of two planes of the TASD were instrumented providing 192 channels. 
 
 A total of 44 FEBs mounted on 8 mini crates instrumented the 3996 channels of Baby MIND and took the 192 channels from the TASD. All 44 FEBs were synchronized using the spill signal from the T9 beam line which arrives one second before the arrival of the spill of particles. This signal was fed to a dedicated Master FEB which would generate a reference clock signal for all the other FEBs acquiring data.
 
@@ -113,7 +113,7 @@ The data recorded by the DAQ is translated using a database relating the channel
 
 It was possible for the DAQ to return hits without a time stamp, which were removed before the analysis. Furthermore, events outside the time window with respect to the initial hit were also removed.
 
-For this test beam initial filters were used to try to remove possible pion contamination in the event, which produces a hadron shower, such as removing events where on average more than three hits were recorded for the same plane for an event. 
+For this test beam, initial filters were used to try to remove possible pion contamination in the event, which produces a hadron shower, such as removing events where on average more than three hits were recorded for the same plane for an event. 
 
 Data was taken for a period of two months. Out of the recorded data, verified samples with the best possible settings for the data acquisition were selected for analysis. The samples contained a few hours worth of data taking at different beam momenta for both negative and positive muon beam settings. These samples were all run through the unpacking software required to read out the recorded data before being passed to SaRoMaN. The data was passed directly onto the digitisation for clustering and grouping before being passed into the reconstruction.
 
@@ -140,7 +140,7 @@ In the analysis it was also quite clear that the beam was not pure muons and con
 
 
 \subsection{Test beam results}
-Two of the main results provided during the test beam were to commission the detector, showing that all hardware worked to specification and that the reconstruction software was able to reconstruct hits in all the modules, and that the magnetisation scheme was able to be used successfully to reconstruct the particle momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in the data and produce charge and momentum estimates for the beam.
+Two of the main results provided during the test beam were to commission the detector, showing that all hardware worked to specification, that the reconstruction software was able to reconstruct hits in all the modules and that the magnetisation scheme was able to be used successfully to reconstruct the particle momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in the data and produce charge and momentum estimates for the beam.
 
 \subsubsection{Electronics results}
 
@@ -157,14 +157,14 @@ Gain plots for all of the 3996 MPPCs installed on Baby MIND are shown in \FigRef
 \subsubsection{Magnet results}
 
 The magnet performance was measured at CERN by the CERN magnet team led by Alexey Dudarev, with detailed tests on the first module allowing comparisons for verification of the simulations. The magnet modules reached the design specification of 1.5 T for a current of 140 A. Stray fields were measured at less than $10$~mT at a distance of 1 mm from the surface of the magnet modules. The measured power consumption at CERN for the 33 magnet modules was 11.5 kW. %The measured power consumption at J-PARC is 11.1 kW. The ambient temperature at J-PARC is 10C lower which accounts for the lower aluminium coil temperatures and resistances. 
-The current and voltage reach stable operating values several hours, this can be seen in~\FigRef{fig:Magnetplot1}. The ARMCO steel was from three different batches, all with slightly different permeabilities. In the top figure of~\FigRef{fig:Magnetplot1} measurements of the magnetic field when the coils are powered (B\_max) is shown as well as the residual field when the current is off (B\_res) for each of the batches. The bottom left figure shows the stability of the power supply when running and the bottom right figure shows how the voltage changes as a function of time due to heating of the coils for a fixed current of 140 A.
+The current and voltage reach stable operating values after several hours, this can be seen in~\FigRef{fig:Magnetplot1}. The ARMCO steel was from three different batches, all with slightly different permeabilities. In the top figure of~\FigRef{fig:Magnetplot1} measurements of the magnetic field when the coils are powered (B\_max) is shown as well as the residual field when the current is off (B\_res) for each of the batches. The bottom left figure shows the stability of the power supply when running and the bottom right figure shows how the voltage changes as a function of time due to heating of the coils for a fixed current of 140 A.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/magnetFigure1.jpeg}
 
 \includegraphics[width=\textwidth]{figures/magnetFigure2.jpeg}
-\caption{Baby MIND magnet measured (at CERN) field values for 33 modules (left), current at J-PARC (middle) and corresponding voltage (right). Figures, courtesy of Etam Noah.}
+\caption{Baby MIND magnet measured (at CERN) with field values for 33 modules (top), power supply current (bottom left) and corresponding power supply voltage (bottom right). Figures, courtesy of Etam Noah.}
 \label{fig:Magnetplot1}
 \end{figure}
 
@@ -190,7 +190,7 @@ Using the recorded data, the SaRoMaN reconstruction needed to be verified to see
 
 
 \subsubsection{Tracks in SaRoMaN}
-In a similar way to simulated data, the collected hits are split depending on the time the hits were recorded to build possible tracks, seen in \FigRef{fig:event} and \FigRef{fig:EventsInitial}. Looking at the track in \FigRef{fig:event} and the top track of \FigRef{fig:EventsInitial} it is clear that these look like clean tracks with no little showering, hits in almost all planes and are thus probably a muon. The bottom track in \FigRef{fig:EventsInitial} has a very clear showering pattern after the first three planes and is probably a showering pion. Each of these possible tracks are then filtered to produce the best possible fitted track for those points and some background or noise hits. This can become quite complicated if there are two tracks passing through simultaneously, however this can be handed by the software even though this phenomenon is rare.
+In a similar way to simulated data, the collected hits are split depending on the time the hits were recorded to build possible tracks, seen in \FigRef{fig:event} and \FigRef{fig:EventsInitial}. Looking at the track in \FigRef{fig:event} and the top track of \FigRef{fig:EventsInitial} it is clear that these look like clean tracks with little showering, with hits in almost all planes and hence is probably a muon. The bottom track in \FigRef{fig:EventsInitial} has a very clear showering pattern after the first three planes and is probably a showering pion. Each of these possible tracks are then filtered to produce the best possible fitted track for those points and some background or noise hits. This can become quite complicated if there are two tracks passing through simultaneously, however this can be handed by the software even though this phenomenon is rare.
 
 The main difficulty arises from the framework only being able to reconstruct tracks and not being able to reconstruct shower events. Any track reconstruction of a shower should fail, but sometimes it will attempt to reconstruct a shower as a track and return an incorrect charge and momentum value. This makes it clear that events containing showers need to be removed before any analysis is performed by using pattern recognition to identify showers (non-muons) from muons (non-showers).
 
@@ -227,9 +227,9 @@ One of the main goals of the Baby MIND detector is to correctly identify the cha
 \label{fig:ChargeInitial}
 \end{figure}
 
-These plots confirm that the full data analysis chain works, however the results show lower efficiencies than expected from simulations. Looking on an event by event basis it became clear that the events are a mix of muons and pions even after an initial pattern recognition to try and isolate muons. This motivated the development of a more advanced pattern recognition algorithm using machine learning. It can be seen that a simulated pion sample, \FigRef{fig:ChargeImprovedPion}, will be very poorly reconstructed and can explain the difference between data and simulation in the mixed test beam. In this poor reconstruction the algorithm falls back to a default estimate, thus over estimating negative charges for the pion samples.
+These plots confirm that the full data analysis chain works, however the results show lower efficiencies than expected from simulations. Looking on an event-by-event basis it became clear that the events are a mix of muons and pions even after an initial pattern recognition to try and isolate muons. This motivated the development of a more advanced pattern recognition algorithm using machine learning. It can be seen that a simulated pion sample, \FigRef{fig:ChargeImprovedPion}, will be very poorly reconstructed and can explain the difference between data and simulation in the mixed test beam. In this poor reconstruction the algorithm falls back to a default estimate, thus over estimating negative charges for the pion samples.
 
-It should be mentioned that for future runs the deposited energy will be available and will make the distinction between pion and muon easier.
+It should be mentioned that for future runs the deposited energy will be available and will make the distinction between pions and muons easier.
 
 %Initial results, with pion contamination and initial unpacking. Discuss issue with cuts. Assuming that all hits had hit amplitude, unpacking could not collate hits correctly. Confirm reconstruction even further. Will be able to properly run the code on the data.
 
@@ -266,13 +266,13 @@ Essentially the machine learning algorithm identifies muons in a mixed backgroun
 The main variables used in the model are the following:
 \begin{itemize}
 \item Number of total hits in the event (Hits),
-\item Number of used planes to perfor the fit (uPlanes),
+\item Number of used planes to perform the fit (uPlanes),
 \item Number of hits used in the fit divided by the number of used planes (HPPlanes),
 \item Average number of hits per plane (AvrHPlanes),
 \item Maximum distance between hits in an event divided by the distance between the first and last plane in the fit (RL).
 \end{itemize}
 
-These variables can be seen in \FigRef{fig:TMVAinput}.
+The distributions of these variables for signal and background can be seen in \FigRef{fig:TMVAinput}.
 
 \begin{figure}[h!]
 \centering
@@ -306,7 +306,7 @@ Based on these simulated signal and background samples, TMVA provides a signal e
 
 Running through this model further it is possible to return the evaluation variable, known as the response, to see how signal and background are classified by TMVA. Figure~\ref{fig:TMVAresponce} shows that signal and background can be separated and is understood by the algorithm, however there will always be some events which are incorrectly classified as signal or background. In the same figure it can be seen how data points have been added both by the training and testing sample to show that the algorithm has not been over-trained to work for only specific data.
 
-This translates directly into \FigRef{fig:TMVAcuts} showing what value of the response should be used to determine what is signal and background, providing a specific purity, efficiency and significance. The significance is chosen as the possibility to see a signal over the background as $Signal/\sqrt{Signal + Background}$ and is often used in particle physics. For this analysis purity is of the most interest as the end goal is to return a data sample with as clean a muon sample as possible. Thus the cut value is chosen as the maximum, seen in~\FigRef{fig:TMVAcuts}, 0.42 and provides 92.3 \% of the signal to pass through in a pure sample of signal events and only 11.3 \% of background events in a pure background event sample.
+This translates directly into \FigRef{fig:TMVAcuts} showing what value of the response should be used to determine what is signal and background, providing a specific purity, efficiency and significance. The significance is chosen as the possibility to see a signal over the background as $s/\sqrt{S+B}$, where $S$ is the number of signal events and $B$ is the number of background events, which is a figure-of-merit that is often used in particle physics. For this analysis purity is of the most interest as the end goal is to return a data sample with as clean a muon sample as possible. Thus the cut value is chosen as the maximum sensitivity = 0.42, as seen in~\FigRef{fig:TMVAcuts}, and provides 92.3 \% of the signal to pass through in a pure sample of signal events and only 11.3 \% of background events in a pure background event sample.
 
 \begin{figure}[h!]
 \centering
@@ -337,7 +337,7 @@ Using the final cleaned sample, with a 81.8\% purity, provides the final charge 
 
 This finally shows, that even after improving the purity of the beam to muons to 81.8\% there is a discrepancy between the charge reconstruction efficiency of the simulation and the data. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or some timing mismatches between the events. It should also be noted that the momentum values for the data are taken as the momentum selection set by the quadrupole magnets in the beam, which may not yield an accurate momentum value. This will require further study and potentially simulations of the entire beamline.
 
-The plots show the potential of using the Baby MIND detector for muon charge reconstruction at lower momenta than had previously been achieved. This is due to the modular nature and careful layout of the detector, with three magnetic modules upstream to perform an initial bend of the particles and gaps between measuring scintillator planes to perform the measurement of the bend. It also shows that for the test beam it was possible to attain above 70\% charge identification for the full momentum range (above 400 MeV/c) and above 85\% for muons above 1 GeV/c. %The discrepancy between data and simulation is due to the act that the beam is not made up of purely muons as well as effects of the modelling of the electronics perhaps not taking all of the effects into account.
+The plots show the potential of using the Baby MIND detector for muon charge reconstruction at lower momenta than had previously been achieved. This is due to the modular nature and careful layout of the detector, with three magnetic modules upstream to perform an initial bend of the particles and gaps between measuring scintillator planes to perform the measurement of the bend. It also shows that for the test beam it was possible to attain a charge identification efficiency of over 70\% for the full momentum range (above 400 MeV/c) and above 85\% for muons above 1 GeV/c. %The discrepancy between data and simulation is due to the act that the beam is not made up of purely muons as well as effects of the modelling of the electronics perhaps not taking all of the effects into account.
 
 \begin{figure}[h!]
 \centering
@@ -353,7 +353,7 @@ The plots show the potential of using the Baby MIND detector for muon charge rec
 	%\includegraphics[width=0.49\textwidth]{figures/TMVAnew/TMVAnewChargeIDFull.pdf}
 	%\includegraphics[width=0.49\textwidth]{figures/TMVAnew/TMVAnewChargeIDLow.pdf}
 
-\caption{After TMVA charge id results}
+\caption{Charge reconstruction efficiency plots after adopting the TMVA particle identification algorithm to select a pure sample of muons. The bottom plot is a zoom version of the top plot, with momentum below 2 GeV/c.}
 \label{fig:ChargeImproved}
 \end{figure}
 
@@ -365,9 +365,9 @@ The plots show the potential of using the Baby MIND detector for muon charge rec
 
 %Requires a new thinking regarding the reconstruction software and lead to the development of SAURON using more modern, reliable Kalman packages and a Runge-kutta method instead of a helical track model.
 
-\pagebreak
+%\pagebreak
 \section{Summary}
-From the test beam results, it has been shown that the Baby MIND performs as expected and can achieve a high charge reconstruction efficiency for particles with momenta above 400 MeV/c. The electronics and readout systems work within expectation, and the reconstruction programme SaRoMaN can perform reconstruction of tracks, showing that reconstruction of tracks is possible for muons at low momentum. The results show that the Baby MIND detector is ready to be integrated into the WAGASCI experiment as a magnetic spectrometer in the J-PARC neutrino beam.
+From the test beam results, it has been shown that the Baby MIND full detector performs as expected and can achieve a high charge reconstruction efficiency for particles with momenta above 400 MeV/c. The electronics and readout systems work within expectation, and the reconstruction programme SaRoMaN can perform reconstruction of tracks, showing that reconstruction of tracks is possible for muons at low momentum. The results show that the Baby MIND detector is ready to be integrated into the WAGASCI experiment as a magnetic spectrometer in the J-PARC neutrino beam.
 
 
 

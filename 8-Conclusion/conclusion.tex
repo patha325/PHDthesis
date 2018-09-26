@@ -3,22 +3,42 @@
 
 %The conclusions should be 1-2 pages summarising the whole thesis. You should go chapter by chapter summarising all the findings of your thesis into one summary so if I were only to read the summary I would know what the thesis is about. For example, you could include parts of 8.2.1 as part of that summary but not 8.2.2 or 8.2.3 which have nothing to do with the thesis.
 
-%In the outlook section, you should talk about what will be the goals of WAGASCI with Baby MIND and what we expect to achieve with that detector combination at J-PARC and what is the likely impact of that combination on the T2K physics analysis. Remove the muon tomography and non-proliferation from the outlook section since it has nothing to do with your thesis.
+
 
 
 \section{Conclusions}
 
 The work performed in this thesis work has performed all of the goals set out at the start and beyond by providing two independent software frameworks for simulation and reconstruction of muon tracks in the Baby MIND. Further more work has been performed with the construction and commissioning of the detector and concluded with analysis of test beam and neutrino beam data. This work is seen as part of a larger chain which is still ongoing and benefits from completed and partial results that have been detailed in this thesis.
 
-\pagebreak
-\newpage
+Chapter one provided a brief introduction into the current theories regarding neutrino interactions as well as highlighted some of the ongoing fundamental questions in neutrino physics. This build up to chapter 2 where some past, current and future experiments were detailed and described both their role in providing an understanding of neutrinos as well as measurements they have provided. 
+
+In chapter three the Baby MIND and WAGASCI detectors were summarised with their motivations and layouts along with some details as to how they were combined.
+
+Chapter four described the two software frameworks which have been developed, SaRoMaN  and SAURON. SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development.
+
+Chapter five described the Aida module and Baby MIND test beams and commissioning at the CERN T9 charged beam facility. Results are presented on how well the Baby MIND detector can reconstruct positive and negative muon tracks as well as comparisons between data and simulations. As part of this work, results are also presented on how well a trained machine learning algorithm can identify muon events from background events in the detector.
+
+In chapter six a NuSTORM study with a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream. Results are presented on how well such as setup would be able to to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$. Results are also provided showing an estimate for how well neutrino charge current cross sections can be measured in a NuSTORM beam with a 10 ton detector.
+
+Chapter seven provides results from a study of neutrino interactions in the iron plates of Baby MIND with a comparison to data recorded during the Baby MIND commissioning as the spectrometer behind the WAGASCI detector. The first neutrino events were shown and compared to simulations to provide a first analysis for neutrino events in the Baby MIND.
+
+
+
+%\pagebreak
+%\newpage
 \section{Outlook}
 
-%\subsection{Baby MIND and WAGASCI}
+%In the outlook section, you should talk about what will be the goals of WAGASCI with Baby MIND and what we expect to achieve with that detector combination at J-PARC and what is the likely impact of that combination on the T2K physics analysis. Remove the muon tomography and non-proliferation from the outlook section since it has nothing to do with your thesis.
+
+\subsection{Interactions in the full WAGASCI}
+The Baby MIND and WAGASCI will start with full data taking in the end of 2018. This will allow for a full combined analysis where different target materials can be studied. This setup will a better vertex reconstruction and more accurate results if the interactions happen in the WAGASCI detectors and the resulting muons are reconstructed in Baby MIND.
+
+%Using WAGASCI as a CCQE identification, perhaps even using some of the INGRID modules to provide range momentum reconstruction at the very low momentum.
 
 \subsection{Software}
 
-During this thesis two software frameworks have been developed. SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development. A simple step in improvement required for both frameworks would be more input from other parts of the collaboration. In either framework there is a lot of detector descriptions and DAQ which could be handled in better and faster ways with more information. These are required to improve results and to provide simulations closer to data.
+%During this thesis two software frameworks have been developed. SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development. 
+A simple step in improvement required for both frameworks would be more input from other parts of the collaboration. In either framework there is a lot of detector descriptions and DAQ which could be handled in better and faster ways with more information. These are required to improve results and to provide simulations closer to data.
 
 %\section{Project management}
 
