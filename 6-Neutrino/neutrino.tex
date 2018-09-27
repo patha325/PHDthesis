@@ -104,7 +104,7 @@ The NuSTORM beam produces $\nu_\mu$ and $\bar{\nu}_e$ neutrinos from the decay o
 The main variables used in the model are the following:
 \begin{itemize}
 \item Maximum distance between hits in an event (MC\_ track\_ len),
-\item Angle of the track compared to the $z$-axis that defines the length of the detector (MC\_ angle),
+\item Angle of the track compared to the $z$-axis that defines the length of the detector\\ (MC\_ angle),
 \item Number of total hits in the event (NumberofHits),
 \item Number of planes hit (NumberofPlanes),
 \item Average number of hits per plane (AvrHitsPerPlane).
@@ -194,13 +194,13 @@ Applying the TMVA algorithm to a mixed sample of electron neutrinos and muon neu
 
 \section{Expected neutrino scattering results at the NuSTORM beam}
 
-Using the tabled event rates for $10^{21}$ protons-on-target (POT) estimated for a 100 ton detector 50 m for the nuSTORM storage ring provided in~\cite{118Soler} the spectra in figures~\ref{fig:TMVAEspectrumBefore} and~\ref{fig:TMVAEspectrumAfter} can be converted to number of events. In NuSTORM the following events are expected: $6.1\times 10^6$ $\nu_\mu$ CC events, $2.5\times 10^6$ $\bar{\nu}_e$ CC events, $2.1\times 10^6$ $\nu_\mu$ NC events and $1.0\times 10^6$ $\bar{\nu}_e$ NC events in a 100 ton detector for $10^{21}$ POT. The numbers used were reduced by a factor of 100 to provide an estimate for a 1 ton detector and the final result can be seen in figures~\ref{fig:TMVAEspectrumNBefore} and~\ref{fig:TMVAEspectrumNAfter}.
+Using the tabled event rates for $10^{21}$ protons-on-target (POT) estimated for a 100 ton detector 50 m for the nuSTORM storage ring provided in~\cite{118Soler} the spectra in figures~\ref{fig:TMVAEspectrumBefore} and~\ref{fig:TMVAEspectrumAfter} can be converted to number of events. In NuSTORM the following events are expected: $6.1\times 10^6$ $\nu_\mu$ CC events, $2.5\times 10^6$ $\bar{\nu}_e$ CC events, $2.1\times 10^6$ $\nu_\mu$ NC events and $1.0\times 10^6$ $\bar{\nu}_e$ NC events in a 100 ton detector for $10^{21}$ POT. The numbers used were reduced by a factor of 10 to provide an estimate for a 10 ton detector and the final result can be seen in figures~\ref{fig:TMVAEspectrumNBefore} and~\ref{fig:TMVAEspectrumNAfter}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/ActualNumEvents.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 1 ton detector at 50 m, before passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 10 ton detector at 50 m, before passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumNBefore}
 \end{figure}
 
@@ -208,7 +208,7 @@ Using the tabled event rates for $10^{21}$ protons-on-target (POT) estimated for
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/ActualNumEventsAfterTMVA.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 1 ton detector at 50 m, after passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 10 ton detector at 50 m, after passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumNAfter}
 \end{figure}
 
@@ -218,7 +218,7 @@ The result of the TMVA can be combined to estimate the total statistical and sys
 
 The CC inclusive cross section is given by the subtraction of the total background from the signal, and dividing by the neutrino flux and the total number of nucleons in the detector.  The estimated uncertainty is given by the quadratic sum of the errors for the signal and the total background. By defining the following operation, $a \oplus b = \sqrt{a^2+b^2}$ and generalising it as $\subsetadd x_i \equiv \sqrt{\sum x_i ^2}$, the error is defined through combining each error as $\sigma_{\nu_{\mu CC}} \oplus \sigma_{\bar{\nu}_{eCC}} \oplus \sigma_{\nu_{NC}} $. Using this error estimate combined with the cross-section values from~\FigRef{fig:neutrinoInteractionsFig} results in the determination of the $\nu_\mu$ inclusive CC cross section, as shown in~\FigRef{fig:crossSecEst} with the estimated measurement errors included.
 
-The results show that it is possible to measure the neutrino inclusive CC cross section with small statistical errors (of order 3\% per bin), for  a 10 ton detector in the NuSTORM beam at $10^{21}$ POT. These errors would decrease with a larger detector mass as well as with more protons on target.
+The results show that it is possible to measure the neutrino inclusive CC cross section with small statistical errors (of order 3\% per bin), for a 10 ton detector in the NuSTORM beam at $10^{21}$ POT. These errors would decrease with a larger detector mass as well as with more protons on target.
 
 \begin{figure}[h!]
 \centering
@@ -423,9 +423,9 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 %Try and conclude with a quantitative estimate of the ratio of antineutrino to neutrino events at 1.5 degrees, based on the previous calculations.
 
 
-Data was collected during March and May 2018. For this study, data collected between the 24th and 31st of May were used. The data was extracted by the unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track-like and were able to be reconstructed. After the events were selected, an angular cut was made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, thus reducing the number of events to 4585 (13.2\%). The requirement that the momentum was well reconstructed within a range 200 MeV/c < p < 10,000 MeV/c, further reduced the number of events to 3899 (11.2\%). After these cuts there are 2245 tracks reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane (to remove neutrino interactions upstream of Baby MIND) reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and fourth scintillator planes provides the final number of events to be 224 (0.6\%). Out of this sample, 123 event are reconstructed with positive charge and 101 with negative charge. Based on the number of reconstructed events and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$.
+Data was collected during March and May 2018. For this study, data collected between the 24th and 31st of May were used. The data was extracted by the unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track-like and were able to be reconstructed. After the events were selected, an angular cut was made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, thus reducing the number of events to 4585 (13.2\%). The requirement that the momentum was well reconstructed within a range $200~{\rm MeV/c} < p < 10,000~{\rm MeV/c}$, further reduced the number of events to 3899 (11.2\%). After these cuts there are 2245 tracks reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane (to remove neutrino interactions upstream of Baby MIND) reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and fourth scintillator planes provides the final number of events to be 224 (0.6\%). Out of this sample, 123 event are reconstructed with positive charge and 101 with negative charge. Based on the number of reconstructed events and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$.
 
-To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum as seen in~\FigRef{fig:SimuSpectrum}.
+To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum as seen in~\FigRef{fig:SimuSpectrum} with 27926 (27.9\%) neutrino and 33681 (33.7\%) antineutrinos which survive all the cuts.
 
 \begin{figure}[h!]
 \centering
@@ -440,7 +440,11 @@ The simulated reconstructed energy spectrum needs to be converted to number of e
 N_{events} = \int \phi_\nu(E) \times \sigma(E) \times N_{target} dE
 \end{equation}
 %N_{events} = \phi_\nu \times \sigma \times N_{target}
-where $\phi(E)$  is the neutrino flux as a function of neutrino energy $E$, seen in figure ~\FigRef{fig:SimuFlux}, $\sigma(E)$ is the neutrino and antineutrino total cross sections taken from figures~\ref{fig:neutrinoInteractionsFig} and~\ref{fig:antineutrinoInteractionsFig} and $N_{target}$ is the number of iron nucleons in the fiducial volume $=9.03 \times 10^{29}$. This provides the total number of neutrino events as 125 muon neutrinos and 154 muon antineutrinos as seen in~\FigRef{fig:NumSim}.
+where $\phi(E)$  is the neutrino flux as a function of neutrino energy $E$, seen in ~\FigRef{fig:SimuFlux}, $\sigma(E)$ is the neutrino and antineutrino total cross sections taken from figures~\ref{fig:neutrinoInteractionsFig} and~\ref{fig:antineutrinoInteractionsFig} and $N_{target}$ is the number of iron nucleons in a 1500 kg mass which is $N_{target}=9.03 \times 10^{29}$. This provides the total number of neutrino events as 7588 muon neutrinos and 23432 muon antineutrinos for 1500 kg of iron and $10^{21}$ POT. Combining these results with the reconstruction efficiency provides 2117 muon neutrinos and 7899 muon antineutrinos reconstructed with the correct charge for 1500 kg of iron and $10^{21}$ POT. The expected ratio of neutinos to antineutrinos is $3.7$, which is different to the observed ratio of $1.22$ in the data. This discrepancy is under investigation. 
+
+%However, when the neutrino simulations are normalized to the neutrino data and the antineutrino simulations are normalized to the antineutrino data, the momentum distribution agrees well as can be seen in~\FigRef{fig:datanumubar} and \FigRef{fig:datanumu}.
+
+ %as seen in~\FigRef{fig:NumSim}.
 
 %This provides a rescaling of the energy spectrum and provides the total number of events in~\FigRef{fig:NumSim}.
 
@@ -452,6 +456,7 @@ where $\phi(E)$  is the neutrino flux as a function of neutrino energy $E$, seen
 \label{fig:SimuFlux}
 \end{figure}
 
+\if{0}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NumSimEvents.pdf}
@@ -459,16 +464,21 @@ where $\phi(E)$  is the neutrino flux as a function of neutrino energy $E$, seen
 \caption{The reconstructed number of simulated neutrino events in SAURON.}
 \label{fig:NumSim}
 \end{figure}
+\fi
 
 %In comparing data to simulations the main way is looking at the reconstructed energy spectra for the events which have been classified as muon neutrino and muon antineutrino respectively. 
 
-The reconstructed energy spectra for events which have been classifies as muon neutrinos and muon antineutrinos were compared to the simulations. In \FigRef{fig:datanumubar} and \FigRef{fig:datanumu} the simulated (expected) reconstructed energy spectrum is plotted with the recorded data points extracted from the neutrino beam overlayed. Both plots have been normalized to each other to ensure that the number of simulated events have been scaled to match the number of recorded events.
+The reconstructed energy spectra for events which have been classified as muon neutrinos and muon antineutrinos were compared to the simulations. In \FigRef{fig:datanumubar} and \FigRef{fig:datanumu} the simulated (expected) reconstructed energy spectrum is plotted with the recorded data points extracted from the neutrino beam overlayed. Both plots have been normalized to each other to ensure that the number of simulated events have been scaled to match the number of recorded events.
 %The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin. 
-The results shown in~ \FigRef{fig:datanumubar} show good agreement between data and simulations for muon antineutrino events. The results shown in~ \FigRef{fig:datanumu} show good agreement between data and simulations for muon neutrino events. The rough shape is due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. 
+The results shown in~\FigRef{fig:datanumubar} show good agreement between data and simulations for muon antineutrino events. The results shown in~\FigRef{fig:datanumu} show good agreement between data and simulations for muon neutrino events. %The rough shape is due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. 
 
 %The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin and the further shape is rough due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. 
 %This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or the assumption that the muon events have been correctly identified as charge-current events in the iron. It is possible that the cuts need to be enhanced to provide improved results. 
-For further results more data needs to be collected and data in the forward horn current mode.
+
+%More neutrino beam data will be collected in 2019 with the Baby MIND detector integrated into the WAGASCI detector.
+
+
+%For further results more data needs to be collected and data in the forward horn current mode.
 
 %Only data taken during the commissioning phase, some errors in data taking requiring only able to use some data. Not possible to correlate time of events with neutrino events allowing background neutrino events and muons to enter into the data sample.
 
@@ -528,4 +538,4 @@ For further results more data needs to be collected and data in the forward horn
 %\section{Electron charge current quasi-elastic}
 
 \section{Summary}
-From the study carried out in this chapter, it is possible for the Baby MIND spectrometer to analyse neutrino events interacting in its iron plates and it would be able to provide charge reconstruction of tracks down to 400 GeV/c. The first neutrino events were also shown and compared to simulations to provide a first analysis for neutrino events in the Baby MIND.
+During commissioning of Baby MIND, it was possible to reconstruct neutrino events during the data taking period in May 2018. A preliminary study was carried out to reconstruct neutrino interactions in the first three iron plates of Baby MIND and measure neutrino and antineutrino events from the Reverse Horn Current beam at a 1.5$^\circ$ off-axis angle. Charge reconstruction was achieved, with momentum measurements down to 400 MeV/c. A total of 224 neutrino and antineutrino events were identified in  Baby MIND, which are the first neutrino events observed in this detector.

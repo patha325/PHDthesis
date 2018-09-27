@@ -14,7 +14,7 @@ In this section details will be given ton how the data was collected and process
 \subsection{Setup}
 During June-July 2016 a test beam was performed to characterise the readout system, data acquisition (DAQ) and electronics to be used in the Baby MIND detector. The test beam was at the T9 beam of the East Area, operating at the Proton Synchrotron (PS) at CERN. A Totally Active Scintillation Detector (TASD) constructed under the AIDA-2020 project (Advanced European Infrastructures for Detectors at Accelerators) was used to test the readout system, electronics, DAQ and reconstruction software. Baby MIND uses the same read out electronics and boards, with some firmware upgrades from this initial test beam.
 
-The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000~mm^3$, and the configuration can be seen in figures~\ref{fig:TASD} and in~\ref{fig:TASDreal}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This results in a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total detector size of $1~m^3$.  For the test beam only 12 layers of $16 \times 16$ bars were instrumented and the total instrumented volume was $0.003~m^3$
+The TASD detector consisted of horizontal and vertical planes, each plane with 16 scintillator bars, $10\times10\times1000~mm^3$, and the configuration can be seen in figures~\ref{fig:TASD} and in~\ref{fig:TASDreal}. Each bar is read out on both sides by S12571-025C Hamamatsu Multi Pixel Photon Counters (MPPCs). There are a total of twelve planes of either horizontal or vertical type in an alternating vertical, horizontal pattern. The layout is six combined planes providing both vertical and horizontal information with spacing between each. This results in a detector with 96 horizontal and 96 vertical bars read out on both sides using a total of 384 MPPCs and a total detector size of $1~m^3$.  For the test beam only 12 layers of $16 \times 16$ bars were instrumented and the total instrumented volume was $0.003~m^3$.
 
 
 \begin{figure}[h!]
@@ -46,9 +46,7 @@ After the merger of the FEB data, unpacking software is used to translate the fo
 
 \subsection{Data preprocessing}
 
-The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible between signal to deposited energy.
-
-It was possible for the DAQ to return hits without a time, which were removed before the analysis, also events which were outside the time window with respect to the initial hit were removed.
+The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible between signal to deposited energy. It was possible for the DAQ to return hits without a time, which were removed before the analysis, also events which were outside the time window with respect to the initial hit were removed.
 
 \subsection{Results}
 
@@ -184,7 +182,7 @@ Using the recorded data, the SaRoMaN reconstruction needed to be verified to see
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/HitMap5GeVYZ.pdf}
-\caption{All recorded hits for a run with the 5 GeV beam settings.}
+\caption{All recorded hits for a run with the 5 GeV/c beam settings.}
 \label{fig:hitmap}
 \end{figure}
 
@@ -197,7 +195,7 @@ The main difficulty arises from the framework only being able to reconstruct tra
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/SampleTrack5GeVYZ.pdf}
-\caption{A sample track from the test beam, taking a time cut for the hits for a run with the 5 GeV beam settings.}
+\caption{A sample track from the test beam, taking a time cut for the hits for a run with the 5 GeV/c beam settings.}
 \label{fig:event}
 \end{figure}
 
@@ -206,7 +204,7 @@ The main difficulty arises from the framework only being able to reconstruct tra
 \includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent2.jpg}
 
 \includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent3.jpg}
-\caption{Sample events of test beam interactions at a set energy value of $5GeV/c$.}
+\caption{Sample events of test beam interactions at a set energy value of 5 GeV/c.}
 \label{fig:EventsInitial}
 \end{figure}
 
@@ -306,7 +304,7 @@ Based on these simulated signal and background samples, TMVA provides a signal e
 
 Running through this model further it is possible to return the evaluation variable, known as the response, to see how signal and background are classified by TMVA. Figure~\ref{fig:TMVAresponce} shows that signal and background can be separated and is understood by the algorithm, however there will always be some events which are incorrectly classified as signal or background. In the same figure it can be seen how data points have been added both by the training and testing sample to show that the algorithm has not been over-trained to work for only specific data.
 
-This translates directly into \FigRef{fig:TMVAcuts} showing what value of the response should be used to determine what is signal and background, providing a specific purity, efficiency and significance. The significance is chosen as the possibility to see a signal over the background as $s/\sqrt{S+B}$, where $S$ is the number of signal events and $B$ is the number of background events, which is a figure-of-merit that is often used in particle physics. For this analysis purity is of the most interest as the end goal is to return a data sample with as clean a muon sample as possible. Thus the cut value is chosen as the maximum sensitivity = 0.42, as seen in~\FigRef{fig:TMVAcuts}, and provides 92.3 \% of the signal to pass through in a pure sample of signal events and only 11.3 \% of background events in a pure background event sample.
+This translates directly into \FigRef{fig:TMVAcuts} showing what value of the response should be used to determine what is signal and background, providing a specific purity, efficiency and significance. The significance is chosen as the possibility to see a signal over the background as $S/\sqrt{S+B}$, where $S$ is the number of signal events and $B$ is the number of background events, which is a figure-of-merit that is often used in particle physics. For this analysis purity is of the most interest as the end goal is to return a data sample with as clean a muon sample as possible. Thus the cut value is chosen as the maximum sensitivity = 0.42, as seen in~\FigRef{fig:TMVAcuts}, and provides 92.3 \% of the signal to pass through in a pure sample of signal events and only 11.3 \% of background events in a pure background event sample.
 
 \begin{figure}[h!]
 \centering
