@@ -1,7 +1,7 @@
 \chapter{NuSTORM beam neutrino interaction studies}
 \label{c:neutrinoNuSTORM}
 
-The Baby MIND detector was built to reconstruct muon tracks passing through the detector, this makes it ideal to be used for muon neutrino reconstruction with an appropriate target. As discussed in subsection~\ref{subsection:Neutrino interactions} there are a few interactions which produce a free muon which can then be reconstructed with the Baby MIND. These are the muon neutrino charge current interactions, quasi-elastic (QE) charge current (CC) interactions, deep inelastic scattering (DIS) and resonant interactions (RES) each at various energy ranges as can be seen in figures~\ref{fig:neutrinoInteractionsFig} and in~\ref{fig:antineutrinoInteractionsFig}.
+The Baby MIND detector was built to reconstruct muon tracks passing through the detector, this makes it ideal to be used for muon neutrino reconstruction with an appropriate target. As discussed in subsection~\ref{subsection:Neutrino interactions} there are a few interactions which produce a free muon which can then be reconstructed with the Baby MIND. These are the muon neutrino charge current interactions, quasi-elastic (QE) charge current (CC) interactions, deep inelastic scattering (DIS) and resonant single pion interactions (RES) each at various energy ranges as can be seen in figures~\ref{fig:neutrinoInteractionsFig} and in~\ref{fig:antineutrinoInteractionsFig}.
 
 \begin{figure}[h!]
 \centering
@@ -23,13 +23,13 @@ The signature for each of these interactions are quite different, as a charge-cu
 
 \section{Muon charge current quasi-elastic interactions}
 
-Charge current quasi-elastic (CCQE) interactions produce a clear muon track for both neutrinos and anti-neutrinos, however the interaction only produces a proton track for neutrino interactions as seen below:
+Charge current quasi-elastic (CCQE) interactions produce a clear muon track for both neutrinos and antineutrinos, however the interaction only produces a proton track for neutrino interactions as seen below:
 \begin{align}
 \nu_\mu + n &\rightarrow \mu^- + p\\
  \bar{\nu_\mu} + p &\rightarrow \mu^+ + n
 \end{align}
 
-For the neutrino interactions, this becomes a very clear signature in a fully active target where both a muon and proton track can be identified. For anti-neutrinos this is not possible since neutron tracks are usually not detectable for most detector types. However the main goal is to identify muon tracks from pion tracks which is simply identifying a shower from a track. There have been a lot of interesting articles relating to how to identify neutrino events in argon detectors using machine learning~\cite{83Radovic2018}~\cite{84Adams}. In a non-active target it becomes very difficult to identify neutrino interactions as pions may decay to muons and become indistinguishable from directly produced muons.
+For the neutrino interactions, this becomes a very clear signature in a fully active target where both a muon and proton track can be identified. For antineutrinos this is not possible since neutron tracks are usually not detectable for most detector types. However the main goal is to identify muon tracks from pion tracks which is simply identifying a shower from a track. There have been a lot of interesting articles relating to how to identify neutrino events in argon detectors using machine learning~\cite{83Radovic2018}~\cite{84Adams}. In a non-active target it becomes very difficult to identify neutrino interactions as pions may decay to muons or they may interact in the material and become indistinguishable from directly produced muons.
 
 %Direct simulations with CCQE and different geometries. Use data from specifically Baby MIND in B2 beam line. Explain the beam line etc etc.
 
@@ -41,17 +41,17 @@ For the neutrino interactions, this becomes a very clear signature in a fully ac
 
 \pagebreak
 %\subsection{Interactions in TASD + Baby MIND}
-\subsection{Neutrino interactions in a TASD and Baby MIND configuration with a NuSTORM beam}
+\section{Neutrino interactions in a TASD and Baby MIND configuration with a NuSTORM beam}
 
-As described in subsection~\ref{subsec:NuSTORM}, a first stage towards a neutrino factory would contain a storage ring for neutrino and anti-neutrino production from muon decay. From a muon decay both muon and anti-electron neutrinos will be produced at $\approx 100\%$. In this to evaluate the sensitivity of NuSTORM to the study of neutrino interactions, the TASD and Baby MIND were used as a near detector to measure the interaction type and reconstruction of muon tracks. The main study is to see if it is possible to identify muon neutrino CCQE interactions and distinguish them from a background of neutral current interactions and anti-electron charge current interactions. This study was performed using a TMVA trained algorithm with simulated samples. As part of this study the fitted efficiency and charge identification efficiency of muon and anti-muon tracks produced by simulated muon and anti-neutrinos in Baby MIND is shown.
+As described in subsection~\ref{subsec:NuSTORM}, a first stage towards a neutrino factory would contain a storage ring for neutrino and antineutrino production from muon decay. From a muon decay both muon and anti-electron neutrinos will be produced at $\approx 100\%$. In order to evaluate the sensitivity of NuSTORM to the study of neutrino interactions, the TASD and Baby MIND were used as a near detector to measure the interaction type and reconstruction of muon tracks. The main purpose of the study is to see if it is possible to identify muon neutrino CCQE interactions and distinguish them from a background of neutral current interactions and anti-electron charge current interactions. This study was performed using a TMVA trained algorithm with simulated samples. As part of this study the fitted efficiency and charge identification efficiency of negative and positive muon tracks produced by simulated muon neutrinos and antineutrinos in Baby MIND are shown.
 
-The NuSTORM neutrino energy spectrum from the decay of $\mu^-$ has been simulated as can be seen in \FigRef{fig:NuSTORMeSpectrum} for both muon and anti-electron neutrinos. This is the spectrum of neutrino flavours observed in a detector at a distance of 50~m from the end of the NuSTORM straight section (as shown in \FigRef{fig:nuStorm}). The main job for any detector will be to identify if the neutrino event is produced from either a $\nu_\mu$ CC interaction, producing a $\mu^-$, or from a $\bar{\nu}_e$ interaction, which produces positrons, as well as dealing with the neutral current (NC) background from all neutrinos.
+The NuSTORM neutrino energy spectrum from the decay of $\mu^-$ has been simulated as can be seen in \FigRef{fig:NuSTORMeSpectrum} for both muon neutrinos and anti-electron neutrinos. This is the spectrum of neutrino flavours observed in a detector at a distance of 50~m from the end of the NuSTORM straight section (as shown in \FigRef{fig:nuStorm}). The main job for any detector will be to identify if the neutrino event is produced from either a $\nu_\mu$ CC interaction, producing a $\mu^-$, or from a $\bar{\nu}_e$ interaction, which produces positrons, as well as dealing with the neutral current (NC) background from all neutrinos.
 %muon interaction or an electron interaction as well as dealing with the small background ($<1\%$) of anti-muon produced electron and anti-muon neutrinos.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/eSpectrum.pdf}
-\caption{Energy spectrum of muon and anti-electron neutrinos produced at NuSTORM and recorded at 50 m from the storage ring.}
+\caption{Energy spectrum of muon neutrinos and anti-electron neutrinos produced at NuSTORM and recorded at 50 m from the storage ring.}
 \label{fig:NuSTORMeSpectrum}
 \end{figure}
 
@@ -64,7 +64,7 @@ During the construction of Baby MIND, it was proposed to fully instrument the wh
 \label{fig:TASDandMIND}
 \end{figure}
 
-Using the SAURON framework, 100 000 muon and antimuon neutrinos were simulated using the NuSTORM energy spectrum and reconstructed to provide the figures of merit presented below. In \FigRef{fig:NuSTORMTASDfitted} the reconstruction efficiency is presented, \FigRef{fig:NuSTORMTASDfittedcharge} shows the charge efficiency and finally \FigRef{fig:NuSTORMTASDCombined} shows these two multiplied. Each of the plots show different metrics to evaluate the SAURON framework and the detector performance. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as how many of the reconstructible tracks are reconstructed with the correct charge. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
+Using the SAURON framework, $10^5$ muon neutrinos and muon antineutrinos were simulated using the NuSTORM energy spectrum and reconstructed to provide the figures of merit presented below. In \FigRef{fig:NuSTORMTASDfitted} the reconstruction efficiency is presented, \FigRef{fig:NuSTORMTASDfittedcharge} shows the charge efficiency and finally \FigRef{fig:NuSTORMTASDCombined} shows these two multiplied. Each of the plots show different metrics to evaluate the SAURON framework and the detector performance. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as how many of the reconstructible tracks are reconstructed with the correct charge. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
 
 \begin{figure}[h!]
 \centering
@@ -86,7 +86,7 @@ Using the SAURON framework, 100 000 muon and antimuon neutrinos were simulated u
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/CombinedNuStormChargeFittedEff.pdf}
 %\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/data260618/T2K/ChargeIDT2KNeutrinoBeamMIND.pdf}
-\caption{The efficiency plot of how well the SAURON algorithm can reconstruct the charge from muon tracks with respect to all the simulated neutrino interactions with the NuSTORM beam as a function of muon momenta. This plot is the multiplication of the efficiencies in \FigRef{fig:NuSTORMTASDfitted} and \FigRef{fig:NuSTORMTASDfittedcharge}}
+\caption{The efficiency plot of how well the SAURON algorithm can reconstruct the charge from muon tracks with respect to all the simulated neutrino interactions with the NuSTORM beam as a function of muon momenta. This plot is the multiplication of the efficiencies in \FigRef{fig:NuSTORMTASDfitted} and \FigRef{fig:NuSTORMTASDfittedcharge}.}
 \label{fig:NuSTORMTASDCombined}
 \end{figure}
 
@@ -122,11 +122,11 @@ The distributions of these variables for signal and background can be seen in \F
 \centering
 
 \includegraphics[width=\textwidth]{figures/neutrinoTMVA/variables_id_c1.png}
-\caption{Input variables for both signal and background using simulated data}
+\caption{Input variables for both signal and background using simulated data.}
 \label{fig:TMVANeuinput}
 \end{figure}
 
-Based on these simulated signal and background samples, TMVA will provided a signal efficiency curve based on the various built-in machine learning models, seen in \FigRef{fig:TMVANeuroc}. In this plot is is clear that several models outperform others, however the multilayer perceptron with a Bayesian Neural Network (MLPBNN) was chosen as the best performing model. The MLPBNN response can be seen in \FigRef{fig:TMVANeuresponce} and shows a clear distinction between signal and background samples. It is quite clear that any cut between these two distinct peaks will produce the desired outcome, this is plotted in \FigRef{fig:TMVANeucuts}. For this study the significance is chosen as the possibility to see a signal over the background as $Signal/\sqrt{Signal + Background}$ and is often used in particle physics. The background is chosen to be close to the estimated interaction probability. For 1000 $\nu_\mu$ CC signal events, there are 1000 $\bar{\nu}_e$ CC events and 333 $\nu_\mu$ NC events and 333 $\bar{\nu}_e$ NC events. This provides a total of 1666 background events for 1000 signal events.
+Based on these simulated signal and background samples, TMVA will provided a signal efficiency curve based on the various built-in machine learning models, seen in \FigRef{fig:TMVANeuroc}. In this plot is is clear that several models outperform others, however the multilayer perceptron with a Bayesian Neural Network (MLPBNN) was chosen as the best performing model. The MLPBNN response can be seen in \FigRef{fig:TMVANeuresponce} and shows a clear distinction between signal and background samples. It is quite clear that any cut between these two distinct peaks will produce the desired outcome, this is plotted in \FigRef{fig:TMVANeucuts}. For this study the significance is chosen as the possibility to see a signal over the background as $S/\sqrt{S+B}$, where $S$ is the number of signal events and $B$ is the number of background events, which is a figure-of-merit often used in particle physics. The background is chosen to be close to the estimated interaction probability. For 1000 $\nu_\mu$ CC signal events, there are 1000 $\bar{\nu}_e$ CC events and 333 $\nu_\mu$ NC events and 333 $\bar{\nu}_e$ NC events. This provides a total of 1666 background events for 1000 signal events.
  %and shows the ideal value if the number of signal and background events are equal.
 
 %Explain the details of figure 6.11, say where you put your optimised cut and how you optimise with a figure of merit S/sqrt(S+B).
@@ -179,7 +179,7 @@ Applying the TMVA algorithm to a mixed sample of electron neutrinos and muon neu
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/ActualNeutrinoEvents.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ produced from $10^{20}$ POT, before passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ produced from $10^{20}$ protons-on-target (POT), before passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumBefore}
 \end{figure}
 
@@ -188,19 +188,19 @@ Applying the TMVA algorithm to a mixed sample of electron neutrinos and muon neu
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/ActualNeutrinoEventsAfter.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ produced from $10^{20}$ POT, after passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ produced from $10^{20}$ protons-on-target (POT), after passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumAfter}
 \end{figure}
 
 \section{Expected neutrino scattering results at the NuSTORM beam}
 
-Using the tabled event rates for $10^{21}$ POT estimated for a 100 ton detector 50 m for the nuSTORM storage ring provided in~\cite{118Soler} the spectra in figures~\ref{fig:TMVAEspectrumBefore} and~\ref{fig:TMVAEspectrumAfter} can be converted to number of events. The numbers used were reduced by a factor of 100 to provide an estimate for a 1 ton detector and the final result can be seen in figures~\ref{fig:TMVAEspectrumNBefore} and~\ref{fig:TMVAEspectrumNAfter}.
+Using the tabled event rates for $10^{21}$ protons-on-target (POT) estimated for a 100 ton detector 50 m for the nuSTORM storage ring provided in~\cite{118Soler} the spectra in figures~\ref{fig:TMVAEspectrumBefore} and~\ref{fig:TMVAEspectrumAfter} can be converted to number of events. In NuSTORM the following events are expected: $6.1\times 10^6$ $\nu_\mu$ CC events, $2.5\times 10^6$ $\bar{\nu}_e$ CC events, $2.1\times 10^6$ $\nu_\mu$ NC events and $1.0\times 10^6$ $\bar{\nu}_e$ NC events in a 100 ton detector for $10^{21}$ POT. The numbers used were reduced by a factor of 100 to provide an estimate for a 1 ton detector and the final result can be seen in figures~\ref{fig:TMVAEspectrumNBefore} and~\ref{fig:TMVAEspectrumNAfter}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/ActualNumEvents.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ POT in a 1 ton detector at 50 m, before passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$ , $\nu_{\mu_{CC}}$ and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 1 ton detector at 50 m, before passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumNBefore}
 \end{figure}
 
@@ -208,7 +208,7 @@ Using the tabled event rates for $10^{21}$ POT estimated for a 100 ton detector 
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/ActualNumEventsAfterTMVA.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ POT in a 1 ton detector at 50 m, after passing through the TMVA algorithm.}
+\caption{Neutrino energy spectrum of $\bar{\nu}_{eCC}$, $\nu_{\mu_{CC}}$and $\nu_{\mu_{NC}}$ recorded from $10^{21}$ protons-on-target (POT) in a 1 ton detector at 50 m, after passing through the TMVA algorithm.}
 \label{fig:TMVAEspectrumNAfter}
 \end{figure}
 
@@ -216,15 +216,17 @@ The result of the TMVA can be combined to estimate the total statistical and sys
 
 \newcommand*\subsetadd{\mathrel{\ooalign{$\bigcup$\cr\hidewidth\hbox{$\oplus\mkern 0.5mu$}\cr}}}
 
-By defining the following operation, $a \oplus b = \sqrt{a^2+b^2}$ and generalising it as $\subsetadd x_i \equiv \sqrt{\sum x_i ^2}$, the error is defined through combining each error as $\sigma_{\nu_{\mu CC}} \oplus \sigma_{\bar{\nu}_{eCC}} \oplus \sigma_{\nu_{NC}} $. Using this error estimate combined with the cross-section values from~\FigRef{fig:neutrinoInteractionsFig} results in \FigRef{fig:crossSecEst} with the estimated measurement errors included.
+The CC inclusive cross section is given by the subtraction of the total background from the signal, and dividing by the neutrino flux and the total number of nucleons in the detector.  The estimated uncertainty is given by the quadratic sum of the errors for the signal and the total background. By defining the following operation, $a \oplus b = \sqrt{a^2+b^2}$ and generalising it as $\subsetadd x_i \equiv \sqrt{\sum x_i ^2}$, the error is defined through combining each error as $\sigma_{\nu_{\mu CC}} \oplus \sigma_{\bar{\nu}_{eCC}} \oplus \sigma_{\nu_{NC}} $. Using this error estimate combined with the cross-section values from~\FigRef{fig:neutrinoInteractionsFig} results in the determination of the $\nu_\mu$ inclusive CC cross section, as shown in~\FigRef{fig:crossSecEst} with the estimated measurement errors included.
 
-The results show that it is possible to identify the cross-section to within small errors even with a 10 ton detector in the NuSTORM beam at $10^{21}$ POT. These errors would decrease with a larger detector mass as well as with more protons on target.
+The results show that it is possible to measure the neutrino inclusive CC cross section with small statistical errors (of order 3\% per bin), for  a 10 ton detector in the NuSTORM beam at $10^{21}$ POT. These errors would decrease with a larger detector mass as well as with more protons on target.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/CrossSecEstimate.pdf}
+\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuSTORM/CrossSecEstimateNew.pdf}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/mvaeffs_MLPBNN.png}
-\caption{Neutrino cross section from ~\FigRef{fig:neutrinoInteractionsFig} overlayed with error bars estimated from the Baby MIND study.}
+\caption{Inclusive neutrino CC cross section for a 10 ton detector at a NuSTORM beam with $10^{21}$ POT. The cross section from~\FigRef{fig:neutrinoInteractionsFig} is overlayed with error bars estimated from this study.}
+
+%\caption{Neutrino cross section from ~\FigRef{fig:neutrinoInteractionsFig} overlayed with error bars estimated from the Baby MIND study.}
 \label{fig:crossSecEst}
 \end{figure}
 
@@ -237,11 +239,15 @@ The results show that it is possible to identify the cross-section to within sma
 %Interactions in the TASD, what would be the efficiency of identifying mu CCQE events in a background e CC and mu NC ? 
 %New MC study using TMVA again, show plots and work. Show training and testing samples. Create mixed sample and show how well it can identify the parts. 
 
-\pagebreak
-\newpage
+%\pagebreak
+%\newpage
 
 \section{Summary}
-From the NuSTORM study carried out in this chapter, a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$ with 84\% efficiency.
+From the NuSTORM study carried out in this chapter, a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$, $\nu_{\mu NC}$ and $\bar{\nu}_{eNC}$ from the NuSTORM beam with 84\% efficiency and contamination of 7.4\%.
+
+
+
+%$\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$ with 84\% efficiency.
 
 %From the NuSTORM study is it clear that a TASD + Baby MIND configuration would be able to provide charge reconstruction of tracks down to 400 GeV/c with the possibility to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu_{e_{CC}}}$ and $\nu_{\mu_{NC}}$ with 91.3 \% efficiency.
 
@@ -278,7 +284,10 @@ From the NuSTORM study carried out in this chapter, a detector configuration con
 %\newpage
 \section{Neutrino interactions in iron in Baby MIND}
 
-Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphite target with three horns to focus the correct polarity of pions that decay to produce neutrinos with flux spectrum, given by reference~\cite{119T2K}. The INGRID on-axis detector \cite{120INGRID}, performs measurements of the beam direction and on-axis flux.The ND280 experiment uses the beam at a $2.5^\circ$ off-axis angle at a distance of 280 m which provides a narrower energy spectrum with a shifted peak energy energy with a peak at 600 MeV as can be seen in \FigRef{fig:T2KAxis}. The energy spectrum at $1.5^\circ$ off-axis, is narrower and has a peak at a lower energy than the on-axis spectrum, at 800 MeV which can be seen in \FigRef{fig:T2KAxis2}. The WAGASCI $1.5^\circ$ off-axis energy spectrum is shifted at a slightly higher energy than the $2.5^\circ$ off-axis energy spectrum used for the ND280 experiment.
+Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphite target with three horns to focus the correct polarity of pions that decay to produce neutrinos with the flux spectrum, given by reference~\cite{119T2K}. The INGRID on-axis detector \cite{120INGRID}, performs measurements of the beam direction and on-axis flux.The ND280 experiment uses the beam at a $2.5^\circ$ off-axis angle at a distance of 280 m which provides a narrower energy spectrum with a shifted energy peak at 600 MeV, as can be seen in \FigRef{fig:T2KAxis}. The energy spectrum at the $1.5^\circ$ off-axis angle for the WAGASCI detector has a peak at a higher energy, 800 MeV, than the peak from the $2.5^\circ$ off-axis angle of the ND280 detector, as can be seen in~\FigRef{fig:T2KAxis2}. 
+
+
+%The WAGASCI $1.5^\circ$ off-axis energy spectrum is shifted at a slightly higher energy than the $2.5^\circ$ off-axis energy spectrum used for the ND280 experiment.
 
 %previous narrower and lower peak than on-axis and slightly higher energy than 2.0 and 2.5 deg. as seen in plots from NuFact talk. Beam comes with two modes, forward horn current (FHC) with neutrinos produced and reverse horn current with anti-neutrinos produced.
 
@@ -300,9 +309,7 @@ Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphit
 
 %Explain that the goal of this chapter is to measure for the first time neutrino interactions in the iron of Baby MIND. Explain also that the data was taken during the commissioning of Baby MIND at J-PARC between March and May 2018. You need to also explain that the beam was operated in reverse horn current since it is important to realise that there is a larger contamination of neutrinos in the predominantly antineutrino beam. Please add a few paragraphs here to introduce all of this before you start talking about your simulation etc.
 
-The goal of this chapter is to perform the first measurement of neutrino interactions in the iron of Baby MIND. To validate the simulation framework SAURON, simulations will be compared to the recorded data.
-
-Data for the study was taken during the commissioning of Baby MIND at J-PARC between March and May 2018 when the beam was operated in reverse horn current mode. This mode produces a majority of muon antineutrinos with a contamination of muon neutrinos.
+The goal of this chapter is to perform the first measurement of neutrino interactions in the iron of Baby MIND. To validate the simulation framework SAURON, simulations will be compared to the recorded data. Data for the study were taken during the commissioning of Baby MIND at J-PARC between March and May 2018 when the beam was operated in reverse horn current mode. This mode produces a majority of muon antineutrinos with a contamination of muon neutrinos.
 
 The reverse horn current neutrino and antineutrino spectrum at 1.5$^\circ$ that the WAGASCI and Baby MIND detectors observed in the run between March and May 2018 can be seen in \FigRef{fig:T2KndSpectrum}. The fraction of muon antineutrinos is approximately 92\%, with a mean energy of 1.43 GeV, and the fraction of muon neutrinos is approximately 9\%, with a mean energy of 0.86 GeV. These spectra were used to perform simulations of neutrino and antineutrino events in WAGASCI and Baby MIND.
 
@@ -316,7 +323,7 @@ The reverse horn current neutrino and antineutrino spectrum at 1.5$^\circ$ that 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/WAGASCIflux.jpeg}
-\caption{The energy spectrum for muon neutrinos and muon anti-neutrinos in the T2K near detector reverse horn current (RHC) beam. Figure, courtesy of Akihiro Minamino.}
+\caption{The energy spectrum for muon neutrinos and muon antineutrinos in the T2K near detector reverse horn current (RHC) beam. Figure, courtesy of Akihiro Minamino.}
 \label{fig:T2KndSpectrum}
 \end{figure}
 
@@ -351,9 +358,11 @@ The event selection has been chosen try to ensure that only muons from neutrino 
 
 %Here you need to describe how you extract the reconstruction efficiency using the simulation, what simulation you used (SAURON or SaRoMaN?), how you generated the events
 
-For the simulations the WAGASCI spectrum has been used in the SAURON framework to generate neutrino interactions in the iron, using event selection previously described. These simulated neutrino events were reconstructed in a similar manor to the interactions in the TASD, detailed in chapter~\ref{c:neutrinoNuSTORM}. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as how many of the reconstructible tracks are reconstructed with the correct charge. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
+For the simulations the WAGASCI spectrum has been used in the SAURON framework to generate neutrino interactions in the iron, using event selection previously described. These simulated neutrino events were reconstructed in a similar manner to the interactions in the TASD, detailed in chapter~\ref{c:neutrinoNuSTORM}. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as the number of tracks with the correct charge divided by the number of reconstructible tracks. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
 
-Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charge current interactions, using the NuSTORM beam, is very high, even at low momenta. The main difference arises from the fact that the neutrinos are produced at a variety of angles with respect to the neutrino direction instead of straight on the center of the detector (with some beam size). Muons from neutrinos are produced at different angles depending on the kinematics of the neutrino interaction and neutrino energy. The track reconstruction efficiency is shown in~\FigRef{fig:IronMINDfitted} and the charge reconstruction efficiency with respect to the reconstructed track is shown in~\FigRef{fig:IronMINDfittedcharge}.
+Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charge current interactions, using the J-PARC neutrino beam, is very high, even at low momenta. The track reconstruction efficiency is shown in~\FigRef{fig:IronMINDfitted} and the charge reconstruction efficiency with respect to the reconstructed track is shown in~\FigRef{fig:IronMINDfittedcharge}.
+
+%The main difference arises from the fact that the neutrinos are produced at a variety of angles with respect to the neutrino direction instead of straight on the center of the detector (with some beam size). Muons from neutrinos are produced at different angles depending on the kinematics of the neutrino interaction and neutrino energy.
 
 In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the lowest momentum does not reach zero as the few tracks which have been fitted can provide a charge. This is seen when multiplying the two plots together as in \FigRef{fig:IronMINDCombined} with a focus on the low momentum range in \FigRef{fig:IronMINDCombinedZoom}.
 
@@ -414,9 +423,9 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 %Try and conclude with a quantitative estimate of the ratio of antineutrino to neutrino events at 1.5 degrees, based on the previous calculations.
 
 
-Data was collected during March and May 2018. For this study data collected between the 24th and 31st of may were used. The data was unpacked the provided unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}, and the study started after this unpacking. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track like and can reconstructed. When these tracks have been reconstructed, both an angular cut is made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, reduces the number of event to 4585 (13.2\%) and the momentum to be well reconstructed ($ 200$ MeV/c $<$ p $<$ $10000$ MeV/c),results in 3899 (11.2\%) events. After these cuts there are 2245 track reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and forth plane provides a final number of events as 224 (0.6\%). Out of this sample 123 event are reconstructed with positive charge and 101 with negative charge. Based on number of reconstructed event and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$ 
+Data was collected during March and May 2018. For this study, data collected between the 24th and 31st of May were used. The data was extracted by the unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track-like and were able to be reconstructed. After the events were selected, an angular cut was made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, thus reducing the number of events to 4585 (13.2\%). The requirement that the momentum was well reconstructed within a range 200 MeV/c < p < 10,000 MeV/c, further reduced the number of events to 3899 (11.2\%). After these cuts there are 2245 tracks reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane (to remove neutrino interactions upstream of Baby MIND) reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and fourth scintillator planes provides the final number of events to be 224 (0.6\%). Out of this sample, 123 event are reconstructed with positive charge and 101 with negative charge. Based on the number of reconstructed events and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$.
 
-To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum a seen in~\FigRef{fig:SimuSpectrum}.
+To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum as seen in~\FigRef{fig:SimuSpectrum}.
 
 \begin{figure}[h!]
 \centering
@@ -428,9 +437,12 @@ To compare data to simulations, two samples of 100000 muon neutrino and antineut
 
 The simulated reconstructed energy spectrum needs to be converted to number of events. This is done through the following equation:
 \begin{equation}
-N_{events} = \phi_\nu \times \sigma \times N_{target}
+N_{events} = \int \phi_\nu(E) \times \sigma(E) \times N_{target} dE
 \end{equation}
-where $\phi$ is the neutrino flux seen in~\FigRef{fig:SimuFlux}, $\sigma$ is the cross section taken from figures~\ref{fig:neutrinoInteractionsFig} and~\ref{fig:antineutrinoInteractionsFig} and $N_{target}$ is the number of iron nucleons in the fiducial volume $=9.03 \times 10^{29}$. This provides a rescaling of the energy spectrum and provides the total number of events in~\FigRef{fig:NumSim}.
+%N_{events} = \phi_\nu \times \sigma \times N_{target}
+where $\phi(E)$  is the neutrino flux as a function of neutrino energy $E$, seen in figure ~\FigRef{fig:SimuFlux}, $\sigma(E)$ is the neutrino and antineutrino total cross sections taken from figures~\ref{fig:neutrinoInteractionsFig} and~\ref{fig:antineutrinoInteractionsFig} and $N_{target}$ is the number of iron nucleons in the fiducial volume $=9.03 \times 10^{29}$. This provides the total number of neutrino events as 125 muon neutrinos and 154 muon antineutrinos as seen in~\FigRef{fig:NumSim}.
+
+%This provides a rescaling of the energy spectrum and provides the total number of events in~\FigRef{fig:NumSim}.
 
 \begin{figure}[h!]
 \centering
@@ -448,9 +460,15 @@ where $\phi$ is the neutrino flux seen in~\FigRef{fig:SimuFlux}, $\sigma$ is the
 \label{fig:NumSim}
 \end{figure}
 
-In comparing data to simulations the main way is looking at the reconstructed energy spectra for the events which have been classified as muon neutrino and muon anti-neutrino respectively. In \FigRef{fig:datanumubar} and \FigRef{fig:datanumu} the simulated (expected) reconstructed energy spectrum is plotted with the recorded data points from the beam line overlaid. Both plots have been normalized to each other to ensure that the number of simulated events have been scaled to match the number of recorded events.
+%In comparing data to simulations the main way is looking at the reconstructed energy spectra for the events which have been classified as muon neutrino and muon antineutrino respectively. 
 
-The results shown in~ \FigRef{fig:datanumubar} show good agreement between data and simulations. The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin. The results shown in~ \FigRef{fig:datanumu} show good agreement between data and simulations. The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin and the further shape is rough due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or the assumption that the muon events have been correctly identified as charge-current events in the iron. It is possible that the cuts need to be enhanced to provide improved results. For further results more data needs to be collected and data in the forward horn current mode.
+The reconstructed energy spectra for events which have been classifies as muon neutrinos and muon antineutrinos were compared to the simulations. In \FigRef{fig:datanumubar} and \FigRef{fig:datanumu} the simulated (expected) reconstructed energy spectrum is plotted with the recorded data points extracted from the neutrino beam overlayed. Both plots have been normalized to each other to ensure that the number of simulated events have been scaled to match the number of recorded events.
+%The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin. 
+The results shown in~ \FigRef{fig:datanumubar} show good agreement between data and simulations for muon antineutrino events. The results shown in~ \FigRef{fig:datanumu} show good agreement between data and simulations for muon neutrino events. The rough shape is due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. 
+
+%The large first bin for the simulation is attributed to the lower momentum events being combined in the lowest bin and the further shape is rough due to the initial flux of neutrinos in RHC being low compared to the antineutrino flux. 
+%This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or the assumption that the muon events have been correctly identified as charge-current events in the iron. It is possible that the cuts need to be enhanced to provide improved results. 
+For further results more data needs to be collected and data in the forward horn current mode.
 
 %Only data taken during the commissioning phase, some errors in data taking requiring only able to use some data. Not possible to correlate time of events with neutrino events allowing background neutrino events and muons to enter into the data sample.
 

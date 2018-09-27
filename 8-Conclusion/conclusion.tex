@@ -3,24 +3,40 @@
 
 %The conclusions should be 1-2 pages summarising the whole thesis. You should go chapter by chapter summarising all the findings of your thesis into one summary so if I were only to read the summary I would know what the thesis is about. For example, you could include parts of 8.2.1 as part of that summary but not 8.2.2 or 8.2.3 which have nothing to do with the thesis.
 
+%I don’t think this is a good way to start a conclusion. You should simply say what you have done, without beating your own drum.
 
+%For example:
+
+%This thesis summarises the work carried out by the candidate to help build and commission the Baby MIND detector, to supply the simulation and reconstruction software for Baby MIND, to perform track reconstruction and charge identification studies at dedicated commissioning test beams at CERN and to perform a preliminary measurement of neutrino interactions in the iron of the Baby MIND detector at the J-PARC facility. These tasks were performed as part of a team of collaborators, but responsibility for the reconstruction and the data analysis has been carried out by the candidate. Further work needs to be carried out to fully commission the Baby MIND detector at J-PARC and to integrate it into the WAGASCI and T2K experiments. The future goal of the WAGASCI and Baby MIND collaboration is to measure neutrino and antineutrino cross sections in water and scintillator, in order to reduce the systematic errors for the T2K neutrino oscillation analysis, leading to the potential discovery of CP violation in neutrinos. 
 
 
 \section{Conclusions}
 
-The work performed in this thesis work has performed all of the goals set out at the start and beyond by providing two independent software frameworks for simulation and reconstruction of muon tracks in the Baby MIND. Further more work has been performed with the construction and commissioning of the detector and concluded with analysis of test beam and neutrino beam data. This work is seen as part of a larger chain which is still ongoing and benefits from completed and partial results that have been detailed in this thesis.
+%The work performed in this thesis work has performed all of the goals set out at the start and beyond by providing two independent software frameworks for simulation and reconstruction of muon tracks in the Baby MIND. Further more work has been performed with the construction and commissioning of the detector and concluded with analysis of test beam and neutrino beam data. This work is seen as part of a larger chain which is still ongoing and benefits from completed and partial results that have been detailed in this thesis.
 
-Chapter one provided a brief introduction into the current theories regarding neutrino interactions as well as highlighted some of the ongoing fundamental questions in neutrino physics. This build up to chapter 2 where some past, current and future experiments were detailed and described both their role in providing an understanding of neutrinos as well as measurements they have provided. 
+This thesis summarises the work carried out by the candidate to help build and commission the Baby MIND detector, to supply the simulation and reconstruction software for Baby MIND, to perform track reconstruction and charge identification studies at dedicated commissioning test beams at CERN, and to perform a preliminary measurement of neutrino interactions in the iron of the Baby MIND detector at the J-PARC facility. These tasks were performed as part of a team of collaborators, but responsibility for the reconstruction and the data analysis has been carried out by the candidate. Further work needs to be carried out to fully commission the Baby MIND detector at J-PARC and to integrate it into the WAGASCI and T2K experiments. The future goal of the WAGASCI and Baby MIND collaboration is to measure neutrino and antineutrino cross sections in water and scintillator, in order to reduce the systematic errors for the T2K neutrino oscillation analysis, leading to the potential discovery of CP violation in neutrinos. 
 
-In chapter three the Baby MIND and WAGASCI detectors were summarised with their motivations and layouts along with some details as to how they were combined.
+Chapter 1 provided a brief introduction into the current theories regarding neutrino interactions as well as highlighting some of the ongoing fundamental questions in neutrino physics. This was followed by chapter 2, in which some past, current and future neutrino experiments were described and how the measurements being carried out are providing a deeper understanding of the properties of neutrinos, with the ultimate goal to determine whether neutrinos observe CP violation.
 
-Chapter four described the two software frameworks which have been developed, SaRoMaN  and SAURON. SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development.
+%This build up to chapter 2 where some past, current and future experiments were detailed and described both their role in providing an understanding of neutrinos as well as measurements they have provided. 
 
-Chapter five described the Aida module and Baby MIND test beams and commissioning at the CERN T9 charged beam facility. Results are presented on how well the Baby MIND detector can reconstruct positive and negative muon tracks as well as comparisons between data and simulations. As part of this work, results are also presented on how well a trained machine learning algorithm can identify muon events from background events in the detector.
+%In chapter 3 the Baby MIND and WAGASCI detectors were summarised with their motivations and layouts along with some details as to how they were combined.
 
-In chapter six a NuSTORM study with a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream. Results are presented on how well such as setup would be able to to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$. Results are also provided showing an estimate for how well neutrino charge current cross sections can be measured in a NuSTORM beam with a 10 ton detector.
+In chapter 3, the design, layout and technical details of the Baby MIND and WAGASCI detectors were described. Furthermore, the motivation for the design choices were justified in terms of the physics properties that we expect to measure with these detectors. 
 
-Chapter seven provides results from a study of neutrino interactions in the iron plates of Baby MIND with a comparison to data recorded during the Baby MIND commissioning as the spectrometer behind the WAGASCI detector. The first neutrino events were shown and compared to simulations to provide a first analysis for neutrino events in the Baby MIND.
+Chapter 4 describes the two software frameworks which have been developed, SaRoMaN  and SAURON. SaRoMaN is a simulation and reconstruction software framework that is able to unpack the hits in Baby MIND, reconstruct tracks and perform momentum and charge reconstruction of the tracks. The SAURON framework was developed as a new software tool to reduce external dependencies on third-party software packages that limited the evolution of SaRoMaN and reduced its applicability.
+
+%SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development.
+
+Chapter 5 describes the AIDA Totally Active Scintillator Detector (TASD) and the Baby MIND test beams and commissioning at the CERN T9 charged particle beam facility. Results are presented on the reconstruction of positive and negative muon tracks with the Baby MIND detector and comparison of data and simulations. As part of this work, results are also presented on a particle identification machine learning algorithm that can identify muon events from background pion events in the detector.
+
+%In chapter 6 a NuSTORM study with a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream. Results are presented on how well such as setup would be able to to identify and distinguish between the $\nu_{\mu_{CC}}$ signal in a background of $\bar{\nu}_{eCC}$ and $\nu_{\mu_{NC}}$. Results are also provided showing an estimate for how well neutrino charge current cross sections can be measured in a NuSTORM beam with a 10 ton detector.
+
+In chapter 6, a detector configuration consisting of a Totally Active Scintillator Detector (TASD) with a Baby MIND spectrometer downstream was studied in the context of the unique beam of neutrinos that can be achieved using the NuSTORM facility. In this facility, a beam of muon neutrinos and electron antineutrinos from the decay of muons is created and neutrino interactions can be studied with the TASD and Baby MIND configuration. This simulation study was able to show how $\nu_\mu$ charge current (CC) events can be reconstructed against a background of $\bar{\nu}_e$ CC events and neutral currents (NC) from both $\nu_\mu$ and $\bar{\nu}_e$. A machine learning algorithm was used to select the signal above the background, and these results were used to estimate the expected sensitivities of this detector configuration at a NuSTORM beam to study neutrino CC cross sections.
+
+%Chapter 7 provides results from a study of neutrino interactions in the iron plates of Baby MIND with a comparison to data recorded during the Baby MIND commissioning as the spectrometer behind the WAGASCI detector. The first neutrino events were shown and compared to simulations to provide a first analysis for neutrino events in the Baby MIND.
+
+Chapter 7 provides results from a study of neutrino interactions in the iron plates of Baby MIND with a comparison to data recorded during the Baby MIND commissioning in the J-PARC neutrino beam between March and May 2018. Baby MIND acts as a spectrometer behind the WAGASCI detector, but this first study was able to isolate neutrino events in the iron of the Baby MIND detector. The first neutrino events were shown and compared to simulations to provide a first analysis of neutrino events in Baby MIND at the 1.5$^\circ$ off-axis location at J-PARC. 
 
 
 
@@ -30,15 +46,22 @@ Chapter seven provides results from a study of neutrino interactions in the iron
 
 %In the outlook section, you should talk about what will be the goals of WAGASCI with Baby MIND and what we expect to achieve with that detector combination at J-PARC and what is the likely impact of that combination on the T2K physics analysis. Remove the muon tomography and non-proliferation from the outlook section since it has nothing to do with your thesis.
 
-\subsection{Interactions in the full WAGASCI}
-The Baby MIND and WAGASCI will start with full data taking in the end of 2018. This will allow for a full combined analysis where different target materials can be studied. This setup will a better vertex reconstruction and more accurate results if the interactions happen in the WAGASCI detectors and the resulting muons are reconstructed in Baby MIND.
+%\subsection{Interactions in the full WAGASCI}
+The Baby MIND and WAGASCI experiments will commence full data taking in the J-PARC neutrino beam in 2019. Neutrino interactions will be recorded in the water and scintillator targets of the WAGASCI, where the neutrino events will be identified, and the outgoing muons from charge current interactions will be reconstructed in the Baby MIND spectrometer downstream of WAGASCI.
+
+%will start with full data taking in the end of 2018. This will allow for a full combined analysis where different target materials can be studied. This setup will a better vertex reconstruction and more accurate results if the interactions happen in the WAGASCI detectors and the resulting muons are reconstructed in Baby MIND.
 
 %Using WAGASCI as a CCQE identification, perhaps even using some of the INGRID modules to provide range momentum reconstruction at the very low momentum.
 
-\subsection{Software}
+%\subsection{Software}
 
 %During this thesis two software frameworks have been developed. SaRoMaN was expanded to be able to be used for the Baby MIND and SAURON was developed from scratch to take advantage of lessons learned as well as set a standard for future development. 
-A simple step in improvement required for both frameworks would be more input from other parts of the collaboration. In either framework there is a lot of detector descriptions and DAQ which could be handled in better and faster ways with more information. These are required to improve results and to provide simulations closer to data.
+%A simple step in improvement required for both frameworks would be more input from other parts of the collaboration. In either framework there is a lot of detector descriptions and DAQ which could be handled in better and faster ways with more information. These are required to improve results and to provide simulations closer to data.
+
+To be able to reconstruct full neutrino events in the two detectors, the software frameworks for both WAGASCI and Baby MIND will need to be merged to be able to match hits, vertices and tracks in both detectors. Furthermore, for efficient data taking the Baby MIND data acquisition software will also need to be included in the generic WAGASCI DAQ, so that full event building of both detectors may be carried out. These are the main future software challenges that need to be met in order to be able to perform the WAGASCI and Baby MIND physics programme. 
+
+The physics goal for WAGASCI and Baby MIND is to measure the ratio of neutrino and antineutrino cross sections on water and scintillator, to constrain the nuclear effects from neutrino interactions in oxygen and carbon, essential to reduce systematic uncertainties in the T2K neutrino oscillation measurements. The ultimate goal is to reduce the systematic errors in these cross sections by a factor of two, down to 4\%, and to enable the measurements of CP violation in the T2K experiment.
+
 
 %\section{Project management}
 

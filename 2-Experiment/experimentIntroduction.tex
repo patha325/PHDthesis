@@ -332,13 +332,13 @@ The neutrino beam comes from an initial 30 GeV/c proton beam which impinges onto
 \label{fig:T2K}
 \end{figure}
 
-The near detector hall contains two main experiments, an on-axis experiment INGRID~\cite{129INGRID} (\FigRef{fig:INGRIDdet}) and the off-axis ($2.5^\circ$) ND280 detector both used to reduce model uncertainty and systematic uncertainty in the Super-Kamiokande analysis. %\textbf{More details?}
+The near detector hall contains two main experiments, an on-axis experiment INGRID~\cite{129INGRID} (\FigRef{fig:INGRIDdet}) and the off-axis ($2.5^\circ$) ND280 detector~\cite{130Assylbekov} (\FigRef{fig:ND280det}) both used to reduce model uncertainty and systematic uncertainty in the Super-Kamiokande analysis. %\textbf{More details?}
 
 The experiment wants to improve our understanding of the neutrino oscillation parameters. T2K was able to successfully observe the appearance of muon to electron neutrino oscillations and find evidence that the third mixing angle $\theta_{13}$ is not zero. 
 
 The combined analysis shows the sensitivity of the experiment to the CP violating phase $\delta_{CP}$ (figure 2.16), the measurements of neutrino mixing parameters obtained by T2K (\FigRef{fig:T2K23}) and the effect of the measurement of $\theta_{13}$ as a function of the value of $\delta_{CP}$ (\FigRef{fig:T2K12}). This is still an ongoing experiment with ongoing analyses.
 
-The combined analysis showing the affect of the $\theta_{13}$ value on $\delta_{CP}$ is seen in . 
+%The combined analysis showing the affect of the $\theta_{13}$ value on $\delta_{CP}$ is seen in . 
 
 %Here you should include the latest results from T2K, the \theta_{13}$ measurements with the electron neutrino appearance analysis and the sensitivity to CP violation. You should discuss these results and motivate the results you show in figures 2.16 and 2.17, including full references.
 
@@ -351,6 +351,14 @@ The combined analysis showing the affect of the $\theta_{13}$ value on $\delta_{
 \label{fig:INGRIDdet}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+  \centering
+\includegraphics[width=0.7\textwidth]{figures/ND280det.jpeg}
+\vspace{2mm}
+\caption{An exploded view of the ND280 detector~\cite{130Assylbekov}.}
+\label{fig:ND280det}
+\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -379,7 +387,7 @@ The combined analysis showing the affect of the $\theta_{13}$ value on $\delta_{
 \label{fig:T2K12}
 \end{figure}
 
-One of the main source of systematic error for T2K is caused by the difference of the target material and acceptance between the ND280 near detector (hydrocarbon) and the far detector water Cherenkov detector~\cite{T2Kpaper} motivating further studies and upgrades to ND280.
+One of the main sources of systematic error for T2K is caused by the difference of the target material and acceptance between the ND280 near detector (hydrocarbon) and the far detector water Cherenkov detector~\cite{T2Kpaper} motivating further studies and upgrades to ND280.
 
 \pagebreak
 \newpage
@@ -427,12 +435,16 @@ KamLAND showed that electron antineutrinos oscillate in the same way as the elec
 \subsection{Daya Bay}
 %\textbf{Correct after Pauls comments and add data.}
 
-The Daya Bay experiments main result and goal was to make a conclusive measurement of $\theta_{13}$. The experiment measured  $\theta_{13}$ to be non-zero with more than 5$\sigma$ significance~\cite{122An}.
+The Daya Bay experiment's main result and goal was to make a conclusive measurement of $\theta_{13}$. The experiment measured  $\theta_{13}$ to be non-zero with more than 5$\sigma$ significance~\cite{122An}.
 
 The Daya Bay Reactor Neutrino Experiment is a facility consisting of eight identical gadolinium-doped  liquid scintillator detectors placed in underground experimental halls at three locations around the Daya Bay area in China, which detect antineutrinos from six different nuclear reactor cores of thermal energy 2.9 GW$_{th}$ (figures 2.22 and 2.23). The flux-weighted baselines from the reactors to the three locations are 470 m and 576 m (two at a near location) and 1648 m, at a far location.
 
 This layout allows for maximum sensitivity and the ability to reduce systematic uncertainties due to uncertainties in reactor power levels. It also allows for cross-calibration of the detectors since they are all identical. Each detector is a segmented gadolinium-doped liquid scintillator detector using PMTs to read out photons produced through inverse beta-decay and annihilation. %The experiment has been taking data since 2011.
-The experiment has been taking data since 2011, and was the first experiment to measure a non-zero value for the neutrino mixing angle $\theta_{13}$ with more that 5$\sigma$ significance \cite{122An}. Further measurements have improved on the original results, and now $\theta_{13}$ is the most accurately measured mixing angle of the neutrino sector \cite{123An, 124An}:
+The experiment has been taking data since 2011, and was the first experiment to measure a non-zero value for the neutrino mixing angle $\theta_{13}$ with more that 5$\sigma$ significance \cite{122An}. The search for electron-antineutrino disappearance is dependent on the $\theta_{13}$ mixing angle. The probability for antineutrino disappearance is given by
+\begin{equation}
+P(\bar{\nu}_e \rightarrow \bar{\nu}_e)\approx 1 - \sin^(2\theta_{13}) \sin^2\left(\frac{1.27 L(m) \Delta m^2_{31} (eV^2) }{E_{\bar{\nu}} (MeV)} \right) . 
+\end{equation}
+The reduction in the reactor antineutrino flux is used to determine the value of $\theta_{13}$. Further measurements have improved on the original results, and now $\theta_{13}$ is the most accurately measured mixing angle of the neutrino sector \cite{123An, 124An}:
 $\sin^2 2\theta_{13} = 0.0841 \pm 0.0027(stat) \pm 0.0019(syst)$ and the
 effective neutrino mass-squared difference of $\Delta m^2_{ee} = (2.50 \pm 0.06(stat) \pm 0.06(syst)) \times 10^{-3}$~eV$^2$.
 
