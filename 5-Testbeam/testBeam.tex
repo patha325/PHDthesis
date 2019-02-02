@@ -102,7 +102,7 @@ A sketch of the layout can be seen in~\FigRef{fig:MINDtb} and a photograph is in
 
 Four support frames were constructed specifically to support the Baby MIND magnets and scintillator modules mechanically and to meet the transport requirements within CERN and for shipping to J-PARC. The Baby MIND modules were installed in the four frames, as can be seen in~\FigRef{fig:MINDtbreal}. The total weight of the detector is around 65 t giving each block a weight of less than 20 tons, which is within the required limits for crane operations at both sites.
 
-For the data taking during the test beam, the TASD AIDA module was placed in front of the Baby MIND to provide initial beam information, both for an angular measurement of the beam and a veto measurement from cosmic rays. Only a total of two planes of the TASD were instrumented providing 192 channels. 
+For the data taking during the test beam, the TASD AIDA module was placed in front of the Baby MIND to provide initial beam information, both for an angular measurement of the beam and a veto measurement from cosmic rays. It was also used as a trigger to define an event from the spill timing. Only a total of two planes of the TASD were instrumented providing 192 channels. 
 
 A total of 44 FEBs mounted on 8 mini crates instrumented the 3996 channels of Baby MIND and took the 192 channels from the TASD. All 44 FEBs were synchronized using the spill signal from the T9 beam line which arrives one second before the arrival of the spill of particles. This signal was fed to a dedicated Master FEB which would generate a reference clock signal for all the other FEBs acquiring data.
 
@@ -117,7 +117,7 @@ Data was taken for a period of two months. Out of the recorded data, verified sa
 
 \subsection{Analysis}
 
-For the first part of the analysis, the data sample was assumed to be quite clean, containing mostly only muons of either charge. To remove any contribution from outside of the beam, the hits in the TASD were used as a beam trigger to define a 125~ns time window after this time within which to accept hits to be used to fit tracks. This time was chosen after carefully optimising the appropriate time to process the data. To remove any potential showers or noise, any event less than four hits in Baby MIND or on average more than 10 hits per plane were removed.
+For the first part of the analysis, the data sample was assumed to be quite clean, containing mostly only muons of either charge. To remove any contribution from outside of the beam, the hits in the TASD were used as a beam trigger to define a 125~ns beam time window after the trigger time within which to accept hits to be used to fit tracks. This time was chosen after carefully optimising the appropriate time to process the data from triggering and to combine hits from the different parts of the detector. To remove any potential showers or noise, any event less than four hits in Baby MIND or on average more than 10 hits per plane were removed.
 
 Data was run through the SaRoMaN software framework and produced plots of charge reconstruction efficiency, momentum reconstruction and these were compared to simulations.
 
@@ -162,7 +162,7 @@ The current and voltage reach stable operating values after several hours, this 
 \includegraphics[width=0.9\textwidth]{figures/magnetFigure1.jpeg}
 
 \includegraphics[width=\textwidth]{figures/magnetFigure2.jpeg}
-\caption{Baby MIND magnet measured (at CERN) with field values for 33 modules (top), power supply current (bottom left) and corresponding power supply voltage (bottom right). Figures, courtesy of Etam Noah.}
+\caption{Baby MIND magnet measured (at CERN) with field values for 33 modules (top), power supply current (bottom left) and corresponding power supply voltage (bottom right). All of the ARMCO modules had a Bmax of $1.571 \pm 0.023$ T with the remaining field varying between the modules types and within the module type as $1.13 \pm  0.8 $ T. Figures, courtesy of Etam Noah.}
 \label{fig:Magnetplot1}
 \end{figure}
 
@@ -195,7 +195,7 @@ The main difficulty arises from the framework only being able to reconstruct tra
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/SampleTrack5GeVYZ.pdf}
-\caption{A sample track from the test beam, taking a time cut for the hits for a run with the 5 GeV/c beam settings.}
+\caption{A sample track event from the test beam, taking a time cut for the hits for a run with the 5 GeV/c beam settings. Green represents 1 horizontal bar hit and yellow 2 horizontal bars hit within the same time window.}
 \label{fig:event}
 \end{figure}
 
@@ -227,7 +227,7 @@ One of the main goals of the Baby MIND detector is to correctly identify the cha
 
 These plots confirm that the full data analysis chain works, however the results show lower efficiencies than expected from simulations. Looking on an event-by-event basis it became clear that the events are a mix of muons and pions even after an initial pattern recognition to try and isolate muons. This motivated the development of a more advanced pattern recognition algorithm using machine learning. It can be seen that a simulated pion sample, \FigRef{fig:ChargeImprovedPion}, will be very poorly reconstructed and can explain the difference between data and simulation in the mixed test beam. In this poor reconstruction the algorithm falls back to a default estimate, thus over estimating negative charges for the pion samples.
 
-It should be mentioned that for future runs the deposited energy will be available and will make the distinction between pions and muons easier.
+It should be mentioned that for future runs the conversion between photoelectrons to deposited energy will be available and will make the distinction between pions and muons easier.
 
 %Initial results, with pion contamination and initial unpacking. Discuss issue with cuts. Assuming that all hits had hit amplitude, unpacking could not collate hits correctly. Confirm reconstruction even further. Will be able to properly run the code on the data.
 
@@ -236,7 +236,7 @@ It should be mentioned that for future runs the deposited energy will be availab
 \includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullWPion.pdf}
 
 \includegraphics[width=\textwidth]{figures/testbeam/TestBeam090318Plots/ChargeIDFullLowWPion.pdf}
-\caption{Simulated charge reconstruction efficiency results for positive and negative muons and pions as a function of the true momentum of the particle (the lower plot is just a zoom below 2.2 GeV/c of the top plot).}
+\caption{Simulated charge reconstruction efficiency results for positive and negative muons and pions as a function of the true momentum of the particle (the lower plot is just a zoom below 2.2 GeV/c of the top plot). The plots are based samples of between 1000 and 10000 events at each energy range.}
 \label{fig:ChargeImprovedPion}
 \end{figure}
 
@@ -270,7 +270,7 @@ The main variables used in the model are the following:
 \item Maximum distance between hits in an event divided by the distance between the first and last plane in the fit (RL).
 \end{itemize}
 
-The distributions of these variables for signal and background can be seen in \FigRef{fig:TMVAinput}.
+The distributions of these variables for signal and background can be seen in \FigRef{fig:TMVAinput} where no pre-selection or cuts have been made to the data before applying the TMVA.
 
 \begin{figure}[h!]
 \centering
@@ -333,7 +333,7 @@ This translates directly into \FigRef{fig:TMVAcuts} showing what value of the re
 
 Using the final cleaned sample, with a 81.8\% purity, provides the final charge estimates as seen in \FigRef{fig:ChargeImproved}.
 
-This finally shows, that even after improving the purity of the beam to muons to 81.8\% there is a discrepancy between the charge reconstruction efficiency of the simulation and the data. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection due to the electronics or some timing mismatches between the events. It should also be noted that the momentum values for the data are taken as the momentum selection set by the quadrupole magnets in the beam, which may not yield an accurate momentum value. This will require further study and potentially simulations of the entire beamline.
+This finally shows, that even after improving the purity of the beam to muons to 81.8\% there is a discrepancy between the charge reconstruction efficiency of the simulation and the data. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection, leading to missing hitpoints and shorter fitted tracks, due to the electronics or some timing mismatches between the events. It should also be noted that the momentum values for the data are taken as the momentum selection set by the quadrupole magnets in the beam, which may not yield an accurate momentum value. For instance this may have been an overestimate shifting all data points to the right, where as the real momentum would shift them back to lower momenta. This will require further study and potentially simulations of the entire beamline.
 
 The plots show the potential of using the Baby MIND detector for muon charge reconstruction at lower momenta than had previously been achieved. This is due to the modular nature and careful layout of the detector, with three magnetic modules upstream to perform an initial bend of the particles and gaps between measuring scintillator planes to perform the measurement of the bend. It also shows that for the test beam it was possible to attain a charge identification efficiency of over 70\% for the full momentum range (above 400 MeV/c) and above 85\% for muons above 1 GeV/c. %The discrepancy between data and simulation is due to the act that the beam is not made up of purely muons as well as effects of the modelling of the electronics perhaps not taking all of the effects into account.
 
@@ -351,7 +351,7 @@ The plots show the potential of using the Baby MIND detector for muon charge rec
 	%\includegraphics[width=0.49\textwidth]{figures/TMVAnew/TMVAnewChargeIDFull.pdf}
 	%\includegraphics[width=0.49\textwidth]{figures/TMVAnew/TMVAnewChargeIDLow.pdf}
 
-\caption{Charge reconstruction efficiency plots after adopting the TMVA particle identification algorithm to select a pure sample of muons. The bottom plot is a zoom version of the top plot, with momentum below 2 GeV/c.}
+\caption{Charge reconstruction efficiency plots after adopting the TMVA particle identification algorithm to select a pure sample of muons. The bottom plot is a zoom version of the top plot, with momentum below 2 GeV/c. The discrepancy in rise between data and simulation may be attributed to the difference between known simulated muon momenta and that muon momenta in data is estimated from the beam parameters which may not have been correctly calibrated.}
 \label{fig:ChargeImproved}
 \end{figure}
 
