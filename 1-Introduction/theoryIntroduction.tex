@@ -94,7 +94,7 @@ To describe neutrino interactions it is worth building a theory to try to descri
 \begin{equation}
 \sum_\mu (i\gamma^\mu \partial_\mu - m)\psi(x) = 0
 \end{equation}
-where $\gamma^\mu$ are the so-called Dirac matrices and the sum over $\mu$ is often removed using the Einstein notation requiring summation over repeated indices.
+where m is the rest-mass of the particle, $\psi(x)$ is a spinor,  $\gamma^\mu$ are the so-called Dirac matrices and the sum over $\mu$ is often removed using the Einstein notation requiring summation over repeated indices. It should also be noted that this equation only applies to fermions, half-integer spin particles.
 
 As with all quantum mechanical equations this allows us to define $\psi(x)$ as a quantum field or state.
 
@@ -125,7 +125,7 @@ There is nothing preventing us from choosing our previous field $\epsilon$ as th
 \end{equation}
 This can be simplified by introducing the gauge covariant derivative $D_\mu \equiv \partial_\mu + ieA_\mu$ and the slash notation as $\displaystyle{\not} D = \gamma^\mu D_\mu$. This produces the simplified QED Lagrangian as:
 \begin{equation}
-\mathcal{L}_{QED} = \bar{\psi}(i\gamma^\mu \displaystyle{\not} D_\mu-m)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\mathcal{L}_{QED} = \bar{\psi}(i\displaystyle{\not} D_\mu-m)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
 
 %\textbf{Add example of interaction?} 
@@ -919,9 +919,9 @@ U ={} &
   0 & -s_{23} & c_{23}\\
  \end{pmatrix} 
    \begin{pmatrix}
- c_{13} & 0 & s_{13}e^{i\delta_{CP}}\\
+ c_{13} & 0 & s_{13}e^{-i\delta_{CP}}\\
   0 & 1 & 0\\
-  -s_{13}e^{-i\delta_{CP}} & 0 & c_{13}\\
+  -s_{13}e^{i\delta_{CP}} & 0 & c_{13}\\
  \end{pmatrix} 
  \\
  & \times
@@ -996,7 +996,7 @@ and where $\pm$ denotes neutrinos or antineutrinos. $G_F$ is the Fermi constant,
 
 The mass-squared difference between neutrino mass states $\left|m_i^2 - m_j^2\right|$ has to be different from zero for there to be neutrino oscillations, so at least one of the neutrinos must have non-zero mass which currently is not explained through the Standard Model. Furthermore, if the elements of the PMNS matrix $U_{\alpha i}$ are all real then $arg(U_{\alpha i} U^*_{\beta i} U^*_{\alpha j}  U_{\beta i} ) = 0$ and the CP-violating phase $\delta_{CP} =0$. The current experimental focus lies with trying to measure values for all these parameters. Current values of the neutrino masses can be found in table \ref{table:UpperNMass}.
 
-Looking at the oscillation probability \eqref{eq:Problength} two main classes of experiments for neutrino oscillations can be devised. Finding a distance $x$ to the source where $P_{\nu_\alpha \rightarrow \nu_\alpha} (x) < 1$, it is possible to look at so-called disappearance of the beam by comparing the expected neutrino flux to the observed. For the disappearing flavour there must be a probability, $P_{\nu_\alpha \rightarrow \nu_\beta} (x) > 0, \alpha=\beta$ for another flavour to appear. The second kind of experiment, denoted as appearance, is based on looking for interaction products which are impossible without oscillations.  An example of this would be to see a positron from a muon neutrino beam. More on this can be found well described in~\cite{34doi:10.1142/9789812562203_0002} and examples of different detectors will be discussed in chapter~\ref{c:expIntro}. As a rule of thumb the distance of propagation $L$ has to be on the order of km for energy ranges between MeV to GeV. This means that oscillations will have a small effect on short scale neutrino interactions measured close to the source.
+Looking at the oscillation probability \eqref{eq:Problength} two main classes of experiments for neutrino oscillations can be devised. Finding a distance $x$ to the source where $P_{\nu_\alpha \rightarrow \nu_\alpha} (x) < 1$, it is possible to look at so-called disappearance of the beam by comparing the expected neutrino flux to the observed. For the disappearing flavour there must be a probability, $P_{\nu_\alpha \rightarrow \nu_\beta} (x) > 0, \alpha \neq \beta$ for another flavour to appear. The second kind of experiment, denoted as appearance, is based on looking for interaction products which are impossible without oscillations.  An example of this would be to see a positron from a muon neutrino beam. More on this can be found well described in~\cite{34doi:10.1142/9789812562203_0002} and examples of different detectors will be discussed in chapter~\ref{c:expIntro}. As a rule of thumb the distance of propagation $L$ has to be on the order of km for energy ranges between MeV to GeV. This means that oscillations will have a small effect on short scale neutrino interactions measured close to the source.
 
 Charge conjugation and parity (C and P, CP) symmetry states that physics should be the same for particles and anti-particles while the spatial coordinates are inverted. If $\delta_{CP}$ is non-zero implying CP symmetry is violated it would imply a difference between the rate of neutrino and antineutrino oscillations which could be responsible for the matter-antimatter asymmetry of the early universe. Current best-fit values (at 90\% confidence limit) have $\delta_{CP} = -1.79\pm 1.42$ for normal mass ordering and $\delta_{CP} = -1.41\pm 0.68$ for inverted mass ordering both rejecting the null hypothesis for $\delta_{CP}$ at the 90\% confidence limit~\cite{T2KResults}.
 
