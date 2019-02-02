@@ -60,7 +60,7 @@ As a way to simplify the integration and implementation, the data acquisition (D
 To ensure that all further analysis is performed properly, the output of the digitisation is identical, whether it was simulated or read out through the DAQ.
 %there is no way to distinguish data coming out of the digitisation as being simulated or read in through the DAQ.
 
-One of the most difficult design features of Baby MIND is combining hits from both vertical and horizontal bars. It is possible to get hits which cannot be combined without ambiguity. Figure~\ref{fig:BarAmbi} contains an illustration of two sets of simultaneous hits in the vertical and horizontal bars. It is not possible to distinguished the green hits from each other and the same with the red hits. The current method is for the digitisation to create both hits at all times and these hits are then handled by the reconstruction where they can be distinguished by looking at the pattern recognition and the track reconstruction.
+One of the most difficult design features of Baby MIND is combining hits from both vertical and horizontal bars. It is possible to get hits which cannot be combined without ambiguity. Figure~\ref{fig:BarAmbi} contains an illustration of two sets of simultaneous hits in the vertical and horizontal bars. Think of two separate events, the first one producing the green hits and the second the red hits. Given that the bars only return that they were hit, not the actual position on the bar that was hit it is not possible to distinguished the green hits from the red hits, they would produce the same data. The current method is for the digitisation to create both hits at all times and these hits are then handled by the reconstruction where they can be distinguished by looking at the pattern recognition and the track reconstruction.
 
 \begin{figure}[h!]
 \centering
@@ -130,14 +130,14 @@ The pattern recognition tries to estimate if the event is muon-like or not. It s
 \item At least 4 hit modules are required to do any form of charge estimation or track building.
 \item At least 10 hit modules are required to perform a Kalman fit.
 \end{itemize}
-Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each event will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is performed very simply by assuming anything that is not a shower is a muon. Single hits here refer to separable space points, meaning that for each $z-$position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition, tracks are built up from so-called track stubs of at least four single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using a $\chi^2$analysis as a metric. This $\chi^2$ analysis is run through the fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub and the other hits are saved for use in finding secondary tracks. 
+Outside of these limitations, currently only muon track fitting has been implemented. The general assumption is that each event will contain at least one muon track followed by other secondary tracks. If this is not the case the event is discarded. The event filtering is performed very simply by assuming anything that is not a shower is a muon. Single hits here refer to separable space points, meaning that for each $z-$position there is only one unique hit. The aim of the pattern recognition is to find as many tracks with single hits as possible. In the pattern recognition, tracks are built up from so-called track stubs of at least four single hits. As soon as a track stub is created other hits can be added onto the track stub to create a final track using a $\chi^2$analysis as a metric for evaluating which hits to add. This $\chi^2$ analysis is run through the Kalman fitter and requires an initial charge and momentum guess. This means that the best suitable hits are added to the track stub with the remaining hits saved for use in finding secondary tracks. This initial Kalman fitter produces a track with an estimate of the momentum and charge which is further used in the final fitting.
 
 The program flow can be seen as taking in an event consisting of a number of hits and returning a number of tracks along with hits which could not be fitted into any track. Each returned track contains only single hits as well as a momentum and charge estimate. The latter two are then improved by the fitter.
 
 %Given an event, a time selection which can be seen as part of a accelerator spill cycle. Is it possible from the ensemble of hits to find a track or several tracks. Currently makes the assumption that tracks will be separable in space for at least 4 points or that there are 4 planes with single track points as to have an initial track to later add more points into.
 
 \subsection{Fitting}
-The fitter's main job is to build tracks and to estimate the momentum and charge of that track. There are two modes, one main mode for hits with more than nine hits are passed into the Kalman fitter RecPack. When it is not possible to perform a helical fit and for any track with more than three hits, a self implemented lever-arm approach is used. In both cases RecPack is used to build the tracks, however the momentum and charge reconstruction has to be split depending on the possibility of a helical fit or not. The full helix equation (equations 4.1-4.3 and 4.4-4.6) has a total of nine parameters and takes ten measurements to be fully fitted.  
+The fitter's main job is to build tracks and to estimate the momentum and charge of that track. There are two modes, one main mode for events with more than nine hits are passed into the Kalman fitter RecPack. When it is not possible to perform a helical fit and for any track with more than three hits, a self implemented lever-arm approach is used. In both cases RecPack is used to build the tracks, however the momentum and charge reconstruction has to be split depending on the possibility of a helical fit or not. The full helix equation (equations 4.1-4.3 and 4.4-4.6) has a total of nine parameters and takes ten measurements to be fully fitted.  
 \begin{align}
 x(t) &= a\cos(bt+c)+d\\
 y(t) &= e\sin(ft+g) + h\\
@@ -279,7 +279,7 @@ The charge identification is however improved when utilizing a measurement point
 
 \includegraphics[width=0.75\textwidth]{figures/MIND.jpeg}
 %\includegraphics[width=0.48\textwidth]{figures/oldStudies/MINDetam.jpeg}
-\caption{(Top) Image of the initial Baby MIND layout. (Bottom) The current Baby MIND layout. The main differences consist of removing the first scintillator plane, a different configuration layout in the middle blocks and removing the final scintillator plane.}
+\caption{(Top) Image of the initial Baby MIND layout. (Bottom) The current Baby MIND layout. The main differences consist of removing the first scintillator plane, a different configuration layout in the middle blocks and removing the final scintillator plane. This was done for constructional reasons to be able to transport the detector from CERN to J-PARC.}
 \label{fig:oldMIND}
 \end{figure}
 
@@ -292,7 +292,7 @@ The main difference between the results are both below 1~$GeV/c$ and in the regi
 \includegraphics[width=0.8\textwidth]{figures/oldStudies/oldRecEff.png}
 
 \includegraphics[width=0.8\textwidth]{figures/oldStudies/oldChargeID.png}
-\caption{Reconstructed efficiency and charge identification efficiency of the initial Baby MIND layout using the SaRoMaN simulation and reconstruction package.}
+\caption{Reconstructed efficiency and charge identification efficiency of the initial Baby MIND layout using the SaRoMaN simulation and reconstruction package. The low momentum points in the top figure are based on a different algorithm and definition as they do not require the identification of tracks. Also note that in both figures the points sit on top of each other with red covering blue.}
 \label{fig:oldMIND2}
 \end{figure}
 
@@ -301,7 +301,7 @@ The main difference between the results are both below 1~$GeV/c$ and in the regi
 \includegraphics[width=0.8\textwidth]{figures/oldStudies/FullFitted.pdf}
 
 \includegraphics[width=0.8\textwidth]{figures/oldStudies/FullChargeID.pdf}
-\caption{Reconstructed efficiency and charge identification efficiency of the Baby MIND layout configured for the CERN test beam, using the SaRoMaN simulation and reconstruction package.}
+\caption{Reconstructed efficiency and charge identification efficiency of simulated events for the Baby MIND layout configured for the CERN test beam, using the SaRoMaN simulation and reconstruction package. The dip in the top figure represents the boundary as tracks leave the detector where the algorithm.}
 \label{fig:TestBeamMIND2}
 \end{figure}
 
@@ -351,7 +351,7 @@ Machine learning algorithms are used through the Toolkit for Multivariate Data A
 
 %\pagebreak
 \section{Future development}
-Based on the main principles of easily shareable code, using the latest versions and simplicity, a further development of SaRoMaN has already commenced by creating a fully new version based on newer versions of the third party software packages such as GEANT4, GENIE and ROOT. By moving to the latest versions and ensuring that they will be easy to maintain the software becomes ``future proof'' which is very important for ensuring that the results are making use of the latest physics software. The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrino-like events). SAURON also makes sure to only use open source software and has thus moved from the RecPack Kalman filter to use a Runge-Kutta and Kalman open source fitter known as GENFIT~\cite{81Genfit}.
+Based on the main principles of easily shareable code, using the latest versions and simplicity, a further development of SaRoMaN has already commenced by creating a fully new version based on newer versions of the third party software packages such as GEANT4, GENIE and ROOT. By moving to the latest versions and ensuring that they will be easy to maintain the software becomes ``future proof'' which is very important for ensuring that the results are making use of the latest physics software. The new framework, following the Lord of the Rings theme~\cite{79tolkien2012lord}, has been named SAURON (Simulation And Universal Reconstruction Of Neutrino-like events). SAURON also makes sure to only use open source software and has thus moved from the RecPack Kalman filter to use a Runge-Kutta and Kalman open source fitter known as GENFIT~\cite{81Genfit}. The change of fitter significantly improved the track reconstruction and momentum reconstruction.
 The software environment and code can be found in a docker environment at: \url{https://hub.docker.com/r/patha325/science/}. The code is hosted at : \url{https://github.com/patha325/NewSaRoMaN}.
 
 The simulation is based on a generic GEANT4 simulation, which takes in neutrino data simulated with the GENIE open source code used by many. The reconstruction package  GENFIT~\cite{81Genfit}, used by several different experiments, takes generic points and uses a Runge-Kutta method to fit the points and calculate the track momentum and charge.
