@@ -104,7 +104,7 @@ The NuSTORM beam produces $\nu_\mu$ and $\bar{\nu}_e$ neutrinos from the decay o
 
 The main variables used in the model are the following:
 \begin{itemize}
-\item Maximum distance between hits in an event (MC\_ track\_ len),
+\item Track length for distance between first and last hits in an event (MC\_ track\_ len),
 \item Angle of the track compared to the $z$-axis that defines the length of the detector\\ (MC\_ angle),
 \item Number of total hits in the event (NumberofHits),
 \item Number of planes hit (NumberofPlanes),
@@ -143,7 +143,7 @@ Based on these simulated signal and background samples, TMVA will provided a sig
 \centering
 \includegraphics[width=\textwidth]{figures/newTMVAplots/rejBvsS.png}
 %\includegraphics[width=\textwidth]{figures/neutrinoTMVA/rejBvsS.png}
-\caption{Receiver operating characteristic (ROC) curve for various machine learning algorithms.}
+\caption{Receiver operating characteristic (ROC) curve for various machine learning algorithms. The best method was the MLPBNN however many of the methods gave similar, but only slightly worse, results.}
 \label{fig:TMVANeuroc}
 \end{figure}
 
