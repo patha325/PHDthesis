@@ -1,11 +1,11 @@
 \chapter{Baby MIND test beam at CERN}
 \label{c:Testbeam}
 
-The Baby MIND collaboration performed an electronics validation using a Totally Active Scintillating Detector (TASD) at the T9 test beam in the PS facility at CERN in 2016. After construction was completed of Baby MIND in 2017, the full Baby MIND was commissioned in the same test beam.
+The Baby MIND collaboration performed an electronics validation using the Totally Active Scintillating Detector (TASD) at the T9 test beam in the PS facility at CERN in 2016. After construction was completed of Baby MIND in 2017, the full Baby MIND was commissioned in the same test beam.
 
 The Baby MIND test beams took place at the T9 beam line at the proton synchrotron (PS) experimental hall. The beam lines are derived from the 24 GeV/c primary proton beam from the PS, which provides 2.4 s cycles of about 400 ms spill duration. The T9 beam is extracted as a secondary beam by firing the proton beam at a 200 mm thick aluminium target which delivers secondary particles up to 15 GeV/c at a production angle of 0 degrees. The line is designed to provide the users with non-separated secondary particles, with positive or negative polarity, as hadron (pion) or muons and the beam momentum can be adjusted by setting the currents for the optical magnets of the beam line. Additional particle identification Cherenkov detectors can be included as part of the T9 beam line but these were not included during the Baby MIND 2016 and 2017 tests.
 
-In this section details will be given ton how the data was collected and processed before showing some sample events and then further describe how data is processed in SaRoMaN to provide results obtained from each of the two test beams.
+In this section details will be given to how the data was collected and processed before showing some sample events and then further describing how data is processed in SaRoMaN to provide the results obtained from each of the two test beams.
 
 %Write like a lab report, describe what we are doing with T9, what is happening in the detector when a particle comes through, what happens with the data and how it is saved. When this is saved, what does the unpacking do and SaRoMaN. After all of this, how is the analysis done, what are the plots etc etc.
 
@@ -38,7 +38,7 @@ Each MPPC is connected to a Front End Board (FEB) which returns data in a specif
 %During the initial test beam FEBv1 was used. For, ease in finding plots, details regarding FEBv2 are going to be shown.
 %\textbf{Readout format and block chart can be seen in figures? }OR \cite{71Status17}. Described above under SaRoMaN.
 
-The data is sent from each of the FEBs in a custom-made data format. The data format combined the data from all of the FEBs, however it could only work for offline processing as the footers need to be read before any processing can be done.
+The data is sent from each of the FEBs in a custom-made data format. The data format combined the data from all of the FEBs; however, it could only work for offline processing as the footers need to be read before any processing can be done.
 
 After the merger of the FEB data, unpacking software is used to translate the format to actual usable data and hits. During the first test beam, conversion between channel and position were hard coded, this was later changed to a database.  
 
@@ -46,7 +46,7 @@ After the merger of the FEB data, unpacking software is used to translate the fo
 
 \subsection{Data preprocessing}
 
-The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible between signal to deposited energy. It was possible for the DAQ to return hits without a time, which were removed before the analysis, also events which were outside the time window with respect to the initial hit were removed.
+The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible from signal to deposited energy. It was possible for the DAQ to return hits without a time, which were removed before the analysis, also events which were outside the time window with respect to the initial hit were removed.
 
 \subsection{Results}
 
@@ -72,7 +72,7 @@ The main goal of this first test beam was to understand the readout system, elec
 
 %What was lowest energy recorded in a bar? Results in lowest energy for horizontal and vertical.
 
-The plots show that both the electronics and readout system work well, and that the data can be passed through the DAQ into the reconstruction software. Given that the TASD was only 6 planes of scintillator and did not have a magnetic field, the reconstruction software only combined hits in $x$ and $y$ with the $z$ position to form a final track, without being able to perform any momentum reconstruction. However it showed that the reconstruction software was operational and could create tracks from these hits.
+The plots show that both the electronics and readout system work well, and that the data can be passed through the DAQ into the reconstruction software. Given that the TASD was only 6 planes of scintillator and did not have a magnetic field, the reconstruction software only combined hits in $x$ and $y$ with the $z$ position to form a final track, without being able to perform any momentum reconstruction. However, it showed that the reconstruction software was operational and could create tracks from these hits.
 
 %Too few planes. No magnetic field. Confirms that the full chain works and can produce plots, however the results are slightly less than expected. Add in event displays. Something to show both pion showers and muons.
 
@@ -107,7 +107,7 @@ For the data taking during the test beam, the TASD AIDA module was placed in fro
 A total of 44 FEBs mounted on 8 mini crates instrumented the 3996 channels of Baby MIND and took the 192 channels from the TASD. All 44 FEBs were synchronized using the spill signal from the T9 beam line which arrives one second before the arrival of the spill of particles. This signal was fed to a dedicated Master FEB which would generate a reference clock signal for all the other FEBs acquiring data.
 
 \subsection{Data preprocessing}
-The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible between signal to deposited energy.
+The data recorded by the DAQ is translated using a database relating the channel number directly to a relative position for the bar as well as passing on the time of the hit. For this initial test beam there was no conversion possible from signal to deposited energy.
 
 It was possible for the DAQ to return hits without a time stamp, which were removed before the analysis. Furthermore, events outside the time window with respect to the initial hit were also removed.
 
@@ -117,9 +117,9 @@ Data was taken for a period of two months. Out of the recorded data, verified sa
 
 \subsection{Analysis}
 
-For the first part of the analysis, the data sample was assumed to be quite clean, containing mostly only muons of either charge. To remove any contribution from outside of the beam, the hits in the TASD were used as a beam trigger to define a 125~ns beam time window after the trigger time within which to accept hits to be used to fit tracks. This time was chosen after carefully optimising the appropriate time to process the data from triggering and to combine hits from the different parts of the detector. To remove any potential showers or noise, any event less than four hits in Baby MIND or on average more than 10 hits per plane were removed.
+For the first part of the analysis, the data sample was assumed to be quite clean, containing mostly only muons of either charge. To remove any contribution from outside of the beam, the hits in the TASD were used as a beam trigger to define a 125~ns beam time window after the trigger time within which to accept hits to be used to fit tracks. This time was chosen after carefully optimising the appropriate time to process the data from triggering and to combine hits from the different parts of the detector. To remove any potential showers or noise, any event with less than four hits in Baby MIND or on average more than 10 hits per plane were removed.
 
-Data was run through the SaRoMaN software framework and produced plots of charge reconstruction efficiency, momentum reconstruction and these were compared to simulations.
+Data was run through the SaRoMaN software framework which produced plots of charge reconstruction efficiency and momentum reconstruction, and these were compared to simulations.
 
 In the analysis it was also quite clear that the beam was not pure muons and contained some contamination of other particles. The main contamination seems to be pions. Thus, for a second pass of the analysis, a machine learning algorithm, using the TMVA software package~\cite{TMVA} was used to perform particle identification to separate muon and pion events.
 
@@ -138,11 +138,11 @@ In the analysis it was also quite clear that the beam was not pure muons and con
 
 
 \subsection{Test beam results}
-Two of the main results provided during the test beam were to commission the detector, showing that all hardware worked to specification, that the reconstruction software was able to reconstruct hits in all the modules and that the magnetisation scheme was able to be used successfully to reconstruct the particle momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in the data and produce charge and momentum estimates for the beam.
+Three of the main results provided during the test beam were to commission the detector, showing that all hardware worked to specification, that the reconstruction software was able to reconstruct hits in all the modules and that the magnetisation scheme was able to be used successfully to reconstruct the particle momentum. Results will be presented showing that the detector has been commissioned and showing that the reconstruction framework can read in the data and produce charge and momentum estimates for the beam.
 
 \subsubsection{Electronics results}
 
-Gain plots for all of the 3996 MPPCs installed on Baby MIND are shown in \FigRef{fig:MPPCplot1}. The gain is evenly distributed around 45 ADC counts per photoelectron, with a variation of $\pm 5$ (\FigRef{fig:MPPCplot1}, left). The gain variation can be further reduced by optimising the pre-amplifier gain on the FEB for each of the MPPCs. The calibration of the gain for each channel is achieved by fitting the photoelectron distribution for each MPPC to a number of single photoelectron peaks. This is know as the ``finger plots'', and can be seen in \FigRef{fig:MPPCplot1} (right). The average separation between peaks determines the ADC per photoelectron for each channel.
+Gain plots for all of the 3996 MPPCs installed on Baby MIND are shown in \FigRef{fig:MPPCplot1}. The gain is evenly distributed around 45 ADC counts per photoelectron, with a variation of $\pm 5$ (\FigRef{fig:MPPCplot1}, left). The gain variation can be further reduced by optimising the pre-amplifier gain on the FEB for each of the MPPCs. The calibration of the gain for each channel is achieved by fitting the photoelectron distribution for each MPPC to a number of single photoelectron peaks. This is known as the ``finger plots'', and can be seen in \FigRef{fig:MPPCplot1} (right). The average separation between peaks determines the ADC per photoelectron for each channel.
 
 \begin{figure}[h!]
 \centering
@@ -182,13 +182,13 @@ Using the recorded data, the SaRoMaN reconstruction needed to be verified to see
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/HitMap5GeVYZ.pdf}
-\caption{All recorded hits for a run with the 5 GeV/c beam settings.}
+\caption{All recorded hits for both the two TASD planes and the Baby MIND planes for a run with the 5 GeV/c beam settings.}
 \label{fig:hitmap}
 \end{figure}
 
 
 \subsubsection{Tracks in SaRoMaN}
-In a similar way to simulated data, the collected hits are split depending on the time the hits were recorded to build possible tracks, seen in \FigRef{fig:event} and \FigRef{fig:EventsInitial}. Looking at the track in \FigRef{fig:event} and the top track of \FigRef{fig:EventsInitial} it is clear that these look like clean tracks with little showering, with hits in almost all planes and hence is probably a muon. The bottom track in \FigRef{fig:EventsInitial} has a very clear showering pattern after the first three planes and is probably a showering pion. Each of these possible tracks are then filtered to produce the best possible fitted track for those points and some background or noise hits. This can become quite complicated if there are two tracks passing through simultaneously, however this can be handed by the software even though this phenomenon is rare.
+In a similar way to simulated data, the collected hits are split depending on the time the hits were recorded to build possible tracks, seen in \FigRef{fig:event} and \FigRef{fig:EventsInitial}. Looking at the track in \FigRef{fig:event} and the top track of \FigRef{fig:EventsInitial}, it is clear that these look like clean tracks with little showering, with hits in almost all planes and hence they are probably muon tracks. The bottom track in \FigRef{fig:EventsInitial} has a very clear showering pattern after the first three planes and is probably a showering pion. Each of these possible tracks are then filtered to produce the best possible fitted track for those points and some background or noise hits. This can become quite complicated if there are two tracks passing through simultaneously; however, this can be handed by the software even though this phenomenon is rare.
 
 The main difficulty arises from the framework only being able to reconstruct tracks and not being able to reconstruct shower events. Any track reconstruction of a shower should fail, but sometimes it will attempt to reconstruct a shower as a track and return an incorrect charge and momentum value. This makes it clear that events containing showers need to be removed before any analysis is performed by using pattern recognition to identify showers (non-muons) from muons (non-showers).
 
@@ -204,7 +204,7 @@ The main difficulty arises from the framework only being able to reconstruct tra
 \includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent2.jpg}
 
 \includegraphics[width=\textwidth]{figures/oldStudies/m5GeVevent3.jpg}
-\caption{Sample events of test beam interactions at a set energy value of 5 GeV/c.}
+\caption{Sample events of test beam interactions at a set energy value of 5 GeV/c. The top figure shows a muon-like track and the bottom figure a shower and pion-like track.}
 \label{fig:EventsInitial}
 \end{figure}
 
@@ -302,7 +302,7 @@ Based on these simulated signal and background samples, TMVA provides a signal e
 \label{fig:TMVAroc2}
 \end{figure}
 
-Running through this model further it is possible to return the evaluation variable, known as the response, to see how signal and background are classified by TMVA. Figure~\ref{fig:TMVAresponce} shows that signal and background can be separated and is understood by the algorithm, however there will always be some events which are incorrectly classified as signal or background. In the same figure it can be seen how data points have been added both by the training and testing sample to show that the algorithm has not been over-trained to work for only specific data.
+Running through this model further it is possible to return the evaluation variable, known as the response, to see how signal and background are classified by TMVA. Figure~\ref{fig:TMVAresponce} shows that signal and background can be separated and are understood by the algorithm, however there will always be some events which are incorrectly classified as signal or background. In the same figure it can be seen how data points have been added both by the training and testing sample to show that the algorithm has not been over-trained to work for only specific data.
 
 This translates directly into \FigRef{fig:TMVAcuts} showing what value of the response should be used to determine what is signal and background, providing a specific purity, efficiency and significance. The significance is chosen as the possibility to see a signal over the background as $S/\sqrt{S+B}$, where $S$ is the number of signal events and $B$ is the number of background events, which is a figure-of-merit that is often used in particle physics. For this analysis purity is of the most interest as the end goal is to return a data sample with as clean a muon sample as possible. Thus the cut value is chosen as the maximum sensitivity = 0.42, as seen in~\FigRef{fig:TMVAcuts}, and provides 92.3 \% of the signal to pass through in a pure sample of signal events and only 11.3 \% of background events in a pure background event sample.
 
@@ -333,7 +333,7 @@ This translates directly into \FigRef{fig:TMVAcuts} showing what value of the re
 
 Using the final cleaned sample, with a 81.8\% purity, provides the final charge estimates as seen in \FigRef{fig:ChargeImproved}.
 
-This finally shows, that even after improving the purity of the beam to muons to 81.8\% there is a discrepancy between the charge reconstruction efficiency of the simulation and the data. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection, leading to missing hitpoints and shorter fitted tracks, due to the electronics or some timing mismatches between the events. It should also be noted that the momentum values for the data are taken as the momentum selection set by the quadrupole magnets in the beam, which may not yield an accurate momentum value. For instance this may have been an overestimate shifting all data points to the right, where as the real momentum would shift them back to lower momenta. This will require further study and potentially simulations of the entire beamline.
+This finally shows that even after improving the purity of the beam to muons to 81.8\% there is a discrepancy between the charge reconstruction efficiency of the simulation and the data. This discrepancy is probably due to differences in reconstruction efficiency in real events, due to inefficiencies in the data collection leading to missing hitpoints and shorter fitted tracks, due to the electronics or some timing mismatches between the events. It should also be noted that the momentum values for the data are taken as the momentum selection set by the quadrupole magnets in the beam, which may not yield an accurate momentum value. For instance this may have been an overestimate shifting all data points to the right, where as the real momentum would shift them back to lower momenta. This will require further study and potentially simulations of the entire beamline.
 
 The plots show the potential of using the Baby MIND detector for muon charge reconstruction at lower momenta than had previously been achieved. This is due to the modular nature and careful layout of the detector, with three magnetic modules upstream to perform an initial bend of the particles and gaps between measuring scintillator planes to perform the measurement of the bend. It also shows that for the test beam it was possible to attain a charge identification efficiency of over 70\% for the full momentum range (above 400 MeV/c) and above 85\% for muons above 1 GeV/c. %The discrepancy between data and simulation is due to the act that the beam is not made up of purely muons as well as effects of the modelling of the electronics perhaps not taking all of the effects into account.
 
