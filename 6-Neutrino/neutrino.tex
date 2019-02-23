@@ -285,7 +285,7 @@ From the NuSTORM study carried out in this chapter, a detector configuration con
 %\newpage
 \section{Neutrino interactions in iron in Baby MIND}
 
-Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphite target with three horns to focus the correct polarity of pions that decay to produce neutrinos with the flux spectrum, given by reference~\cite{119T2K}. The INGRID on-axis detector \cite{120INGRID}, performs measurements of the beam direction and on-axis flux.The ND280 experiment uses the beam at a $2.5^\circ$ off-axis angle at a distance of 280 m which provides a narrower energy spectrum with a shifted energy peak at 600 MeV, as can be seen in \FigRef{fig:T2KAxis}. The energy spectrum at the $1.5^\circ$ off-axis angle for the WAGASCI detector has a peak at a higher energy, 800 MeV, than the peak from the $2.5^\circ$ off-axis angle of the ND280 detector, as can be seen in~\FigRef{fig:T2KAxis2}. 
+Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphite target with three horns to focus the correct polarity of pions that decay to produce neutrinos with the flux spectrum, given by reference~\cite{119T2K}. The INGRID on-axis detector \cite{120INGRID}, performs measurements of the beam direction and on-axis flux.The ND280 experiment uses the beam at a $2.5^\circ$ off-axis angle at a distance of 280 m which provides a narrower energy spectrum with a shifted energy peak at 600 MeV, as can be seen in \FigRef{fig:T2KAxis}. The energy spectrum at the $1.5^\circ$ off-axis angle for the WAGASCI detector has a peak at a higher energy, 800 MeV, than the peak from the $2.5^\circ$ off-axis angle of the ND280 detector, as can be seen in~\FigRef{fig:T2KAxis}. 
 
 
 %The WAGASCI $1.5^\circ$ off-axis energy spectrum is shifted at a slightly higher energy than the $2.5^\circ$ off-axis energy spectrum used for the ND280 experiment.
@@ -310,7 +310,7 @@ Neutrinos at T2K are produced from a 30 GeV/c proton beam impinging on a graphit
 
 %Explain that the goal of this chapter is to measure for the first time neutrino interactions in the iron of Baby MIND. Explain also that the data was taken during the commissioning of Baby MIND at J-PARC between March and May 2018. You need to also explain that the beam was operated in reverse horn current since it is important to realise that there is a larger contamination of neutrinos in the predominantly antineutrino beam. Please add a few paragraphs here to introduce all of this before you start talking about your simulation etc.
 
-The goal of this chapter is to perform the first measurement of neutrino interactions in the iron of Baby MIND. To validate the simulation framework SAURON, simulations will be compared to the recorded data. Data for the study were taken during the commissioning of Baby MIND at J-PARC between March and May 2018 when the beam was operated in reverse horn current mode. This mode produces a majority of muon antineutrinos with a contamination of muon neutrinos.
+The goal described in this chapter is to perform the first measurement of neutrino interactions in the iron of Baby MIND. To validate the simulation framework SAURON, simulations will be compared to the recorded data. Data for the study were taken during the commissioning of Baby MIND at J-PARC between March and May 2018 when the beam was operated in reverse horn current mode. This mode produces a majority of muon antineutrinos with a contamination of muon neutrinos.
 
 The reverse horn current neutrino and antineutrino spectrum at 1.5$^\circ$ that the WAGASCI and Baby MIND detectors observed in the run between March and May 2018 can be seen in \FigRef{fig:T2KndSpectrum}. The fraction of muon antineutrinos is approximately 92\%, with a mean energy of 1.43 GeV, and the fraction of muon neutrinos is approximately 9\%, with a mean energy of 0.86 GeV. These spectra were used to perform simulations of neutrino and antineutrino events in WAGASCI and Baby MIND.
 
@@ -336,7 +336,7 @@ To compare simulations with data taken for the commissioning run, interactions w
 
 %New paragraph:
 %At this point, you define the event selection criteria, ie. the trigger condition of how you choose that a neutrino event is selected.
-The event selection has been chosen try to ensure that only muons from neutrino interactions in the iron are evaluated. Firstly to remove outside muons the first veto cut is that there are no hits in the first scintillator module. Secondly to compare to simulations and to reduce muons entering from the side of the detector, at least one hit in each of scintillator module 2, 3 and 4 is required.
+The event selection has been chosen to ensure that only muons from neutrino interactions in the iron are evaluated. Firstly, to remove outside muons the first veto cut requires that there are no hits in the first scintillator module. Secondly to compare to simulations and to reduce muons entering from the side of the detector, at least one hit in each of scintillator module 2, 3 and 4 is required.
 
 
 %The fiducial volume is chosen to be in the first iron module seen in \FigRef{fig:MINDneutrinoLayout} as a1-3 as well as selecting part of the iron plate, as seen with further details in \FigRef{fig:MINDFiducial}. 
@@ -359,7 +359,7 @@ The event selection has been chosen try to ensure that only muons from neutrino 
 
 %Here you need to describe how you extract the reconstruction efficiency using the simulation, what simulation you used (SAURON or SaRoMaN?), how you generated the events
 
-For the simulations the WAGASCI spectrum has been used in the SAURON framework to generate neutrino interactions in the iron, using event selection previously described. These simulated neutrino events were reconstructed in a similar manner to the interactions in the TASD, detailed in chapter~\ref{c:neutrinoNuSTORM}. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as the number of tracks with the correct charge divided by the number of reconstructible tracks. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
+For the simulations the WAGASCI spectrum has been used in the SAURON framework to generate neutrino interactions in the iron, using the event selection previously described. These simulated neutrino events were reconstructed in a similar manner to the interactions in the TASD, detailed in chapter~\ref{c:neutrinoNuSTORM}. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as the number of tracks with the correct charge divided by the number of reconstructible tracks. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
 
 Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charge current interactions, using the J-PARC neutrino beam, is very high, even at low momenta. The track reconstruction efficiency is shown in~\FigRef{fig:IronMINDfitted} and the charge reconstruction efficiency with respect to the reconstructed track is shown in~\FigRef{fig:IronMINDfittedcharge}. The study requires some more investigation as to why there is a difference in the simulations between the reconstructed efficiency for muon neutrinos and antineutrinos.
 
@@ -382,7 +382,7 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/Neutrino/T2KIronChargeEff.pdf}
-\caption{Charge reconstruction efficiency showing the efficiency of reconstructing the correct muon charge rom a simulated neutrino charge current event in the first three modules of iron of Baby MIND with respect to the reconstructed track, as a function of muon momenta.}
+\caption{Charge reconstruction efficiency showing the efficiency of reconstructing the correct muon charge from a simulated neutrino charge current event in the first three modules of iron of Baby MIND with respect to the reconstructed track, as a function of muon momenta.}
 \label{fig:IronMINDfittedcharge}
 \end{figure}
 
