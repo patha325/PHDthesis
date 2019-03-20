@@ -24,7 +24,7 @@ The Baby MIND collaboration is comprised of around 46 scientists from 10 differe
 
 \subsection{Motivation}
 
-The Baby MIND aims to show that MIND type detectors are viable to use for muon charge identification at low momenta ($<1$ GeV/c) and also to show how well the charge can be identified for charge current interactions from neutrinos produced at a Neutrino Factory~\cite{25NUfact} beam. A secondary motivation is to act as a platform to develop a new iron magnetisation scheme, and to test new electronics, scintillation fibres and the data acquisition system for future experiments. Additionally the experiment aims to compare simulations from GEANT4~\cite{Geant4} to data taken by the detector at a test beam to be able to verify the properties of muon interactions in momentum ranges of 0.5 to 10 GeV/c. Separating and identifying particles of different charges requires a magnetic field, and to perform identification at low momenta a high uniform field has to be created in a large volume and preferably without fully stopping the particles which are being identified. 
+The Baby MIND aims to show that MIND type detectors are viable to use for muon charge identification at low momenta ($<1$ GeV/c) and also to show how well the charge can be identified for charged current interactions from neutrinos produced at a Neutrino Factory~\cite{25NUfact} beam. A secondary motivation is to act as a platform to develop a new iron magnetisation scheme, and to test new electronics, scintillation fibres and the data acquisition system for future experiments. Additionally the experiment aims to compare simulations from GEANT4~\cite{Geant4} to data taken by the detector at a test beam to be able to verify the properties of muon interactions in momentum ranges of 0.5 to 10 GeV/c. Separating and identifying particles of different charges requires a magnetic field, and to perform identification at low momenta a high uniform field has to be created in a large volume and preferably without fully stopping the particles which are being identified. 
 The main difficulty that arises is to magnetise the volume in an inexpensive and simple manner.
 
 In essence, one has to balance the requirements of magnetising a large non-magnetic volume containing low density material (such as gas, scintillator or liquid argon), with the convenience and reduced cost of magnetising iron plates, which can achieve uniformly high magnetic fields with modest currents, but stops low-momentum particles.
@@ -76,7 +76,7 @@ In the Baby MIND, particle hits are detected by scintillating bars which provide
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/horizontal.png}
-\caption{Schematic view of the horizontal bar and light yield curves~\cite{112Sascha1} where the y-axis represents number of bars recorded. The blue bars represent data for each of the horizontal bars and the red curve represents the best Gaussian fit to the data.}
+\caption{Schematic view of the horizontal bar and light yield curves~\cite{112Sascha1} where the y-axis represents number of bars recorded. The blue histogram represent data for each of the horizontal bars and the red curve represents the best Gaussian fit to the data.}
 \label{fig:horizontal}
 \end{figure}
 
@@ -109,7 +109,7 @@ Previous magnetised iron detectors, discussed in chapter~\ref{c:expIntro}, have 
 \centering
 %\includegraphics[width=\textwidth]{figures/design.png}
 \includegraphics[width=\textwidth]{figures/MIND.jpeg}
-\caption{The test beam Baby MIND design, in yellow the magnet modules and in blue the scintillator modules. The red dots and x refere to the magnetic field direction.}
+\caption{The test beam Baby MIND design, in yellow the magnet modules and in blue the scintillator modules. The red dots and x refer to the magnetic field direction.}
 \label{fig:design}
 \end{figure}
 
@@ -117,7 +117,7 @@ Previous magnetised iron detectors, discussed in chapter~\ref{c:expIntro}, have 
 %\textbf{iterations, highlight flexibility of design?}
 
 \subsection{Electronics}
-The scintillating fibres, present in the bars are read out using Hamamatsu MPPC (Multi Pixel Photon Counters). Compared to PMTs these use a lower voltage, less current and are compatible with magnetic fields. This provides a small size, and simple electronics for the modules. The MPPCs are custom made S12571-025C (and derived S10943-5796), a size of $1\times1$ mm$^2$ (65\% fill factor) and 25 $\mu$m cell size. The operating voltage is $\approx 67.5$~V with photon detection efficiency (PDE) ≈ 35\%, gain $5 \times 10^5$ and dark counts of typically 100 kcps. The MPPC signals, sampled at 400 MHz, are powered (HV/LV) and read out by custom made Front-End Boards (FEBs), seen in \FigRef{fig:FEB}, designed for 96 channels using CITIROC ASICs~\cite{78EASIROC}. The MPPC signals are connected through a 5 m extension coaxial cable bundle containing up to 32 photosensor signals. The purpose is to decouple the FEBs from the scintillator modules, which improves accessibility to FEBs and their long term maintainability. These rack mounted FEBs have been designed by Geneva University containing $3 \times 32$ channel connectors, i.e. three CITIROC ASICs with 32 channels each. The FEBs are installed in mini-crates which can connect up to seven FEBs via readout/slow control on USB3 and/or Gigabit using a backplane seen in~\FigRef{fig:crate}. 
+The scintillating fibres present in the bars are read out using Hamamatsu MPPC (Multi Pixel Photon Counters). Compared to PMTs these use a lower voltage, less current and are compatible with magnetic fields. This provides a small size, and simple electronics for the modules. The MPPCs are custom made S12571-025C (and derived S10943-5796), a size of $1\times1$ mm$^2$ (65\% fill factor) and 25 $\mu$m cell size. The operating voltage is $\approx 67.5$~V with photon detection efficiency (PDE) ≈ 35\%, gain $5 \times 10^5$ and dark counts of typically 100 kcps. The MPPC signals, sampled at 400 MHz, are powered (HV/LV) and read out by custom made Front-End Boards (FEBs), seen in \FigRef{fig:FEB}, designed for 96 channels using CITIROC ASICs~\cite{78EASIROC}. The MPPC signals are connected through a 5 m extension coaxial cable bundle containing up to 32 photosensor signals. The purpose is to decouple the FEBs from the scintillator modules, which improves accessibility to FEBs and their long term maintainability. These rack mounted FEBs have been designed by Geneva University containing $3 \times 32$ channel connectors, i.e. three CITIROC ASICs with 32 channels each. The FEBs are installed in mini-crates which can connect up to seven FEBs via readout/slow control on USB3 and/or Gigabit using a backplane seen in~\FigRef{fig:crate}. 
 Data is sent from the mini-crates to Data acquisition (DAQ) computers via USB3 and passed on to a final computer located in a control room. The full readout chain can be seen in the block diagram in \FigRef{fig:daqChain}.
 
 %with a platform independent readout, Windows/Linux. There is also an analog readout, 8 μs for 96-channel low gain and high gain with a 12-bits, 8 channel, 40 MSam- ples/s per channel ADC based on the Altera ARIA5 FPGA. \textbf{Cite Etams paper?}
@@ -169,7 +169,7 @@ The CERN Neutrino Platform approved Baby MIND as experiment NP05 in December 201
 
 \section{WAGASCI/T59}\label{sec:WAGASCI}
 
-The new WAter-Grid-SCIintilator-detector (WAGASCI) at the J-PARC neutrino beam line will measure the difference in cross sections from neutrinos interacting with a water and scintillator targets, in order to constrain neutrino cross sections in oxygen and carbon, essential for the T2K neutrino oscillation measurements. It follows a similar approach to the one used for iron scintillator cross-sections in the INGRID detector~\cite{21T2K}.
+The new WAter-Grid-SCIintilator-detector (WAGASCI) at the J-PARC neutrino beam line will measure the difference in cross sections from neutrinos interacting with water and with scintillator targets, in order to constrain neutrino cross sections in oxygen and carbon, essential for the T2K neutrino oscillation measurements. It follows a similar approach to the one used for iron scintillator cross-sections in the INGRID detector~\cite{21T2K}.
 
 Baby MIND will act as a magnetic spectrometer behind the main WAGASCI target. Baby MIND was installed behind the WAGASCI at J-PARC in the beginning of 2018 to measure the charge and momentum of the outgoing muon from neutrino charged current interactions, to enable full neutrino event reconstruction in WAGASCI.
 
@@ -363,6 +363,6 @@ A new water-scintillator detector, WAGASCI (WAter- Grid-SCIintilator-Detector) s
 \end{figure}
 
 \subsection{Motivation}
-The main goals of the proposed detector are to improve the charge current cross section ratio between water and scintillator targets and to perform high-precision measurement of different charged current neutrino interaction channels.
+The main goals of the proposed detector are to improve the charged current cross section ratio between water and scintillator targets and to perform high-precision measurement of different charged current neutrino interaction channels.
 
 \fi

@@ -1,7 +1,7 @@
 \chapter{NuSTORM beam neutrino interaction studies}
 \label{c:neutrinoNuSTORM}
 
-The Baby MIND detector was built to reconstruct muon tracks passing through the detector. This makes it ideal to be used for muon neutrino reconstruction with an appropriate target. As discussed in subsection~\ref{subsection:Neutrino interactions} there are a few interactions which produce a free muon which can then be reconstructed with the Baby MIND. These are the muon neutrino charge current interactions, quasi-elastic (QE) charge current (CC) interactions, deep inelastic scattering (DIS) and resonant single pion interactions (RES) each at various energy ranges as can be seen in figures~\ref{fig:neutrinoInteractionsFig} and in~\ref{fig:antineutrinoInteractionsFig}.
+The Baby MIND detector was built to reconstruct muon tracks passing through the detector. This makes it ideal to be used for muon neutrino reconstruction with an appropriate target. As discussed in subsection~\ref{subsection:Neutrino interactions} there are a few interactions which produce a free muon which can then be reconstructed with the Baby MIND. These are the muon neutrino charged current interactions, quasi-elastic (QE) charged current (CC) interactions, deep inelastic scattering (DIS) and resonant single pion interactions (RES) each at various energy ranges as can be seen in figures~\ref{fig:neutrinoInteractionsFig} and in~\ref{fig:antineutrinoInteractionsFig}.
 
 \begin{figure}[h!]
 \centering
@@ -17,13 +17,13 @@ The Baby MIND detector was built to reconstruct muon tracks passing through the 
 \label{fig:antineutrinoInteractionsFig}
 \end{figure}
 
-The signature for each of these interactions is quite different, as a charge-current quasi-elastic interaction will produce a clean proton and muon track, compared to a shower-like pion track or the less clear DIS signature. Baby MIND is designed to operate at a lower energy spectrum, below 5 GeV, meaning that the contribution will be mostly from CCQE and pion interactions. Results from various simulations with the T2K near detector beam spectrum and data recorded from the commissioning will be shown.
+The signature for each of these interactions is quite different, as a charged current quasi-elastic interaction will produce a clean proton and muon track, compared to a shower-like pion track or the less clear DIS signature. Baby MIND is designed to operate at a lower energy spectrum, below 5 GeV, meaning that the contribution will be mostly from CCQE and pion interactions. Results from various simulations with the T2K near detector beam spectrum and data recorded from the commissioning will be shown.
 
 %Lab report again, trying to estimate cross-section of interactions. Why? Need it to improve oscillation measurements. Using simulations of muon neutrinos from simulation. What is done, what cuts? How Do we calculate cross-sections? Angular acceptance, look at what Marc has done, do similar things and further the calculations.Discuss what to expect, what kind of interactions could happen in the TASD/WAGASCI? What could be seen? What information? Baby MIND can also have interactions, which ones would be visible? Can reconstruct muons in Baby MIND, electrons and pions visible and potentially reconstructable, but not now. Charge id, momentum. Identifying muons comming of the neutrino interaction with a specific beam and interaction area. Describe the fiducial volume like in my talk for NuFACT.
 
-\section{Muon charge current quasi-elastic interactions}
+\section{Muon charged current quasi-elastic interactions}
 
-Charge current quasi-elastic (CCQE) interactions produce a clear muon track for both neutrinos and antineutrinos, however the interaction only produces a proton track for neutrino interactions as seen below:
+Charged current quasi-elastic (CCQE) interactions produce a clear muon track for both neutrinos and antineutrinos, however the interaction only produces a proton track for neutrino interactions as seen below:
 \begin{align}
 \nu_\mu + n &\rightarrow \mu^- + p\\
  \bar{\nu_\mu} + p &\rightarrow \mu^+ + n
@@ -44,7 +44,7 @@ There have been a lot of interesting articles relating to how to identify neutri
 %\subsection{Interactions in TASD + Baby MIND}
 \section{Neutrino interactions in a TASD and Baby MIND configuration with a NuSTORM beam}
 
-As described in subsection~\ref{subsec:NuSTORM}, a first stage towards a neutrino factory would contain a storage ring for neutrino and antineutrino production from muon decay. From a muon decay both muon and electron anti-neutrinos will be produced at $\approx 100\%$. In order to evaluate the sensitivity of NuSTORM to the study of neutrino interactions, the TASD and Baby MIND were used as a near detector to measure the interaction type and reconstruction of muon tracks. The main purpose of the study is to see if it is possible to identify muon neutrino CCQE interactions and distinguish them from a background of neutral current interactions and electron anti-neutrino charge current interactions. This study was performed using a TMVA trained algorithm with simulated samples. As part of this study the fitted efficiency and charge identification efficiency of negative and positive muon tracks produced by simulated muon neutrinos and antineutrinos in Baby MIND are shown.
+As described in subsection~\ref{subsec:NuSTORM}, a first stage towards a neutrino factory would contain a storage ring for neutrino and antineutrino production from muon decay. From a muon decay both muon and electron anti-neutrinos will be produced at $\approx 100\%$. In order to evaluate the sensitivity of NuSTORM to the study of neutrino interactions, the TASD and Baby MIND were used as a near detector to measure the interaction type and reconstruction of muon tracks. The main purpose of the study is to see if it is possible to identify muon neutrino CCQE interactions and distinguish them from a background of neutral current interactions and electron anti-neutrino charged current interactions. This study was performed using a TMVA trained algorithm with simulated samples. As part of this study the fitted efficiency and charge identification efficiency of negative and positive muon tracks produced by simulated muon neutrinos and antineutrinos in Baby MIND are shown.
 
 The NuSTORM neutrino energy spectrum from the decay of $\mu^-$ has been simulated as can be seen in \FigRef{fig:NuSTORMeSpectrum} for both muon neutrinos and electron anti-neutrinos. This is the spectrum of neutrino flavours observed in a detector at a distance of 50~m from the end of the NuSTORM straight section (as shown in \FigRef{fig:nuStorm}). The main job for any detector will be to identify if the neutrino event is produced from either a $\nu_\mu$ CC interaction, producing a $\mu^-$, or from a $\bar{\nu}_e$ interaction, which produces positrons, as well as dealing with the neutral current (NC) background from all neutrinos.
 %muon interaction or an electron interaction as well as dealing with the small background ($<1\%$) of anti-muon produced electron and anti-muon neutrinos.
@@ -92,7 +92,7 @@ Using the SAURON framework, $10^5$ muon neutrinos and muon antineutrinos were si
 \end{figure}
 
 %Similarly to the simulated muon beam, and data the charge reconstruction efficiency is very good for the reconstructible tracks.
-Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charge current interactions, using the NuSTORM beam, is very high, even at low momenta. The main difference arises from the fact that the neutrinos are produced over a range of angles with respect to the neutrino direction instead of straight on the center of the detector (with some beam size). Muons from neutrinos are produced at different angles depending on the kinematics of the neutrino interaction and neutrino energy. 
+Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charged current interactions, using the NuSTORM beam, is very high, even at low momenta. The main difference arises from the fact that the neutrinos are produced over a range of angles with respect to the neutrino direction instead of straight on the center of the detector (with some beam size). Muons from neutrinos are produced at different angles depending on the kinematics of the neutrino interaction and neutrino energy. 
 
 \section{Neutrino event selection from the NuSTORM beam}
 
@@ -361,7 +361,7 @@ The event selection has been chosen to ensure that only muons from neutrino inte
 
 For the simulations the WAGASCI spectrum has been used in the SAURON framework to generate neutrino interactions in the iron, using the event selection previously described. These simulated neutrino events were reconstructed in a similar manner to the interactions in the TASD, detailed in chapter~\ref{c:neutrinoNuSTORM}. The reconstruction efficiency is defined as the ratio of reconstructible tracks divided by all the simulated tracks. The charge efficiency is defined as the number of tracks with the correct charge divided by the number of reconstructible tracks. Multiplying these two results gives the ratio of reconstructed tracks with the correct charge divided by all simulated tracks.
 
-Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charge current interactions, using the J-PARC neutrino beam, is very high, even at low momenta. The track reconstruction efficiency is shown in~\FigRef{fig:IronMINDfitted} and the charge reconstruction efficiency with respect to the reconstructed track is shown in~\FigRef{fig:IronMINDfittedcharge}. The study requires some more investigation as to why there is a difference in the simulations between the reconstructed efficiency for muon neutrinos and antineutrinos.
+Similarly to the studies carried out in chapter 5 for single muons in the CERN test beam, the charge reconstruction efficiency of muons from neutrino charged current interactions, using the J-PARC neutrino beam, is very high, even at low momenta. The track reconstruction efficiency is shown in~\FigRef{fig:IronMINDfitted} and the charge reconstruction efficiency with respect to the reconstructed track is shown in~\FigRef{fig:IronMINDfittedcharge}. The study requires some more investigation as to why there is a difference in the simulations between the reconstructed efficiency for muon neutrinos and antineutrinos.
 
 %The main difference arises from the fact that the neutrinos are produced at a variety of angles with respect to the neutrino direction instead of straight on the center of the detector (with some beam size). Muons from neutrinos are produced at different angles depending on the kinematics of the neutrino interaction and neutrino energy.
 
@@ -375,14 +375,14 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/Neutrino/T2KIronRecEff.pdf}
-\caption{Track reconstruction efficiency, showing the probability of reconstructing a simulated neutrino charge current event in the first three modules of iron of Baby MIND as a function of the momentum of the reconstructed muon.}
+\caption{Track reconstruction efficiency, showing the probability of reconstructing a simulated neutrino charged current event in the first three modules of iron of Baby MIND as a function of the momentum of the reconstructed muon.}
 \label{fig:IronMINDfitted}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/Neutrino/T2KIronChargeEff.pdf}
-\caption{Charge reconstruction efficiency showing the efficiency of reconstructing the correct muon charge from a simulated neutrino charge current event in the first three modules of iron of Baby MIND with respect to the reconstructed track, as a function of muon momenta.}
+\caption{Charge reconstruction efficiency showing the efficiency of reconstructing the correct muon charge from a simulated neutrino charged current event in the first three modules of iron of Baby MIND with respect to the reconstructed track, as a function of muon momenta.}
 \label{fig:IronMINDfittedcharge}
 \end{figure}
 
@@ -390,7 +390,7 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 \centering
 \includegraphics[width=.9\textwidth]{figures/NeutrinoChap/NuFactTalk/fix3.pdf}
 %\includegraphics[width=.9\textwidth]{figures/NeutrinoChap/data260618/T2K/ChargeIDT2KNeutrinoBeamMIND.pdf}
-\caption{Charge reconstruction efficiency with respect to the originally simulated neutrino interaction in the first three modules of Baby MIND, showing the efficiency of reconstructing the correct muon charge with respect to the simulated neutrino charge current event, as a function of muon momenta. This plot is the multiplication of the efficiencies in figures 7.6 and 7.7. }
+\caption{Charge reconstruction efficiency with respect to the originally simulated neutrino interaction in the first three modules of Baby MIND, showing the efficiency of reconstructing the correct muon charge with respect to the simulated neutrino charged current event, as a function of muon momenta. This plot is the multiplication of the efficiencies in figures 7.6 and 7.7. }
 \label{fig:IronMINDCombined}
 \end{figure}
 
@@ -424,7 +424,7 @@ In \FigRef{fig:IronMINDfittedcharge} the efficiency for antineutrinos at the low
 %Try and conclude with a quantitative estimate of the ratio of antineutrino to neutrino events at 1.5 degrees, based on the previous calculations.
 
 
-Data was collected during March and May 2018. For this study, data collected between the 24th and 31st of May were used. The data was extracted by the unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track-like and were able to be reconstructed. After the events were selected, an angular cut was made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, thus reducing the number of events to 4585 (13.2\%). The requirement that the momentum was within a range $200~{\rm MeV/c} < p < 10,000~{\rm MeV/c}$, further reduced the number of events to 3899 (11.2\%). Events outside of this range were considered unphysical and rejected. After these cuts there are 2245 tracks reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane (to remove neutrino interactions upstream of Baby MIND) reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and fourth scintillator planes provides the final number of events to be 224 (0.6\%). Out of this sample, 123 event are reconstructed with positive charge and 101 with negative charge. Based on the number of reconstructed events and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$.
+Data was collected during March and May 2018. For this study, data collected between the 24th and 31st of May were used. The data was extracted by the unpacking software for the Baby MIND data, found at \url{https://github.com/MrMefodij/BabyMINDunpacking}. The unpacking of the data produced 34675 (100\%) events which were input into the SAURON framework. From this number of events only 9562 (27.6\%) are seen as track-like and were able to be reconstructed. After the events were selected, an angular cut was made requiring the initial track angle with respect to the $z-$axis to be less than 30$^\circ$, thus reducing the number of events to 4585 (13.2\%). The requirement that the momentum was within a range $200~{\rm MeV/c} < p < 10,000~{\rm MeV/c}$, further reduced the number of events to 3899 (11.2\%). Events outside of this range are inconsistent with neutrino events and were considered unphysical and rejected. After these cuts there are 2245 tracks reconstructed as having a positive charge and 1654 with negative charge. Further imposing the fiducial cuts such as no hits in the first scintillator plane (to remove neutrino interactions upstream of Baby MIND) reduces this number to 2209 (6.4\%) and finally requiring hits in the second, third and fourth scintillator planes provides the final number of events to be 224 (0.6\%). Out of this sample, 123 event are reconstructed with positive charge and 101 with negative charge. Based on the number of reconstructed events and using the statistical error the estimated ratio of antineutrino to neutrino events at 1.5$^\circ$ off axis is $1.22 \pm 0.15$.
 
 To compare data to simulations, two samples of 100000 muon neutrino and antineutrino events each were simulated in the SAURON framework defining the GENIE interaction area to be the same iron plates as described in the fiducial cut. This provided the reconstructed energy spectrum as seen in~\FigRef{fig:SimuSpectrum} with 27926 (27.9\%) neutrino and 33681 (33.7\%) antineutrinos which survive all the cuts.
 
